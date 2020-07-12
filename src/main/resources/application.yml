@@ -1,5 +1,0 @@
-server:
-  port: 20790
-spring:
-  application:
-    name: meco

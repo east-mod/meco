@@ -29,19 +29,4 @@ public class TestingController {
 
         return "success";
     }
-
-
-    /*
-        String str="我的天空多么的美丽.";
-		String a4 = "\uDB80\uDC00";
-		logger.info(a4);
-		logger.info(String.valueOf(a4.length()));
-		System.out.println(0xdb80);
-		System.out.println(0xdc00);
-
-		char[] chars = Character.toChars(0xf0000);
-		for (char aChar : chars) {
-			System.out.println((int)aChar);
-		}
-     */
 }

@@ -19,6 +19,7 @@ public class Testing {
         logger.info(String.valueOf(a4.length()));
         System.out.println(0xdb80);
         System.out.println(0xdc00);
+        char cha = '\uDB80';
 
         char[] chars = Character.toChars(0xf0000);
         for (char aChar : chars) {

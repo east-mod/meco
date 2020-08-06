@@ -17,10 +17,10 @@ public class FromDelehiConvertRule {
 
     static {
         rule = new HashMap<>(1024);
-        rule.putAll(getEhshig());
-        rule.putAll(getGiiN());
-        rule.putAll(getGiiB());
-        rule.putAll(getGiiF());
+        combine(getEhshig());
+        combine(getGiiN());
+        combine(getGiiB());
+        combine(getGiiP());
     }
 
     public static void combine(Map<String, Character> subRule) {
@@ -31,11 +31,12 @@ public class FromDelehiConvertRule {
             if (rule.containsKey(entry.getKey())) {
                 throw new MecoException(DelehiState.DUPLICATE_KEY);
             }
+            rule.put(entry.getKey(), entry.getValue());
         }
     }
 
     public static Map<String, Character> getEhshig() {
-        Map<String, Character> ehshig = new HashMap<>(32);
+        Map<String, Character> ehshig = new HashMap<>(64);
         //a
         ehshig.put("\u0020\u1820\u0020", '\ue000');
         //e
@@ -68,7 +69,7 @@ public class FromDelehiConvertRule {
     }
 
     public static Map<String, Character> getGiiN() {
-        Map<String, Character> n = new HashMap<>(32);
+        Map<String, Character> n = new HashMap<>(64);
         //na,ne
         n.put("\u0020\u1828\u1820\u0020", '\ue00a');
         //ni
@@ -89,20 +90,141 @@ public class FromDelehiConvertRule {
         n.put("\u1828\u1820", '\ue00f');
         //middle ne
         n.put("\u1828\u1821", '\ue00f');
-        //tail na
-        n.put("\u1828\u1820\u0020", '\ue010');
+        //tail1 na
+//        n.put("\u1828\u1820\u0020", '\ue010');
+        //tail2 na
+        n.put("\u1828\u1820\u0020", '\ue011');
+        //tail1 ne
+//        n.put("\u1828\u1820\u0020",'\ue010');
+        //tail2 ne
+        n.put("\u1828\u1821\u0020", '\ue011');
+        //head ni
+        n.put("\u0020\u1828\u1822", '\ue012');
+        //middle ni
+        n.put("\u1828\u1822", '\ue013');
+        //tail ni
+        n.put("\u1828\u1822\u0020", '\ue014');
+        //head n4o
+        n.put("\u0020\u1828\u1823", '\ue015');
+        //head n5o
+        n.put("\u0020\u1828\u1824", '\ue015');
+        //middle n4o
+        n.put("\u1828\u1823", '\ue016');
+        //middle n5o
+        n.put("\u1828\u1824", '\ue016');
+        //middle n6u
+        n.put("\u1828\u1825", '\ue016');
+        //middle n7u
+        n.put("\u1828\u1826", '\ue016');
+        //tail n4o
+        n.put("\u1828\u1823\u0020", '\ue017');
+        //tail n5o
+        n.put("\u1828\u1824\u0020", '\ue017');
+        //tail n6u
+        n.put("\u1828\u1825\u0020", '\ue017');
+        //tail n7u
+        n.put("\u1828\u1826\u0020", '\ue017');
+        //head n6u
+        n.put("\u0020\u1828\u1825", '\ue018');
+        //head n7u
+        n.put("\u0020\u1828\u1826", '\ue018');
         return n;
     }
 
     public static Map<String, Character> getGiiB() {
-        Map<String, Character> b = new HashMap<>(32);
-
+        Map<String, Character> b = new HashMap<>(64);
+        //ba
+        b.put("\u0020\u182a\u1820\u0020", '\ue019');
+        //be
+        b.put("\u0020\u182a\u1821\u0020", '\ue019');
+        //bi
+        b.put("\u0020\u182a\u1822\u0020", '\ue01a');
+        //b4o
+        b.put("\u0020\u182a\u1823\u0020", '\ue01b');
+        //b5o
+        b.put("\u0020\u182a\u1824\u0020", '\ue01b');
+        //b6u
+        b.put("\u0020\u182a\u1825\u0020", '\ue01c');
+        //b7u
+        b.put("\u0020\u182a\u1826\u0020", '\ue01c');
+        //head ba,be
+        b.put("\u0020\u182a\u1820", '\ue01d');
+        b.put("\u0020\u182a\u1821", '\ue01d');
+        //middle ba,be
+        b.put("\u182a\u1820", '\ue01e');
+        b.put("\u182a\u1821", '\ue01e');
+        //tail ba,be
+        b.put("\u182a\u1820\u0020", '\ue01f');
+        b.put("\u182a\u1820\u0021", '\ue01f');
+        //head bi
+        b.put("\u0020\u182a\u1822", '\ue020');
+        //middle bi
+        b.put("\u182a\u1822", '\ue021');
+        //tail bi
+        b.put("\u182a\u1822\u0020", '\ue022');
+        //head b4o,b5o
+        b.put("\u0020\u182a\u1823", '\ue023');
+        b.put("\u0020\u182a\u1824", '\ue023');
+        //middle b4o,b5o,b6u,b7u
+        b.put("\u182a\u1823", '\ue024');
+        b.put("\u182a\u1824", '\ue024');
+        b.put("\u182a\u1825", '\ue024');
+        b.put("\u182a\u1826", '\ue024');
+        //tail b4o,b5o,b6u,b7u
+        b.put("\u182a\u1823\u0020", '\ue025');
+        b.put("\u182a\u1824\u0020", '\ue025');
+        b.put("\u182a\u1825\u0020", '\ue025');
+        b.put("\u182a\u1826\u0020", '\ue025');
+        //head b6u,b7u
+        b.put("\u0020\u182a\u1825", '\ue026');
+        b.put("\u0020\u182a\u1826", '\ue026');
         return b;
     }
 
-    public static Map<String, Character> getGiiF() {
-        Map<String, Character> f = new HashMap<>(32);
-
-        return f;
+    public static Map<String, Character> getGiiP() {
+        Map<String, Character> p = new HashMap<>(64);
+        //pa,pe
+        p.put("\u0020\u182b\u1820\u0020", '\ue027');
+        p.put("\u0020\u182b\u1821\u0020", '\ue027');
+        //pi
+        p.put("\u0020\u182b\u1822\u0020", '\ue028');
+        //p4o,p5o
+        p.put("\u0020\u182b\u1823\u0020", '\ue029');
+        p.put("\u0020\u182b\u1824\u0020", '\ue029');
+        //p6u,p7u
+        p.put("\u0020\u182b\u1825\u0020", '\ue02a');
+        p.put("\u0020\u182b\u1826\u0020", '\ue02a');
+        //head pa,pe
+        p.put("\u0020\u182b\u1820", '\ue02b');
+        p.put("\u0020\u182b\u1821", '\ue02b');
+        //middle pa,pe
+        p.put("\u182b\u1820", '\ue02c');
+        p.put("\u182b\u1821", '\ue02c');
+        //tail pa,pe
+        p.put("\u182b\u1820\u0020", '\ue02d');
+        p.put("\u182b\u1820\u0021", '\ue02d');
+        //head pi
+        p.put("\u0020\u182b\u1822", '\ue02e');
+        //middle pi
+        p.put("\u182b\u1822", '\ue02f');
+        //tail pi
+        p.put("\u182b\u1822\u0020", '\ue030');
+        //head p4o,p5o
+        p.put("\u0020\u182b\u1823", '\ue031');
+        p.put("\u0020\u182b\u1824", '\ue031');
+        //middle p4o,p5o,p6u,p7u
+        p.put("\u182b\u1823", '\ue032');
+        p.put("\u182b\u1824", '\ue032');
+        p.put("\u182b\u1825", '\ue032');
+        p.put("\u182b\u1826", '\ue032');
+        //tail p4o,p5o,p6u,p7u
+        p.put("\u182b\u1823\u0020", '\ue033');
+        p.put("\u182b\u1824\u0020", '\ue033');
+        p.put("\u182b\u1825\u0020", '\ue033');
+        p.put("\u182b\u1826\u0020", '\ue033');
+        //head p6u,p7u
+        p.put("\u0020\u182b\u1825", '\ue034');
+        p.put("\u0020\u182b\u1826", '\ue034');
+        return p;
     }
 }

@@ -864,6 +864,11 @@ public class FromDelehiConvertRule {
         return k;
     }
 
+    public static Map<String, Character> getGiiZ() {
+        Map<String, Character> z = new HashMap<>(64);
+        return z;
+    }
+
     public static void main(String[] args) {
         System.out.println(FromDelehiConvertRule.rule);
     }

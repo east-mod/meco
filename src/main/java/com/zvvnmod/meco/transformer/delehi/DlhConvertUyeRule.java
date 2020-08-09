@@ -1,7 +1,6 @@
 package com.zvvnmod.meco.transformer.delehi;
 
-import com.zvvnmod.meco.common.MecoException;
-import org.springframework.util.CollectionUtils;
+import com.zvvnmod.meco.transformer.RuleMap;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,48 +11,40 @@ import java.util.Map;
  * WEEK  : Wed
  * TIME  : 19:42
  */
-public class FromDelehiConvertRule {
-    public static Map<String, Character> rule;
+public class DlhConvertUyeRule {
+    public static RuleMap rule;
 
     static {
-        rule = new HashMap<>(2048);
-        combine(getEhshig());
-        combine(getGiiN());
-        combine(getGiiB());
-        combine(getGiiP());
-        combine(getGiiH());
-        combine(getGiiG());
-        combine(getGiiM());
-        combine(getGiiL());
-        combine(getGiiS());
-        combine(getGiiSH());
-        combine(getGiiT());
-        combine(getGiiD());
-        combine(getGiiTR());
-        combine(getGiiJ());
-        combine(getGiiY());
-        combine(getGiiR());
-        combine(getGiiW());
-        combine(getGiiF());
-        combine(getGiiK());
-        combine(getGiiKH());
-        combine(getGiiTS());
-        combine(getGiiZ());
-        combine(getGiiHH());
-        combine(getGiiRH());
-        combine(getGiiLH());
+        build();
     }
 
-    public static void combine(Map<String, Character> subRule) {
-        if (CollectionUtils.isEmpty(subRule)) {
-            return;
-        }
-        for (Map.Entry<String, Character> entry : subRule.entrySet()) {
-            if (rule.containsKey(entry.getKey())) {
-                throw new MecoException(DelehiState.DUPLICATE_KEY);
-            }
-            rule.put(entry.getKey(), entry.getValue());
-        }
+    public static void build() {
+        rule = new RuleMap(2048);
+        rule.combine(getEhshig());
+        rule.combine(getGiiN());
+        rule.combine(getGiiB());
+        rule.combine(getGiiP());
+        rule.combine(getGiiH());
+        rule.combine(getGiiG());
+        rule.combine(getGiiM());
+        rule.combine(getGiiL());
+        rule.combine(getGiiS());
+        rule.combine(getGiiSH());
+        rule.combine(getGiiT());
+        rule.combine(getGiiD());
+        rule.combine(getGiiTR());
+        rule.combine(getGiiJ());
+        rule.combine(getGiiY());
+        rule.combine(getGiiR());
+        rule.combine(getGiiW());
+        rule.combine(getGiiF());
+        rule.combine(getGiiK());
+        rule.combine(getGiiKH());
+        rule.combine(getGiiTS());
+        rule.combine(getGiiZ());
+        rule.combine(getGiiHH());
+        rule.combine(getGiiRH());
+        rule.combine(getGiiLH());
     }
 
     public static Map<String, Character> getEhshig() {
@@ -898,11 +889,5 @@ public class FromDelehiConvertRule {
     public static Map<String, Character> getGiiLH() {
         Map<String, Character> rh = new HashMap<>(64);
         return rh;
-    }
-
-
-
-    public static void main(String[] args) {
-        System.out.println(FromDelehiConvertRule.rule);
     }
 }

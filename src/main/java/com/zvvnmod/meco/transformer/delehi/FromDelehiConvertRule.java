@@ -36,6 +36,12 @@ public class FromDelehiConvertRule {
         combine(getGiiW());
         combine(getGiiF());
         combine(getGiiK());
+        combine(getGiiKH());
+        combine(getGiiTS());
+        combine(getGiiZ());
+        combine(getGiiHH());
+        combine(getGiiRH());
+        combine(getGiiLH());
     }
 
     public static void combine(Map<String, Character> subRule) {
@@ -864,10 +870,37 @@ public class FromDelehiConvertRule {
         return k;
     }
 
+    public static Map<String, Character> getGiiKH() {
+        Map<String, Character> kh = new HashMap<>(64);
+        return kh;
+    }
+
+    public static Map<String, Character> getGiiTS() {
+        Map<String, Character> ts = new HashMap<>(64);
+        return ts;
+    }
+
     public static Map<String, Character> getGiiZ() {
         Map<String, Character> z = new HashMap<>(64);
         return z;
     }
+
+    public static Map<String, Character> getGiiHH() {
+        Map<String, Character> hh = new HashMap<>(64);
+        return hh;
+    }
+
+    public static Map<String, Character> getGiiRH() {
+        Map<String, Character> rh = new HashMap<>(64);
+        return rh;
+    }
+
+    public static Map<String, Character> getGiiLH() {
+        Map<String, Character> rh = new HashMap<>(64);
+        return rh;
+    }
+
+
 
     public static void main(String[] args) {
         System.out.println(FromDelehiConvertRule.rule);

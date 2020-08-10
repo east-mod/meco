@@ -1,4 +1,4 @@
-package com.zvvnmod.meco.transformer.delehi;
+package com.zvvnmod.meco.rule.delehi;
 
 import com.zvvnmod.meco.common.State;
 

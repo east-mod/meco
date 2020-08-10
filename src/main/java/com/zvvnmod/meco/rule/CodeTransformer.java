@@ -1,4 +1,4 @@
-package com.zvvnmod.meco.transformer;
+package com.zvvnmod.meco.rule;
 
 /**
  * AUTHOR: zorigt

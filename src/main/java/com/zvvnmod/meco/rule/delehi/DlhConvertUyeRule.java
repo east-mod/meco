@@ -1,6 +1,6 @@
-package com.zvvnmod.meco.transformer.delehi;
+package com.zvvnmod.meco.rule.delehi;
 
-import com.zvvnmod.meco.transformer.RuleMap;
+import com.zvvnmod.meco.tranformer.RuleMap;
 
 import java.util.HashMap;
 import java.util.Map;

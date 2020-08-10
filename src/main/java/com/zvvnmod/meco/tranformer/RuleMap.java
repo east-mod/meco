@@ -1,7 +1,7 @@
-package com.zvvnmod.meco.transformer;
+package com.zvvnmod.meco.tranformer;
 
 import com.zvvnmod.meco.common.MecoException;
-import com.zvvnmod.meco.transformer.delehi.DelehiState;
+import com.zvvnmod.meco.rule.delehi.DelehiState;
 import org.springframework.util.CollectionUtils;
 
 import java.util.HashMap;
@@ -16,11 +16,15 @@ import java.util.Map;
 public class RuleMap<K, V> {
     public Map<K, V> rule;
 
+    public RuleMap() {
+        this.rule = new HashMap<>();
+    }
+
     public RuleMap(final Integer size) {
         this.rule = new HashMap<>(size);
     }
 
-    public void put(K key, V character) {
+    public void put(final K key, final V character) {
         if (rule.containsKey(key)) {
             throw new MecoException(DelehiState.DUPLICATE_KEY);
         } else {
@@ -28,7 +32,7 @@ public class RuleMap<K, V> {
         }
     }
 
-    public void combine(Map<K, V> subRule) {
+    public void combine(final Map<K, V> subRule) {
         if (CollectionUtils.isEmpty(subRule)) {
             return;
         }
@@ -38,5 +42,9 @@ public class RuleMap<K, V> {
             }
             rule.put(entry.getKey(), entry.getValue());
         }
+    }
+
+    public boolean containsKey(final K k) {
+        return this.rule.containsKey(k);
     }
 }

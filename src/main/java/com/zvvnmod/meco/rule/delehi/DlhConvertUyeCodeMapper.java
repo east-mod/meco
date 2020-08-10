@@ -1,6 +1,6 @@
 package com.zvvnmod.meco.rule.delehi;
 
-import com.zvvnmod.meco.tranformer.CodeMapper;
+import com.zvvnmod.meco.translate.domain.CodeMapper;
 
 import java.util.HashMap;
 import java.util.Map;

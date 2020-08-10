@@ -7,8 +7,4 @@ package com.zvvnmod.meco.common;
  * TIME  : 18:39
  */
 public class Characters {
-    public boolean isMongolianBlock(){
-
-        return true;
-    }
 }

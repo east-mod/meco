@@ -1,4 +1,4 @@
-package com.zvvnmod.meco.tranformer;
+package com.zvvnmod.meco.translate.domain;
 
 /**
  * AUTHOR: zorigt

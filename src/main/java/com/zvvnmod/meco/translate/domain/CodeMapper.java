@@ -1,4 +1,4 @@
-package com.zvvnmod.meco.tranformer;
+package com.zvvnmod.meco.translate.domain;
 
 import com.zvvnmod.meco.common.MecoException;
 import com.zvvnmod.meco.rule.delehi.DelehiState;
@@ -46,5 +46,9 @@ public class CodeMapper {
 
     public boolean containsKey(final String k) {
         return this.map.containsKey(k);
+    }
+
+    public String get(final String k) {
+        return this.map.get(k);
     }
 }

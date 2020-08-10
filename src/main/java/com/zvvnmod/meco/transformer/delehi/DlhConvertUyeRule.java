@@ -12,14 +12,14 @@ import java.util.Map;
  * TIME  : 19:42
  */
 public class DlhConvertUyeRule {
-    public static RuleMap rule;
+    public static RuleMap<String, Character> rule;
 
     static {
         build();
     }
 
     public static void build() {
-        rule = new RuleMap(2048);
+        rule = new RuleMap<>(2048);
         rule.combine(getEhshig());
         rule.combine(getGiiN());
         rule.combine(getGiiB());

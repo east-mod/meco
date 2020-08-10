@@ -12,14 +12,14 @@ import java.util.Map;
  * TIME  : 23:08
  */
 public class DlhConvertDrsRule {
-    public static RuleMap rule;
+    public static RuleMap<String,String> rule;
 
     static {
         build();
     }
 
     public static void build(){
-        rule = new RuleMap(256);
+        rule = new RuleMap<>(256);
         rule.combine(getEhshig());
         rule.combine(getGiiN());
         rule.combine(getGiiB());
@@ -47,8 +47,29 @@ public class DlhConvertDrsRule {
         rule.combine(getGiiLH());
     }
 
-    public static Map<String ,Character> getEhshig(){
-        Map<String ,Character> ehshig = new HashMap<>(32);
+    public static Map<String ,String> getEhshig(){
+        Map<String ,String> ehshig = new HashMap<>(32);
+        //a
+        ehshig.put("\u0020\u1820\u0020","\u0020\ue000\ue00c\u0020");
+        //e
+        ehshig.put("\u0020\u1821\u0020","\u0020\ue000\ue00d\u0020");
+        //i
+        ehshig.put("\u0020\u1822\u0020","\u0020\ue000\ue00e\u0020");
+        //4o,5o
+        ehshig.put("\u0020\u1823\u0020","\u0020\ue000\ue00f\u0020");
+        ehshig.put("\u0020\u1824\u0020","\u0020\ue000\ue00f\u0020");
+        //6u,7u
+        ehshig.put("\u0020\u1825\u0020","\u0020\ue000\ue010\u0020");
+        ehshig.put("\u0020\u1826\u0020","\u0020\ue000\ue010\u0020");
+
+        //head a
+        ehshig.put("\u0020\u1820","\u0020\ue000\ue005");
+        //head e
+        ehshig.put("\u0020\u1821","\u0020\ue000");
+        //head i
+        ehshig.put("\u0020\u1822","\u0020\ue000\ue006");
+
         
+        return ehshig;
     }
 }

@@ -13,14 +13,14 @@ import java.util.Map;
  * WEEK  : Sun
  * TIME  : 23:12
  */
-public class RuleMap {
-    public Map<String, Character> rule;
+public class RuleMap<K, V> {
+    public Map<K, V> rule;
 
     public RuleMap(final Integer size) {
         this.rule = new HashMap<>(size);
     }
 
-    public void put(String key, Character character) {
+    public void put(K key, V character) {
         if (rule.containsKey(key)) {
             throw new MecoException(DelehiState.DUPLICATE_KEY);
         } else {
@@ -28,11 +28,11 @@ public class RuleMap {
         }
     }
 
-    public void combine(Map<String, Character> subRule) {
+    public void combine(Map<K, V> subRule) {
         if (CollectionUtils.isEmpty(subRule)) {
             return;
         }
-        for (Map.Entry<String, Character> entry : subRule.entrySet()) {
+        for (Map.Entry<K, V> entry : subRule.entrySet()) {
             if (rule.containsKey(entry.getKey())) {
                 throw new MecoException(DelehiState.DUPLICATE_KEY);
             }

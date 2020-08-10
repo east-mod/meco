@@ -1,6 +1,6 @@
 package com.zvvnmod.meco.rule.delehi;
 
-import com.zvvnmod.meco.tranformer.RuleMap;
+import com.zvvnmod.meco.tranformer.CodeMapper;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,16 +11,16 @@ import java.util.Map;
  * WEEK  : Sun
  * TIME  : 23:08
  */
-public class DlhConvertDrsRule {
-    public static RuleMap<String, String> rule;
+public class DlhConvertDrsCodeMapper {
+    public static CodeMapper mapper;
 
     static {
         build();
     }
 
     public static void build() {
-        rule = new RuleMap<>(256);
-        rule.combine(getEhshig());
+        mapper = new CodeMapper(256);
+        mapper.combine(getEhshig());
 //        rule.combine(getGiiN());
 //        rule.combine(getGiiB());
 //        rule.combine(getGiiP());

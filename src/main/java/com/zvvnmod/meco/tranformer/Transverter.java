@@ -8,13 +8,14 @@ import com.zvvnmod.meco.common.Strings;
  * WEEK  : 周一
  * TIME  : 18:14
  */
-public class Tranformer {
-    private final RuleMap<String, String> rule;
+public class Transverter {
+
+    private final TransformRule transformRule;
 
     private MSC msc;
 
-    public Tranformer(final RuleMap<String, String> rule) {
-        this.rule = rule;
+    public Transverter(final TransformRule transformRule) {
+        this.transformRule = transformRule;
         this.msc = new MSC();
     }
 

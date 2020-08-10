@@ -3,6 +3,8 @@ package com.zvvnmod.meco.translate.domain;
 import com.zvvnmod.meco.common.MecoException;
 import com.zvvnmod.meco.common.Strings;
 import com.zvvnmod.meco.translate.exception.TranslateState;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
@@ -16,8 +18,12 @@ import java.util.List;
  * convertible mongolian string context.
  */
 public class MSC {
+    @Getter
+    @Setter
     private UnicodeType head;
     private List<Character> content;
+    @Getter
+    @Setter
     private UnicodeType tail;
 
     public MSC() {
@@ -28,14 +34,14 @@ public class MSC {
         if (CollectionUtils.isEmpty(content)) {
             return Strings.BLANK;
         }
-        StringBuilder builder = new StringBuilder(content.size() + 2);
-        content.forEach(builder::append);
         if (head == null || tail == null) {
             throw new MecoException(TranslateState.UNICODE_TYPE_NOT_BE_NULL);
         }
+        StringBuilder builder = new StringBuilder(content.size() + 2);
         if (!head.equals(UnicodeType.MONGOLIAN)) {
             builder.append('\u0020');
         }
+        content.forEach(builder::append);
         if (!tail.equals(UnicodeType.MONGOLIAN)) {
             builder.append('\u0020');
         }
@@ -57,18 +63,6 @@ public class MSC {
         this.head = null;
         this.content = new ArrayList<>(8);
         this.tail = null;
-    }
-
-    public void setTail(UnicodeType tail) {
-        if (this.tail == null) {
-            this.tail = tail;
-        }
-    }
-
-    public void setHead(UnicodeType head) {
-        if (this.head == null) {
-            this.head = head;
-        }
     }
 
     public boolean contentIsBlank() {

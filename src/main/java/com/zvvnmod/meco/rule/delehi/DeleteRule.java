@@ -1,6 +1,7 @@
 package com.zvvnmod.meco.rule.delehi;
 
 import com.zvvnmod.meco.translate.domain.CodeMapper;
+import com.zvvnmod.meco.translate.domain.MglUnicodeBlock;
 import com.zvvnmod.meco.translate.domain.TranslateRule;
 
 /**
@@ -12,11 +13,12 @@ import com.zvvnmod.meco.translate.domain.TranslateRule;
 public class DeleteRule implements TranslateRule {
     @Override
     public CodeMapper getCodesMapper() {
-        return null;
+        return DlhConvertDrsCodeMapper.mapper;
     }
 
     @Override
     public boolean isMongolianCodePoint(char c) {
-        return false;
+        return MglUnicodeBlock.isNormalLetter(c) || MglUnicodeBlock.isFreeVariationSelector(c) ||
+                MglUnicodeBlock.isVowelSeparator(c);
     }
 }

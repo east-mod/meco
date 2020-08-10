@@ -38,6 +38,15 @@ public class Translator {
         return translateRule.isMongolianCodePoint(ch);
     }
 
+    private UnicodeType getUnicodeType(char ch) {
+        return isMongolianCodePoint(ch) ? UnicodeType.MONGOLIAN : UnicodeType.OTHER;
+    }
+
+    private String getTranslateString() {
+        String translateString = translateRule.getCodesMapper().get(this.msc.getKey());
+        return translateString.replaceAll(" ", "");
+    }
+
     public String translate(final String s0) {
         if (Strings.isBlank(s0)) {
             return Strings.BLANK;
@@ -45,33 +54,39 @@ public class Translator {
         char[] chars0 = s0.toCharArray();
         StringBuilder builder = new StringBuilder(chars0.length * 2);
         this.msc.setHead(UnicodeType.OTHER);
-        for (char c : chars0) {
-            boolean isMongolian = isMongolianCodePoint(c);
-            if (isMongolian) {
+        for (int i = 0; i < chars0.length; i++) {
+            char c = chars0[i];
+            if (isMongolianCodePoint(c)) {
                 this.msc.push(c);
-                if (!containsKey(this.msc.getKey())) {
+                boolean notLast = i + 1 < chars0.length;
+                if (notLast) {
+                    this.msc.setTail(getUnicodeType(chars0[i + 1]));
+                    if (containsKey(this.msc.getKey())) {
+                        continue;
+                    }
                     this.msc.pop();
                     this.msc.setTail(UnicodeType.MONGOLIAN);
-                    if (this.msc.contentIsBlank()) {
-                        throw new MecoException(TranslateState.NOT_FOUNT_IN_MAPPER_RULE.getCode(),
-                                "NOT_FOUNT_the String " + c + "IN_MAPPER_RULE");
-                    }
-                    String translateString = translateRule.getCodesMapper().get(this.msc.getKey());
-                    builder.append(translateString);
-                    this.msc.reset();
                 } else {
-                    continue;
+                    this.msc.setTail(UnicodeType.OTHER);
                 }
-            }
-            if (!isMongolian && !this.msc.contentIsBlank()) {
-                this.msc.setTail(UnicodeType.OTHER);
-                String translateString = translateRule.getCodesMapper().get(this.msc.getKey());
-                builder.append(translateString);
+                if (this.msc.contentIsBlank()) {
+                    throw new MecoException(TranslateState.NOT_FOUNT_IN_MAPPER_RULE.getCode(),
+                            "NOT_FOUNT_the String " + c + "IN_MAPPER_RULE");
+                }
+                builder.append(this.getTranslateString());
                 this.msc.reset();
+            } else {
+                if (!this.msc.contentIsBlank()) {
+                    this.msc.setTail(UnicodeType.OTHER);
+                    builder.append(this.getTranslateString());
+                    this.msc.reset();
+                }
+                builder.append(c);
             }
-            this.msc.setHead(isMongolianCodePoint(c) ? UnicodeType.MONGOLIAN : UnicodeType.OTHER);
+            if (this.msc.getHead() == null) {
+                this.msc.setHead(getUnicodeType(c));
+            }
         }
-
         return builder.toString();
     }
 

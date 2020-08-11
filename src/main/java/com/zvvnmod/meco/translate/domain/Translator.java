@@ -44,6 +44,10 @@ public class Translator {
 
     private String getTranslateString() {
         String translateString = translateRule.getCodesMapper().get(this.msc.getKey());
+        if (translateString == null) {
+            throw new MecoException(TranslateState.NOT_FOUNT_IN_MAPPER_RULE.getCode(),
+                    "NOT_FOUNT_the String " + this.msc.getContent() + "IN_MAPPER_RULE");
+        }
         return translateString.replaceAll(" ", "");
     }
 
@@ -75,6 +79,9 @@ public class Translator {
                 }
                 builder.append(this.getTranslateString());
                 this.msc.reset();
+                if (notLast) {
+                    this.msc.push(c);
+                }
             } else {
                 if (!this.msc.contentIsBlank()) {
                     this.msc.setTail(UnicodeType.OTHER);

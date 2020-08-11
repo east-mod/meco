@@ -21,6 +21,7 @@ public class MSC {
     @Getter
     @Setter
     private UnicodeType head;
+    @Getter
     private List<Character> content;
     @Getter
     @Setter

@@ -46,7 +46,7 @@ public class Translator {
         String translateString = translateRule.getCodesMapper().get(this.msc.getKey());
         if (translateString == null) {
             throw new MecoException(TranslateState.NOT_FOUNT_IN_MAPPER_RULE.getCode(),
-                    "NOT_FOUNT_the String " + this.msc.getContent() + "IN_MAPPER_RULE");
+                    "Not fount the string " + this.msc.getContent() + "in mapper rule");
         }
         return translateString.replaceAll(" ", "");
     }
@@ -55,33 +55,27 @@ public class Translator {
         if (Strings.isBlank(s0)) {
             return Strings.BLANK;
         }
-        char[] chars0 = s0.toCharArray();
+        String s1 = s0 + "\ue666";
+        char[] chars0 = s1.toCharArray();
         StringBuilder builder = new StringBuilder(chars0.length * 2);
         this.msc.setHead(UnicodeType.OTHER);
         for (int i = 0; i < chars0.length; i++) {
             char c = chars0[i];
             if (isMongolianCodePoint(c)) {
                 this.msc.push(c);
-                boolean notLast = i + 1 < chars0.length;
-                if (notLast) {
-                    this.msc.setTail(getUnicodeType(chars0[i + 1]));
-                    if (containsKey(this.msc.getKey())) {
-                        continue;
-                    }
-                    this.msc.pop();
-                    this.msc.setTail(UnicodeType.MONGOLIAN);
-                } else {
-                    this.msc.setTail(UnicodeType.OTHER);
+                this.msc.setTail(getUnicodeType(chars0[i + 1]));
+                if (containsKey(this.msc.getKey())) {
+                    continue;
                 }
+                this.msc.pop();
+                this.msc.setTail(UnicodeType.MONGOLIAN);
                 if (this.msc.contentIsBlank()) {
                     throw new MecoException(TranslateState.NOT_FOUNT_IN_MAPPER_RULE.getCode(),
-                            "NOT_FOUNT_the String " + c + "IN_MAPPER_RULE");
+                            "not fount the string " + c + "in mapper rule");
                 }
                 builder.append(this.getTranslateString());
                 this.msc.reset();
-                if (notLast) {
-                    this.msc.push(c);
-                }
+                this.msc.push(c);
             } else {
                 if (!this.msc.contentIsBlank()) {
                     this.msc.setTail(UnicodeType.OTHER);
@@ -94,8 +88,8 @@ public class Translator {
                 this.msc.setHead(getUnicodeType(c));
             }
         }
+        builder.deleteCharAt(builder.length() - 1);
         return builder.toString();
     }
-
 
 }

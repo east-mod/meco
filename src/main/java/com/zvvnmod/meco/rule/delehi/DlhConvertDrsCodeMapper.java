@@ -128,10 +128,11 @@ public class DlhConvertDrsCodeMapper {
         //middle
         n.put("\u1828", "\ue028");
         //tail
-        n.put("\u1828\u0200", "\ue00c");
+        n.put("\u1828\u0020", "\ue00c");
 
         //n+180e
-        n.put("\u1828\u180e", "\ue00c\ue143");
+        n.put("\u1828\u180e", "\ue028\ue143");
+        n.put("\u1828\u180e\u0020", "\ue00c\ue143");
         //tail2 na
         n.put("\u1828\u180e\u1820\u0020", "\ue077");
         n.put("\u1828\u180e\u1821\u0020", "\ue077");

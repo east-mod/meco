@@ -13,12 +13,44 @@ import java.util.Map;
  */
 public class DlhConvertDrsCodeMapper {
     public static CodeMapper mapper;
+    public static CodeMapper chaghMapper;
+    public static CodeMapper hundiiMapper;
 
     static {
-        build();
+        buildChagh();
+        buildHundii();
+        buildMapper();
     }
 
-    public static void build() {
+    public static void buildChagh() {
+        chaghMapper = new CodeMapper(16);
+        //middle h
+        chaghMapper.put("\u182c", "\ue005\ue005");
+        //tail h
+        chaghMapper.put("\u182c\u0020", "\ue032");
+        //h+mvs
+        chaghMapper.put("\u182c\u180e", "\ue005\ue005\ue143");
+        //middle g
+        chaghMapper.put("\u182d", "\ue005\ue005");
+        //tail g
+        chaghMapper.put("\u182d\u0020", "\ue032");
+    }
+
+    public static void buildHundii() {
+        hundiiMapper = new CodeMapper(16);
+        //middle h
+        hundiiMapper.put("\u182c", "\ue031");
+        //tail h
+        hundiiMapper.put("\u182c\u0020", "\ue033");
+        //h+mvs
+        hundiiMapper.put("\u182c\u180e", "\ue031\ue143");
+        //middle g
+        hundiiMapper.put("\u182d", "\ue031");
+        //tail g
+        hundiiMapper.put("\u182d\u0020", "\ue033");
+    }
+
+    public static void buildMapper() {
         mapper = new CodeMapper(256);
         mapper.combine(getSeparator());
         mapper.combine(getEhshig());
@@ -26,12 +58,12 @@ public class DlhConvertDrsCodeMapper {
         mapper.combine(getGiiB());
         mapper.combine(getGiiP());
         mapper.combine(getGiiH());
-//        rule.combine(getGiiG());
-//        rule.combine(getGiiM());
-//        rule.combine(getGiiL());
-//        rule.combine(getGiiS());
-//        rule.combine(getGiiSH());
-//        rule.combine(getGiiT());
+        mapper.combine(getGiiG());
+        mapper.combine(getGiiM());
+        mapper.combine(getGiiL());
+        mapper.combine(getGiiS());
+        mapper.combine(getGiiSH());
+        mapper.combine(getGiiT());
 //        rule.combine(getGiiD());
 //        rule.combine(getGiiTR());
 //        rule.combine(getGiiJ());
@@ -243,62 +275,156 @@ public class DlhConvertDrsCodeMapper {
         return p;
     }
 
-    public static Map<String, String> getGiiH(){
+    public static Map<String, String> getGiiH() {
         Map<String, String> h = new HashMap<>(64);
         //head
-        h.put("\u0020\u182c","\ue030");
-        //middle
-        h.put("\u182c","\ue031");
-        //tail
+        h.put("\u0020\u182c", "\ue030");
 
         //ha
-        h.put("\u0020\u182c\u1820\u0020", "\ue035");
+        h.put("\u0020\u182c\u1820\u0020", "\ue02f\ue00c");
         //he
-        h.put("\u0020\u182c\u1821\u0020", "\ue036");
+        h.put("\u0020\u182c\u1821\u0020", "\ue094\ue00d");
         //hi
-        h.put("\u0020\u182c\u1822\u0020", "\ue037");
+        h.put("\u0020\u182c\u1822\u0020", "\ue092");
         //h4o,h5o
-        h.put("\u0020\u182c\u1823\u0020", "\ue038");
-        h.put("\u0020\u182c\u1824\u0020", "\ue038");
+        h.put("\u0020\u182c\u1823\u0020", "\ue02f\ue00f");
+        h.put("\u0020\u182c\u1824\u0020", "\ue02f\ue00f");
         //h6u,h7u
-        h.put("\u0020\u182c\u1825\u0020", "\ue039");
-        h.put("\u0020\u182c\u1826\u0020", "\ue039");
+        h.put("\u0020\u182c\u1825\u0020", "\ue093");
+        h.put("\u0020\u182c\u1826\u0020", "\ue093");
         //head ha
-        h.put("\u0020\u182c\u1820", "\ue03a");
-        //middle ha
-        h.put("\u182c\u1820", "\ue03b");
+        h.put("\u0020\u182c\u1820", "\ue02f\ue005");
         //tail ha
-        h.put("\u182c\u1820\u0020", "\ue03c");
+        h.put("\u182c\u180e\u1820\u0020", "\ue032\ue00d");
         //head he
-        h.put("\u0020\u182c\u1821", "\ue03d");
+        h.put("\u0020\u182c\u1821", "\ue094");
         //middle he
-        h.put("\u182c\u1821", "\ue03e");
+        h.put("\u182c\u1821", "\ue095");
         //tail he
-        h.put("\u182c\u1821\u0020", "\ue03f");
+        h.put("\u182c\u1821\u0020", "\ue096");
         //head hi
-        h.put("\u0020\u182c\u1822", "\ue040");
+        h.put("\u0020\u182c\u1822", "\ue097");
         //middle hi
-        h.put("\u182c\u1822", "\ue041");
+        h.put("\u182c\u1822", "\ue098");
         //tail hi
-        h.put("\u182c\u1822\u0020", "\ue042");
+        h.put("\u182c\u1822\u0020", "\ue099");
         //head h4o,h5o
-        h.put("\u0020\u182c\u1823", "\ue043");
-        h.put("\u0020\u182c\u1824", "\ue043");
-        //middle h4o,h5o
-        h.put("\u182c\u1823", "\ue044");
-        h.put("\u182c\u1824", "\ue044");
-        //tail h4o,h5o
-        h.put("\u182c\u1823\u0020", "\ue045");
-        h.put("\u182c\u1824\u0020", "\ue045");
+        h.put("\u0020\u182c\u1823", "\ue02f\ue008");
+        h.put("\u0020\u182c\u1824", "\ue02f\ue008");
         //head h6u,h7u
-        h.put("\u0020\u182c\u1825", "\ue046");
-        h.put("\u0020\u182c\u1826", "\ue046");
+        h.put("\u0020\u182c\u1825", "\ue09a");
+        h.put("\u0020\u182c\u1826", "\ue09a");
         //middle h6u,h7u
-        h.put("\u182c\u1825", "\ue047");
-        h.put("\u182c\u1826", "\ue047");
+        h.put("\u182c\u1825", "\ue09b");
+        h.put("\u182c\u1826", "\ue09b");
         //tail h6u,h7u
-        h.put("\u182c\u1825\u0020", "\ue048");
-        h.put("\u182c\u1826\u0020", "\ue048");
+        h.put("\u182c\u1825\u0020", "\ue09c");
+        h.put("\u182c\u1826\u0020", "\ue09c");
         return h;
+    }
+
+    public static Map<String, String> getGiiG() {
+        Map<String, String> g = new HashMap<>(64);
+        //head
+        g.put("\u0020\u182d", "\ue030");
+
+        //ga
+        g.put("\u0020\u182d\u1820\u0020", "\ue034\ue00c");
+        //ge
+        g.put("\u0020\u182d\u1821\u0020", "\ue094\ue00d");
+        //gi
+        g.put("\u0020\u182d\u1822\u0020", "\ue092");
+        //g4o,g5o
+        g.put("\u0020\u182d\u1823\u0020", "\ue034\ue00f");
+        g.put("\u0020\u182d\u1824\u0020", "\ue034\ue00f");
+        //g6u,g7u
+        g.put("\u0020\u182d\u1825\u0020", "\ue093");
+        g.put("\u0020\u182d\u1826\u0020", "\ue093");
+        //head ga
+        g.put("\u0020\u182d\u1820", "\ue034\ue005");
+        //middle ga
+        g.put("\u182d\u1820", "\ue035\ue005");
+        //tail ga
+        g.put("\u182d\u1820\u0020", "\ue09d");
+        //head ge
+        g.put("\u0020\u182d\u1821", "\ue094");
+        //middle ge
+        g.put("\u182d\u1821", "\ue095");
+        //tail ge
+        g.put("\u182d\u1821\u0020", "\ue096");
+        //head gi
+        g.put("\u0020\u182d\u1822", "\ue097");
+        //middle gi
+        g.put("\u182d\u1822", "\ue098");
+        //tail gi
+        g.put("\u182d\u1822\u0020", "\ue099");
+        //head g4o,g5o
+        g.put("\u0020\u182d\u1823", "\ue034\ue008");
+        g.put("\u0020\u182d\u1824", "\ue034\ue008");
+        //middle g4o,g5o
+        g.put("\u182d\u1823", "\ue035\ue008");
+        g.put("\u182d\u1824", "\ue035\ue008");
+        //tail g4o,g5o
+        g.put("\u182d\u1823\u0020", "\ue035\ue011");
+        g.put("\u182d\u1824\u0020", "\ue035\ue011");
+        //head g6u,g7u
+        g.put("\u0020\u182d\u1825", "\ue09a");
+        g.put("\u0020\u182d\u1826", "\ue09a");
+        //middle g6u,g7u
+        g.put("\u182d\u1825", "\ue09b");
+        g.put("\u182d\u1826", "\ue09b");
+        //tail g6u,g7u
+        g.put("\u182d\u1825\u0020", "\ue09c");
+        g.put("\u182d\u1826\u0020", "\ue09c");
+        return g;
+    }
+
+    public static Map<String, String> getGiiM() {
+        Map<String, String> m = new HashMap<>(8);
+        //head
+        m.put("\u0020\u182E", "\ue036");
+        //middle
+        m.put("\u182E", "\ue037");
+        //tail
+        m.put("\u182E\u0020", "\ue038");
+        return m;
+    }
+
+    public static Map<String, String> getGiiL() {
+        Map<String, String> l = new HashMap<>(8);
+        //head
+        l.put("\u0020\u182f", "\ue039");
+        //middle
+        l.put("\u182f", "\ue03a");
+        //tail
+        l.put("\u182f\u0020", "\ue03b");
+        return l;
+    }
+
+    public static Map<String, String> getGiiS() {
+        Map<String, String> s = new HashMap<>(8);
+        //head
+        s.put("\u0020\u1830", "\ue03c");
+        //middle
+        s.put("\u1830", "\ue03d");
+        //tail
+        s.put("\u1830\u0020", "\ue03e");
+        return s;
+    }
+
+    public static Map<String, String> getGiiSH() {
+        Map<String, String> sh = new HashMap<>(8);
+        //head
+        sh.put("\u0020\u1831", "\ue03f");
+        //middle
+        sh.put("\u1831", "\ue040");
+        //tail
+        sh.put("\u1831\u0020", "\ue041");
+        return sh;
+    }
+
+    public static Map<String, String> getGiiT() {
+        Map<String, String> t = new HashMap<>(8);
+        return t;
     }
 }

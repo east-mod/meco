@@ -10,20 +10,31 @@ import com.zvvnmod.meco.translate.domain.TranslateRule;
  * WEEK  : 周一
  * TIME  : 19:32
  */
-public class DeleteRule implements TranslateRule {
+public class DelehiRule implements TranslateRule {
     @Override
     public String getMapperCode(String s, Nature nature) {
-        return DlhConvertDrsCodeMapper.mapper.get(s);
+        String s1 = DlhConvertDrsCodeMapper.mapper.get(s);
+        if (s1 != null) {
+            return s1;
+        }
+        if (nature.equals(Nature.CHAGH)) {
+            return DlhConvertDrsCodeMapper.chaghMapper.get(s);
+        } else {
+            return DlhConvertDrsCodeMapper.hundiiMapper.get(s);
+        }
     }
 
     @Override
     public boolean contains(String s) {
-        return DlhConvertDrsCodeMapper.mapper.containsKey(s);
+        if (DlhConvertDrsCodeMapper.mapper.containsKey(s)) {
+            return true;
+        }
+        return DlhConvertDrsCodeMapper.chaghMapper.containsKey(s);
     }
 
     @Override
     public Nature getCodeNature(char c) {
-        return Nature.SAARMAG;
+        return MglUnicodeBlock.getCodeNature(c);
     }
 
     @Override

@@ -17,20 +17,18 @@ import java.util.List;
  * TIME  : 18:18
  * convertible mongolian string context.
  */
-public class MSC {
-    @Getter
+@Getter
+public class MglWordFragment {
     @Setter
     private UnicodeType head;
-    @Getter
-    private List<Character> content;
-    @Getter
-    private Nature nature;
-    @Getter
     @Setter
     private UnicodeType tail;
+    private List<Character> content;
+    private Nature nature;
 
-    public MSC() {
+    public MglWordFragment() {
         this.content = new ArrayList<>(8);
+        this.nature = Nature.SAARMAG;
     }
 
     public String getKey() {
@@ -51,9 +49,16 @@ public class MSC {
         return builder.toString();
     }
 
+    public void setNature(Nature nature) {
+        if (this.nature.equals(Nature.SAARMAG) && !nature.equals(Nature.SAARMAG)) {
+            this.nature = nature;
+        }
+    }
+
     public void push(char ch) {
         content.add(ch);
     }
+
 
     public void pop() {
         if (CollectionUtils.isEmpty(content)) {

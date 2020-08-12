@@ -14,38 +14,43 @@ public class Translator {
 
     private TranslateRule translateRule;
 
-    private MSC msc;
+    private MglWordFragment mglWordFragment;
+
+    private MglWord mglWord;
 
     private Translator() {
     }
 
     public Translator(final TranslateRule translateRule) {
         this.translateRule = translateRule;
-        this.msc = new MSC();
-    }
-
-    private boolean isMongolianCodePoint(char ch) {
-        if (translateRule == null) {
-            throw new MecoException(TranslateState.MISS_TRANSLATE_RULE);
-        }
-        return translateRule.isMongolianCodePoint(ch);
+        this.mglWordFragment = new MglWordFragment();
+        this.mglWord = new MglWord();
     }
 
     private UnicodeType getUnicodeType(char ch) {
-        return isMongolianCodePoint(ch) ? UnicodeType.MONGOLIAN : UnicodeType.OTHER;
+        return translateRule.isMongolianCodePoint(ch) ? UnicodeType.MONGOLIAN : UnicodeType.OTHER;
     }
 
-    private void resetMsc() {
-        this.msc = new MSC();
+    private void resetMglWordFragment() {
+        this.mglWordFragment = new MglWordFragment();
     }
 
-    private String getTranslateString() {
-        String translateString = translateRule.getCodesMapper().get(this.msc.getKey());
-        if (translateString == null) {
-            throw new MecoException(TranslateState.NOT_FOUNT_IN_MAPPER_RULE.getCode(),
-                    "Not fount the string " + this.msc.getContent() + "in mapper rule");
+    private void resetMglWord() {
+        this.mglWord = new MglWord();
+    }
+
+    private void translateWord(StringBuilder builder, MglWord mglWord) {
+        Nature nature;
+        String s;
+        for (MglWordFragment wordFragment : mglWord.getMglWordFragments()) {
+            nature = wordFragment.getNature().equals(Nature.SAARMAG) ? mglWord.getNature() : wordFragment.getNature();
+            s = translateRule.getMapperCode(wordFragment.getKey(), nature);
+            if (s == null) {
+                throw new MecoException(TranslateState.NOT_FOUNT_IN_MAPPER_RULE.getCode(),
+                        "Not fount the string " + this.mglWordFragment.getContent() + "in mapper rule");
+            }
+            builder.append(s);
         }
-        return translateString.replaceAll("\u0020", "");
     }
 
     public String translate(final String s0) {
@@ -55,34 +60,37 @@ public class Translator {
         String s1 = s0 + "\ue666";
         char[] chars0 = s1.toCharArray();
         StringBuilder builder = new StringBuilder(chars0.length * 2);
-        this.msc.setHead(UnicodeType.OTHER);
+        mglWordFragment.setHead(UnicodeType.OTHER);
         for (int i = 0; i < chars0.length; i++) {
             char c = chars0[i];
-            if (isMongolianCodePoint(c)) {
-                this.msc.push(c);
-                this.msc.setTail(getUnicodeType(chars0[i + 1]));
-                if (translateRule.contains(this.msc)) {
+            if (translateRule.isMongolianCodePoint(c)) {
+                mglWordFragment.push(c);
+                mglWordFragment.setTail(getUnicodeType(chars0[i + 1]));
+                if (translateRule.contains(mglWordFragment.getKey())) {
+                    mglWordFragment.setNature(translateRule.getCodeNature(c));
                     continue;
                 }
-                this.msc.pop();
-                this.msc.setTail(UnicodeType.MONGOLIAN);
-                if (this.msc.contentIsBlank()) {
+                mglWordFragment.pop();
+                mglWordFragment.setTail(UnicodeType.MONGOLIAN);
+                if (mglWordFragment.contentIsBlank()) {
                     throw new MecoException(TranslateState.NOT_FOUNT_IN_MAPPER_RULE.getCode(),
                             "not fount the string " + c + "in mapper rule");
                 }
-                builder.append(this.getTranslateString());
-                this.resetMsc();
-                this.msc.push(c);
+                mglWord.add(mglWordFragment);
+                resetMglWordFragment();
+                mglWordFragment.push(c);
             } else {
-                if (!this.msc.contentIsBlank()) {
-                    this.msc.setTail(UnicodeType.OTHER);
-                    builder.append(this.getTranslateString());
-                    this.resetMsc();
+                if (!mglWordFragment.contentIsBlank()) {
+                    mglWordFragment.setTail(UnicodeType.OTHER);
+                    mglWord.add(mglWordFragment);
+                    resetMglWordFragment();
                 }
+                translateWord(builder, mglWord);
+                resetMglWord();
                 builder.append(c);
             }
-            if (this.msc.getHead() == null) {
-                this.msc.setHead(getUnicodeType(c));
+            if (mglWordFragment.getHead() == null) {
+                mglWordFragment.setHead(getUnicodeType(c));
             }
         }
         builder.deleteCharAt(builder.length() - 1);

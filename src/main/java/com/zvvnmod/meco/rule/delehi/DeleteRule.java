@@ -1,8 +1,7 @@
 package com.zvvnmod.meco.rule.delehi;
 
-import com.zvvnmod.meco.translate.domain.Nature;
-import com.zvvnmod.meco.translate.domain.MSC;
 import com.zvvnmod.meco.translate.domain.MglUnicodeBlock;
+import com.zvvnmod.meco.translate.domain.Nature;
 import com.zvvnmod.meco.translate.domain.TranslateRule;
 
 /**
@@ -13,19 +12,18 @@ import com.zvvnmod.meco.translate.domain.TranslateRule;
  */
 public class DeleteRule implements TranslateRule {
     @Override
-    public String getMapperCode(MSC msc) {
-        return null;
+    public String getMapperCode(String s, Nature nature) {
+        return DlhConvertDrsCodeMapper.mapper.get(s);
     }
 
     @Override
-    public boolean contains(MSC msc) {
-//        DlhConvertDrsCodeMapper.mapper
-        return false;
+    public boolean contains(String s) {
+        return DlhConvertDrsCodeMapper.mapper.containsKey(s);
     }
 
     @Override
     public Nature getCodeNature(char c) {
-        return null;
+        return Nature.SAARMAG;
     }
 
     @Override

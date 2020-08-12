@@ -1,6 +1,7 @@
 package com.zvvnmod.meco.rule.menk;
 
 import com.zvvnmod.meco.translate.domain.CodeMapper;
+import com.zvvnmod.meco.translate.domain.Nature;
 import com.zvvnmod.meco.translate.domain.TranslateRule;
 
 /**
@@ -11,7 +12,17 @@ import com.zvvnmod.meco.translate.domain.TranslateRule;
  */
 public class MenkRule implements TranslateRule {
     @Override
-    public CodeMapper getCodesMapper() {
+    public String getMapperCode(String s, Nature nature) {
+        return null;
+    }
+
+    @Override
+    public boolean contains(String s) {
+        return false;
+    }
+
+    @Override
+    public Nature getCodeNature(char c) {
         return null;
     }
 

@@ -7,9 +7,9 @@ package com.zvvnmod.meco.translate.domain;
  * TIME  : 19:33
  */
 public interface TranslateRule {
-    String getMapperCode(MSC msc);
+    String getMapperCode(String s, Nature nature);
 
-    boolean contains(MSC msc);
+    boolean contains(String s);
 
     Nature getCodeNature(char c);
 

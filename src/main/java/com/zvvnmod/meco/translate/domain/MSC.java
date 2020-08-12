@@ -24,6 +24,8 @@ public class MSC {
     @Getter
     private List<Character> content;
     @Getter
+    private Nature nature;
+    @Getter
     @Setter
     private UnicodeType tail;
 
@@ -58,12 +60,6 @@ public class MSC {
             throw new MecoException(TranslateState.MSC_NOTHING_TO_POP);
         }
         content.remove(content.size() - 1);
-    }
-
-    public void reset() {
-        this.head = null;
-        this.content = new ArrayList<>(8);
-        this.tail = null;
     }
 
     public boolean contentIsBlank() {

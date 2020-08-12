@@ -24,13 +24,6 @@ public class Translator {
         this.msc = new MSC();
     }
 
-    private boolean containsKey(String s) {
-        if (translateRule == null) {
-            throw new MecoException(TranslateState.MISS_TRANSLATE_RULE);
-        }
-        return translateRule.getCodesMapper().containsKey(s);
-    }
-
     private boolean isMongolianCodePoint(char ch) {
         if (translateRule == null) {
             throw new MecoException(TranslateState.MISS_TRANSLATE_RULE);
@@ -42,13 +35,17 @@ public class Translator {
         return isMongolianCodePoint(ch) ? UnicodeType.MONGOLIAN : UnicodeType.OTHER;
     }
 
+    private void resetMsc() {
+        this.msc = new MSC();
+    }
+
     private String getTranslateString() {
         String translateString = translateRule.getCodesMapper().get(this.msc.getKey());
         if (translateString == null) {
             throw new MecoException(TranslateState.NOT_FOUNT_IN_MAPPER_RULE.getCode(),
                     "Not fount the string " + this.msc.getContent() + "in mapper rule");
         }
-        return translateString.replaceAll(" ", "");
+        return translateString.replaceAll("\u0020", "");
     }
 
     public String translate(final String s0) {
@@ -64,7 +61,7 @@ public class Translator {
             if (isMongolianCodePoint(c)) {
                 this.msc.push(c);
                 this.msc.setTail(getUnicodeType(chars0[i + 1]));
-                if (containsKey(this.msc.getKey())) {
+                if (translateRule.contains(this.msc)) {
                     continue;
                 }
                 this.msc.pop();
@@ -74,13 +71,13 @@ public class Translator {
                             "not fount the string " + c + "in mapper rule");
                 }
                 builder.append(this.getTranslateString());
-                this.msc.reset();
+                this.resetMsc();
                 this.msc.push(c);
             } else {
                 if (!this.msc.contentIsBlank()) {
                     this.msc.setTail(UnicodeType.OTHER);
                     builder.append(this.getTranslateString());
-                    this.msc.reset();
+                    this.resetMsc();
                 }
                 builder.append(c);
             }

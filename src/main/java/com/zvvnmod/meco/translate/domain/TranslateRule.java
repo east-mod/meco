@@ -7,7 +7,11 @@ package com.zvvnmod.meco.translate.domain;
  * TIME  : 19:33
  */
 public interface TranslateRule {
-    CodeMapper getCodesMapper();
+    String getMapperCode(MSC msc);
+
+    boolean contains(MSC msc);
+
+    Nature getCodeNature(char c);
 
     boolean isMongolianCodePoint(char c);
 }

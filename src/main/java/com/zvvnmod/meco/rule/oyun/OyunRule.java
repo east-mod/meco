@@ -26,6 +26,11 @@ public class OyunRule implements TranslateRule {
     }
 
     @Override
+    public boolean isTranslateCodePoint(char c) {
+        return false;
+    }
+
+    @Override
     public boolean isMongolianCodePoint(char c) {
         return false;
     }

@@ -16,7 +16,7 @@ import java.util.Map;
  * TIME  : 23:12
  */
 public class CodeMapper {
-    private static Logger logger = LoggerFactory.getLogger(CodeMapper.class);
+    private static final Logger logger = LoggerFactory.getLogger(CodeMapper.class);
 
     public Map<String, String> map;
 
@@ -43,6 +43,7 @@ public class CodeMapper {
         }
         for (Map.Entry<String, String> entry : subRule.entrySet()) {
             if (map.containsKey(entry.getKey())) {
+                logger.error("DUPLICATE_KEY:{}", entry.getKey());
                 throw new MecoException(DelehiState.DUPLICATE_KEY);
             }
             map.put(entry.getKey(), entry.getValue());

@@ -13,5 +13,7 @@ public interface TranslateRule {
 
     Nature getCodeNature(char c);
 
+    boolean isTranslateCodePoint(char c);
+
     boolean isMongolianCodePoint(char c);
 }

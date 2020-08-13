@@ -38,6 +38,12 @@ public class DelehiRule implements TranslateRule {
     }
 
     @Override
+    public boolean isTranslateCodePoint(char c) {
+        return MglUnicodeBlock.isNormalLetter(c) || MglUnicodeBlock.isFreeVariationSelector(c) ||
+                MglUnicodeBlock.isVowelSeparator(c) || DelehiCodeBlock.isWordConnector(c);
+    }
+
+    @Override
     public boolean isMongolianCodePoint(char c) {
         return MglUnicodeBlock.isNormalLetter(c) || MglUnicodeBlock.isFreeVariationSelector(c) ||
                 MglUnicodeBlock.isVowelSeparator(c);

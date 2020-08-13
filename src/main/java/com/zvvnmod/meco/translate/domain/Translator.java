@@ -47,7 +47,7 @@ public class Translator {
             s = translateRule.getMapperCode(wordFragment.getKey(), nature);
             if (s == null) {
                 throw new MecoException(TranslateState.NOT_FOUNT_IN_MAPPER_RULE.getCode(),
-                        "Not fount the string " + wordFragment.getContent() + "in mapper rule");
+                        "Not fount the string [" + wordFragment.getContent() + "] in mapper rule");
             }
             builder.append(s);
         }
@@ -71,26 +71,31 @@ public class Translator {
                     continue;
                 }
                 mglWordFragment.pop();
-                mglWordFragment.setTail(UnicodeType.MONGOLIAN);
+                mglWordFragment.setTail(getUnicodeType(c));
                 if (mglWordFragment.contentIsBlank()) {
                     throw new MecoException(TranslateState.NOT_FOUNT_IN_MAPPER_RULE.getCode(),
-                            "not fount the string " + c + "in mapper rule");
+                            "Not fount the string [" + c + "] in mapper rule");
                 }
                 mglWord.add(mglWordFragment);
                 resetMglWordFragment();
+                mglWordFragment.setHead(getUnicodeType(chars0[i - 1]));
                 i--;
             } else {
                 if (!mglWordFragment.contentIsBlank()) {
                     mglWordFragment.setTail(UnicodeType.OTHER);
                     mglWord.add(mglWordFragment);
                     resetMglWordFragment();
+                    mglWordFragment.setHead(UnicodeType.OTHER);
                 }
-                translateWord(builder, mglWord);
-                resetMglWord();
-                builder.append(c);
-            }
-            if (mglWordFragment.getHead() == null) {
-                mglWordFragment.setHead(getUnicodeType(c));
+                if (!mglWord.isEmpty()) {
+                    translateWord(builder, mglWord);
+                    resetMglWord();
+                }
+                if (translateRule.isTranslateCodePoint(c)) {
+                    mglWordFragment.push(c);
+                } else {
+                    builder.append(c);
+                }
             }
         }
         builder.deleteCharAt(builder.length() - 1);

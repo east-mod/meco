@@ -1,6 +1,7 @@
 package com.zvvnmod.meco.translate.domain;
 
 import lombok.Getter;
+import org.springframework.util.CollectionUtils;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -28,5 +29,9 @@ public class MglWord {
             this.nature = mglWordFragment.getNature();
         }
         mglWordFragments.add(mglWordFragment);
+    }
+
+    public boolean isEmpty() {
+        return CollectionUtils.isEmpty(mglWordFragments);
     }
 }

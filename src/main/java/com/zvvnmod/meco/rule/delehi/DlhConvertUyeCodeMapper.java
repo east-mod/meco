@@ -540,103 +540,11 @@ public class DlhConvertUyeCodeMapper {
 
     public static Map<String, String> getGiiT() {
         Map<String, String> t = new HashMap<>(64);
-        //ta,te
-        t.put("\u0020\u1832\u1820\u0020", "\ue08b");
-        t.put("\u0020\u1832\u1821\u0020", "\ue08b");
-        //ti
-        t.put("\u0020\u1832\u1822\u0020", "\ue08c");
-        //t4o,45o
-        t.put("\u0020\u1832\u1823\u0020", "\ue08d");
-        t.put("\u0020\u1832\u1824\u0020", "\ue08d");
-        //t6u,t7u
-        t.put("\u0020\u1832\u1825\u0020", "\ue08e");
-        t.put("\u0020\u1832\u1826\u0020", "\ue08e");
-        //head ta,te
-        t.put("\u0020\u1832\u1820", "\ue08f");
-        t.put("\u0020\u1832\u1821", "\ue08f");
-        //middle ta,te
-        t.put("\u1832\u1820", "\ue09f");
-        t.put("\u1832\u1821", "\ue09f");
-        //tail ta,te
-        t.put("\u1832\u1820\u0020", "\ue0a0");
-        t.put("\u1832\u1821\u0020", "\ue0a0");
-        //head ti
-        t.put("\u0020\u1832\u1822", "\ue092");
-        //middle ti
-        t.put("\u1832\u1822", "\ue0a2");
-        //tail ti
-        t.put("\u1832\u1822\u0020", "\ue0a4");
-        //head t4o,t5o
-        t.put("\u0020\u1832\u1823", "\ue095");
-        t.put("\u0020\u1832\u1824", "\ue095");
-        //middle t4o,t5o,t6u,t7u
-        t.put("\u1832\u1823", "\ue0a5");
-        t.put("\u1832\u1824", "\ue0a5");
-        t.put("\u1832\u1825", "\ue0a5");
-        t.put("\u1832\u1826", "\ue0a5");
-        //tail t4o,t5o,t6u,t7u
-        t.put("\u1832\u1823\u0020", "\ue0a6");
-        t.put("\u1832\u1824\u0020", "\ue0a6");
-        t.put("\u1832\u1825\u0020", "\ue0a6");
-        t.put("\u1832\u1826\u0020", "\ue0a6");
-        //head t6u,t7u
-        t.put("\u0020\u1832\u1825", "\ue099");
-        t.put("\u0020\u1832\u1826", "\ue099");
         return t;
     }
 
     public static Map<String, String> getGiiD() {
         Map<String, String> d = new HashMap<>(64);
-        //head da,de [180B]:mongolian free variation selector one
-        //da,de
-        d.put("\u0020\u1833\u180b\u1820\u0020", "\ue09a");
-        d.put("\u0020\u1833\u180b\u1821\u0020", "\ue09a");
-        //di
-        d.put("\u0020\u1833\u180b\u1822\u0020", "\ue09b");
-        //d4o,d5o
-        d.put("\u0020\u1833\u180b\u1823\u0020", "\ue09c");
-        d.put("\u0020\u1833\u180b\u1824\u0020", "\ue09c");
-        //d6u,d7u
-        d.put("\u0020\u1833\u180b\u1825\u0020", "\ue09d");
-        d.put("\u0020\u1833\u180b\u1826\u0020", "\ue09d");
-        //head da,de  [t,d]
-        d.put("\u0020\u1833\u180b\u1820", "\ue09e");
-        d.put("\u0020\u1833\u180b\u1821", "\ue09e");
-        d.put("\u0020\u1833\u1820", "\ue08f");
-        d.put("\u0020\u1833\u1821", "\ue08f");
-        //middle da,de
-        d.put("\u1833\u1820", "\ue09f");
-        d.put("\u1833\u1821", "\ue09f");
-        //tail da,de
-        d.put("\u1833\u1820\u0020", "\ue0a0");
-        d.put("\u1833\u1821\u0020", "\ue0a0");
-        //head di  [t,d]
-        d.put("\u0020\u1833\u1822", "\ue092");
-        d.put("\u0020\u1833\u180b\u1822", "\ue0a1");
-        //middle di
-        d.put("\u1833\u1822", "\ue0a2");
-        //tail di
-        d.put("\u1833\u1822\u0020", "\ue0a3");
-        //head d4o,d5o  [t,d]
-        d.put("\u0020\u1833\u1823", "\ue095");
-        d.put("\u0020\u1833\u1824", "\ue095");
-        d.put("\u0020\u1833\u180b\u1823", "\ue0a4");
-        d.put("\u0020\u1833\u180b\u1824", "\ue0a4");
-        //middle d4o,d5o,d6u,d7u
-        d.put("\u1833\u1823", "\ue0a5");
-        d.put("\u1833\u1824", "\ue0a5");
-        d.put("\u1833\u1825", "\ue0a5");
-        d.put("\u1833\u1826", "\ue0a5");
-        //tail d4o,d5o,d6u,d7u
-        d.put("\u1833\u1823\u0020", "\ue0a6");
-        d.put("\u1833\u1824\u0020", "\ue0a6");
-        d.put("\u1833\u1825\u0020", "\ue0a6");
-        d.put("\u1833\u1826\u0020", "\ue0a6");
-        //head d6u,d7u  [t,d]
-        d.put("\u0020\u1833\u1825", "\ue099");
-        d.put("\u0020\u1833\u1826", "\ue099");
-        d.put("\u0020\u1833\u180b\u1825", "\ue0a7");
-        d.put("\u0020\u1833\u180b\u1826", "\ue0a7");
         return d;
     }
 

@@ -611,14 +611,14 @@ public class DlhConvertDrsCodeMapper {
         d.put("\u1833\u1822\u0020", "\ue046\ue00e");
         d.put("\u1833\u180b\u1822\u0020", "\ue046\ue00e");
         //tail d4o,d5o,d6u,d7u
-        d.put("\u1833\u1823\u0020", "\ue046\ue00c");
-        d.put("\u1833\u1824\u0020", "\ue046\ue00c");
-        d.put("\u1833\u1825\u0020", "\ue046\ue00c");
-        d.put("\u1833\u1826\u0020", "\ue046\ue00c");
-        d.put("\u1833\u180b\u1823\u0020", "\ue046\ue00c");
-        d.put("\u1833\u180b\u1824\u0020", "\ue046\ue00c");
-        d.put("\u1833\u180b\u1825\u0020", "\ue046\ue00c");
-        d.put("\u1833\u180b\u1826\u0020", "\ue046\ue00c");
+        d.put("\u1833\u1823\u0020", "\ue046\ue011");
+        d.put("\u1833\u1824\u0020", "\ue046\ue011");
+        d.put("\u1833\u1825\u0020", "\ue046\ue011");
+        d.put("\u1833\u1826\u0020", "\ue046\ue011");
+        d.put("\u1833\u180b\u1823\u0020", "\ue046\ue011");
+        d.put("\u1833\u180b\u1824\u0020", "\ue046\ue011");
+        d.put("\u1833\u180b\u1825\u0020", "\ue046\ue011");
+        d.put("\u1833\u180b\u1826\u0020", "\ue046\ue011");
         return d;
     }
 

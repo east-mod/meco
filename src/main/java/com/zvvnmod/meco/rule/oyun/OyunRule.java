@@ -3,6 +3,8 @@ package com.zvvnmod.meco.rule.oyun;
 import com.zvvnmod.meco.translate.domain.Nature;
 import com.zvvnmod.meco.translate.domain.TranslateRule;
 
+import java.util.List;
+
 /**
  * AUTHOR: zorigt
  * DATE  : 2020/8/11
@@ -10,8 +12,9 @@ import com.zvvnmod.meco.translate.domain.TranslateRule;
  * TIME  : 01:56
  */
 public class OyunRule implements TranslateRule {
+
     @Override
-    public String getMapperCode(String s, Nature nature) {
+    public String getMapperCode(List<Character> pre, String s, Nature nature) {
         return null;
     }
 
@@ -34,4 +37,5 @@ public class OyunRule implements TranslateRule {
     public boolean isMongolianCodePoint(char c) {
         return false;
     }
+    
 }

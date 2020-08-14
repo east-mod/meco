@@ -1,5 +1,7 @@
 package com.zvvnmod.meco.translate.domain;
 
+import java.util.List;
+
 /**
  * AUTHOR: zorigt
  * DATE  : 2020/8/10
@@ -7,7 +9,7 @@ package com.zvvnmod.meco.translate.domain;
  * TIME  : 19:33
  */
 public interface TranslateRule {
-    String getMapperCode(String s, Nature nature);
+    String getMapperCode(List<Character> pre, String s, Nature nature);
 
     boolean contains(String s);
 

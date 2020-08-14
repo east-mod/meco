@@ -12,6 +12,7 @@ import java.util.Set;
 public class MglUnicodeBlock {
     public static final Set<Character> chagh = new HashSet<>(8);
     public static final Set<Character> hundii = new HashSet<>(8);
+    public static final Set<Character> ehshig = new HashSet<>(16);
 
     static {
         chagh.add('\u1820');
@@ -20,6 +21,13 @@ public class MglUnicodeBlock {
         hundii.add('\u1821');
         hundii.add('\u1825');
         hundii.add('\u1826');
+        ehshig.add('\u1820');
+        ehshig.add('\u1821');
+        ehshig.add('\u1822');
+        ehshig.add('\u1823');
+        ehshig.add('\u1824');
+        ehshig.add('\u1825');
+        ehshig.add('\u1826');
     }
 
     public static final char MONGOLIAN_A = '\u1820';
@@ -51,5 +59,9 @@ public class MglUnicodeBlock {
             return Nature.HUNDII;
         }
         return Nature.SAARMAG;
+    }
+
+    public static boolean isEhshig(char ch) {
+        return ehshig.contains(ch);
     }
 }

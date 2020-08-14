@@ -4,6 +4,8 @@ import com.zvvnmod.meco.common.MecoException;
 import com.zvvnmod.meco.common.Strings;
 import com.zvvnmod.meco.translate.exception.TranslateState;
 
+import java.util.List;
+
 /**
  * AUTHOR: zorigt
  * DATE  : 2020/8/10
@@ -42,14 +44,16 @@ public class Translator {
     private void translateWord(StringBuilder builder, MglWord mglWord) {
         Nature nature;
         String s;
+        List<Character> preFragmentContent = null;
         for (MglWordFragment wordFragment : mglWord.getMglWordFragments()) {
             nature = wordFragment.getNature().equals(Nature.SAARMAG) ? mglWord.getNature() : wordFragment.getNature();
-            s = translateRule.getMapperCode(wordFragment.getKey(), nature);
+            s = translateRule.getMapperCode(preFragmentContent, wordFragment.getKey(), nature);
             if (s == null) {
                 throw new MecoException(TranslateState.NOT_FOUNT_IN_MAPPER_RULE.getCode(),
                         "Not fount the string [" + wordFragment.getContent() + "] in mapper rule");
             }
             builder.append(s);
+            preFragmentContent = wordFragment.getContent();
         }
     }
 

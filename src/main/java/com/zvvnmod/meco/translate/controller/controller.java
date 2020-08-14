@@ -5,6 +5,7 @@ import com.zvvnmod.meco.common.result.GenericResult;
 import com.zvvnmod.meco.common.result.ResultBase;
 import com.zvvnmod.meco.translate.controller.dto.TranslateParam;
 import com.zvvnmod.meco.translate.service.TranslateService;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +28,12 @@ public class controller extends SuperController {
 
     @PostMapping("/delehi")
     public ResultBase translateDelehi(@RequestBody TranslateParam param) {
+        String s = translateService.translateDelehi(param.getContent());
+        return GenericResult.get(s);
+    }
+
+    @GetMapping("/delehi")
+    public ResultBase translateDelehiByGet(@RequestBody TranslateParam param) {
         String s = translateService.translateDelehi(param.getContent());
         return GenericResult.get(s);
     }

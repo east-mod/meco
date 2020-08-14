@@ -521,6 +521,7 @@ public class DlhConvertDrsCodeMapper {
         d.put("\u0020\u1833", "\ue045");
         d.put("\u0020\u202f\u1833", "\u0020\ue045");
         d.put("\u0020\u1833\u180b", "\ue045");
+        d.put("\u0020\u202f\u1833\u180b", "\ue045");
         //middle
         d.put("\u1833", "\ue047");
         d.put("\u1833\u180b", "\ue046");
@@ -636,6 +637,7 @@ public class DlhConvertDrsCodeMapper {
         y.put("\u0020\u1836\u0020", "\ue050");
         //head
         y.put("\u0020\u1836", "\ue050");
+        y.put("\u0020\u202f\u1836\u180b", "\u0020\ue050");
         //middle
         y.put("\u1836", "\ue051");
         //tail
@@ -862,7 +864,7 @@ public class DlhConvertDrsCodeMapper {
         //etre
         dagbor.put("\u0020\u202f\u1820", "\u0020\ue000");
         dagbor.put("\u0020\u202f\u1820\u180b", "\u0020\ue000");
-        dagbor.put("\u0020\u1820\u180b", "\u0020\ue000");
+        dagbor.put("\u0020\u1820\u180b", "\ue000");
 
         //ood
         dagbor.put("\u0020\u202f\u1823", "\u0020\ue000\ue008");
@@ -889,8 +891,9 @@ public class DlhConvertDrsCodeMapper {
         //start yin,gi
         dagbor.put("\u0020\u1836\u180b", "\ue002");
         dagbor.put("\u0020\u1822\u180b", "\ue002");
-        dagbor.put("\u0020\u202f\u1836", "\ue002");
-
+        dagbor.put("\u0020\u202f\u1836", "\u0020\ue002");
+        //gi
+        dagbor.put("\u0020\u202f\u1836\u180b\u1822\u0020", "\u0020\ue002\ue00e");
         return dagbor;
     }
 

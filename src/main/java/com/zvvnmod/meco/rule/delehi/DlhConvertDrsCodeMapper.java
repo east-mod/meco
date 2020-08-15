@@ -15,6 +15,7 @@ public class DlhConvertDrsCodeMapper {
     public static CodeMapper mapper;
     public static CodeMapper chaghMapper;
     public static CodeMapper hundiiMapper;
+    public static char[] doubleIEhishig = {'\u1820', '\u1821', '\u1822', '\u1823', '\u1824'};
 
     static {
         buildChagh();
@@ -137,6 +138,7 @@ public class DlhConvertDrsCodeMapper {
         ehshig.put("\u0020\u1821", "\ue000");
         //head i
         ehshig.put("\u0020\u1822", "\ue000\ue006");
+        ehshig.put("\u0020\u202f\u1822", "\u0020\ue000\ue006");
         //head 4o,5o
         ehshig.put("\u0020\u1823", "\ue000\ue008");
         ehshig.put("\u0020\u1824", "\ue000\ue008");
@@ -159,6 +161,8 @@ public class DlhConvertDrsCodeMapper {
         //tail a,e
         ehshig.put("\u1820\u0020", "\ue00c");
         ehshig.put("\u1821\u0020", "\ue00c");
+        ehshig.put("\u0020\u202f\u1820\u0020", "\u0020\ue00d");
+        ehshig.put("\u0020\u202f\u1821\u0020", "\u0020\ue00d");
         //tail i
         ehshig.put("\u1822\u0020", "\ue00e");
         //tail1 4o,5o
@@ -184,6 +188,10 @@ public class DlhConvertDrsCodeMapper {
         n.put("\u1828", "\ue005");
         //tail
         n.put("\u1828\u0020", "\ue00c");
+
+        //n6u,n7u
+        n.put("\u0020\u1828\u1825", "\ue027\ue008\ue006");
+        n.put("\u0020\u1828\u1826", "\ue027\ue008\ue006");
 
         //middle na
         n.put("\u1828\u1820", "\ue028\ue005");
@@ -499,6 +507,11 @@ public class DlhConvertDrsCodeMapper {
         m.put("\u182e\u180e\u1820\u0020", "\ue038\ue00d");
         //tail2 me
         m.put("\u182e\u180e\u1821\u0020", "\ue038\ue00d");
+
+        //m6u,m7u
+        m.put("\u0020\u182e\u1825", "\ue036\ue008\ue006");
+        m.put("\u0020\u182e\u1826", "\ue036\ue008\ue006");
+
         return m;
     }
 
@@ -517,6 +530,11 @@ public class DlhConvertDrsCodeMapper {
         l.put("\u182f\u180e\u1820\u0020", "\ue03b\ue00d");
         //tail le
         l.put("\u182f\u180e\u1821\u0020", "\ue03b\ue00d");
+
+        //l6u,l7u
+        l.put("\u0020\u182f\u1825", "\ue039\ue008\ue006");
+        l.put("\u0020\u182f\u1826", "\ue039\ue008\ue006");
+
         return l;
     }
 
@@ -530,6 +548,11 @@ public class DlhConvertDrsCodeMapper {
         s.put("\u1830", "\ue03d");
         //tail
         s.put("\u1830\u0020", "\ue03e");
+
+        //s6u,s7u
+        s.put("\u0020\u1830\u1825", "\ue03c\ue008\ue006");
+        s.put("\u0020\u1830\u1826", "\ue03c\ue008\ue006");
+
         return s;
     }
 
@@ -543,6 +566,11 @@ public class DlhConvertDrsCodeMapper {
         sh.put("\u1831", "\ue040");
         //tail
         sh.put("\u1831\u0020", "\ue041");
+
+        //sh6u,sh7u
+        sh.put("\u0020\u1831\u1825", "\ue03f\ue008\ue006");
+        sh.put("\u0020\u1831\u1826", "\ue03f\ue008\ue006");
+
         return sh;
     }
 
@@ -558,6 +586,11 @@ public class DlhConvertDrsCodeMapper {
         t.put("\u1832\u180b", "\ue043");
         //tail
         t.put("\u1832\u0020", "\ue044");
+
+        //t6u,t7u
+        t.put("\u0020\u1832\u1825", "\ue042\ue008\ue006");
+        t.put("\u0020\u1832\u1826", "\ue042\ue008\ue006");
+
         return t;
     }
 
@@ -663,6 +696,11 @@ public class DlhConvertDrsCodeMapper {
         tr.put("\u1834", "\ue04b");
         //tail
         tr.put("\u1834\u0020", "\ue04c");
+
+        //tr6u,tr7u
+        tr.put("\u0020\u1834\u1825", "\ue04a\ue008\ue006");
+        tr.put("\u0020\u1834\u1826", "\ue04a\ue008\ue006");
+
         return tr;
     }
 
@@ -676,6 +714,11 @@ public class DlhConvertDrsCodeMapper {
         j.put("\u1835", "\ue04e");
         //tail
         j.put("\u1835\u0020", "\ue04f");
+
+        //tr6u,tr7u
+        j.put("\u0020\u1835\u1825", "\ue04d\ue008\ue006");
+        j.put("\u0020\u1835\u1826", "\ue04d\ue008\ue006");
+
         return j;
     }
 
@@ -695,6 +738,10 @@ public class DlhConvertDrsCodeMapper {
         y.put("\u1836\u180e\u1820\u0020", "\ue052\ue00d");
         //tail2 ye
         y.put("\u1836\u180e\u1821\u0020", "\ue052\ue00d");
+
+        //y6u,y7u
+        y.put("\u0020\u1836\u1825", "\ue050\ue008\ue006");
+        y.put("\u0020\u1836\u1826", "\ue050\ue008\ue006");
         return y;
     }
 
@@ -713,6 +760,10 @@ public class DlhConvertDrsCodeMapper {
         r.put("\u1837\u180e\u1820\u0020", "\ue055\ue00d");
         //tail re
         r.put("\u1837\u180e\u1821\u0020", "\ue055\ue00d");
+
+        //r6u,r7u
+        r.put("\u0020\u1837\u1825", "\ue053\ue008\ue006");
+        r.put("\u0020\u1837\u1826", "\ue053\ue008\ue006");
         return r;
     }
 
@@ -726,6 +777,10 @@ public class DlhConvertDrsCodeMapper {
         w.put("\u1838", "\ue057");
         //tail
         w.put("\u1838\u0020", "\ue058");
+
+        //w6u,w7u
+        w.put("\u0020\u1838\u1825", "\ue056\ue008\ue006");
+        w.put("\u0020\u1838\u1826", "\ue056\ue008\ue006");
         return w;
     }
 
@@ -871,6 +926,10 @@ public class DlhConvertDrsCodeMapper {
         ts.put("\u183c", "\ue060");
         //tail
         ts.put("\u183c\u0020", "\ue061");
+
+        //ts6u,ts7u
+        ts.put("\u0020\u183c\u1825", "\ue05f\ue008\ue006");
+        ts.put("\u0020\u183c\u1826", "\ue05f\ue008\ue006");
         return ts;
     }
 
@@ -884,6 +943,10 @@ public class DlhConvertDrsCodeMapper {
         z.put("\u183d", "\ue063");
         //tail
         z.put("\u183d\u0020", "\ue064");
+
+        //ts6u,ts7u
+        z.put("\u0020\u183d\u1825", "\ue062\ue008\ue006");
+        z.put("\u0020\u183d\u1826", "\ue062\ue008\ue006");
         return z;
     }
 
@@ -897,6 +960,10 @@ public class DlhConvertDrsCodeMapper {
         hh.put("\u183e", "\ue066");
         //tail
         hh.put("\u183e\u0020", "\ue067");
+
+        //ts6u,ts7u
+        hh.put("\u0020\u183e\u1825", "\ue065\ue008\ue006");
+        hh.put("\u0020\u183e\u1826", "\ue065\ue008\ue006");
         return hh;
     }
 
@@ -910,6 +977,10 @@ public class DlhConvertDrsCodeMapper {
         rh.put("\u183f", "\ue068");
         //tail
         rh.put("\u183f\u0020", "\ue068");
+
+        //ts6u,ts7u
+        rh.put("\u0020\u183f\u1825", "\ue068\ue008\ue006");
+        rh.put("\u0020\u183f\u1826", "\ue068\ue008\ue006");
         return rh;
     }
 
@@ -959,6 +1030,7 @@ public class DlhConvertDrsCodeMapper {
 
         //gi
         dagbor.put("\u0020\u202f\u1836\u180b\u1822\u0020", "\u0020\ue002\ue00e");
+        dagbor.put("\u0020\u202f\u1822\u1822\u0020", "\u0020\ue002\ue00e");
         return dagbor;
     }
 
@@ -972,6 +1044,8 @@ public class DlhConvertDrsCodeMapper {
 
         //i
         devsger.put("\u1836\u180b", "\ue006");
+        devsger.put("\u1822\u180c", "\ue006\ue006");
+        devsger.put("\u1822\u180d", "\ue006");
         return devsger;
     }
 
@@ -1016,4 +1090,5 @@ public class DlhConvertDrsCodeMapper {
         fuck.put("\u1827\u0020", "\ue058");
         return fuck;
     }
+
 }

@@ -17,10 +17,9 @@ public class DelehiRule implements TranslateRule {
 
     @Override
     public String getMapperCode(List<Character> pre, String s, Nature nature) {
-        Character lastLetter = getLastLetter(pre);
-        if (s.equals("\u1822") && lastLetter != null && MglUnicodeBlock.isChagh(lastLetter)
-                && lastLetter != '\u1822') {
-            return "\ue006\ue006";
+        String ii = resolveDevsgerI(pre, s);
+        if (ii != null) {
+            return ii;
         }
         String s1 = DlhConvertDrsCodeMapper.mapper.get(s);
         if (s1 != null) {
@@ -33,11 +32,20 @@ public class DelehiRule implements TranslateRule {
         }
     }
 
-    private Character getLastLetter(List<Character> pre) {
+    private String resolveDevsgerI(List<Character> pre, String s) {
+        if (!s.equals("\u1822")) {
+            return null;
+        }
         if (CollectionUtils.isEmpty(pre)) {
             return null;
         }
-        return pre.get(pre.size() - 1);
+        Character c = pre.get(pre.size() - 1);
+        for (char c1 : DlhConvertDrsCodeMapper.doubleIEhishig) {
+            if (c1 == c) {
+                return "\ue006\ue006";
+            }
+        }
+        return null;
     }
 
     @Override

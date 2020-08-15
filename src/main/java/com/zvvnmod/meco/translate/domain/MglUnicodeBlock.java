@@ -58,11 +58,15 @@ public class MglUnicodeBlock {
         return Nature.SAARMAG;
     }
 
-    public static boolean isEhshig(char ch) {
+    public static boolean isEhshig(Character ch) {
+        if (ch == null) {
+            return false;
+        }
         return ehshig.contains(ch);
     }
 
     public static boolean isChagh(char ch) {
         return chagh.contains(ch);
     }
+
 }

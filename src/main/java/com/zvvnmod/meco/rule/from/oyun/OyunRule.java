@@ -1,4 +1,4 @@
-package com.zvvnmod.meco.rule.oyun;
+package com.zvvnmod.meco.rule.from.oyun;
 
 import com.zvvnmod.meco.translate.domain.Nature;
 import com.zvvnmod.meco.translate.domain.TranslateRule;
@@ -37,5 +37,5 @@ public class OyunRule implements TranslateRule {
     public boolean isMongolianCodePoint(char c) {
         return false;
     }
-    
+
 }

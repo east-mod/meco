@@ -1,4 +1,4 @@
-package com.zvvnmod.meco.rule.delehi;
+package com.zvvnmod.meco.rule.from.delehi;
 
 /**
  * AUTHOR: zorigt

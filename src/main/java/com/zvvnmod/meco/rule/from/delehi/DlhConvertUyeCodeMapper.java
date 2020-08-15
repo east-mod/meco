@@ -1,4 +1,4 @@
-package com.zvvnmod.meco.rule.delehi;
+package com.zvvnmod.meco.rule.from.delehi;
 
 import com.zvvnmod.meco.translate.domain.CodeMapper;
 
@@ -11,6 +11,7 @@ import java.util.Map;
  * WEEK  : Wed
  * TIME  : 19:42
  */
+@Deprecated
 public class DlhConvertUyeCodeMapper {
     public static CodeMapper mapper;
 

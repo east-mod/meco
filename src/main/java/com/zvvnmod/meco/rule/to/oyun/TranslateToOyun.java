@@ -1,4 +1,4 @@
-package com.zvvnmod.meco.rule.menk;
+package com.zvvnmod.meco.rule.to.oyun;
 
 import com.zvvnmod.meco.translate.domain.Nature;
 import com.zvvnmod.meco.translate.domain.TranslateRule;
@@ -7,12 +7,11 @@ import java.util.List;
 
 /**
  * AUTHOR: zorigt
- * DATE  : 2020/8/10
- * WEEK  : 周一
- * TIME  : 19:32
+ * DATE  : 2020/8/15
+ * WEEK  : 周六
+ * TIME  : 20:36
  */
-public class MenkRule implements TranslateRule {
-
+public class TranslateToOyun implements TranslateRule {
     @Override
     public String getMapperCode(List<Character> pre, String s, Nature nature) {
         return null;

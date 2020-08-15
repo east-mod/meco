@@ -1,4 +1,4 @@
-package com.zvvnmod.meco.rule.delehi;
+package com.zvvnmod.meco.rule.from.delehi;
 
 import com.zvvnmod.meco.translate.domain.MglUnicodeBlock;
 import com.zvvnmod.meco.translate.domain.Nature;
@@ -13,7 +13,7 @@ import java.util.List;
  * WEEK  : 周一
  * TIME  : 19:32
  */
-public class DelehiRule implements TranslateRule {
+public class TranslateFromDelehi implements TranslateRule {
 
     @Override
     public String getMapperCode(List<Character> pre, String s, Nature nature) {

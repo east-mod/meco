@@ -1,6 +1,6 @@
 package com.zvvnmod.meco.translate.service;
 
-import com.zvvnmod.meco.rule.delehi.DelehiRule;
+import com.zvvnmod.meco.rule.from.delehi.TranslateFromDelehi;
 import com.zvvnmod.meco.translate.domain.TranslateRule;
 import com.zvvnmod.meco.translate.domain.Translator;
 import org.springframework.stereotype.Component;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 public class TranslateService {
 
     public String translateDelehi(String s) {
-        TranslateRule translateRule = new DelehiRule();
+        TranslateRule translateRule = new TranslateFromDelehi();
         Translator translator = new Translator(translateRule);
         return translator.translate(s);
     }

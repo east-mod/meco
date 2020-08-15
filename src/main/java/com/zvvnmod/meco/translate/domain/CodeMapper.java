@@ -1,7 +1,7 @@
 package com.zvvnmod.meco.translate.domain;
 
 import com.zvvnmod.meco.common.MecoException;
-import com.zvvnmod.meco.rule.delehi.DelehiState;
+import com.zvvnmod.meco.rule.from.delehi.DelehiState;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.CollectionUtils;

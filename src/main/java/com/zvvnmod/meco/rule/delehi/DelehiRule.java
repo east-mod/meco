@@ -18,7 +18,7 @@ public class DelehiRule implements TranslateRule {
     @Override
     public String getMapperCode(List<Character> pre, String s, Nature nature) {
         Character lastLetter = getLastLetter(pre);
-        if (s.equals("\u1822") && lastLetter != null && MglUnicodeBlock.isEhshig(lastLetter)
+        if (s.equals("\u1822") && lastLetter != null && MglUnicodeBlock.isChagh(lastLetter)
                 && lastLetter != '\u1822') {
             return "\ue006\ue006";
         }

@@ -3,6 +3,8 @@ package com.zvvnmod.meco.translate.domain;
 import com.zvvnmod.meco.common.MecoException;
 import com.zvvnmod.meco.common.Strings;
 import com.zvvnmod.meco.translate.exception.TranslateState;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -13,12 +15,15 @@ import java.util.List;
  * TIME  : 18:14
  */
 public class Translator {
+    private static final Logger logger = LoggerFactory.getLogger(Translator.class);
 
     private TranslateRule translateRule;
 
     private MglWordFragment mglWordFragment;
 
     private MglWord mglWord;
+
+    private long wordCounter;
 
     private Translator() {
     }
@@ -55,12 +60,14 @@ public class Translator {
             builder.append(s);
             preFragmentContent = wordFragment.getContent();
         }
+        wordCounter++;
     }
 
     public String translate(final String s0) {
         if (Strings.isBlank(s0)) {
             return Strings.BLANK;
         }
+        wordCounter = 0;
         String s1 = s0 + "\ue666";
         char[] chars0 = s1.toCharArray();
         StringBuilder builder = new StringBuilder(chars0.length * 2);
@@ -103,6 +110,7 @@ public class Translator {
             }
         }
         builder.deleteCharAt(builder.length() - 1);
+        logger.info("{} words translated.", wordCounter);
         return builder.toString();
     }
 

@@ -17,13 +17,13 @@ public class TranslateFromDelehi implements TranslateRule {
 
     @Override
     public String getMapperCode(List<Character> pre, String s, Nature nature) {
-        String ii = resolveDevsgerI(pre, s);
-        if (ii != null) {
-            return ii;
+        String result = resolveDevsgerI(pre, s);
+        if (result != null) {
+            return result;
         }
-        String s1 = DlhConvertDrsCodeMapper.mapper.get(s);
-        if (s1 != null) {
-            return s1;
+        result = DlhConvertDrsCodeMapper.mapper.get(s);
+        if (result != null) {
+            return result;
         }
         if (nature.equals(Nature.CHAGH)) {
             return DlhConvertDrsCodeMapper.chaghMapper.get(s);

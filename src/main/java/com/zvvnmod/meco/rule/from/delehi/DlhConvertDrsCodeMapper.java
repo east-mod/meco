@@ -210,9 +210,14 @@ public class DlhConvertDrsCodeMapper {
         //middle n4o,n5o
         n.put("\u1828\u1823", "\ue028\ue008");
         n.put("\u1828\u1824", "\ue028\ue008");
+
         //middle n6u,n7u
         n.put("\u1828\u1825", "\ue028\ue008");
         n.put("\u1828\u1826", "\ue028\ue008");
+        n.put("\u1828\u1825\u180b", "\ue028\ue008\ue006");
+        n.put("\u1828\u1826\u180b", "\ue028\ue008\ue006");
+        n.put("\u1828\u1825\u180c", "\ue028\ue005\ue008\ue006");
+        n.put("\u1828\u1826\u180c", "\ue028\ue005\ue008\ue006");
 
         //tail1 na
         n.put("\u1828\u1820\u0020", "\ue028\ue00c");
@@ -223,9 +228,15 @@ public class DlhConvertDrsCodeMapper {
         //tail n4o,n5o
         n.put("\u1828\u1823\u0020", "\ue028\ue011");
         n.put("\u1828\u1824\u0020", "\ue028\ue011");
+
+        n.put("\u1828\u1823\u180b\u0020", "\ue028\ue00f");
+        n.put("\u1828\u1824\u180b\u0020", "\ue028\ue00f");
         //tail n6u,n7u
         n.put("\u1828\u1825\u0020", "\ue028\ue011");
         n.put("\u1828\u1826\u0020", "\ue028\ue011");
+
+        n.put("\u1828\u1825\u180b\u0020", "\ue028\ue010");
+        n.put("\u1828\u1826\u180b\u0020", "\ue028\ue010");
 
         //n+180e
         n.put("\u1828\u180e", "\ue028\ue143");
@@ -292,11 +303,19 @@ public class DlhConvertDrsCodeMapper {
         b.put("\u182a\u1824", "\ue083");
         b.put("\u182a\u1825", "\ue083");
         b.put("\u182a\u1826", "\ue083");
+        b.put("\u182a\u1825\u180b", "\ue083\ue006");
+        b.put("\u182a\u1826\u180b", "\ue083\ue006");
+
         //tail b4o,b5o,b6u,b7u
         b.put("\u182a\u1823\u0020", "\ue084");
         b.put("\u182a\u1824\u0020", "\ue084");
         b.put("\u182a\u1825\u0020", "\ue084");
         b.put("\u182a\u1826\u0020", "\ue084");
+        b.put("\u182a\u1823\u180b\u0020", "\ue084");
+        b.put("\u182a\u1824\u180b\u0020", "\ue084");
+        b.put("\u182a\u1825\u180b\u0020", "\ue0cd");
+        b.put("\u182a\u1826\u180b\u0020", "\ue0cd");
+
         //head b6u,b7u
         b.put("\u0020\u182a\u1825", "\ue082\ue006");
         b.put("\u0020\u182a\u1826", "\ue082\ue006");
@@ -355,11 +374,17 @@ public class DlhConvertDrsCodeMapper {
         p.put("\u182b\u1824", "\ue090");
         p.put("\u182b\u1825", "\ue090");
         p.put("\u182b\u1826", "\ue090");
+        p.put("\u182b\u1825\u180b", "\ue090\ue006");
+        p.put("\u182b\u1826\u180b", "\ue090\ue006");
         //tail p4o,p5o,p6u,p7u
         p.put("\u182b\u1823\u0020", "\ue091");
         p.put("\u182b\u1824\u0020", "\ue091");
         p.put("\u182b\u1825\u0020", "\ue091");
         p.put("\u182b\u1826\u0020", "\ue091");
+        p.put("\u182b\u1823\u180b\u0020", "\ue091");
+        p.put("\u182b\u1824\u180b\u0020", "\ue091");
+        p.put("\u182b\u1825\u180b\u0020", "\ue0ce");
+        p.put("\u182b\u1826\u180b\u0020", "\ue0ce");
         //head p6u,p7u
         p.put("\u0020\u182b\u1825", "\ue08f\ue006");
         p.put("\u0020\u182b\u1826", "\ue08f\ue006");
@@ -426,12 +451,27 @@ public class DlhConvertDrsCodeMapper {
         //middle h6u,h7u
         h.put("\u182c\u1825", "\ue09b");
         h.put("\u182c\u1826", "\ue09b");
+        h.put("\u182c\u1825\u180b", "\ue09b\ue006");
+        h.put("\u182c\u1826\u180b", "\ue09b\ue006");
+        h.put("\u182c\u1825\u180c", "\ue005\ue005\ue005\ue008\ue006");
+        h.put("\u182c\u1826\u180c", "\ue005\ue005\ue005\ue008\ue006");
+
         //tail h4o,h5o
         h.put("\u182c\u1823\u0020", "\ue005\ue005\ue011");
         h.put("\u182c\u1824\u0020", "\ue005\ue005\ue011");
         //tail h6u,h7u
         h.put("\u182c\u1825\u0020", "\ue09c");
         h.put("\u182c\u1826\u0020", "\ue09c");
+
+        h.put("\u182c\u1823\u180b\u0020", "\ue005\ue005\ue00f");
+        h.put("\u182c\u1824\u180b\u0020", "\ue005\ue005\ue00f");
+        h.put("\u182c\u1825\u180b\u0020", "\ue0cf");
+        h.put("\u182c\u1826\u180b\u0020", "\ue0cf");
+
+        h.put("\u0020\u182c\u1823\u180b\u0020", "\ue02f\ue00f");
+        h.put("\u0020\u182c\u1824\u180b\u0020", "\ue02f\ue00f");
+        h.put("\u0020\u182c\u1825\u180b\u0020", "\ue093");
+        h.put("\u0020\u182c\u1826\u180b\u0020", "\ue093");
         return h;
     }
 
@@ -494,9 +534,23 @@ public class DlhConvertDrsCodeMapper {
         //middle g6u,g7u
         g.put("\u182d\u1825", "\ue09b");
         g.put("\u182d\u1826", "\ue09b");
+        g.put("\u182d\u1825\u180b", "\ue09b\ue006");
+        g.put("\u182d\u1826\u180b", "\ue09b\ue006");
+        g.put("\u182d\u1825\u180c", "\ue035\ue005\ue008\ue006");
+        g.put("\u182d\u1826\u180c", "\ue035\ue005\ue008\ue006");
         //tail g6u,g7u
         g.put("\u182d\u1825\u0020", "\ue09c");
         g.put("\u182d\u1826\u0020", "\ue09c");
+
+        g.put("\u182d\u1823\u180b\u0020", "\ue035\ue00f");
+        g.put("\u182d\u1824\u180b\u0020", "\ue035\ue00f");
+        g.put("\u182d\u1825\u180b\u0020", "\ue0cf");
+        g.put("\u182d\u1826\u180b\u0020", "\ue0cf");
+
+        g.put("\u0020\u182d\u1823\u180b\u0020", "\ue034\ue00f");
+        g.put("\u0020\u182d\u1824\u180b\u0020", "\ue034\ue00f");
+        g.put("\u0020\u182d\u1825\u180b\u0020", "\ue093");
+        g.put("\u0020\u182d\u1826\u180b\u0020", "\ue093");
         return g;
     }
 
@@ -594,6 +648,7 @@ public class DlhConvertDrsCodeMapper {
         t.put("\u1832\u180b", "\ue043");
         //tail
         t.put("\u1832\u0020", "\ue044");
+        t.put("\u1832\u180b\u0020", "\ue044");
 
         //t6u,t7u
         t.put("\u0020\u1832\u1825", "\ue042\ue008\ue006");
@@ -674,6 +729,11 @@ public class DlhConvertDrsCodeMapper {
         d.put("\u1833\u180b\u1825", "\ue046\ue008");
         d.put("\u1833\u180b\u1826", "\ue046\ue008");
 
+        d.put("\u1833\u1825\u180b", "\ue046\ue008\ue006");
+        d.put("\u1833\u1826\u180b", "\ue046\ue008\ue006");
+        d.put("\u1833\u1825\u180c", "\ue047\ue005\ue008\ue006");
+        d.put("\u1833\u1826\u180c", "\ue047\ue005\ue008\ue006");
+
         //tail da,de
         d.put("\u1833\u1820\u0020", "\ue046\ue00c");
         d.put("\u1833\u1821\u0020", "\ue046\ue00c");
@@ -722,6 +782,10 @@ public class DlhConvertDrsCodeMapper {
         j.put("\u1835", "\ue04e");
         //tail
         j.put("\u1835\u0020", "\ue04f");
+
+        //ya,ye ??
+        j.put("\u0020\u1835\u180e\u1820\u0020", "\ue01a\ue00d");
+        j.put("\u0020\u1835\u180e\u1821\u0020", "\ue01a\ue00d");
 
         //tr6u,tr7u
         j.put("\u0020\u1835\u1825", "\ue04d\ue008\ue006");
@@ -848,6 +912,10 @@ public class DlhConvertDrsCodeMapper {
         f.put("\u1839\u1824", "\ue0a9");
         f.put("\u1839\u1825", "\ue0a9");
         f.put("\u1839\u1826", "\ue0a9");
+
+        f.put("\u1839\u1825\u180b", "\ue0a9\ue006");
+        f.put("\u1839\u1826\u180b", "\ue0a9\ue006");
+
         //tail f4o,f5o,f6u,f7u
         f.put("\u1839\u1823\u0020", "\ue0aa");
         f.put("\u1839\u1824\u0020", "\ue0aa");
@@ -856,6 +924,11 @@ public class DlhConvertDrsCodeMapper {
         //head f6u,f7u
         f.put("\u0020\u1839\u1825", "\ue0a8\ue006");
         f.put("\u0020\u1839\u1826", "\ue0a8\ue006");
+
+        f.put("\u1839\u1823\u180b\u0020", "\ue0aa");
+        f.put("\u1839\u1824\u180b\u0020", "\ue0aa");
+        f.put("\u1839\u1825\u180b\u0020", "\ue0d0");
+        f.put("\u1839\u1826\u180b\u0020", "\ue0d0");
         return f;
     }
 
@@ -912,6 +985,10 @@ public class DlhConvertDrsCodeMapper {
         k.put("\u183a\u1824", "\ue0ba");
         k.put("\u183a\u1825", "\ue0ba");
         k.put("\u183a\u1826", "\ue0ba");
+
+        k.put("\u183a\u1825\u180b", "\ue0ba\ue006");
+        k.put("\u183a\u1826\u180b", "\ue0ba\ue006");
+
         //tail k4o,k5o
         k.put("\u183a\u1823\u0020", "\ue0bb");
         k.put("\u183a\u1824\u0020", "\ue0bb");
@@ -1072,8 +1149,6 @@ public class DlhConvertDrsCodeMapper {
         //middle o
         others.put("\u1823\u180b", "\ue008");
         others.put("\u1824\u180b", "\ue008");
-        others.put("\u1825\u180b", "\ue008");
-        others.put("\u1826\u180b", "\ue008");
         //tail2 4o,5o
         others.put("\u1823\u180b\u0020", "\ue00f");
         others.put("\u1824\u180b\u0020", "\ue00f");

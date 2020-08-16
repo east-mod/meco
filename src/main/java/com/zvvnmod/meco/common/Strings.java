@@ -16,4 +16,20 @@ public final class Strings {
     public static boolean isEmpty(CharSequence cs) {
         return cs == null || cs.length() == 0;
     }
+
+    public static boolean endOf(String s, char c) {
+        if (Strings.isBlank(s)) {
+            return false;
+        }
+        return s.charAt(s.length() - 1) == c;
+    }
+
+    public static boolean endOf(String s0, String s1) {
+        if (Strings.isBlank(s0) || Strings.isBlank(s1)) {
+            return false;
+        }
+        String last = s0.substring(s0.length() - s1.length());
+        return last.equals(s1);
+    }
+
 }

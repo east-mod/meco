@@ -1,7 +1,10 @@
 package com.zvvnmod.meco.rule.to.delehi;
 
+import com.zvvnmod.meco.common.CodeType;
+import com.zvvnmod.meco.rule.annotation.To;
 import com.zvvnmod.meco.translate.domain.Nature;
 import com.zvvnmod.meco.translate.domain.TranslateRule;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -11,6 +14,8 @@ import java.util.List;
  * WEEK  : 周六
  * TIME  : 20:33
  */
+@To(CodeType.delehi)
+@Component
 public class TranslateToDelehi implements TranslateRule {
     @Override
     public String getMapperCode(List<Character> pre, String s, Nature nature) {

@@ -24,4 +24,8 @@ public class State {
 
     public static State SUCCESS = new State(30200, "Success");
     public static State INTERNAL_SERVER_ERROR = new State(30400, "INTERNAL_SERVER_ERROR");
+    public static State MISS_ANNOTATION = new State(30401,
+            "");
+    public static State NOT_SUPPORT_ENUM_TYPE = new State(30402,
+            "NOT_SUPPORT_ENUM_TYPE");
 }

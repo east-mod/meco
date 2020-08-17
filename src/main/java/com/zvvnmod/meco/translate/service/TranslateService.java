@@ -1,9 +1,12 @@
 package com.zvvnmod.meco.translate.service;
 
-import com.zvvnmod.meco.rule.from.delehi.TranslateFromDelehi;
-import com.zvvnmod.meco.translate.domain.TranslateRule;
+import com.zvvnmod.meco.common.CodeType;
+import com.zvvnmod.meco.common.Strings;
+import com.zvvnmod.meco.rule.RuleHolder;
 import com.zvvnmod.meco.translate.domain.Translator;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
 
 /**
  * AUTHOR: zorigt
@@ -13,11 +16,21 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class TranslateService {
+    @Resource
+    private RuleHolder ruleHolder;
 
-    public String translateDelehi(String s) {
-        TranslateRule translateRule = new TranslateFromDelehi();
-        Translator translator = new Translator(translateRule);
-        return translator.translate(s);
+    public String translate(CodeType from, CodeType to, String s) {
+        if (from == to || Strings.isBlank(s)) {
+            return s;
+        }
+        String s0 = s;
+        if (from != CodeType.zvvnmod) {
+            s0 = new Translator(ruleHolder.getFromRule(from)).translate(s0);
+        }
+
+        if (to != CodeType.zvvnmod) {
+            s0 = new Translator(ruleHolder.getToRule(to)).translate(s0);
+        }
+        return s0;
     }
-
 }

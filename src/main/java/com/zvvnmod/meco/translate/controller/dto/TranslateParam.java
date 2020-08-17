@@ -12,5 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class TranslateParam {
+    private String from;
+    private String to;
     private String content;
 }

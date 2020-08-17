@@ -1,8 +1,11 @@
 package com.zvvnmod.meco.rule.from.delehi;
 
+import com.zvvnmod.meco.common.CodeType;
+import com.zvvnmod.meco.rule.annotation.From;
 import com.zvvnmod.meco.translate.domain.MglUnicodeBlock;
 import com.zvvnmod.meco.translate.domain.Nature;
 import com.zvvnmod.meco.translate.domain.TranslateRule;
+import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
 import java.util.List;
@@ -13,6 +16,8 @@ import java.util.List;
  * WEEK  : 周一
  * TIME  : 19:32
  */
+@From(CodeType.delehi)
+@Component
 public class TranslateFromDelehi implements TranslateRule {
 
     @Override
@@ -21,14 +26,14 @@ public class TranslateFromDelehi implements TranslateRule {
         if (result != null) {
             return result;
         }
-        result = DlhConvertDrsCodeMapper.mapper.get(s);
+        result = FromDelehiCodeMapper.mapper.get(s);
         if (result != null) {
             return result;
         }
         if (nature.equals(Nature.CHAGH)) {
-            return DlhConvertDrsCodeMapper.chaghMapper.get(s);
+            return FromDelehiCodeMapper.chaghMapper.get(s);
         } else {
-            return DlhConvertDrsCodeMapper.hundiiMapper.get(s);
+            return FromDelehiCodeMapper.hundiiMapper.get(s);
         }
     }
 
@@ -40,7 +45,7 @@ public class TranslateFromDelehi implements TranslateRule {
             return null;
         }
         Character c = pre.get(pre.size() - 1);
-        for (char c1 : DlhConvertDrsCodeMapper.doubleIEhishig) {
+        for (char c1 : FromDelehiCodeMapper.doubleIEhishig) {
             if (c1 == c) {
                 return "\ue006\ue006";
             }
@@ -50,10 +55,10 @@ public class TranslateFromDelehi implements TranslateRule {
 
     @Override
     public boolean contains(String s) {
-        if (DlhConvertDrsCodeMapper.mapper.containsKey(s)) {
+        if (FromDelehiCodeMapper.mapper.containsKey(s)) {
             return true;
         }
-        return DlhConvertDrsCodeMapper.chaghMapper.containsKey(s);
+        return FromDelehiCodeMapper.chaghMapper.containsKey(s);
     }
 
     @Override

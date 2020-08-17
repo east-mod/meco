@@ -11,7 +11,7 @@ import java.util.Map;
  * WEEK  : Sun
  * TIME  : 23:08
  */
-public class DlhConvertDrsCodeMapper {
+public class FromDelehiCodeMapper {
     public static CodeMapper mapper;
     public static CodeMapper chaghMapper;
     public static CodeMapper hundiiMapper;
@@ -56,7 +56,7 @@ public class DlhConvertDrsCodeMapper {
     }
 
     public static void buildMapper() {
-        mapper = new CodeMapper(256);
+        mapper = new CodeMapper(1024);
         mapper.combine(getSeparator());
         mapper.combine(getEhshig());
         mapper.combine(getGiiN());

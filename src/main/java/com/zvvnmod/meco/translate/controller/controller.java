@@ -1,5 +1,6 @@
 package com.zvvnmod.meco.translate.controller;
 
+import com.zvvnmod.meco.common.CodeType;
 import com.zvvnmod.meco.common.SuperController;
 import com.zvvnmod.meco.common.result.GenericResult;
 import com.zvvnmod.meco.common.result.ResultBase;
@@ -26,15 +27,16 @@ public class controller extends SuperController {
     @Resource
     private TranslateService translateService;
 
-    @PostMapping("/delehi")
-    public ResultBase translateDelehi(@RequestBody TranslateParam param) {
-        String s = translateService.translateDelehi(param.getContent());
-        return GenericResult.get(s);
+    @PostMapping
+    public ResultBase translateByPost(@RequestBody TranslateParam param) {
+        return GenericResult.get(translateService.translate(
+                CodeType.get(param.getFrom()),
+                CodeType.get(param.getTo()),
+                param.getContent()));
     }
 
-    @GetMapping("/delehi")
-    public ResultBase translateDelehiByGet(@RequestBody TranslateParam param) {
-        String s = translateService.translateDelehi(param.getContent());
-        return GenericResult.get(s);
+    @GetMapping
+    public ResultBase translateByGet(@RequestBody TranslateParam param) {
+        return translateByPost(param);
     }
 }

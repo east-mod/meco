@@ -12,7 +12,7 @@ import java.util.Map;
  * TIME  : 19:42
  */
 @Deprecated
-public class DlhConvertUyeCodeMapper {
+public class FromDelehiUyeCodeMapper {
     public static CodeMapper mapper;
 
     static {

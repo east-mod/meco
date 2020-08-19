@@ -4,6 +4,7 @@
 target
 .idea
 .DS_Store
+*.iml
 
 # Log file
 *.log

@@ -2,8 +2,7 @@ package com.zvvnmod.meco.translate.service;
 
 import com.zvvnmod.meco.common.CodeType;
 import com.zvvnmod.meco.common.Strings;
-import com.zvvnmod.meco.rule.RuleHolder;
-import com.zvvnmod.meco.translate.domain.Translator;
+import com.zvvnmod.meco.translate.letter.from.RuleHolder;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -25,12 +24,34 @@ public class TranslateService {
         }
         String s0 = s;
         if (from != CodeType.zvvnmod) {
-            s0 = new Translator(ruleHolder.getFromRule(from)).translate(s0);
+            s0 = translateFrom(from, s0);
+//            s0 = new Translator(ruleHolder.getFromRule(from)).translate(s0);
         }
-
         if (to != CodeType.zvvnmod) {
-            s0 = new Translator(ruleHolder.getToRule(to)).translate(s0);
+            s0 = translateTo(to, s0);
+//            s0 = new Translator(ruleHolder.getToRule(to)).translate(s0);
         }
         return s0;
+    }
+
+
+    /**
+     * translate from other codes
+     *
+     * @return
+     */
+    private String translateFrom(CodeType codeType, String s) {
+
+        return null;
+    }
+
+    /**
+     * translate to other codes
+     *
+     * @return
+     */
+    private String translateTo(CodeType codeType, String s) {
+
+        return null;
     }
 }

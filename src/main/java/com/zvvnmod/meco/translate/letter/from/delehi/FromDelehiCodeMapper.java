@@ -27,8 +27,6 @@ public class FromDelehiCodeMapper {
         chaghMapper = new CodeMapper(16);
         //middle h
         chaghMapper.put("\u182c", "\ue005\ue005");
-        //tail h
-        chaghMapper.put("\u182c\u0020", "\ue032");
         //h+mvs
         chaghMapper.put("\u182c\u180e", "\ue005\ue005\ue143");
         //middle g
@@ -38,7 +36,6 @@ public class FromDelehiCodeMapper {
         chaghMapper.put("\u1830\u182d\u180e", "\ue03d\ue005\ue005\ue143");
         chaghMapper.put("\u1833\u182d\u180e", "\ue008\ue005\ue005\ue005\ue143");
         //tail g
-        chaghMapper.put("\u182d\u0020", "\ue032");
         chaghMapper.put("\u182d\u180e\u0020", "\ue032\ue143");
     }
 
@@ -46,8 +43,6 @@ public class FromDelehiCodeMapper {
         hundiiMapper = new CodeMapper(16);
         //middle h
         hundiiMapper.put("\u182c", "\ue031");
-        //tail h
-        hundiiMapper.put("\u182c\u0020", "\ue033");
         //h+mvs
         hundiiMapper.put("\u182c\u180e", "\ue031\ue143");
         //middle g
@@ -57,7 +52,6 @@ public class FromDelehiCodeMapper {
         hundiiMapper.put("\u1830\u182d\u180e", "\ue03d\ue031\ue143");
         hundiiMapper.put("\u1833\u182d\u180e", "\ue008\ue005\ue031\ue143");
         //tail g
-        hundiiMapper.put("\u182d\u0020", "\ue033");
         hundiiMapper.put("\u182d\u180e\u0020", "\ue033\ue143");
     }
 
@@ -409,6 +403,7 @@ public class FromDelehiCodeMapper {
         //tail
         h.put("\u182c\u180c\u0020", "\ue033");
         h.put("\u180c\u180d\u0020", "\ue032");
+        h.put("\u182c\u0020", "\ue032");
         //ha
         h.put("\u0020\u182c\u1820\u0020", "\ue02f\ue00c");
         //he
@@ -485,6 +480,8 @@ public class FromDelehiCodeMapper {
         Map<String, String> g = new HashMap<>(64);
         //g
         g.put("\u0020\u182d\u0020", "\ue034");
+        //tail g
+        g.put("\u182d\u0020", "\ue032");
         //head
         g.put("\u0020\u182d", "\ue030");
         g.put("\u0020\u182d\u180d", "\ue030");

@@ -14,10 +14,10 @@ import java.util.List;
  * WEEK  : 周一
  * TIME  : 18:14
  */
-public class Translator {
-    private static final Logger logger = LoggerFactory.getLogger(Translator.class);
+public class LetterFromTranslator {
+    private static final Logger logger = LoggerFactory.getLogger(LetterFromTranslator.class);
 
-    private TranslateRule translateRule;
+    private LetterFromTranslateRule letterFromTranslateRule;
 
     private MglWordFragment mglWordFragment;
 
@@ -25,17 +25,17 @@ public class Translator {
 
     private long wordCounter;
 
-    private Translator() {
+    private LetterFromTranslator() {
     }
 
-    public Translator(final TranslateRule translateRule) {
-        this.translateRule = translateRule;
+    public LetterFromTranslator(final LetterFromTranslateRule letterFromTranslateRule) {
+        this.letterFromTranslateRule = letterFromTranslateRule;
         this.mglWordFragment = new MglWordFragment();
         this.mglWord = new MglWord();
     }
 
     private UnicodeType getUnicodeType(char ch) {
-        return translateRule.isMongolianCodePoint(ch) ? UnicodeType.MONGOLIAN : UnicodeType.OTHER;
+        return letterFromTranslateRule.isMongolianCodePoint(ch) ? UnicodeType.MONGOLIAN : UnicodeType.OTHER;
     }
 
     private void resetMglWordFragment() {
@@ -52,7 +52,7 @@ public class Translator {
         List<Character> preFragmentContent = null;
         for (MglWordFragment wordFragment : mglWord.getMglWordFragments()) {
             nature = wordFragment.getNature().equals(Nature.SAARMAG) ? mglWord.getNature() : wordFragment.getNature();
-            s = translateRule.getMapperCode(preFragmentContent, wordFragment.getKey(), nature);
+            s = letterFromTranslateRule.getMapperCode(preFragmentContent, wordFragment.getKey(), nature);
             if (s == null) {
                 throw new MecoException(TranslateState.NOT_FOUNT_IN_MAPPER_RULE.getCode(),
                         "Not fount the string [" + wordFragment.getContent() + "] in mapper rule");
@@ -74,11 +74,11 @@ public class Translator {
         mglWordFragment.setHead(UnicodeType.OTHER);
         for (int i = 0; i < chars0.length; i++) {
             char c = chars0[i];
-            if (translateRule.isMongolianCodePoint(c)) {
+            if (letterFromTranslateRule.isMongolianCodePoint(c)) {
                 mglWordFragment.push(c);
                 mglWordFragment.setTail(getUnicodeType(chars0[i + 1]));
-                if (translateRule.contains(mglWordFragment.getKey())) {
-                    mglWordFragment.setNature(translateRule.getCodeNature(c));
+                if (letterFromTranslateRule.contains(mglWordFragment.getKey())) {
+                    mglWordFragment.setNature(letterFromTranslateRule.getCodeNature(c));
                     continue;
                 }
                 mglWordFragment.pop();
@@ -102,7 +102,7 @@ public class Translator {
                     translateWord(builder, mglWord);
                     resetMglWord();
                 }
-                if (translateRule.isTranslateCodePoint(c)) {
+                if (letterFromTranslateRule.isTranslateCodePoint(c)) {
                     mglWordFragment.push(c);
                 } else {
                     builder.append(c);

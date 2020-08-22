@@ -1,7 +1,7 @@
 package com.zvvnmod.meco.translate.letter.to.menk;
 
 import com.zvvnmod.meco.translate.letter.from.Nature;
-import com.zvvnmod.meco.translate.letter.from.TranslateRule;
+import com.zvvnmod.meco.translate.letter.from.LetterFromTranslateRule;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import java.util.List;
  * WEEK  : 周六
  * TIME  : 20:35
  */
-public class TranslateToMenk implements TranslateRule {
+public class LetterFromTranslateToMenk implements LetterFromTranslateRule {
     @Override
     public String getMapperCode(List<Character> pre, String s, Nature nature) {
         return null;

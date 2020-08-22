@@ -25,4 +25,6 @@ public class TranslateState extends State {
             "MSC_NOTHING_TO_POP");
     public static TranslateState NOT_FOUNT_IN_MAPPER_RULE = new TranslateState(309003,
             "NOT_FOUNT_IN_MAPPER_RULE");
+    public static TranslateState NOT_SUPPORTED_CODE_SERIES = new TranslateState(309004,
+            "NOT_SUPPORTED_CODE_SERIES");
 }

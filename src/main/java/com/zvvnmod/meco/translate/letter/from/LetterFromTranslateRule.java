@@ -8,7 +8,7 @@ import java.util.List;
  * WEEK  : 周一
  * TIME  : 19:33
  */
-public interface TranslateRule {
+public interface LetterFromTranslateRule {
     String getMapperCode(List<Character> pre, String s, Nature nature);
 
     boolean contains(String s);

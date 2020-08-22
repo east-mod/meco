@@ -1,4 +1,8 @@
-package com.zvvnmod.meco.common;
+package com.zvvnmod.meco.translate.enumeration;
+
+import com.zvvnmod.meco.common.MecoException;
+import com.zvvnmod.meco.common.State;
+import lombok.Getter;
 
 /**
  * AUTHOR: zorigt
@@ -7,7 +11,18 @@ package com.zvvnmod.meco.common;
  * TIME  : 14:06
  */
 public enum CodeType {
-    zvvnmod, delehi, menk, oyun, bainu;
+    Zvvnmod(CodeSeries.Shape),
+    Delehi(CodeSeries.Letter),
+    Menk(CodeSeries.Letter),
+    Oyun(CodeSeries.Letter),
+    Bainu(CodeSeries.Letter);
+
+    @Getter
+    private final CodeSeries codeSeries;
+
+    CodeType(CodeSeries codeSeries) {
+        this.codeSeries = codeSeries;
+    }
 
     public static CodeType[] codeTypes = CodeType.class.getEnumConstants();
 

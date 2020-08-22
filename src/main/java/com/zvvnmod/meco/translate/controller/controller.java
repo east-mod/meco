@@ -1,6 +1,6 @@
 package com.zvvnmod.meco.translate.controller;
 
-import com.zvvnmod.meco.common.CodeType;
+import com.zvvnmod.meco.translate.enumeration.CodeType;
 import com.zvvnmod.meco.common.SuperController;
 import com.zvvnmod.meco.common.result.GenericResult;
 import com.zvvnmod.meco.common.result.ResultBase;

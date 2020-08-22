@@ -1,6 +1,6 @@
 package com.zvvnmod.meco.translate.annotation;
 
-import com.zvvnmod.meco.common.CodeType;
+import com.zvvnmod.meco.translate.enumeration.CodeType;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -9,12 +9,12 @@ import java.lang.annotation.Target;
 
 /**
  * AUTHOR: zorigt
- * DATE  : 2020/8/17
- * WEEK  : 周一
- * TIME  : 14:22
+ * DATE  : 2020/8/21
+ * WEEK  : 周五
+ * TIME  : 23:28
  */
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface To {
+public @interface Rule {
     CodeType value();
 }

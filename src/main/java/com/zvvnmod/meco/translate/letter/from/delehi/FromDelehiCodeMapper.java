@@ -1089,6 +1089,7 @@ public class FromDelehiCodeMapper {
         dagbor.put("\u0020\u202f\u1825", "\u0020\ue000\ue008\ue006");
         dagbor.put("\u0020\u202f\u1826", "\u0020\ue000\ue008\ue006");
         dagbor.put("\u0020\u202f\u1824\u1833\u0020", "\u0020\ue001\ue008\ue00c");
+        dagbor.put("\u0020\u202f\u1826\u1833\u0020", "\u0020\ue001\ue008\ue00c");
 
         //on
         dagbor.put("\u0020\u202f\u1823\u180b", "\u0020\ue001");
@@ -1115,6 +1116,9 @@ public class FromDelehiCodeMapper {
         dagbor.put("\u0020\u1822\u180b", "\ue002");
         dagbor.put("\u0020\u202f\u1836", "\u0020\ue002");
         dagbor.put("\u0020\u202f\u1822\u180b", "\u0020\ue002");
+        dagbor.put("\u0020\u202f\u1822\u1836", "\u0020\ue000\ue006\ue051");
+        dagbor.put("\u0020\u202f\u1822\u1836\u1820", "\u0020\ue000\ue006\ue051\ue005");
+        dagbor.put("\u0020\u202f\u1822\u1836\u1820\u1828\u0020", "\u0020\ue002\ue006\ue005\ue00c");
 
         dagbor.put("\u0020\u202f\u1836\u180b\u1822", "\u0020\ue002\ue006");
 

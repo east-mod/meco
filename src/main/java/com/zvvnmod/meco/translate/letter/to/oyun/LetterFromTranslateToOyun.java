@@ -1,7 +1,7 @@
 package com.zvvnmod.meco.translate.letter.to.oyun;
 
-import com.zvvnmod.meco.translate.letter.from.Nature;
 import com.zvvnmod.meco.translate.letter.from.LetterFromTranslateRule;
+import com.zvvnmod.meco.translate.letter.from.Nature;
 
 import java.util.List;
 

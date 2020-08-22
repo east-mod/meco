@@ -1,10 +1,10 @@
 package com.zvvnmod.meco.translate.controller;
 
-import com.zvvnmod.meco.translate.enumeration.CodeType;
 import com.zvvnmod.meco.common.SuperController;
 import com.zvvnmod.meco.common.result.GenericResult;
 import com.zvvnmod.meco.common.result.ResultBase;
 import com.zvvnmod.meco.translate.controller.dto.TranslateParam;
+import com.zvvnmod.meco.translate.enumeration.CodeType;
 import com.zvvnmod.meco.translate.service.TranslateService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

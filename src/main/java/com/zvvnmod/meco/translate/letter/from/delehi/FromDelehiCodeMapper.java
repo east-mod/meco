@@ -34,6 +34,9 @@ public class FromDelehiCodeMapper {
         //middle g
         chaghMapper.put("\u182d", "\ue005\ue005");
         chaghMapper.put("\u182d\u180e", "\ue005\ue005\ue143");
+
+        chaghMapper.put("\u1830\u182d\u180e", "\ue03d\ue005\ue005\ue143");
+        chaghMapper.put("\u1833\u182d\u180e", "\ue008\ue005\ue005\ue005\ue143");
         //tail g
         chaghMapper.put("\u182d\u0020", "\ue032");
         chaghMapper.put("\u182d\u180e\u0020", "\ue032\ue143");
@@ -50,6 +53,9 @@ public class FromDelehiCodeMapper {
         //middle g
         hundiiMapper.put("\u182d", "\ue031");
         hundiiMapper.put("\u182d\u180e", "\ue031\ue143");
+
+        hundiiMapper.put("\u1830\u182d\u180e", "\ue03d\ue031\ue143");
+        hundiiMapper.put("\u1833\u182d\u180e", "\ue008\ue005\ue031\ue143");
         //tail g
         hundiiMapper.put("\u182d\u0020", "\ue033");
         hundiiMapper.put("\u182d\u180e\u0020", "\ue033\ue143");
@@ -503,10 +509,21 @@ public class FromDelehiCodeMapper {
         g.put("\u0020\u182d\u1820", "\ue034\ue005");
         //middle ga
         g.put("\u182d\u1820", "\ue035\ue005");
+        g.put("\u1830\u182d", "\ue03d\ue031");
+        g.put("\u1830\u182d\u1820", "\ue03d\ue005\ue005\ue005");
+        g.put("\u1833\u182d", "\ue008\ue005\ue031");
+        g.put("\u1833\u182d\u1820", "\ue008\ue005\ue005\ue005\ue005");
+
         //tail1 ga
         g.put("\u182d\u1820\u0020", "\ue09d");
+        g.put("\u1830\u182d\u1820\u0020", "\ue03d\ue032\ue00d");
+        g.put("\u1833\u182d\u1820\u0020", "\ue008\ue005\ue032\ue00d");
+
         //tail2 ga
         g.put("\u182d\u180e\u1820\u0020", "\ue09d");
+        g.put("\u1830\u182d\u180e\u1820\u0020", "\ue03d\ue032\ue00d");
+        g.put("\u1833\u182d\u180e\u1820\u0020", "\ue008\ue005\ue032\ue00d");
+
         //head ge
         g.put("\u0020\u182d\u1821", "\ue094");
         //middle ge
@@ -524,10 +541,19 @@ public class FromDelehiCodeMapper {
         g.put("\u0020\u182d\u1824", "\ue034\ue008");
         //middle g4o,g5o
         g.put("\u182d\u1823", "\ue035\ue008");
+        g.put("\u1830\u182d\u1823", "\ue03d\ue005\ue005\ue008");
+        g.put("\u1833\u182d\u1823", "\ue008\ue005\ue005\ue005\ue005");
         g.put("\u182d\u1824", "\ue035\ue008");
+        g.put("\u1830\u182d\u1824", "\ue03d\ue005\ue005\ue008");
+        g.put("\u1833\u182d\u1824", "\ue008\ue005\ue005\ue005\ue008");
         //tail g4o,g5o
         g.put("\u182d\u1823\u0020", "\ue035\ue011");
+        g.put("\u1830\u182d\u1823\u0020", "\ue03d\ue005\ue005\ue011");
+        g.put("\u1833\u182d\u1823\u0020", "\ue008\ue005\ue005\ue005\ue011");
         g.put("\u182d\u1824\u0020", "\ue035\ue011");
+        g.put("\u1830\u182d\u1824\u0020", "\ue03d\ue005\ue005\ue011");
+        g.put("\u1833\u182d\u1824\u0020", "\ue008\ue005\ue005\ue005\ue011");
+
         //head g6u,g7u
         g.put("\u0020\u182d\u1825", "\ue09a");
         g.put("\u0020\u182d\u1826", "\ue09a");
@@ -537,13 +563,31 @@ public class FromDelehiCodeMapper {
         g.put("\u182d\u1825\u180b", "\ue09b\ue006");
         g.put("\u182d\u1826\u180b", "\ue09b\ue006");
         g.put("\u182d\u1825\u180c", "\ue035\ue005\ue008\ue006");
+
+        g.put("\u1830\u182d\u1825", "\ue03d\ue09b");
+        g.put("\u1833\u182d\u1825", "\ue008\ue005\ue09b");
+        g.put("\u1830\u182d\u1825\u180c", "\ue03d\ue005\ue005\ue005\ue008\ue006");
+        g.put("\u1833\u182d\u1825\u180c", "\ue008\ue005\ue005\ue005\ue005\ue008\ue006");
+
         g.put("\u182d\u1826\u180c", "\ue035\ue005\ue008\ue006");
+
+        g.put("\u1830\u182d\u1826", "\ue03d\ue09b");
+        g.put("\u1833\u182d\u1826", "\ue008\ue005\ue09b");
+        g.put("\u1830\u182d\u1826\u180c", "\ue03d\ue005\ue005\ue005\ue008\ue006");
+        g.put("\u1833\u182d\u1826\u180c", "\ue008\ue005\ue005\ue005\ue005\ue008\ue006");
+
         //tail g6u,g7u
         g.put("\u182d\u1825\u0020", "\ue09c");
         g.put("\u182d\u1826\u0020", "\ue09c");
 
         g.put("\u182d\u1823\u180b\u0020", "\ue035\ue00f");
+        g.put("\u1830\u182d\u1823\u180b\u0020", "\ue03d\ue005\ue005\ue00f");
+        g.put("\u1833\u182d\u1823\u180b\u0020", "\ue008\ue005\ue005\ue005\ue00f");
+
         g.put("\u182d\u1824\u180b\u0020", "\ue035\ue00f");
+        g.put("\u1830\u182d\u1824\u180b\u0020", "\ue03d\ue005\ue005\ue00f");
+        g.put("\u1833\u182d\u1824\u180b\u0020", "\ue008\ue005\ue005\ue005\ue00f");
+
         g.put("\u182d\u1825\u180b\u0020", "\ue0cf");
         g.put("\u182d\u1826\u180b\u0020", "\ue0cf");
 
@@ -1118,9 +1162,15 @@ public class FromDelehiCodeMapper {
         dagbor.put("\u0020\u202f\u1822\u180b", "\u0020\ue002");
         dagbor.put("\u0020\u202f\u1822\u1836", "\u0020\ue000\ue006\ue051");
         dagbor.put("\u0020\u202f\u1822\u1836\u1820", "\u0020\ue000\ue006\ue051\ue005");
+        dagbor.put("\u0020\u202f\u1822\u1836\u1821", "\u0020\ue000\ue006\ue051\ue005");
         dagbor.put("\u0020\u202f\u1822\u1836\u1820\u1828\u0020", "\u0020\ue002\ue006\ue005\ue00c");
+        dagbor.put("\u0020\u202f\u1822\u1836\u1821\u1828\u0020", "\u0020\ue002\ue006\ue005\ue00c");
 
         dagbor.put("\u0020\u202f\u1836\u180b\u1822", "\u0020\ue002\ue006");
+
+        //yer
+        dagbor.put("\u0020\u202f\u1822\u1836\u1820\u1837\u0020", "\u0020\ue002\ue006\ue005\ue055");
+        dagbor.put("\u0020\u202f\u1822\u1836\u1821\u1837\u0020", "\u0020\ue002\ue006\ue005\ue055");
 
         //gi
         dagbor.put("\u0020\u202f\u1836\u180b\u1822\u0020", "\u0020\ue002\ue00e");
@@ -1168,7 +1218,8 @@ public class FromDelehiCodeMapper {
         //eu
         others.put("\u0020\u1826\u180b\u0020", "\ue000\ue011");
 
-        others.put("\u202f\u1824\u1824", "\ue001\ue011");
+        others.put("\u0020\u202f\u1824\u1824\u0020", "\u0020\ue001\ue011");
+        others.put("\u0020\u202f\u1826\u1826\u0020", "\u0020\ue001\ue011");
         return others;
     }
 

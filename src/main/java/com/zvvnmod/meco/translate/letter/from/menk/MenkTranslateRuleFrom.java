@@ -1,17 +1,23 @@
-package com.zvvnmod.meco.translate.letter.to.oyun;
+package com.zvvnmod.meco.translate.letter.from.menk;
 
-import com.zvvnmod.meco.translate.letter.from.LetterFromTranslateRule;
-import com.zvvnmod.meco.translate.letter.from.Nature;
+import com.zvvnmod.meco.translate.annotation.Rule;
+import com.zvvnmod.meco.translate.enumeration.CodeType;
+import com.zvvnmod.meco.translate.letter.from.LetterTranslateRuleFrom;
+import com.zvvnmod.meco.translate.word.Nature;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 /**
  * AUTHOR: zorigt
- * DATE  : 2020/8/15
- * WEEK  : 周六
- * TIME  : 20:36
+ * DATE  : 2020/8/10
+ * WEEK  : 周一
+ * TIME  : 19:32
  */
-public class LetterFromTranslateToOyun implements LetterFromTranslateRule {
+@Component
+@Rule(CodeType.Menk)
+public class MenkTranslateRuleFrom implements LetterTranslateRuleFrom {
+
     @Override
     public String getMapperCode(List<Character> pre, String s, Nature nature) {
         return null;

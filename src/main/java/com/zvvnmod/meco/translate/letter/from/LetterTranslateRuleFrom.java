@@ -1,5 +1,7 @@
 package com.zvvnmod.meco.translate.letter.from;
 
+import com.zvvnmod.meco.translate.word.Nature;
+
 import java.util.List;
 
 /**
@@ -8,7 +10,7 @@ import java.util.List;
  * WEEK  : 周一
  * TIME  : 19:33
  */
-public interface LetterFromTranslateRule {
+public interface LetterTranslateRuleFrom {
     String getMapperCode(List<Character> pre, String s, Nature nature);
 
     boolean contains(String s);

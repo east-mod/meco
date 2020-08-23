@@ -1,4 +1,4 @@
-package com.zvvnmod.meco.translate.letter.from;
+package com.zvvnmod.meco.translate.word;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -21,7 +21,7 @@ public class TranslateState extends State {
             "UNICODE_TYPE_NOT_BE_NULL");
     public static TranslateState MISS_TRANSLATE_RULE = new TranslateState(309001,
             "MISS_TRANSLATE_RULE");
-    public static TranslateState MSC_NOTHING_TO_POP = new TranslateState(309002,
+    public static TranslateState NOTHING_TO_POP = new TranslateState(309002,
             "MSC_NOTHING_TO_POP");
     public static TranslateState NOT_FOUNT_IN_MAPPER_RULE = new TranslateState(309003,
             "NOT_FOUNT_IN_MAPPER_RULE");

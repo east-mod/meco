@@ -3,6 +3,7 @@ package com.zvvnmod.meco.translate.letter.from;
 import com.zvvnmod.meco.common.MecoException;
 import com.zvvnmod.meco.common.Strings;
 import com.zvvnmod.meco.translate.exception.TranslateState;
+import com.zvvnmod.meco.translate.word.Nature;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.util.CollectionUtils;
@@ -18,15 +19,15 @@ import java.util.List;
  * convertible mongolian string context.
  */
 @Getter
-public class MglWordFragment {
+public class LetterWordFragment {
     @Setter
     private UnicodeType head;
     @Setter
     private UnicodeType tail;
-    private List<Character> content;
+    private final List<Character> content;
     private Nature nature;
 
-    public MglWordFragment() {
+    public LetterWordFragment() {
         this.content = new ArrayList<>(8);
         this.nature = Nature.SAARMAG;
     }
@@ -62,12 +63,16 @@ public class MglWordFragment {
 
     public void pop() {
         if (CollectionUtils.isEmpty(content)) {
-            throw new MecoException(TranslateState.MSC_NOTHING_TO_POP);
+            throw new MecoException(TranslateState.NOTHING_TO_POP);
         }
         content.remove(content.size() - 1);
     }
 
-    public boolean contentIsBlank() {
+    public boolean isBlank() {
         return CollectionUtils.isEmpty(this.content);
+    }
+
+    public boolean isNotBlank() {
+        return !isBlank();
     }
 }

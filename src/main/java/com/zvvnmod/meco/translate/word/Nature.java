@@ -1,4 +1,4 @@
-package com.zvvnmod.meco.translate.letter.from;
+package com.zvvnmod.meco.translate.word;
 
 /**
  * AUTHOR: zorigt

@@ -23,25 +23,25 @@ import java.util.Map;
 public class LetterToRuleHolder {
     private static final Logger logger = LoggerFactory.getLogger(LetterToRuleHolder.class);
 
-    private final Map<CodeType, LetterToTranslateRule> ruleMap;
+    private final Map<CodeType, LetterTranslateRuleTo> ruleMap;
 
     @Autowired
-    public LetterToRuleHolder(List<LetterToTranslateRule> letterToTranslateRules) {
+    public LetterToRuleHolder(List<LetterTranslateRuleTo> letterTranslateRuleTos) {
         this.ruleMap = new LinkedHashMap<>();
 
-        for (LetterToTranslateRule letterToTranslateRule : letterToTranslateRules) {
-            Rule from = letterToTranslateRule.getClass().getAnnotation(Rule.class);
+        for (LetterTranslateRuleTo letterTranslateRuleTo : letterTranslateRuleTos) {
+            Rule from = letterTranslateRuleTo.getClass().getAnnotation(Rule.class);
             if (from == null) {
                 logger.info("Are you miss add the @Rule annotation to {}",
-                        letterToTranslateRule.getClass().getSimpleName());
+                        letterTranslateRuleTo.getClass().getSimpleName());
                 throw new MecoException(State.MISS_ANNOTATION);
             }
-            ruleMap.put(from.value(), letterToTranslateRule);
+            ruleMap.put(from.value(), letterTranslateRuleTo);
         }
 
     }
 
-    public LetterToTranslateRule getRule(CodeType codeType) {
+    public LetterTranslateRuleTo getRule(CodeType codeType) {
         return this.ruleMap.get(codeType);
     }
 }

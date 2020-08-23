@@ -2,9 +2,9 @@ package com.zvvnmod.meco.translate.letter.from.delehi;
 
 import com.zvvnmod.meco.translate.annotation.Rule;
 import com.zvvnmod.meco.translate.enumeration.CodeType;
-import com.zvvnmod.meco.translate.letter.from.LetterFromTranslateRule;
-import com.zvvnmod.meco.translate.letter.from.MglUnicodeBlock;
-import com.zvvnmod.meco.translate.letter.from.Nature;
+import com.zvvnmod.meco.translate.letter.from.LetterTranslateRuleFrom;
+import com.zvvnmod.meco.translate.word.MglUnicodeBlock;
+import com.zvvnmod.meco.translate.word.Nature;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
@@ -18,7 +18,7 @@ import java.util.List;
  */
 @Component
 @Rule(CodeType.Delehi)
-public class TranslateFromDelehiRule implements LetterFromTranslateRule {
+public class DelehiTranslateRuleFrom implements LetterTranslateRuleFrom {
 
     @Override
     public String getMapperCode(List<Character> pre, String s, Nature nature) {

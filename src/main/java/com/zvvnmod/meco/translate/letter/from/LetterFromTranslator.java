@@ -3,6 +3,7 @@ package com.zvvnmod.meco.translate.letter.from;
 import com.zvvnmod.meco.common.MecoException;
 import com.zvvnmod.meco.common.Strings;
 import com.zvvnmod.meco.translate.exception.TranslateState;
+import com.zvvnmod.meco.translate.word.Nature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,42 +18,42 @@ import java.util.List;
 public class LetterFromTranslator {
     private static final Logger logger = LoggerFactory.getLogger(LetterFromTranslator.class);
 
-    private LetterFromTranslateRule letterFromTranslateRule;
+    private LetterTranslateRuleFrom letterTranslateRuleFrom;
 
-    private MglWordFragment mglWordFragment;
+    private LetterWordFragment letterWordFragment;
 
-    private MglWord mglWord;
+    private LetterWord letterWord;
 
     private long wordCounter;
 
     private LetterFromTranslator() {
     }
 
-    public LetterFromTranslator(final LetterFromTranslateRule letterFromTranslateRule) {
-        this.letterFromTranslateRule = letterFromTranslateRule;
-        this.mglWordFragment = new MglWordFragment();
-        this.mglWord = new MglWord();
+    public LetterFromTranslator(final LetterTranslateRuleFrom letterTranslateRuleFrom) {
+        this.letterTranslateRuleFrom = letterTranslateRuleFrom;
+        this.letterWordFragment = new LetterWordFragment();
+        this.letterWord = new LetterWord();
     }
 
     private UnicodeType getUnicodeType(char ch) {
-        return letterFromTranslateRule.isMongolianCodePoint(ch) ? UnicodeType.MONGOLIAN : UnicodeType.OTHER;
+        return letterTranslateRuleFrom.isMongolianCodePoint(ch) ? UnicodeType.MONGOLIAN : UnicodeType.OTHER;
     }
 
     private void resetMglWordFragment() {
-        this.mglWordFragment = new MglWordFragment();
+        this.letterWordFragment = new LetterWordFragment();
     }
 
     private void resetMglWord() {
-        this.mglWord = new MglWord();
+        this.letterWord = new LetterWord();
     }
 
-    private void translateWord(StringBuilder builder, MglWord mglWord) {
+    private void translateWord(StringBuilder builder, LetterWord letterWord) {
         Nature nature;
         String s;
         List<Character> preFragmentContent = null;
-        for (MglWordFragment wordFragment : mglWord.getMglWordFragments()) {
-            nature = wordFragment.getNature().equals(Nature.SAARMAG) ? mglWord.getNature() : wordFragment.getNature();
-            s = letterFromTranslateRule.getMapperCode(preFragmentContent, wordFragment.getKey(), nature);
+        for (LetterWordFragment wordFragment : letterWord.getLetterWordFragments()) {
+            nature = wordFragment.getNature().equals(Nature.SAARMAG) ? letterWord.getNature() : wordFragment.getNature();
+            s = letterTranslateRuleFrom.getMapperCode(preFragmentContent, wordFragment.getKey(), nature);
             if (s == null) {
                 throw new MecoException(TranslateState.NOT_FOUNT_IN_MAPPER_RULE.getCode(),
                         "Not fount the string [" + wordFragment.getContent() + "] in mapper rule");
@@ -71,39 +72,39 @@ public class LetterFromTranslator {
         String s1 = s0 + "\ue666";
         char[] chars0 = s1.toCharArray();
         StringBuilder builder = new StringBuilder(chars0.length * 2);
-        mglWordFragment.setHead(UnicodeType.OTHER);
+        letterWordFragment.setHead(UnicodeType.OTHER);
         for (int i = 0; i < chars0.length; i++) {
             char c = chars0[i];
-            if (letterFromTranslateRule.isMongolianCodePoint(c)) {
-                mglWordFragment.push(c);
-                mglWordFragment.setTail(getUnicodeType(chars0[i + 1]));
-                if (letterFromTranslateRule.contains(mglWordFragment.getKey())) {
-                    mglWordFragment.setNature(letterFromTranslateRule.getCodeNature(c));
+            if (letterTranslateRuleFrom.isMongolianCodePoint(c)) {
+                letterWordFragment.push(c);
+                letterWordFragment.setTail(getUnicodeType(chars0[i + 1]));
+                if (letterTranslateRuleFrom.contains(letterWordFragment.getKey())) {
+                    letterWordFragment.setNature(letterTranslateRuleFrom.getCodeNature(c));
                     continue;
                 }
-                mglWordFragment.pop();
-                mglWordFragment.setTail(getUnicodeType(c));
-                if (mglWordFragment.contentIsBlank()) {
+                letterWordFragment.pop();
+                letterWordFragment.setTail(getUnicodeType(c));
+                if (letterWordFragment.isBlank()) {
                     throw new MecoException(TranslateState.NOT_FOUNT_IN_MAPPER_RULE.getCode(),
                             "Not fount the string [" + c + "] in mapper rule");
                 }
-                mglWord.add(mglWordFragment);
+                letterWord.add(letterWordFragment);
                 resetMglWordFragment();
-                mglWordFragment.setHead(getUnicodeType(chars0[i - 1]));
+                letterWordFragment.setHead(getUnicodeType(chars0[i - 1]));
                 i--;
             } else {
-                if (!mglWordFragment.contentIsBlank()) {
-                    mglWordFragment.setTail(UnicodeType.OTHER);
-                    mglWord.add(mglWordFragment);
+                if (letterWordFragment.isNotBlank()) {
+                    letterWordFragment.setTail(UnicodeType.OTHER);
+                    letterWord.add(letterWordFragment);
                     resetMglWordFragment();
-                    mglWordFragment.setHead(UnicodeType.OTHER);
+                    letterWordFragment.setHead(UnicodeType.OTHER);
                 }
-                if (!mglWord.isEmpty()) {
-                    translateWord(builder, mglWord);
+                if (letterWord.isNotBlank()) {
+                    translateWord(builder, letterWord);
                     resetMglWord();
                 }
-                if (letterFromTranslateRule.isTranslateCodePoint(c)) {
-                    mglWordFragment.push(c);
+                if (letterTranslateRuleFrom.isTranslateCodePoint(c)) {
+                    letterWordFragment.push(c);
                 } else {
                     builder.append(c);
                 }

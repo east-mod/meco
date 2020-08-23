@@ -56,7 +56,7 @@ public class LetterFromTranslator {
             s = letterTranslateRuleFrom.getMapperCode(preFragmentContent, wordFragment.getKey(), nature);
             if (s == null) {
                 throw new MecoException(TranslateState.NOT_FOUNT_IN_MAPPER_RULE.getCode(),
-                        "Not fount the string [" + wordFragment.getContent() + "] in mapper rule");
+                        "Not fount the string " + wordFragment.getContent() + " in mapper rule");
             }
             builder.append(s);
             preFragmentContent = wordFragment.getContent();

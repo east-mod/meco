@@ -3,6 +3,7 @@ package com.zvvnmod.meco.translate.letter.to;
 import com.zvvnmod.meco.common.MecoException;
 import com.zvvnmod.meco.common.Strings;
 import com.zvvnmod.meco.translate.exception.TranslateState;
+import lombok.Getter;
 import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ import java.util.List;
  * TIME  : 09:44
  */
 public class ShapeWordFragment {
+    @Getter
     private List<Character> content;
 
     public ShapeWordFragment() {

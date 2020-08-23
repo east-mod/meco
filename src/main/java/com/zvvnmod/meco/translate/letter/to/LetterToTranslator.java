@@ -68,6 +68,13 @@ public class LetterToTranslator {
         String pre = "";
         for (ShapeWordFragment wordFragment : zvvnModWord.getWordFragments()) {
             String s = letterTranslateRuleTo.getMapperCode(pre, wordFragment.getKey());
+            if (s == null) {
+                throw new MecoException(TranslateState.NOT_FOUNT_IN_MAPPER_RULE.getCode(),
+                        "Not fount the string " + wordFragment.getContent() + " in mapper rule");
+            }
+            if (s.charAt(s.length() - 1) == '\u202f' && builder.charAt(builder.length() - 1) == '\u0020') {
+                builder.deleteCharAt(builder.length() - 1);
+            }
             builder.append(s);
             pre = s;
         }

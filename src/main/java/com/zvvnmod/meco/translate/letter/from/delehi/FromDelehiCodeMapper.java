@@ -402,7 +402,7 @@ public class FromDelehiCodeMapper {
         h.put("\u182c\u180d", "\ue031");
         //tail
         h.put("\u182c\u180c\u0020", "\ue033");
-        h.put("\u180c\u180d\u0020", "\ue032");
+        h.put("\u182c\u180d\u0020", "\ue032");
         h.put("\u182c\u0020", "\ue032");
         //ha
         h.put("\u0020\u182c\u1820\u0020", "\ue02f\ue00c");

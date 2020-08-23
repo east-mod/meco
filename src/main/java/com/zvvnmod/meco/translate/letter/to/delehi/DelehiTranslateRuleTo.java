@@ -28,7 +28,7 @@ public class DelehiTranslateRuleTo implements LetterTranslateRuleTo {
     }
 
     public boolean contains(String s) {
-        return false;
+        return ToDelehiCodeMapper.mapper.containsKey(s);
     }
 
     public boolean isTranslateCodePoint(char c) {

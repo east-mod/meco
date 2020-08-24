@@ -78,5 +78,6 @@ public class LetterToTranslator {
             builder.append(s);
             pre = s;
         }
+        wordCounter++;
     }
 }

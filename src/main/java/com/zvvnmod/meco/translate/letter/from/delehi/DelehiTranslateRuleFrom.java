@@ -32,8 +32,10 @@ public class DelehiTranslateRuleFrom implements LetterTranslateRuleFrom {
         }
         if (nature.equals(Nature.CHAGH)) {
             return FromDelehiCodeMapper.chaghMapper.get(s);
-        } else {
+        } else if (nature.equals(Nature.HUNDII)) {
             return FromDelehiCodeMapper.hundiiMapper.get(s);
+        } else {
+            return FromDelehiCodeMapper.saarmag.get(s);
         }
     }
 

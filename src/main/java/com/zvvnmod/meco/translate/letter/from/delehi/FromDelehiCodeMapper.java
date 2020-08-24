@@ -15,16 +15,18 @@ public class FromDelehiCodeMapper {
     public static CodeMapper mapper;
     public static CodeMapper chaghMapper;
     public static CodeMapper hundiiMapper;
+    public static CodeMapper saarmag;
     public static char[] doubleIEhishig = {'\u1820', '\u1821', '\u1822', '\u1823', '\u1824'};
 
     static {
         buildChagh();
         buildHundii();
+        buildSaarmag();
         buildMapper();
     }
 
     public static void buildChagh() {
-        chaghMapper = new CodeMapper(16);
+        chaghMapper = new CodeMapper(32);
         //middle h
         chaghMapper.put("\u182c", "\ue005\ue005");
         //h+mvs
@@ -37,10 +39,12 @@ public class FromDelehiCodeMapper {
         chaghMapper.put("\u1833\u182d\u180e", "\ue008\ue005\ue005\ue005\ue143");
         //tail g
         chaghMapper.put("\u182d\u180e\u0020", "\ue032\ue143");
+        //tail g
+        chaghMapper.put("\u182d\u0020", "\ue032");
     }
 
     public static void buildHundii() {
-        hundiiMapper = new CodeMapper(16);
+        hundiiMapper = new CodeMapper(32);
         //middle h
         hundiiMapper.put("\u182c", "\ue031");
         //h+mvs
@@ -53,6 +57,27 @@ public class FromDelehiCodeMapper {
         hundiiMapper.put("\u1833\u182d\u180e", "\ue008\ue005\ue031\ue143");
         //tail g
         hundiiMapper.put("\u182d\u180e\u0020", "\ue033\ue143");
+        //tail g
+        hundiiMapper.put("\u182d\u0020", "\ue033");
+    }
+
+    public static void buildSaarmag() {
+        saarmag = new CodeMapper(32);
+        //middle h
+        saarmag.put("\u182c", "\ue031");
+        //h+mvs
+        saarmag.put("\u182c\u180e", "\ue031\ue143");
+        //middle g
+        saarmag.put("\u182d", "\ue031");
+        saarmag.put("\u182d\u180e", "\ue031\ue143");
+
+        saarmag.put("\u1830\u182d\u180e", "\ue03d\ue031\ue143");
+        saarmag.put("\u1833\u182d\u180e", "\ue008\ue005\ue031\ue143");
+        //tail g
+        saarmag.put("\u182d\u180e\u0020", "\ue033\ue143");
+        //is verified
+        //tail g
+        saarmag.put("\u182d\u0020", "\ue032");
     }
 
     public static void buildMapper() {
@@ -480,8 +505,6 @@ public class FromDelehiCodeMapper {
         Map<String, String> g = new HashMap<>(64);
         //g
         g.put("\u0020\u182d\u0020", "\ue034");
-        //tail g
-        g.put("\u182d\u0020", "\ue032");
         //head
         g.put("\u0020\u182d", "\ue030");
         g.put("\u0020\u182d\u180d", "\ue030");
@@ -525,14 +548,22 @@ public class FromDelehiCodeMapper {
         g.put("\u0020\u182d\u1821", "\ue094");
         //middle ge
         g.put("\u182d\u1821", "\ue095");
+        g.put("\u1830\u182d\u1821", "\ue03d\ue095");
+        g.put("\u1833\u182d\u1821", "\ue008\ue005\ue095");
         //tail ge
         g.put("\u182d\u1821\u0020", "\ue096");
+        g.put("\u1830\u182d\u1821\u0020", "\ue03d\ue096");
+        g.put("\u1833\u182d\u1821\u0020", "\ue008\ue005\ue096");
         //head gi
         g.put("\u0020\u182d\u1822", "\ue097");
         //middle gi
         g.put("\u182d\u1822", "\ue098");
+        g.put("\u1830\u182d\u1822", "\ue03d\ue098");
+        g.put("\u1833\u182d\u1822", "\ue008\ue005\ue098");
         //tail gi
         g.put("\u182d\u1822\u0020", "\ue099");
+        g.put("\u1830\u182d\u1822\u0020", "\ue03d\ue099");
+        g.put("\u1833\u182d\u1822\u0020", "\ue008\ue005\ue099");
         //head g4o,g5o
         g.put("\u0020\u182d\u1823", "\ue034\ue008");
         g.put("\u0020\u182d\u1824", "\ue034\ue008");
@@ -563,6 +594,8 @@ public class FromDelehiCodeMapper {
 
         g.put("\u1830\u182d\u1825", "\ue03d\ue09b");
         g.put("\u1833\u182d\u1825", "\ue008\ue005\ue09b");
+        g.put("\u1830\u182d\u1825\u0020", "\ue03d\ue09c");
+        g.put("\u1833\u182d\u1825\u0020", "\ue008\ue005\ue09c");
         g.put("\u1830\u182d\u1825\u180c", "\ue03d\ue005\ue005\ue005\ue008\ue006");
         g.put("\u1833\u182d\u1825\u180c", "\ue008\ue005\ue005\ue005\ue005\ue008\ue006");
 
@@ -570,6 +603,8 @@ public class FromDelehiCodeMapper {
 
         g.put("\u1830\u182d\u1826", "\ue03d\ue09b");
         g.put("\u1833\u182d\u1826", "\ue008\ue005\ue09b");
+        g.put("\u1830\u182d\u1826\u0020", "\ue03d\ue09c");
+        g.put("\u1833\u182d\u1826\u0020", "\ue008\ue005\ue09c");
         g.put("\u1830\u182d\u1826\u180c", "\ue03d\ue005\ue005\ue005\ue008\ue006");
         g.put("\u1833\u182d\u1826\u180c", "\ue008\ue005\ue005\ue005\ue005\ue008\ue006");
 

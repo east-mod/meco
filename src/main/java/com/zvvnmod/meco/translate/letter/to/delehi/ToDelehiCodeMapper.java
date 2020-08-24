@@ -39,7 +39,7 @@ public class ToDelehiCodeMapper {
         mapper.put("\ue002\ue006", "\u202f\u1836\u180b\u1822");
 
         mapper.put("\ue005", "\u1820");
-        mapper.put("\ue006", "\u1822");
+        mapper.put("\ue006", "\u180d\u1822");
         mapper.put("\ue008", "\u1823");
         mapper.put("\ue008\ue006", "\u1825\u180b");
 

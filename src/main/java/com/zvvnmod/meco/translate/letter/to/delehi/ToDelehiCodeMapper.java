@@ -35,7 +35,7 @@ public class ToDelehiCodeMapper {
         mapper.put("\ue001\ue00c", "\u202f\u1826\u1828");
         mapper.put("\ue001\ue011", "\u202f\u1824\u1824");
 
-        mapper.put("\ue002", "\u1822");
+        mapper.put("\ue002", "\u1836\u180b");
         mapper.put("\ue002\ue006", "\u202f\u1836\u180b\u1822");
 
         mapper.put("\ue005", "\u1820");
@@ -123,7 +123,7 @@ public class ToDelehiCodeMapper {
         //h
         mapper.put("\ue02f", "\u182c");
         mapper.put("\ue030", "\u182c");
-        mapper.put("\ue031", "\u182c");
+        mapper.put("\ue031", "\u182c\u180d");
         mapper.put("\ue032", "\u182c\u180d");
         mapper.put("\ue032\ue00d", "\u182c\u180e\u1820");
         mapper.put("\ue033", "\u182c\u180c");
@@ -171,7 +171,7 @@ public class ToDelehiCodeMapper {
         mapper.put("\ue042", "\u1832");
         mapper.put("\ue043", "\u1832\u180b");
         mapper.put("\ue044", "\u1832");
-        mapper.put("\ue045", "\u1833");
+        mapper.put("\ue045", "\u1833\u180b");
         mapper.put("\ue046", "\u1833\u180b");
         mapper.put("\ue049", "\u1833\u180b");
         //ch

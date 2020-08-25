@@ -71,12 +71,13 @@ public class DelehiTranslateRuleFrom implements LetterTranslateRuleFrom {
     @Override
     public boolean isTranslateCodePoint(char c) {
         return MglUnicodeBlock.isNormalLetter(c) || MglUnicodeBlock.isFreeVariationSelector(c) ||
-                MglUnicodeBlock.isVowelSeparator(c) || DelehiCodeBlock.isWordConnector(c);
+                MglUnicodeBlock.isVowelSeparator(c) || DelehiCodeBlock.isWordConnector(c) ||
+                MglUnicodeBlock.otherMongolianCode(c);
     }
 
     @Override
     public boolean isMongolianCodePoint(char c) {
         return MglUnicodeBlock.isNormalLetter(c) || MglUnicodeBlock.isFreeVariationSelector(c) ||
-                MglUnicodeBlock.isVowelSeparator(c);
+                MglUnicodeBlock.isVowelSeparator(c) || MglUnicodeBlock.otherMongolianCode(c);
     }
 }

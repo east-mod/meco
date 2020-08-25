@@ -19,6 +19,7 @@ public class MglUnicodeBlock {
     public static final char FREE_VARIATION_SELECTOR_TWO = '\u180C';
     public static final char FREE_VARIATION_SELECTOR_THREE = '\u180D';
     public static final char VOWEL_SEPARATOR = '\u180E';
+    public static final char NIRUGU = '\u180A';
 
     static {
         chagh.add('\u1820');
@@ -69,4 +70,7 @@ public class MglUnicodeBlock {
         return chagh.contains(ch);
     }
 
+    public static boolean otherMongolianCode(char ch) {
+        return NIRUGU == ch;
+    }
 }

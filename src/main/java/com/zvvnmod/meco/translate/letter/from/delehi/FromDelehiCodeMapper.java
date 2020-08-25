@@ -201,8 +201,14 @@ public class FromDelehiCodeMapper {
         //tail1 4o,5o
         ehshig.put("\u1823\u0020", "\ue011");
         ehshig.put("\u1824\u0020", "\ue011");
+        ehshig.put("\u1823\u180e", "\ue011");
+        ehshig.put("\u1824\u180e", "\ue011");
         ehshig.put("\u1823\u180c\u0020", "\ue011");
         ehshig.put("\u1824\u180c\u0020", "\ue011");
+        ehshig.put("\u1823\u180e\u1820\u0020", "\ue011\ue00d");
+        ehshig.put("\u1824\u180e\u1820\u0020", "\ue011\ue00d");
+        ehshig.put("\u1823\u180e\u1821\u0020", "\ue011\ue00d");
+        ehshig.put("\u1824\u180e\u1821\u0020", "\ue011\ue00d");
         //tail1 6u,7u
         ehshig.put("\u1825\u0020", "\ue011");
         ehshig.put("\u1826\u0020", "\ue011");
@@ -235,6 +241,13 @@ public class FromDelehiCodeMapper {
         //middle n4o,n5o
         n.put("\u1828\u1823", "\ue028\ue008");
         n.put("\u1828\u1824", "\ue028\ue008");
+
+        n.put("\u1828\u1823\u180e", "\ue028\ue011");
+        n.put("\u1828\u1824\u180e", "\ue028\ue011");
+        n.put("\u1828\u1823\u180e\u1820\u0020", "\ue028\ue011\ue00d");
+        n.put("\u1828\u1823\u180e\u1821\u0020", "\ue028\ue011\ue00d");
+        n.put("\u1828\u1824\u180e\u1820\u0020", "\ue028\ue011\ue00d");
+        n.put("\u1828\u1824\u180e\u1821\u0020", "\ue028\ue011\ue00d");
 
         //middle n6u,n7u
         n.put("\u1828\u1825", "\ue028\ue008");
@@ -738,8 +751,8 @@ public class FromDelehiCodeMapper {
         //d
         d.put("\u0020\u1833\u0020", "\ue045");
         //head
-        d.put("\u0020\u1833", "\ue045");
-        d.put("\u0020\u202f\u1833", "\u0020\ue045");
+        d.put("\u0020\u1833", "\ue042");//ᠳᠤᠭᠠᠷ
+        d.put("\u0020\u202f\u1833", "\u0020\ue042");// ᠳᠤᠭᠠᠷ
         d.put("\u0020\u1833\u180b", "\ue045");
         d.put("\u0020\u202f\u1833\u180b", "\ue045");
         //middle
@@ -923,6 +936,9 @@ public class FromDelehiCodeMapper {
         w.put("\u0020\u1838", "\ue056");
         //middle
         w.put("\u1838", "\ue057");
+        w.put("\u1838\u180e", "\ue011");
+        w.put("\u1838\u180e\u1820\u0020", "\ue011\ue00d");
+        w.put("\u1838\u180e\u1821\u0020", "\ue011\ue00d");
         //tail
         w.put("\u1838\u0020", "\ue058");
 
@@ -1265,6 +1281,8 @@ public class FromDelehiCodeMapper {
         fuck.put("\u1827", "\ue057");
         //tail ee
         fuck.put("\u1827\u0020", "\ue058");
+
+        fuck.put("\u0020\u180A", "");
         return fuck;
     }
 

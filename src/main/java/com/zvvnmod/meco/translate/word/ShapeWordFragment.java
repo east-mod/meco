@@ -1,4 +1,4 @@
-package com.zvvnmod.meco.translate.letter.to;
+package com.zvvnmod.meco.translate.word;
 
 import com.zvvnmod.meco.common.MecoException;
 import com.zvvnmod.meco.common.Strings;

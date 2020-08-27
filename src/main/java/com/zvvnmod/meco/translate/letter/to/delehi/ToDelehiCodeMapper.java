@@ -1,6 +1,6 @@
 package com.zvvnmod.meco.translate.letter.to.delehi;
 
-import com.zvvnmod.meco.translate.letter.from.CodeMapper;
+import com.zvvnmod.meco.translate.word.CodeMapper;
 
 /**
  * AUTHOR: zorigt

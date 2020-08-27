@@ -3,6 +3,8 @@ package com.zvvnmod.meco.translate.letter.from;
 import com.zvvnmod.meco.common.MecoException;
 import com.zvvnmod.meco.common.Strings;
 import com.zvvnmod.meco.translate.exception.TranslateState;
+import com.zvvnmod.meco.translate.word.LetterWord;
+import com.zvvnmod.meco.translate.word.LetterWordFragment;
 import com.zvvnmod.meco.translate.word.Nature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

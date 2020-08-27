@@ -15,7 +15,7 @@ import java.util.List;
  * TIME  : 19:32
  */
 @Component
-@Rule(CodeType.Menk)
+@Rule(CodeType.Menk_Unicode)
 public class MenkTranslateRuleFrom implements LetterTranslateRuleFrom {
 
     @Override

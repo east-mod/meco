@@ -1,6 +1,5 @@
-package com.zvvnmod.meco.translate.letter.from;
+package com.zvvnmod.meco.translate.word;
 
-import com.zvvnmod.meco.translate.word.Nature;
 import lombok.Getter;
 import org.springframework.util.CollectionUtils;
 

@@ -1,6 +1,6 @@
 package com.zvvnmod.meco.translate.letter.from.delehi;
 
-import com.zvvnmod.meco.translate.letter.from.CodeMapper;
+import com.zvvnmod.meco.translate.word.CodeMapper;
 
 import java.util.HashMap;
 import java.util.Map;

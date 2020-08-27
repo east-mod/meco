@@ -895,6 +895,10 @@ public class FromMenkCodeMapper {
         y.put("\u1836", "\ue051");
         //tail
         y.put("\u1836\u0020", "\ue00e");
+
+        //middle yi
+        y.put("\u1836\u1822", "\ue006\ue006");
+
         //tail2 ya
         y.put("\u1836\u180e", "\ue051");
         y.put("\u1836\u180e\u1820\u0020", "\ue00e\ue00d");

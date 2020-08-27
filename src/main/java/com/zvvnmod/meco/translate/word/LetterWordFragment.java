@@ -4,7 +4,6 @@ import com.zvvnmod.meco.common.MecoException;
 import com.zvvnmod.meco.common.Strings;
 import com.zvvnmod.meco.translate.exception.TranslateState;
 import com.zvvnmod.meco.translate.letter.from.UnicodeType;
-import com.zvvnmod.meco.translate.word.Nature;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.util.CollectionUtils;

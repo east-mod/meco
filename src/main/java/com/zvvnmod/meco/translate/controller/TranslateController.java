@@ -22,7 +22,7 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping(path = "/meco/translate")
-public class controller extends SuperController {
+public class TranslateController extends SuperController {
 
     @Resource
     private TranslateService translateService;

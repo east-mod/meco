@@ -3,6 +3,7 @@ package com.zvvnmod.meco.translate.letter.from.menk;
 import com.zvvnmod.meco.translate.annotation.Rule;
 import com.zvvnmod.meco.translate.enumeration.CodeType;
 import com.zvvnmod.meco.translate.letter.from.LetterTranslateRuleFrom;
+import com.zvvnmod.meco.translate.letter.from.delehi.DelehiCodeBlock;
 import com.zvvnmod.meco.translate.word.MglUnicodeBlock;
 import com.zvvnmod.meco.translate.word.Nature;
 import org.springframework.stereotype.Component;
@@ -40,7 +41,7 @@ public class MenkTranslateRuleFrom implements LetterTranslateRuleFrom {
     }
 
     private String resolveDevsgerI(List<Character> pre, String s) {
-        if (!s.equals("\u1822")) {
+        if (!s.equals("\u1836") && !s.equals("\u1822")) {
             return null;
         }
         if (CollectionUtils.isEmpty(pre)) {
@@ -71,7 +72,8 @@ public class MenkTranslateRuleFrom implements LetterTranslateRuleFrom {
     @Override
     public boolean isTranslateCodePoint(char c) {
         return MglUnicodeBlock.isNormalLetter(c) || MglUnicodeBlock.isFreeVariationSelector(c) ||
-                MglUnicodeBlock.isVowelSeparator(c) || MglUnicodeBlock.otherMongolianCode(c);
+                MglUnicodeBlock.isVowelSeparator(c) || DelehiCodeBlock.isWordConnector(c) ||
+                MglUnicodeBlock.otherMongolianCode(c);
     }
 
     @Override

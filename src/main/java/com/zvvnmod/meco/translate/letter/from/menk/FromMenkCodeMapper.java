@@ -17,7 +17,7 @@ public class FromMenkCodeMapper {
     public static CodeMapper chaghMapper;
     public static CodeMapper hundiiMapper;
     public static CodeMapper saarmag;
-    public static char[] doubleIEhishig = {'\u1820', '\u1821', '\u1822', '\u1823', '\u1824'};
+    public static char[] doubleIEhishig = {'\u1820', '\u1821', '\u1823', '\u1824'};
 
     static {
         buildChagh();
@@ -754,6 +754,10 @@ public class FromMenkCodeMapper {
         //head
         d.put("\u0020\u1833", "\ue042");//ᠳᠤᠭᠠᠷ
         d.put("\u0020\u202f\u1833", "\u0020\ue042");// ᠳᠤᠭᠠᠷ
+        d.put("\u0020\u202f\u1833\u1823\u0020", "\u0020\ue045\ue00f");
+        d.put("\u0020\u202f\u1833\u1824\u0020", "\u0020\ue045\ue011");
+        d.put("\u0020\u202f\u1833\u1825\u0020", "\u0020\ue045\ue011");
+        d.put("\u0020\u202f\u1833\u1826\u0020", "\u0020\ue045\ue011");
         d.put("\u0020\u1833\u180b", "\ue045");
         d.put("\u0020\u202f\u1833\u180b", "\ue045");
         //middle
@@ -892,20 +896,39 @@ public class FromMenkCodeMapper {
         y.put("\u0020\u1836", "\ue050");
         y.put("\u0020\u202f\u1836\u180b", "\u0020\ue050");
         //middle
-        y.put("\u1836", "\ue051");
+        y.put("\u1836", "\ue006");
         //tail
         y.put("\u1836\u0020", "\ue00e");
 
+        //middle ya,ye
+        y.put("\u1836\u1820", "\ue051\ue005");
+        y.put("\u1836\u1821", "\ue051\ue005");
         //middle yi
         y.put("\u1836\u1822", "\ue006\ue006");
+        //middle y4o,y5o
+        y.put("\u1836\u1823", "\ue051\ue008");
+        y.put("\u1836\u1824", "\ue051\ue008");
+        //middle y6u,y7u
+        y.put("\u1836\u1825", "\ue051\ue008");
+        y.put("\u1836\u1826", "\ue051\ue008");
 
         //tail2 ya
         y.put("\u1836\u180e", "\ue051");
         y.put("\u1836\u180e\u1820\u0020", "\ue00e\ue00d");
         //tail2 ye
         y.put("\u1836\u180e\u1821\u0020", "\ue00e\ue00d");
+        //tail ya,ye
+        y.put("\u1836\u1820\u0020", "\ue051\ue00c");
+        y.put("\u1836\u1821\u0020", "\ue051\ue00c");
+        //tail yi
+        y.put("\u1836\u1822\u0020", "\ue051\ue00e");
+        //tail y4o,y5o,y6u,y7u
+        y.put("\u1836\u1823\u0020", "\ue051\ue011");
+        y.put("\u1836\u1824\u0020", "\ue051\ue011");
+        y.put("\u1836\u1825\u0020", "\ue051\ue011");
+        y.put("\u1836\u1826\u0020", "\ue051\ue011");
 
-        //y6u,y7u
+        //head y6u,y7u
         y.put("\u0020\u1836\u1825", "\ue050\ue008\ue006");
         y.put("\u0020\u1836\u1826", "\ue050\ue008\ue006");
         return y;

@@ -7,4 +7,9 @@ package com.zvvnmod.meco.translate.shape;
  * TIME  : 09:12
  */
 public interface ShapeTranslateRule {
+    boolean isTranslateCodePoint(char c);
+
+    boolean contains(String s);
+
+    String getMapperCode(String s);
 }

@@ -9,6 +9,8 @@ import com.zvvnmod.meco.translate.letter.from.LetterFromRuleHolder;
 import com.zvvnmod.meco.translate.letter.from.LetterFromTranslator;
 import com.zvvnmod.meco.translate.letter.to.LetterToRuleHolder;
 import com.zvvnmod.meco.translate.letter.to.LetterToTranslator;
+import com.zvvnmod.meco.translate.shape.ShapeRuleHolder;
+import com.zvvnmod.meco.translate.shape.ShapeTranslator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -28,6 +30,8 @@ public class TranslateService {
     private LetterFromRuleHolder letterFromRuleHolder;
     @Resource
     private LetterToRuleHolder letterToRuleHolder;
+    @Resource
+    private ShapeRuleHolder shapeRuleHolder;
 
     public String translate(CodeType from, CodeType to, String s) {
         if (from == to || Strings.isBlank(s)) {
@@ -52,7 +56,7 @@ public class TranslateService {
         if (codeType.getCodeSeries() == CodeSeries.Letter) {
             return new LetterFromTranslator(letterFromRuleHolder.getRule(codeType)).translate(s);
         } else if (codeType.getCodeSeries() == CodeSeries.Shape) {
-            return s;
+            return new ShapeTranslator(shapeRuleHolder.getRule(codeType)).translate(s);
         }
         logger.error("Not supported code series : {}", codeType.getCodeSeries());
         throw new MecoException(TranslateState.NOT_SUPPORTED_CODE_SERIES);
@@ -67,7 +71,7 @@ public class TranslateService {
         if (codeType.getCodeSeries() == CodeSeries.Letter) {
             return new LetterToTranslator(letterToRuleHolder.getRule(codeType)).translate(s);
         } else if (codeType.getCodeSeries() == CodeSeries.Shape) {
-            return s;
+            return new ShapeTranslator(shapeRuleHolder.getRule(codeType)).translate(s);
         }
         logger.error("Not supported code series : {}", codeType.getCodeSeries());
         throw new MecoException(TranslateState.NOT_SUPPORTED_CODE_SERIES);

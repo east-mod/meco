@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  * TIME  : 22:35
  */
 @Component
-@Rule(CodeType.Menk)
+@Rule(CodeType.Menk_Shape)
 public class MenkTranslateRuleFrom implements ShapeTranslateRule {
     @Override
     public boolean isTranslateCodePoint(char c) {

@@ -13,7 +13,7 @@ import lombok.Getter;
 public enum CodeType {
     Zvvnmod(CodeSeries.Shape),
     Delehi(CodeSeries.Letter),
-    Menk(CodeSeries.Shape),
+    Menk_Shape(CodeSeries.Shape),
     Menk_Unicode(CodeSeries.Letter),
     Oyun(CodeSeries.Letter),
     Bainu(CodeSeries.Letter);

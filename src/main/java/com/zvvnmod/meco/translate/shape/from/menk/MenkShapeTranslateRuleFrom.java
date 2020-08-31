@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Rule(CodeType.Menk_Shape)
-public class MenkTranslateRuleFrom implements ShapeTranslateRule {
+public class MenkShapeTranslateRuleFrom implements ShapeTranslateRule {
     @Override
     public boolean isTranslateCodePoint(char c) {
         return false;

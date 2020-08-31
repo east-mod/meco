@@ -18,8 +18,8 @@ import java.util.List;
  * TIME  : 19:32
  */
 @Component
-@Rule(CodeType.Menk_Unicode)
-public class MenkTranslateRuleFrom implements LetterTranslateRuleFrom {
+@Rule(CodeType.Menk_Letter)
+public class MenkLetterTranslateRuleFrom implements LetterTranslateRuleFrom {
 
     @Override
     public String getMapperCode(List<Character> pre, String s, Nature nature) {
@@ -27,16 +27,16 @@ public class MenkTranslateRuleFrom implements LetterTranslateRuleFrom {
         if (result != null) {
             return result;
         }
-        result = FromMenkCodeMapper.mapper.get(s);
+        result = FromMenkLetterCodeMapper.mapper.get(s);
         if (result != null) {
             return result;
         }
         if (nature.equals(Nature.CHAGH)) {
-            return FromMenkCodeMapper.chaghMapper.get(s);
+            return FromMenkLetterCodeMapper.chaghMapper.get(s);
         } else if (nature.equals(Nature.HUNDII)) {
-            return FromMenkCodeMapper.hundiiMapper.get(s);
+            return FromMenkLetterCodeMapper.hundiiMapper.get(s);
         } else {
-            return FromMenkCodeMapper.saarmag.get(s);
+            return FromMenkLetterCodeMapper.saarmag.get(s);
         }
     }
 
@@ -48,7 +48,7 @@ public class MenkTranslateRuleFrom implements LetterTranslateRuleFrom {
             return null;
         }
         Character c = pre.get(pre.size() - 1);
-        for (char c1 : FromMenkCodeMapper.doubleIEhishig) {
+        for (char c1 : FromMenkLetterCodeMapper.doubleIEhishig) {
             if (c1 == c) {
                 return "\ue006\ue006";
             }
@@ -58,10 +58,10 @@ public class MenkTranslateRuleFrom implements LetterTranslateRuleFrom {
 
     @Override
     public boolean contains(String s) {
-        if (FromMenkCodeMapper.mapper.containsKey(s)) {
+        if (FromMenkLetterCodeMapper.mapper.containsKey(s)) {
             return true;
         }
-        return FromMenkCodeMapper.chaghMapper.containsKey(s);
+        return FromMenkLetterCodeMapper.chaghMapper.containsKey(s);
     }
 
     @Override

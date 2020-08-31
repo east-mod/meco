@@ -12,7 +12,7 @@ import java.util.Map;
  * WEEK  : Sun
  * TIME  : 23:08
  */
-public class FromMenkCodeMapper {
+public class FromMenkLetterCodeMapper {
     public static CodeMapper mapper;
     public static CodeMapper chaghMapper;
     public static CodeMapper hundiiMapper;

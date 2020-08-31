@@ -14,9 +14,11 @@ public enum CodeType {
     Zvvnmod(CodeSeries.Shape),
     Delehi(CodeSeries.Letter),
     Menk_Shape(CodeSeries.Shape),
-    Menk_Unicode(CodeSeries.Letter),
+    Menk_Letter(CodeSeries.Letter),
     Oyun(CodeSeries.Letter),
     Bainu(CodeSeries.Letter);
+
+    public static CodeType[] codeTypes = CodeType.class.getEnumConstants();
 
     @Getter
     private final CodeSeries codeSeries;
@@ -24,8 +26,6 @@ public enum CodeType {
     CodeType(CodeSeries codeSeries) {
         this.codeSeries = codeSeries;
     }
-
-    public static CodeType[] codeTypes = CodeType.class.getEnumConstants();
 
     public static CodeType get(final String value) {
         for (CodeType codeType : codeTypes) {

@@ -8,7 +8,7 @@ import com.zvvnmod.meco.translate.word.CodeMapper;
  * WEEK  : 周一
  * TIME  : 01:43
  */
-public class FromMenkCodeMapper {
+public class FromMenkShapeCodeMapper {
     public static CodeMapper codeMapper;
 
     static {

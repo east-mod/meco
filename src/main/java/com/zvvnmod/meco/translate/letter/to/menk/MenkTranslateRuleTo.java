@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  * TIME  : 20:35
  */
 @Component
-@Rule(CodeType.Menk_Unicode)
+@Rule(CodeType.Menk_Letter)
 public class MenkTranslateRuleTo implements LetterTranslateRuleTo {
     @Override
     public String getMapperCode(String preLetterCodes, String s) {

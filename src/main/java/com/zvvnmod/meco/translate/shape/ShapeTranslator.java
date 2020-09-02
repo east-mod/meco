@@ -3,6 +3,7 @@ package com.zvvnmod.meco.translate.shape;
 import com.zvvnmod.meco.common.MecoException;
 import com.zvvnmod.meco.common.Strings;
 import com.zvvnmod.meco.translate.exception.TranslateState;
+import com.zvvnmod.meco.translate.letter.from.UnicodeType;
 import com.zvvnmod.meco.translate.word.ShapeWord;
 import com.zvvnmod.meco.translate.word.ShapeWordFragment;
 import org.slf4j.Logger;
@@ -46,14 +47,17 @@ public class ShapeTranslator {
             return Strings.BLANK;
         }
         String s0 = s + "\ue666";
-        char[] chars = s.toCharArray();
+        char[] chars = s0.toCharArray();
         word = new ShapeWord();
         wordFragment = new ShapeWordFragment();
         StringBuilder builder = new StringBuilder();
         wordCounter = 0;
-        for (char aChar : chars) {
+        wordFragment.setHead(UnicodeType.OTHER);
+        for (int i = 0; i < chars.length; i++) {
+            char aChar = chars[i];
             if (translateRule.isTranslateCodePoint(aChar)) {
                 wordFragment.push(aChar);
+                wordFragment.setTail(getUnicodeType(chars[i + 1]));
                 if (translateRule.contains(wordFragment.getKey())) {
                     continue;
                 }
@@ -79,5 +83,9 @@ public class ShapeTranslator {
         builder.deleteCharAt(builder.length() - 1);
         logger.info("{} words translated.", wordCounter);
         return builder.toString();
+    }
+
+    private UnicodeType getUnicodeType(char ch) {
+        return translateRule.isTranslateCodePoint(ch) ? UnicodeType.MONGOLIAN : UnicodeType.OTHER;
     }
 }

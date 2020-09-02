@@ -12,4 +12,6 @@ public interface ShapeTranslateRule {
     boolean contains(String s);
 
     String getMapperCode(String s);
+
+    boolean isWordCodePoint(char c);
 }

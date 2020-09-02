@@ -39,7 +39,7 @@ public class OyunTranslateRuleFrom implements LetterTranslateRuleFrom {
     }
 
     @Override
-    public boolean isMongolianCodePoint(char c) {
+    public boolean isWordCodePoint(char c) {
         return false;
     }
 

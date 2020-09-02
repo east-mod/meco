@@ -38,7 +38,7 @@ public class LetterFromTranslator {
     }
 
     private UnicodeType getUnicodeType(char ch) {
-        return letterTranslateRuleFrom.isMongolianCodePoint(ch) ? UnicodeType.MONGOLIAN : UnicodeType.OTHER;
+        return letterTranslateRuleFrom.isWordCodePoint(ch) ? UnicodeType.MONGOLIAN : UnicodeType.OTHER;
     }
 
     private void resetMglWordFragment() {
@@ -77,7 +77,7 @@ public class LetterFromTranslator {
         letterWordFragment.setHead(UnicodeType.OTHER);
         for (int i = 0; i < chars0.length; i++) {
             char c = chars0[i];
-            if (letterTranslateRuleFrom.isMongolianCodePoint(c)) {
+            if (letterTranslateRuleFrom.isWordCodePoint(c)) {
                 letterWordFragment.push(c);
                 letterWordFragment.setTail(getUnicodeType(chars0[i + 1]));
                 if (letterTranslateRuleFrom.contains(letterWordFragment.getKey())) {

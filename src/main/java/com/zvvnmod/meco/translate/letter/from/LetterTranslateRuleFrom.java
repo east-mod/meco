@@ -19,5 +19,5 @@ public interface LetterTranslateRuleFrom {
 
     boolean isTranslateCodePoint(char c);
 
-    boolean isMongolianCodePoint(char c);
+    boolean isWordCodePoint(char c);
 }

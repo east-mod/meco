@@ -16,16 +16,21 @@ import org.springframework.stereotype.Component;
 public class MenkShapeTranslateRuleFrom implements ShapeTranslateRule {
     @Override
     public boolean isTranslateCodePoint(char c) {
-        return false;
+        return c >= '\ue264' && c <= '\ue34f';
     }
 
     @Override
     public boolean contains(String s) {
-        return false;
+        return FromMenkShapeCodeMapper.codeMapper.containsKey(s);
     }
 
     @Override
     public String getMapperCode(String s) {
-        return null;
+        return FromMenkShapeCodeMapper.codeMapper.get(s);
+    }
+
+    @Override
+    public boolean isWordCodePoint(char c) {
+        return c >= '\ue264' && c <= '\ue34f';
     }
 }

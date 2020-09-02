@@ -77,7 +77,7 @@ public class MenkLetterTranslateRuleFrom implements LetterTranslateRuleFrom {
     }
 
     @Override
-    public boolean isMongolianCodePoint(char c) {
+    public boolean isWordCodePoint(char c) {
         return MglUnicodeBlock.isNormalLetter(c) || MglUnicodeBlock.isFreeVariationSelector(c) ||
                 MglUnicodeBlock.isVowelSeparator(c) || MglUnicodeBlock.otherMongolianCode(c);
     }

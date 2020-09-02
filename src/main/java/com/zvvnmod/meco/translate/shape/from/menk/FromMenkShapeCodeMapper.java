@@ -16,6 +16,7 @@ public class FromMenkShapeCodeMapper {
     }
 
     public static void build() {
+        codeMapper = new CodeMapper(1024);
         codeMapper.put("\ue264", "\ue000\ue00c");
         codeMapper.put("\ue265", "\ue000\ue00d");
         codeMapper.put("\ue266", "\ue000\ue005");
@@ -40,6 +41,37 @@ public class FromMenkShapeCodeMapper {
         codeMapper.put("\ue277", "\ue005");
         codeMapper.put("\ue278", "\ue005");
         codeMapper.put("\ue279", "\ue005");
+        codeMapper.put("\ue27a", "\ue000\ue006");
+        codeMapper.put("\ue27b", "\ue00e");
+
+        //b
+        codeMapper.put("\u0020\ue2c5", "\ue029");
+        codeMapper.put("\ue2c5", "\ue02a");
+        codeMapper.put("\ue2c5\u0020", "\ue02b");
+        //bi
+        codeMapper.put("\ue2c5\ue27c", "\ue079");
+        //hi
+        codeMapper.put("", "");
+
+        //head b4o,b5o
+        codeMapper.put("\ue2c2\ue292", "\ue082");
+
+        //head h
+        codeMapper.put("\ue2ce", "\ue02f");
+
+        //middle m
+        codeMapper.put("\ue2f4", "\ue037");
+
+
+        //tail l
+        codeMapper.put("\ue2f9", "\ue03b");
+
+        //top o
+        codeMapper.put("\ue2ab", "");
+
+        codeMapper.put("\ue2b5", "\ue00c");
+        codeMapper.put("\ue2bd", "\ue015");
+        codeMapper.put("\ue2d6", "\ue032");
 
     }
 }

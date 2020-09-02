@@ -530,6 +530,8 @@ public class FromDelehiCodeMapper {
         g.put("\u0020\u182d\u1820\u0020", "\ue034\ue00c");
         //ge
         g.put("\u0020\u182d\u1821\u0020", "\ue094\ue00d");
+        //gee
+        g.put("\u0020\u182d\u1827\u0020", "\ue0bd");
         //gi
         g.put("\u0020\u182d\u1822\u0020", "\ue092");
         //g4o,g5o
@@ -567,6 +569,12 @@ public class FromDelehiCodeMapper {
         g.put("\u182d\u1821\u0020", "\ue096");
         g.put("\u1830\u182d\u1821\u0020", "\ue03d\ue096");
         g.put("\u1833\u182d\u1821\u0020", "\ue008\ue005\ue096");
+        //head gee
+        g.put("\u0020\u182d\u1827", "\ue0be");
+        //middle gee
+        g.put("\u182d\u1827", "\ue0bf");
+        //tail gee
+        g.put("\u182d\u1827\u0020", "\ue0c0");
         //head gi
         g.put("\u0020\u182d\u1822", "\ue097");
         //middle gi

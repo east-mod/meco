@@ -3,7 +3,7 @@ package com.zvvnmod.meco.translate.shape;
 import com.zvvnmod.meco.common.MecoException;
 import com.zvvnmod.meco.common.Strings;
 import com.zvvnmod.meco.translate.exception.TranslateState;
-import com.zvvnmod.meco.translate.letter.from.UnicodeType;
+import com.zvvnmod.meco.translate.letter.from.CharType;
 import com.zvvnmod.meco.translate.word.ShapeWord;
 import com.zvvnmod.meco.translate.word.ShapeWordFragment;
 import org.slf4j.Logger;
@@ -52,30 +52,35 @@ public class ShapeTranslator {
         wordFragment = new ShapeWordFragment();
         StringBuilder builder = new StringBuilder();
         wordCounter = 0;
-        wordFragment.setHead(UnicodeType.OTHER);
+        wordFragment.setHead(CharType.OTHER);
         for (int i = 0; i < chars.length; i++) {
             char aChar = chars[i];
             if (translateRule.isTranslateCodePoint(aChar)) {
                 wordFragment.push(aChar);
-                wordFragment.setTail(getUnicodeType(chars[i + 1]));
+                wordFragment.setTail(getCharType(chars[i + 1]));
                 if (translateRule.contains(wordFragment.getKey())) {
                     continue;
                 }
                 wordFragment.pop();
+                wordFragment.setTail(getCharType(aChar));
                 if (wordFragment.isBlank()) {
                     throw new MecoException(TranslateState.NOT_FOUNT_IN_MAPPER_RULE.getCode(),
                             "Not fount the string [" + aChar + "] in mapper rule");
                 }
                 word.add(wordFragment);
                 wordFragment = new ShapeWordFragment();
-                wordFragment.push(aChar);
+                wordFragment.setHead(getCharType(chars[i - 1]));
+                i--;
             } else {
                 if (wordFragment.isNotBlank()) {
+                    wordFragment.setTail(CharType.OTHER);
                     word.add(wordFragment);
                     wordFragment = new ShapeWordFragment();
+                    wordFragment.setHead(CharType.OTHER);
                 }
                 if (word.isNotBlank()) {
                     translateWord(builder, word);
+                    word = new ShapeWord();
                 }
                 builder.append(aChar);
             }
@@ -85,7 +90,7 @@ public class ShapeTranslator {
         return builder.toString();
     }
 
-    private UnicodeType getUnicodeType(char ch) {
-        return translateRule.isTranslateCodePoint(ch) ? UnicodeType.MONGOLIAN : UnicodeType.OTHER;
+    private CharType getCharType(char ch) {
+        return translateRule.isTranslateCodePoint(ch) ? CharType.MONGOLIAN : CharType.OTHER;
     }
 }

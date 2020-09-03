@@ -6,6 +6,6 @@ package com.zvvnmod.meco.translate.letter.from;
  * WEEK  : Mon
  * TIME  : 21:20
  */
-public enum UnicodeType {
+public enum CharType {
     MONGOLIAN, OTHER;
 }

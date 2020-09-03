@@ -3,7 +3,7 @@ package com.zvvnmod.meco.translate.word;
 import com.zvvnmod.meco.common.MecoException;
 import com.zvvnmod.meco.common.Strings;
 import com.zvvnmod.meco.translate.exception.TranslateState;
-import com.zvvnmod.meco.translate.letter.from.UnicodeType;
+import com.zvvnmod.meco.translate.letter.from.CharType;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.util.CollectionUtils;
@@ -19,9 +19,9 @@ import java.util.List;
  */
 public class ShapeWordFragment {
     @Setter
-    private UnicodeType head;
+    private CharType head;
     @Setter
-    private UnicodeType tail;
+    private CharType tail;
     @Getter
     private List<Character> content;
 
@@ -65,11 +65,11 @@ public class ShapeWordFragment {
             throw new MecoException(TranslateState.UNICODE_TYPE_NOT_BE_NULL);
         }
         StringBuilder builder = new StringBuilder(content.size() + 2);
-        if (!head.equals(UnicodeType.MONGOLIAN)) {
+        if (!head.equals(CharType.MONGOLIAN)) {
             builder.append('\u0020');
         }
         content.forEach(builder::append);
-        if (!tail.equals(UnicodeType.MONGOLIAN)) {
+        if (!tail.equals(CharType.MONGOLIAN)) {
             builder.append('\u0020');
         }
         return builder.toString();

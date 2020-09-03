@@ -37,8 +37,8 @@ public class LetterFromTranslator {
         this.letterWord = new LetterWord();
     }
 
-    private UnicodeType getUnicodeType(char ch) {
-        return letterTranslateRuleFrom.isWordCodePoint(ch) ? UnicodeType.MONGOLIAN : UnicodeType.OTHER;
+    private CharType getUnicodeType(char ch) {
+        return letterTranslateRuleFrom.isWordCodePoint(ch) ? CharType.MONGOLIAN : CharType.OTHER;
     }
 
     private void resetMglWordFragment() {
@@ -74,7 +74,7 @@ public class LetterFromTranslator {
         String s1 = s0 + "\ue666";
         char[] chars0 = s1.toCharArray();
         StringBuilder builder = new StringBuilder(chars0.length * 2);
-        letterWordFragment.setHead(UnicodeType.OTHER);
+        letterWordFragment.setHead(CharType.OTHER);
         for (int i = 0; i < chars0.length; i++) {
             char c = chars0[i];
             if (letterTranslateRuleFrom.isWordCodePoint(c)) {
@@ -96,10 +96,10 @@ public class LetterFromTranslator {
                 i--;
             } else {
                 if (letterWordFragment.isNotBlank()) {
-                    letterWordFragment.setTail(UnicodeType.OTHER);
+                    letterWordFragment.setTail(CharType.OTHER);
                     letterWord.add(letterWordFragment);
                     resetMglWordFragment();
-                    letterWordFragment.setHead(UnicodeType.OTHER);
+                    letterWordFragment.setHead(CharType.OTHER);
                 }
                 if (letterWord.isNotBlank()) {
                     translateWord(builder, letterWord);

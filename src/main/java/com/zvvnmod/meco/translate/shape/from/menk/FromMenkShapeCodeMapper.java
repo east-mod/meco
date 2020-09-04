@@ -244,12 +244,13 @@ public class FromMenkShapeCodeMapper {
                 b.put("\u0020" + item + s + "\u0020", "\ue082\ue006");
             }
         });
-        //bi
-        b.put("\u0020\ue2c5\ue27c\u0020", "\ue079");
-        b.put("\u0020\ue2c1\ue27c\u0020", "\ue079");
-        //tail bi
-        b.put("\ue2c5\ue27c\u0020", "\ue081");
-        b.put("\ue2c1\ue27c\u0020", "\ue081");
+        //bi,tail bi
+        b1.forEach(item -> {
+            b.put("\u0020" + item + "\ue27c", "\ue079");
+            b.put(item + "\ue27c", "\ue081");
+            b.put(item + "\ue27c\u0020", "\ue081");
+            b.put("\u0020" + item + "\ue27c" + "\u0020", "\ue079");
+        });
         //top,middle bi
         b1.forEach(item -> {
             for (String s : shelbList) {
@@ -307,12 +308,79 @@ public class FromMenkShapeCodeMapper {
         List<String> middleGa = Lists.newArrayList("\ue2d9", "\ue2ea", "\ue2ec");
         middleGa.forEach(item -> buildLocateChar(hg, item, "\ue035"));
 
+        List<String> h1 = Lists.newArrayList("\ue2d0", "\ue2e3", "\ue2da", "\ue2eb");
+        List<String> h2 = Lists.newArrayList("\ue2d4", "\ue2e6", "\ue2ed", "\ue2dd");
+        //head he,ge
+        h1.forEach(item -> {
+            for (String shud : shudList) {
+                hg.put("\u0020" + item + shud, "\ue094");
+                hg.put(item + shud, "\ue095");
+                hg.put("\u0020" + item + shud + "\u0020", "\ue094");
+                hg.put(item + shud + "\u0020", "\ue095");
+            }
+        });
+        //hu
+        h2.forEach(item -> {
+            for (String cycleTailU : cycleTailUList) {
+                buildLocateChar(hg, item + cycleTailU, "\ue093");
+            }
+        });
+        //tail bu
+        h2.forEach(item -> {
+            for (String s : cycleTailGedesList) {
+                hg.put("\u0020" + item + s, "\ue09c");
+                hg.put(item + s, "\ue09b");
+                hg.put(item + s + "\u0020", "\ue09c");
+                hg.put("\u0020" + item + s + "\u0020", "\ue09c");
+            }
+        });
+        //head hu,middle hu
+        h2.forEach(item -> {
+            for (String s : cycleNoTailGedesList) {
+                hg.put("\u0020" + item + s, "\ue09b");
+                hg.put(item + s, "\ue09b");
+                hg.put(item + s + "\u0020", "\ue09b");
+                hg.put("\u0020" + item + s + "\u0020", "\ue09b");
+            }
+        });
+        //head bu
+        h2.forEach(item -> {
+            for (String s : cycleGedesForU) {
+                hg.put("\u0020" + item + s, "\ue09a");
+                hg.put(item + s, "\ue09a");
+                hg.put(item + s + "\u0020", "\ue09a");
+                hg.put("\u0020" + item + s + "\u0020", "\ue09a");
+            }
+        });
+
+
         //tail g
         //hi,gi
         hg.put("\u0020\ue2d0\ue27c\u0020", "\ue092");
         hg.put("\u0020\ue2da\ue27c\u0020", "\ue092");
         //hi,gi tail
         hg.put("\ue2da\ue27c\u0020", "\ue099");
+
+        //hi,tail hi
+        h1.forEach(item -> {
+            hg.put("\u0020" + item + "\ue27c", "\ue092");
+            hg.put(item + "\ue27c", "\ue099");
+            hg.put(item + "\ue27c\u0020", "\ue099");
+            hg.put("\u0020" + item + "\ue27c" + "\u0020", "\ue092");
+        });
+        //top,middle hi
+        h1.forEach(item -> {
+            for (String s : shelbList) {
+                hg.put("\u0020" + item + s, "\ue097");
+                hg.put(item + s, "\ue098");
+                hg.put(item + s + "\u0020", "\ue098");
+                hg.put("\u0020" + item + s + "\u0020", "\ue097");
+            }
+            hg.put("\u0020" + item + cycleShelb, "\ue097");
+            hg.put(item + cycleShelb, "\ue098");
+            hg.put(item + cycleShelb + "\u0020", "\ue098");
+            hg.put("\u0020" + item + cycleShelb + "\u0020", "\ue097");
+        });
         return hg;
     }
 

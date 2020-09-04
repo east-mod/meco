@@ -42,6 +42,7 @@ public class FromMenkShapeCodeMapper {
 
     static {
         build();
+        codeMapper.combine(buildTailI());
         codeMapper.combine(buildEng());
         codeMapper.combine(buildShud());
         codeMapper.combine(buildDoubleShud());
@@ -52,6 +53,10 @@ public class FromMenkShapeCodeMapper {
         codeMapper.combine(buildM());
         codeMapper.combine(buildL());
         codeMapper.combine(buildF());
+        codeMapper.combine(buildS());
+        codeMapper.combine(buildSH());
+        codeMapper.combine(buildTD());
+        codeMapper.combine(buildTR());
     }
 
     public static void build() {
@@ -74,7 +79,6 @@ public class FromMenkShapeCodeMapper {
         codeMapper.put("\ue275\u0020", "\ue005\ue00d");
         codeMapper.put("\u0020\ue279\u0020", "\ue005");
         codeMapper.put("\u0020\ue27a", "\ue000\ue006");
-        codeMapper.put("\ue27b\u0020", "\ue00e");
 
         codeMapper.put("\ue27d", "\ue005\ue006");
 
@@ -117,6 +121,7 @@ public class FromMenkShapeCodeMapper {
         codeMapper.put("\ue28d\u0020", "\ue011");
         codeMapper.put("\ue296\u0020", "\ue011");
         codeMapper.put("\ue2a3\u0020", "\ue011");
+        codeMapper.put("\ue32b\u0020", "\ue011");
         //tail2 u
         codeMapper.put("\u0020\ue297", "\ue010");
         codeMapper.put("\u0020\ue2a4", "\ue010");
@@ -130,6 +135,7 @@ public class FromMenkShapeCodeMapper {
         codeMapper.put("\u0020\ue28d\u0020", "\ue01b");
         codeMapper.put("\u0020\ue296\u0020", "\ue01b");
         codeMapper.put("\u0020\ue2a3\u0020", "\ue01b");
+        codeMapper.put("\u0020\ue32b\u0020", "\ue01b");
         //eu
         codeMapper.put("\u0020\ue294\u0020", "\ue000\ue011");
         codeMapper.put("\u0020\ue2a1\u0020", "\ue000\ue011");
@@ -139,6 +145,13 @@ public class FromMenkShapeCodeMapper {
         codeMapper.put("\u0020\ue2ae", "\ue000\ue057");
         codeMapper.put("\ue2af\u0020", "\ue058");
         codeMapper.put("\ue2b0", "\ue057");
+    }
+
+    private static Map<String, String> buildTailI() {
+        Map<String, String> i = new HashMap<>(64);
+        List<String> tailI = Lists.newArrayList("\ue27b", "\ue31c", "\ue31f");
+        tailI.forEach(item -> buildLocateChar(i, item, "\ue00e"));
+        return i;
     }
 
     private static Map<String, String> buildEng() {
@@ -489,6 +502,10 @@ public class FromMenkShapeCodeMapper {
             hg.put(item + cycleShelb + "\u0020", "\ue098");
             hg.put("\u0020" + item + cycleShelb + "\u0020", "\ue097");
         });
+        //h,g
+        buildLocateChar(hg, "\ue2df", "\ue031");
+        buildLocateChar(hg, "\ue2f0", "\ue031");
+        buildLocateChar(hg, "\ue2ef", "\ue031");
         return hg;
     }
 
@@ -518,12 +535,78 @@ public class FromMenkShapeCodeMapper {
 
     private static Map<String, String> buildS() {
         Map<String, String> s = new HashMap<>(64);
+        buildLocateChar(s, "\ue2fd", "\ue03c");
+        buildLocateChar(s, "\ue2fe", "\ue03c");
+        buildLocateChar(s, "\ue301", "\ue03d");
+        buildLocateChar(s, "\ue302", "\ue03d");
+        buildLocateChar(s, "\ue2ff", "\ue03e");
         return s;
     }
 
     private static Map<String, String> buildSH() {
         Map<String, String> sh = new HashMap<>(64);
+        buildLocateChar(sh, "\ue303", "\ue03f");
+        buildLocateChar(sh, "\ue304", "\ue03f");
+        buildLocateChar(sh, "\ue306", "\ue040");
+        buildLocateChar(sh, "\ue307", "\ue040");
+        buildLocateChar(sh, "\ue305", "\ue041");
         return sh;
+    }
+
+    private static Map<String, String> buildTD() {
+        Map<String, String> td = new HashMap<>(64);
+        List<String> topTList = Lists.newArrayList("\ue308", "\ue309", "\ue30e", "\ue30f");
+        topTList.forEach(item -> buildLocateChar(td, item, "\ue042"));
+        List<String> middleTList = Lists.newArrayList("\ue30c", "\ue30d");
+        middleTList.forEach(item -> buildLocateChar(td, item, "\ue043"));
+        buildLocateChar(td, "\ue30a", "\ue044");
+        List<String> dList = Lists.newArrayList("\ue30b", "\ue310", "\ue313");
+        dList.forEach(item -> {
+            td.put("\u0020" + item, "\ue045");
+            td.put(item, "\ue046");
+            td.put(item + "\u0020", "\ue046");
+            td.put("\u0020" + item + "\u0020", "\ue045");
+        });
+        td.put("\u0020\uE311", "\ue001\ue00c");
+        td.put("\uE311", "\ue008\ue00c");
+        td.put("\uE311\u0020", "\ue008\ue00c");
+        td.put("\u0020\uE311\u0020", "\ue001\ue00c");
+
+        buildLocateChar(td, "\uE312", "\ue049");
+
+        td.put("\u0020\uE314", "\ue001\ue005");
+        td.put("\uE314", "\ue008\ue005");
+        td.put("\uE314\u0020", "\ue008\ue005");
+        td.put("\u0020\uE314\u0020", "\ue001\ue005");
+        return td;
+    }
+
+    private static Map<String, String> buildTR() {
+        Map<String, String> tr = new HashMap<>(64);
+        buildLocateChar(tr, "\ue315", "\ue04a");
+        buildLocateChar(tr, "\ue317", "\ue04b");
+        buildLocateChar(tr, "\ue316", "\ue04c");
+        return tr;
+    }
+
+    private static Map<String, String> buildJ() {
+        Map<String, String> j = new HashMap<>(64);
+        return j;
+    }
+
+    private static Map<String, String> buildY() {
+        Map<String, String> y = new HashMap<>(64);
+        return y;
+    }
+
+    private static Map<String, String> buildR() {
+        Map<String, String> r = new HashMap<>(64);
+        return r;
+    }
+
+    private static Map<String, String> buildW() {
+        Map<String, String> w = new HashMap<>(64);
+        return w;
     }
 
     private static Map<String, String> buildF() {
@@ -535,6 +618,31 @@ public class FromMenkShapeCodeMapper {
         f.put("\ue330\ue27c\u0020", "\ue0a7");
         f.put("\ue32d\ue27c\u0020", "\ue0a7");
         return f;
+    }
+
+    private static Map<String, String> buildK() {
+        Map<String, String> k = new HashMap<>(64);
+        return k;
+    }
+
+    private static Map<String, String> buildTS() {
+        Map<String, String> ts = new HashMap<>(64);
+        return ts;
+    }
+
+    private static Map<String, String> buildZ() {
+        Map<String, String> z = new HashMap<>(64);
+        return z;
+    }
+
+    private static Map<String, String> buildHH() {
+        Map<String, String> hh = new HashMap<>(64);
+        return hh;
+    }
+
+    private static Map<String, String> buildRH() {
+        Map<String, String> rh = new HashMap<>(64);
+        return rh;
     }
 
     private static void buildLocateChar(Map<String, String> map, String s, String mapperString) {

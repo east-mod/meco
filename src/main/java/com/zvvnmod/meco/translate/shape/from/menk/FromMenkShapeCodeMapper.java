@@ -65,8 +65,6 @@ public class FromMenkShapeCodeMapper {
         codeMapper.put("\ue26a\u0020", "\ue00d");
         codeMapper.put("\ue26b\u0020", "\ue005\ue00d");
 
-
-        codeMapper.put("\ue26e", "\ue005\ue005");
         codeMapper.put("\u0020\ue270\u0020", "\ue000\ue00d");
         codeMapper.put("\u0020\ue271", "\ue000");
         codeMapper.put("\u0020\ue272", "\ue000\ue005");
@@ -275,17 +273,116 @@ public class FromMenkShapeCodeMapper {
             b.put(item + cycleShelb + "\u0020", "\ue080");
             b.put("\u0020" + item + cycleShelb + "\u0020", "\ue07f");
         });
+        //b
+        b.put("\u0020\ue2c7", "\ue029");
+        b.put("\ue2c7", "\ue02a");
+        b.put("\ue2c7\u0020", "\ue02a");
+        b.put("\u0020\ue2c7\u0020", "\ue029");
+        //b
+        buildLocateChar(b, "\ue2c3", "\ue02b");
         return b;
     }
 
     private static Map<String, String> buildP() {
         Map<String, String> p = new HashMap<>(64);
-        //pi
-        p.put("\u0020\ue2c8\ue27c\u0020", "\ue086");
-        p.put("\u0020\ue2cb\ue27c\u0020", "\ue086");
-        //tail pi
-        p.put("\ue2cb\ue27c\u0020", "\ue081");
-        p.put("\ue2c8\ue27c\u0020", "\ue081");
+        //top,middle p with a,e,i
+        List<String> p1 = Lists.newArrayList("\ue2c8", "\ue2cb");
+        //top,middle p with o,u
+        List<String> p2 = Lists.newArrayList("\ue2cc", "\ue2c9");
+        //p1,p2
+        p1.forEach(item -> {
+            p.put(item, "\ue02d");
+            p.put("\u0020" + item, "\ue02c");
+            p.put(item + "\u0020", "\ue02c");
+            p.put("\u0020" + item + "\u0020", "\ue02c");
+        });
+        p2.forEach(item -> {
+            p.put(item, "\ue02d");
+            p.put("\u0020" + item, "\ue02c");
+            p.put(item + "\u0020", "\ue02c");
+            p.put("\u0020" + item + "\u0020", "\ue02c");
+        });
+        //head,middle pa,pe
+        p1.forEach(item -> {
+            for (String shud : shudList) {
+                p.put("\u0020" + item + shud, "\ue089");
+                p.put(item + shud, "\ue08a");
+                p.put("\u0020" + item + shud + "\u0020", "\ue089");
+                p.put(item + shud + "\u0020", "\ue08a");
+            }
+        });
+        //pa,pe tail pa,pe
+        p1.forEach(item -> {
+            for (String s : cycleTsatslagaList) {
+                p.put("\u0020" + item + s, "\ue085");
+                p.put(item + s, "\ue08b");
+                p.put("\u0020" + item + s + "\u0020", "\ue085");
+                p.put(item + s + "\u0020", "\ue08b");
+            }
+        });
+        //pu
+        p2.forEach(item -> {
+            for (String cycleTailU : cycleTailUList) {
+                p.put("\u0020" + item + cycleTailU, "\ue088");
+                p.put(item + cycleTailU, "\ue088");
+                p.put("\u0020" + item + cycleTailU + "\u0020", "\ue088");
+                p.put(item + cycleTailU + "\u0020", "\ue088");
+            }
+        });
+        //po,tail po,pu
+        p2.forEach(item -> {
+            for (String s : cycleTailGedesList) {
+                p.put("\u0020" + item + s, "\ue087");
+                p.put(item + s, "\ue091");
+                p.put(item + s + "\u0020", "\ue091");
+                p.put("\u0020" + item + s + "\u0020", "\ue087");
+            }
+        });
+        //head po,middle po,pu
+        p2.forEach(item -> {
+            for (String s : cycleNoTailGedesList) {
+                p.put("\u0020" + item + s, "\ue08f");
+                p.put(item + s, "\ue090");
+                p.put(item + s + "\u0020", "\ue090");
+                p.put("\u0020" + item + s + "\u0020", "\ue08f");
+            }
+        });
+        //head pu
+        p2.forEach(item -> {
+            for (String s : cycleGedesForU) {
+                p.put("\u0020" + item + s, "\ue082\ue006");
+                p.put(item + s, "\ue082\ue006");
+                p.put(item + s + "\u0020", "\ue082\ue006");
+                p.put("\u0020" + item + s + "\u0020", "\ue082\ue006");
+            }
+        });
+        //pi,tail pi
+        p1.forEach(item -> {
+            p.put("\u0020" + item + "\ue27c", "\ue086");
+            p.put(item + "\ue27c", "\ue08e");
+            p.put(item + "\ue27c\u0020", "\ue08e");
+            p.put("\u0020" + item + "\ue27c" + "\u0020", "\ue086");
+        });
+        //top,middle pi
+        p1.forEach(item -> {
+            for (String s : shelbList) {
+                p.put("\u0020" + item + s, "\ue08c");
+                p.put(item + s, "\ue08d");
+                p.put(item + s + "\u0020", "\ue08d");
+                p.put("\u0020" + item + s + "\u0020", "\ue08c");
+            }
+            p.put("\u0020" + item + cycleShelb, "\ue08c");
+            p.put(item + cycleShelb, "\ue08d");
+            p.put(item + cycleShelb + "\u0020", "\ue08d");
+            p.put("\u0020" + item + cycleShelb + "\u0020", "\ue08c");
+        });
+        //p
+        p.put("\u0020\ue2c7", "\ue02c");
+        p.put("\ue2c7", "\ue02d");
+        p.put("\ue2c7\u0020", "\ue02d");
+        p.put("\u0020\ue2c7\u0020", "\ue02c");
+        //p
+        buildLocateChar(p, "\ue2c3", "\ue02e");
         return p;
     }
 

@@ -28,7 +28,7 @@ public class FromMenkShapeCodeMapper {
 
     private static final List<String> cycleGedesForU = Lists.newArrayList("\ue29d", "\ue2aa");
 
-    private static final List<String> shelbList = Lists.newArrayList("\ue27e", "\ue280");
+    private static final List<String> shelbList = Lists.newArrayList("\ue27e", "\ue280", "\ue321");
 
     private static final String cycleShelb = "\ue27f";
 
@@ -52,11 +52,20 @@ public class FromMenkShapeCodeMapper {
         codeMapper.combine(buildHG());
         codeMapper.combine(buildM());
         codeMapper.combine(buildL());
-        codeMapper.combine(buildF());
         codeMapper.combine(buildS());
         codeMapper.combine(buildSH());
         codeMapper.combine(buildTD());
         codeMapper.combine(buildTR());
+        codeMapper.combine(buildJ());
+        codeMapper.combine(buildY());
+        codeMapper.combine(buildR());
+        codeMapper.combine(buildW());
+        codeMapper.combine(buildF());
+        codeMapper.combine(buildK());
+        codeMapper.combine(buildTS());
+        codeMapper.combine(buildZ());
+        codeMapper.combine(buildHH());
+        codeMapper.combine(buildRH());
     }
 
     public static void build() {
@@ -390,12 +399,12 @@ public class FromMenkShapeCodeMapper {
             p.put("\u0020" + item + cycleShelb + "\u0020", "\ue08c");
         });
         //p
-        p.put("\u0020\ue2c7", "\ue02c");
-        p.put("\ue2c7", "\ue02d");
-        p.put("\ue2c7\u0020", "\ue02d");
-        p.put("\u0020\ue2c7\u0020", "\ue02c");
+        p.put("\u0020\ue2cd", "\ue02c");
+        p.put("\ue2cd", "\ue02d");
+        p.put("\ue2cd\u0020", "\ue02d");
+        p.put("\u0020\ue2cd\u0020", "\ue02c");
         //p
-        buildLocateChar(p, "\ue2c3", "\ue02e");
+        buildLocateChar(p, "\ue2ca", "\ue02e");
         return p;
     }
 
@@ -591,57 +600,271 @@ public class FromMenkShapeCodeMapper {
 
     private static Map<String, String> buildJ() {
         Map<String, String> j = new HashMap<>(64);
+        List<String> j1 = Lists.newArrayList("\ue318", "\ue319", "\ue31a");
+        j1.forEach(item -> buildLocateChar(j, item, "\ue04d"));
+        buildLocateChar(j, "\ue31b", "\ue04f");
+        buildLocateChar(j, "\ue31d", "\ue04e");
         return j;
     }
 
     private static Map<String, String> buildY() {
         Map<String, String> y = new HashMap<>(64);
+        buildLocateChar(y, "\ue31e", "\ue050");
+        buildLocateChar(y, "\ue320", "\ue051");
         return y;
     }
 
     private static Map<String, String> buildR() {
         Map<String, String> r = new HashMap<>(64);
+        List<String> r1 = Lists.newArrayList("\ue322", "\ue323", "\ue324");
+        r1.forEach(item -> buildLocateChar(r, item, "\ue053"));
+        List<String> r2 = Lists.newArrayList("\ue326", "\ue327", "\ue328");
+        r2.forEach(item -> buildLocateChar(r, item, "\ue054"));
+        buildLocateChar(r, "\ue325", "\ue055");
         return r;
     }
 
     private static Map<String, String> buildW() {
         Map<String, String> w = new HashMap<>(64);
+        buildLocateChar(w, "\ue329", "\ue056");
+        buildLocateChar(w, "\ue32c", "\ue057");
+        buildLocateChar(w, "\ue32a", "\ue058");
         return w;
     }
 
     private static Map<String, String> buildF() {
         Map<String, String> f = new HashMap<>(64);
-        //fi
-        f.put("\u0020\ue32d\ue27c\u0020", "\ue09f");
-        f.put("\u0020\ue330\ue27c\u0020", "\ue09f");
-        //tail fi
-        f.put("\ue330\ue27c\u0020", "\ue0a7");
-        f.put("\ue32d\ue27c\u0020", "\ue0a7");
+        //top,middle f with a,e,i
+        List<String> f1 = Lists.newArrayList("\ue32d", "\ue330");
+        //top,middle f with o,u
+        List<String> f2 = Lists.newArrayList("\ue32e", "\ue331");
+        //f1,f2
+        f1.forEach(item -> {
+            f.put(item, "\ue05a");
+            f.put("\u0020" + item, "\ue059");
+            f.put(item + "\u0020", "\ue059");
+            f.put("\u0020" + item + "\u0020", "\ue059");
+        });
+        f2.forEach(item -> {
+            f.put(item, "\ue05a");
+            f.put("\u0020" + item, "\ue059");
+            f.put(item + "\u0020", "\ue059");
+            f.put("\u0020" + item + "\u0020", "\ue059");
+        });
+        //head,middle fa,fe
+        f1.forEach(item -> {
+            for (String shud : shudList) {
+                f.put("\u0020" + item + shud, "\ue0a2");
+                f.put(item + shud, "\ue0a3");
+                f.put("\u0020" + item + shud + "\u0020", "\ue0a2");
+                f.put(item + shud + "\u0020", "\ue0a3");
+            }
+        });
+        //fa,fe tail fa,fe
+        f1.forEach(item -> {
+            for (String s : cycleTsatslagaList) {
+                f.put("\u0020" + item + s, "\ue09e");
+                f.put(item + s, "\ue0a4");
+                f.put("\u0020" + item + s + "\u0020", "\ue09e");
+                f.put(item + s + "\u0020", "\ue0a4");
+            }
+        });
+        //fu
+        f2.forEach(item -> {
+            for (String cycleTailU : cycleTailUList) {
+                f.put("\u0020" + item + cycleTailU, "\ue0a1");
+                f.put(item + cycleTailU, "\ue0a1");
+                f.put("\u0020" + item + cycleTailU + "\u0020", "\ue0a1");
+                f.put(item + cycleTailU + "\u0020", "\ue0a1");
+            }
+        });
+        //fo,tail fo,fu
+        f2.forEach(item -> {
+            for (String s : cycleTailGedesList) {
+                f.put("\u0020" + item + s, "\ue0a0");
+                f.put(item + s, "\ue0aa");
+                f.put(item + s + "\u0020", "\ue0aa");
+                f.put("\u0020" + item + s + "\u0020", "\ue0a0");
+            }
+        });
+        //head fo,middle fo,fu
+        f2.forEach(item -> {
+            for (String s : cycleNoTailGedesList) {
+                f.put("\u0020" + item + s, "\ue08f");
+                f.put(item + s, "\ue090");
+                f.put(item + s + "\u0020", "\ue090");
+                f.put("\u0020" + item + s + "\u0020", "\ue08f");
+            }
+        });
+        //head fu
+        f2.forEach(item -> {
+            for (String s : cycleGedesForU) {
+                f.put("\u0020" + item + s, "\ue08f\ue006");
+                f.put(item + s, "\ue08f\ue006");
+                f.put(item + s + "\u0020", "\ue08f\ue006");
+                f.put("\u0020" + item + s + "\u0020", "\ue08f\ue006");
+            }
+        });
+        //fi,tail fi
+        f1.forEach(item -> {
+            f.put("\u0020" + item + "\ue27c", "\ue09f");
+            f.put(item + "\ue27c", "\ue0a7");
+            f.put(item + "\ue27c\u0020", "\ue0a7");
+            f.put("\u0020" + item + "\ue27c" + "\u0020", "\ue09f");
+        });
+        //top,middle fi
+        f1.forEach(item -> {
+            for (String s : shelbList) {
+                f.put("\u0020" + item + s, "\ue0a5");
+                f.put(item + s, "\ue0a6");
+                f.put(item + s + "\u0020", "\ue0a6");
+                f.put("\u0020" + item + s + "\u0020", "\ue0a5");
+            }
+            f.put("\u0020" + item + cycleShelb, "\ue0a5");
+            f.put(item + cycleShelb, "\ue0a6");
+            f.put(item + cycleShelb + "\u0020", "\ue0a6");
+            f.put("\u0020" + item + cycleShelb + "\u0020", "\ue0a5");
+        });
+        //f
+        f.put("\u0020\ue332", "\ue059");
+        f.put("\ue332", "\ue05a");
+        f.put("\ue332\u0020", "\ue05a");
+        f.put("\u0020\ue332\u0020", "\ue059");
+        //f
+        buildLocateChar(f, "\ue32f", "\ue05b");
         return f;
     }
 
     private static Map<String, String> buildK() {
         Map<String, String> k = new HashMap<>(64);
+        //top,middle k with a,e,i
+        List<String> k1 = Lists.newArrayList("\ue333", "\ue336");
+        //top,middle k with o,u
+        List<String> k2 = Lists.newArrayList("\ue334", "\ue337");
+        //k1,k2
+        k1.forEach(item -> {
+            k.put(item, "\ue05d");
+            k.put("\u0020" + item, "\ue05c");
+            k.put(item + "\u0020", "\ue05c");
+            k.put("\u0020" + item + "\u0020", "\ue05c");
+        });
+        k1.forEach(item -> {
+            k.put(item, "\ue05d");
+            k.put("\u0020" + item, "\ue05c");
+            k.put(item + "\u0020", "\ue05c");
+            k.put("\u0020" + item + "\u0020", "\ue05c");
+        });
+        //head,middle ka,ke
+        k1.forEach(item -> {
+            for (String shud : shudList) {
+                k.put("\u0020" + item + shud, "\ue0b0");
+                k.put(item + shud, "\ue0b1");
+                k.put("\u0020" + item + shud + "\u0020", "\ue0b0");
+                k.put(item + shud + "\u0020", "\ue0b1");
+            }
+        });
+        //ka,ke tail ka,ke
+        k1.forEach(item -> {
+            for (String s : cycleTsatslagaList) {
+                k.put("\u0020" + item + s, "\ue0ab");
+                k.put(item + s, "\ue0b2");
+                k.put("\u0020" + item + s + "\u0020", "\ue0ab");
+                k.put(item + s + "\u0020", "\ue0b2");
+            }
+        });
+        //ku
+        k2.forEach(item -> {
+            for (String cycleTailU : cycleTailUList) {
+                k.put("\u0020" + item + cycleTailU, "\ue0af");
+                k.put(item + cycleTailU, "\ue0bc");
+                k.put("\u0020" + item + cycleTailU + "\u0020", "\ue0af");
+                k.put(item + cycleTailU + "\u0020", "\ue0bc");
+            }
+        });
+        //ko,tail ko,ku
+        k2.forEach(item -> {
+            for (String s : cycleTailGedesList) {
+                k.put("\u0020" + item + s, "\ue0ae");
+                k.put(item + s, "\ue0bb");
+                k.put(item + s + "\u0020", "\ue0bb");
+                k.put("\u0020" + item + s + "\u0020", "\ue0ae");
+            }
+        });
+        //head ko,middle ko,ku
+        k2.forEach(item -> {
+            for (String s : cycleNoTailGedesList) {
+                k.put("\u0020" + item + s, "\ue0b9");
+                k.put(item + s, "\ue0ba");
+                k.put(item + s + "\u0020", "\ue0ba");
+                k.put("\u0020" + item + s + "\u0020", "\ue0b9");
+            }
+        });
+        //head ku
+        k2.forEach(item -> {
+            for (String s : cycleGedesForU) {
+                k.put("\u0020" + item + s, "\ue0b9\ue006");
+                k.put(item + s, "\ue0b9\ue006");
+                k.put(item + s + "\u0020", "\ue0b9\ue006");
+                k.put("\u0020" + item + s + "\u0020", "\ue0b9\ue006");
+            }
+        });
+        //ki,tail ki
+        k1.forEach(item -> {
+            k.put("\u0020" + item + "\ue27c", "\ue0ad");
+            k.put(item + "\ue27c", "\ue0b8");
+            k.put(item + "\ue27c\u0020", "\ue0b8");
+            k.put("\u0020" + item + "\ue27c" + "\u0020", "\ue0ad");
+        });
+        //top,middle ki
+        k1.forEach(item -> {
+            for (String s : shelbList) {
+                k.put("\u0020" + item + s, "\ue0b6");
+                k.put(item + s, "\ue0b7");
+                k.put(item + s + "\u0020", "\ue0b7");
+                k.put("\u0020" + item + s + "\u0020", "\ue0b6");
+            }
+            k.put("\u0020" + item + cycleShelb, "\ue0b6");
+            k.put(item + cycleShelb, "\ue0b7");
+            k.put(item + cycleShelb + "\u0020", "\ue0b7");
+            k.put("\u0020" + item + cycleShelb + "\u0020", "\ue0b6");
+        });
+        //k
+        k.put("\u0020\ue338", "\ue05c");
+        k.put("\ue338", "\ue05d");
+        k.put("\ue338\u0020", "\ue05d");
+        k.put("\u0020\ue338\u0020", "\ue05c");
+        //k
+        buildLocateChar(k, "\ue335", "\ue05e");
         return k;
     }
 
     private static Map<String, String> buildTS() {
         Map<String, String> ts = new HashMap<>(64);
+        buildLocateChar(ts, "\ue33f", "\ue05f");
+        buildLocateChar(ts, "\ue341", "\ue060");
+        buildLocateChar(ts, "\ue340", "\ue061");
         return ts;
     }
 
     private static Map<String, String> buildZ() {
         Map<String, String> z = new HashMap<>(64);
+        buildLocateChar(z, "\ue342", "\ue062");
+        buildLocateChar(z, "\ue344", "\ue063");
+        buildLocateChar(z, "\ue343", "\ue064");
         return z;
     }
 
     private static Map<String, String> buildHH() {
         Map<String, String> hh = new HashMap<>(64);
+        buildLocateChar(hh, "\ue345", "\ue065");
+        buildLocateChar(hh, "\ue347", "\ue066");
+        buildLocateChar(hh, "\ue346", "\ue067");
         return hh;
     }
 
     private static Map<String, String> buildRH() {
         Map<String, String> rh = new HashMap<>(64);
+        buildLocateChar(rh, "\ue348", "\ue068");
         return rh;
     }
 

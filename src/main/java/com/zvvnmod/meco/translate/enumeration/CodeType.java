@@ -15,8 +15,7 @@ public enum CodeType {
     Delehi(CodeSeries.Letter),
     Menk_Shape(CodeSeries.Shape),
     Menk_Letter(CodeSeries.Letter),
-    Oyun(CodeSeries.Letter),
-    Bainu(CodeSeries.Letter);
+    Oyun(CodeSeries.Letter);
 
     public static CodeType[] codeTypes = CodeType.class.getEnumConstants();
 

@@ -41,11 +41,13 @@ public class FromMenkShapeCodeMapper {
     private static final List<String> cycleTsatslagaList = Lists.newArrayList("\ue26b", "\ue275");
 
     static {
-        build();
+        codeMapper = new CodeMapper(4096);
+        codeMapper.combine(buildBase());
         codeMapper.combine(buildTailI());
         codeMapper.combine(buildEng());
         codeMapper.combine(buildShud());
         codeMapper.combine(buildDoubleShud());
+        codeMapper.combine(buildShelb());
         codeMapper.combine(buildN());
         codeMapper.combine(buildB());
         codeMapper.combine(buildP());
@@ -69,92 +71,94 @@ public class FromMenkShapeCodeMapper {
         codeMapper.combine(buildOthers());
     }
 
-    public static void build() {
-        codeMapper = new CodeMapper(1024);
-        codeMapper.put("\u0020\ue264\u0020", "\ue000\ue00c");
-        codeMapper.put("\u0020\ue265\u0020", "\ue000\ue00d");
-        codeMapper.put("\u0020\ue266", "\ue000\ue005");
-        codeMapper.put("\u0020\ue267", "\ue000");
-        codeMapper.put("\ue268\u0020", "\ue00c");
-        codeMapper.put("\ue269\u0020", "\ue00d");
-        codeMapper.put("\ue26a\u0020", "\ue00d");
-        codeMapper.put("\ue26b\u0020", "\ue005\ue00d");
+    public static Map<String, String> buildBase() {
+        Map<String, String> base = new HashMap<>(1024);
+        base.put("\u0020\ue264\u0020", "\ue000\ue00c");
+        base.put("\u0020\ue265\u0020", "\ue000\ue00d");
+        base.put("\u0020\ue266", "\ue000\ue005");
 
-        codeMapper.put("\u0020\ue270\u0020", "\ue000\ue00d");
-        codeMapper.put("\u0020\ue271", "\ue000");
-        codeMapper.put("\u0020\ue272", "\ue000\ue005");
-        codeMapper.put("\ue273\u0020", "\ue00c");
+        List<String> likeEHead = Lists.newArrayList("\ue267", "\ue271", "\ue2b2", "\ue2b4");
+        likeEHead.forEach(item -> buildLocateChar(base, item, "\ue000"));
 
-        codeMapper.put("\ue274\u0020", "\ue00d");
-        codeMapper.put("\ue275\u0020", "\ue005\ue00d");
-        codeMapper.put("\u0020\ue279\u0020", "\ue005");
-        codeMapper.put("\u0020\ue27a", "\ue000\ue006");
+        List<String> likeTailN = Lists.newArrayList("\ue268", "\ue2b5");
+        likeTailN.forEach(item -> buildLocateChar(base, item, "\ue00c"));
 
-        codeMapper.put("\ue27d", "\ue005\ue006");
+        base.put("\ue269\u0020", "\ue00d");
+        base.put("\ue26a\u0020", "\ue00d");
+        base.put("\ue26b\u0020", "\ue005\ue00d");
 
-        codeMapper.put("\ue27e", "\ue006");
-        codeMapper.put("\ue27f", "\ue006");
-        codeMapper.put("\ue281", "\ue006\ue006");
-        codeMapper.put("\u0020\ue282\u0020", "\ue01a");
+        base.put("\u0020\ue270\u0020", "\ue000\ue00d");
+        base.put("\u0020\ue272", "\ue000\ue005");
+        buildLocateChar(base, "\ue273", "\ue00c");
+
+        base.put("\ue274\u0020", "\ue00d");
+        base.put("\ue275\u0020", "\ue005\ue00d");
+        base.put("\u0020\ue279\u0020", "\ue005");
+        base.put("\u0020\ue27a", "\ue000\ue006");
+
+        base.put("\ue27d", "\ue005\ue006");
+
+        base.put("\ue281", "\ue006\ue006");
+        base.put("\u0020\ue282\u0020", "\ue01a");
 
         //o
-        codeMapper.put("\u0020\ue28b\u0020", "\ue000\ue00f");
-        codeMapper.put("\u0020\ue283\u0020", "\ue000\ue00f");
+        base.put("\u0020\ue28b\u0020", "\ue000\ue00f");
+        base.put("\u0020\ue283\u0020", "\ue000\ue00f");
         //head1 o
-        codeMapper.put("\u0020\ue284", "\ue000\ue008");
-        codeMapper.put("\u0020\ue28c", "\ue000\ue008");
+        base.put("\u0020\ue284", "\ue000\ue008");
+        base.put("\u0020\ue28c", "\ue000\ue008");
         //head2 o
-        codeMapper.put("\u0020\uE291", "\ue001");
-        codeMapper.put("\u0020\uE2AB", "\ue001");
+        base.put("\u0020\uE291", "\ue001");
+        base.put("\u0020\uE2AB", "\ue001");
         //u
-        codeMapper.put("\u0020\ue293\u0020", "\ue000\ue010");
-        codeMapper.put("\u0020\ue2a0\u0020", "\ue000\ue010");
+        base.put("\u0020\ue293\u0020", "\ue000\ue010");
+        base.put("\u0020\ue2a0\u0020", "\ue000\ue010");
         //head1 u
-        codeMapper.put("\u0020\ue295", "\ue000\ue008\ue006");
-        codeMapper.put("\u0020\ue2a2", "\ue000\ue008\ue006");
+        base.put("\u0020\ue295", "\ue000\ue008\ue006");
+        base.put("\u0020\ue2a2", "\ue000\ue008\ue006");
         //middle o,u
-        codeMapper.put("\ue289", "\ue008");
-        codeMapper.put("\ue29e", "\ue008");
-        codeMapper.put("\ue291", "\ue008");
-        codeMapper.put("\ue2ab", "\ue008");
+        base.put("\ue289", "\ue008");
+        base.put("\ue29e", "\ue008");
+        base.put("\ue291", "\ue008");
+        base.put("\ue2ab", "\ue008");
         //middle o
-        codeMapper.put("\ue288", "\ue005\ue008");
-        codeMapper.put("\ue290", "\ue005\ue008");
+        base.put("\ue288", "\ue005\ue008");
+        base.put("\ue290", "\ue005\ue008");
         //middle u
-        codeMapper.put("\ue29c", "\ue008\ue006");
-        codeMapper.put("\ue2a9", "\ue008\ue006");
+        base.put("\ue29c", "\ue008\ue006");
+        base.put("\ue2a9", "\ue008\ue006");
         //middle u
-        codeMapper.put("\ue29b", "\ue005\ue008\ue006");
-        codeMapper.put("\ue2a8", "\ue005\ue008\ue006");
-        //tail1 o,u
-        codeMapper.put("\ue285\u0020", "\ue011");
-        codeMapper.put("\ue28d\u0020", "\ue011");
-        codeMapper.put("\ue296\u0020", "\ue011");
-        codeMapper.put("\ue2a3\u0020", "\ue011");
-        codeMapper.put("\ue32b\u0020", "\ue011");
+        base.put("\ue29b", "\ue005\ue008\ue006");
+        base.put("\ue2a8", "\ue005\ue008\ue006");
+
+        List<String> s10 = Lists.newArrayList("\ue285", "\ue28d", "\ue296", "\ue2a3", "\ue32b");
+        s10.forEach(item -> {
+            //tail1 o,u,
+            base.put(item + "\u0020", "\ue011");
+            base.put(item, "\ue011");
+            //dagbvr nu
+            base.put("\u0020" + item, "\ue01b");
+            base.put("\u0020" + item + "\u0020", "\ue01b");
+        });
+
         //tail2 u
-        codeMapper.put("\u0020\ue297", "\ue010");
-        codeMapper.put("\u0020\ue2a4", "\ue010");
+        base.put("\u0020\ue297", "\ue010");
+        base.put("\u0020\ue2a4", "\ue010");
         //tail3 o,u
-        codeMapper.put("\ue286\u0020", "\ue00f");
-        codeMapper.put("\ue28e\u0020", "\ue00f");
-        codeMapper.put("\ue299\u0020", "\ue00f");
-        codeMapper.put("\ue2a6\u0020", "\ue00f");
-        //dagbvr nu
-        codeMapper.put("\u0020\ue285\u0020", "\ue01b");
-        codeMapper.put("\u0020\ue28d\u0020", "\ue01b");
-        codeMapper.put("\u0020\ue296\u0020", "\ue01b");
-        codeMapper.put("\u0020\ue2a3\u0020", "\ue01b");
-        codeMapper.put("\u0020\ue32b\u0020", "\ue01b");
+        base.put("\ue286\u0020", "\ue00f");
+        base.put("\ue28e\u0020", "\ue00f");
+        base.put("\ue299\u0020", "\ue00f");
+        base.put("\ue2a6\u0020", "\ue00f");
         //eu
-        codeMapper.put("\u0020\ue294\u0020", "\ue000\ue011");
-        codeMapper.put("\u0020\ue2a1\u0020", "\ue000\ue011");
+        base.put("\u0020\ue294\u0020", "\ue000\ue011");
+        base.put("\u0020\ue2a1\u0020", "\ue000\ue011");
 
         //ee
-        codeMapper.put("\u0020\ue2ad\u0020", "\ue000\ue058");
-        codeMapper.put("\u0020\ue2ae", "\ue000\ue057");
-        codeMapper.put("\ue2af\u0020", "\ue058");
-        codeMapper.put("\ue2b0", "\ue057");
+        base.put("\u0020\ue2ad\u0020", "\ue000\ue058");
+        base.put("\u0020\ue2ae", "\ue000\ue057");
+        base.put("\ue2af\u0020", "\ue058");
+        base.put("\ue2b0", "\ue057");
+        return base;
     }
 
     private static Map<String, String> buildTailI() {
@@ -185,21 +189,24 @@ public class FromMenkShapeCodeMapper {
         return doubleShud;
     }
 
+    private static Map<String, String> buildShelb() {
+        Map<String, String> shelb = new HashMap<>(64);
+        shelbList.forEach(item -> buildLocateChar(shelb, item, "\ue006"));
+        buildLocateChar(shelb, cycleShelb, "\ue006");
+        return shelb;
+    }
+
     private static Map<String, String> buildN() {
         Map<String, String> n = new HashMap<>(16);
-        n.put("\u0020\ue2b1", "\ue027");
-        n.put("\u0020\ue2b2", "\ue000");
-        n.put("\u0020\ue2b3", "\ue027");
-        n.put("\u0020\ue2b4", "\ue000");
-        n.put("\ue2b5", "\ue00c");
-        n.put("\ue2b5\u0020", "\ue00c");
-        n.put("\ue2b6", "\ue077");
-        n.put("\ue2b6\ue274\u0020", "\ue077");
-        n.put("\ue2b6\ue269\u0020", "\ue077");
-        n.put("\ue2b6\ue26a\u0020", "\ue077");
-        n.put("\ue2b7", "\ue028");
-        n.put("\ue2b9", "\ue028");
-        n.put("\ue2bf", "\ue028");
+        List<String> headN = Lists.newArrayList("\ue2b1", "\ue2b3");
+        headN.forEach(item -> buildLocateChar(n, item, "\ue027"));
+
+        buildLocateChar(n, "\ue2b6", "\ue077");
+        List<String> tailNaNe = Lists.newArrayList("\ue2b6\ue274", "\ue2b6\ue269", "\ue2b6\ue26a");
+        tailNaNe.forEach(item -> buildLocateChar(n, item, "\ue077"));
+
+        List<String> middleN = Lists.newArrayList("\ue2b7", "\ue2b9", "\ue2bf");
+        middleN.forEach(item -> buildLocateChar(n, item, "\ue028"));
         return n;
     }
 

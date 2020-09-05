@@ -91,6 +91,6 @@ public class ShapeTranslator {
     }
 
     private CharType getCharType(char ch) {
-        return translateRule.isTranslateCodePoint(ch) ? CharType.MONGOLIAN : CharType.OTHER;
+        return translateRule.isWordCodePoint(ch) ? CharType.MONGOLIAN : CharType.OTHER;
     }
 }

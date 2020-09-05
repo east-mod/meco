@@ -66,6 +66,7 @@ public class FromMenkShapeCodeMapper {
         codeMapper.combine(buildZ());
         codeMapper.combine(buildHH());
         codeMapper.combine(buildRH());
+        codeMapper.combine(buildOthers());
     }
 
     public static void build() {
@@ -440,6 +441,19 @@ public class FromMenkShapeCodeMapper {
 
         List<String> h1 = Lists.newArrayList("\ue2d0", "\ue2e3", "\ue2da", "\ue2eb");
         List<String> h2 = Lists.newArrayList("\ue2d4", "\ue2e6", "\ue2ed", "\ue2dd");
+        //p1,p2
+        h1.forEach(item -> {
+            hg.put(item, "\ue031");
+            hg.put("\u0020" + item, "\ue030");
+            hg.put(item + "\u0020", "\ue031");
+            hg.put("\u0020" + item + "\u0020", "\ue030");
+        });
+        h2.forEach(item -> {
+            hg.put(item, "\ue031");
+            hg.put("\u0020" + item, "\ue030");
+            hg.put(item + "\u0020", "\ue031");
+            hg.put("\u0020" + item + "\u0020", "\ue030");
+        });
         //head,middle he,ge
         h1.forEach(item -> {
             for (String shud : shudList) {
@@ -748,7 +762,7 @@ public class FromMenkShapeCodeMapper {
             k.put(item + "\u0020", "\ue05c");
             k.put("\u0020" + item + "\u0020", "\ue05c");
         });
-        k1.forEach(item -> {
+        k2.forEach(item -> {
             k.put(item, "\ue05d");
             k.put("\u0020" + item, "\ue05c");
             k.put(item + "\u0020", "\ue05c");
@@ -866,6 +880,12 @@ public class FromMenkShapeCodeMapper {
         Map<String, String> rh = new HashMap<>(64);
         buildLocateChar(rh, "\ue348", "\ue068");
         return rh;
+    }
+
+    private static Map<String, String> buildOthers() {
+        Map<String, String> others = new HashMap<>();
+        buildLocateChar(others, "\ue263", "\u0020");
+        return others;
     }
 
     private static void buildLocateChar(Map<String, String> map, String s, String mapperString) {

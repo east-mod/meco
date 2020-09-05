@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 public class MenkShapeTranslateRuleFrom implements ShapeTranslateRule {
     @Override
     public boolean isTranslateCodePoint(char c) {
-        return c >= '\ue264' && c <= '\ue34f';
+        return (c >= '\ue264' && c <= '\ue34f') || c == '\ue263';
     }
 
     @Override

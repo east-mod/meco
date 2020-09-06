@@ -986,6 +986,10 @@ public class FromMenkLetterCodeMapper {
         y.put("\u0020\u202f\u1836\u180b", "\u0020\ue050");
         //middle
         y.put("\u1836", "\ue006");
+        y.put("\u1836\u180b", "\ue050");
+        //y+ee
+        y.put("\u1836\u1827\u0020", "\ue050\ue058");
+        y.put("\u1836\u1827", "\ue050\ue057");
         //tail
         y.put("\u1836\u0020", "\ue00e");
 
@@ -1412,7 +1416,6 @@ public class FromMenkLetterCodeMapper {
         devsger.put("\u1829\u0020", "\ue016");
 
         //i
-        devsger.put("\u1836\u180b", "\ue006");
         devsger.put("\u1822\u180c", "\ue006\ue006");
         devsger.put("\u1822\u180d", "\ue006");
         devsger.put("\u180d\u1822", "\ue006");

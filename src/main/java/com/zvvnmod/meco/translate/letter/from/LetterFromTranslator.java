@@ -9,6 +9,7 @@ import com.zvvnmod.meco.translate.word.Nature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -52,7 +53,7 @@ public class LetterFromTranslator {
     private void translateWord(StringBuilder builder, LetterWord letterWord) {
         Nature nature;
         String s;
-        List<Character> preFragmentContent = null;
+        List<Character> preFragmentContent = new LinkedList<>();
         for (LetterWordFragment wordFragment : letterWord.getLetterWordFragments()) {
             nature = wordFragment.getNature().equals(Nature.SAARMAG) ? letterWord.getNature() : wordFragment.getNature();
             s = letterTranslateRuleFrom.getMapperCode(preFragmentContent, wordFragment.getKey(), nature);
@@ -61,7 +62,7 @@ public class LetterFromTranslator {
                         "Not fount the string " + wordFragment.getContent() + " in mapper rule");
             }
             builder.append(s);
-            preFragmentContent = wordFragment.getContent();
+            preFragmentContent.addAll(wordFragment.getContent());
         }
         wordCounter++;
     }

@@ -52,6 +52,14 @@ public class MenkLetterTranslateRuleFrom implements LetterTranslateRuleFrom {
             return null;
         }
         Character c = pre.get(pre.size() - 1);
+        if (s.equals("\u1822") && (c.equals('\u1822') || c.equals('\u1836')) && pre.size() > 2) {
+            Character pre2 = pre.get(pre.size() - 2);
+            for (char c1 : FromMenkLetterCodeMapper.doubleIEhishig) {
+                if (c1 == pre2) {
+                    return "";
+                }
+            }
+        }
         for (char c1 : FromMenkLetterCodeMapper.doubleIEhishig) {
             if (c1 == c) {
                 return "\ue006\ue006";
@@ -62,6 +70,9 @@ public class MenkLetterTranslateRuleFrom implements LetterTranslateRuleFrom {
 
     private String resoloveW(List<Character> pre, String s) {
         if (!s.contains("\u1838")) {
+            return null;
+        }
+        if (CollectionUtils.isEmpty(pre)) {
             return null;
         }
         Character c = pre.get(pre.size() - 1);

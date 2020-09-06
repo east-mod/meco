@@ -63,6 +63,13 @@ public class MglUnicodeBlock {
         if (ch == null) {
             return false;
         }
+        return ehshig.contains(ch) || ch.equals('\u1827');
+    }
+
+    public static boolean isTraditionalEhshig(Character ch) {
+        if (ch == null) {
+            return false;
+        }
         return ehshig.contains(ch);
     }
 

@@ -18,12 +18,14 @@ public class FromMenkLetterCodeMapper {
     public static CodeMapper hundiiMapper;
     public static CodeMapper saarmag;
     public static char[] doubleIEhishig = {'\u1820', '\u1821', '\u1823', '\u1824'};
+    public static CodeMapper wWithEhshig;
 
     static {
         buildChagh();
         buildHundii();
         buildSaarmag();
         buildMapper();
+        buildWWithEhshig();
     }
 
     public static void buildChagh() {
@@ -975,6 +977,11 @@ public class FromMenkLetterCodeMapper {
         //w6u,w7u
         w.put("\u0020\u1838\u1825", "\ue056\ue008\ue006");
         w.put("\u0020\u1838\u1826", "\ue056\ue008\ue006");
+        //gii + w + 180b
+        w.put("\u0020\u1838\u180b", "\ue056");
+        w.put("\u1838\u180b", "\ue008");
+        w.put("\u1838\u180b\u0020", "\ue011");
+        w.put("\u0020\u1838\u180b\u0020", "\ue056");
         return w;
     }
 
@@ -1318,4 +1325,13 @@ public class FromMenkLetterCodeMapper {
         return fuck;
     }
 
+    public static void buildWWithEhshig() {
+        wWithEhshig = new CodeMapper(16);
+        //ehshig + w
+        wWithEhshig.put("\u1838", "\ue008");
+        wWithEhshig.put("\u1838\u0020", "\ue011");
+        //ehshig + w + 180b
+        wWithEhshig.put("\u1838\u180b", "\ue057");
+        wWithEhshig.put("\u1838\u180b\u0020", "\ue058");
+    }
 }

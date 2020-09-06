@@ -27,6 +27,10 @@ public class MenkLetterTranslateRuleFrom implements LetterTranslateRuleFrom {
         if (result != null) {
             return result;
         }
+        result = resoloveW(pre, s);
+        if (result != null) {
+            return result;
+        }
         result = FromMenkLetterCodeMapper.mapper.get(s);
         if (result != null) {
             return result;
@@ -52,6 +56,17 @@ public class MenkLetterTranslateRuleFrom implements LetterTranslateRuleFrom {
             if (c1 == c) {
                 return "\ue006\ue006";
             }
+        }
+        return null;
+    }
+
+    private String resoloveW(List<Character> pre, String s) {
+        if (!s.contains("\u1838")) {
+            return null;
+        }
+        Character c = pre.get(pre.size() - 1);
+        if (MglUnicodeBlock.isEhshig(c)) {
+            return FromMenkLetterCodeMapper.wWithEhshig.get(s);
         }
         return null;
     }

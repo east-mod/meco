@@ -48,7 +48,7 @@ public class DelehiTranslateRuleTo implements LetterTranslateRuleTo {
             return "\u1820";
         }
         Character c = preLetterCodes.charAt(preLetterCodes.length() - 1);
-        if (MglUnicodeBlock.isEhshig(c)) {
+        if (MglUnicodeBlock.isTraditionalEhshig(c)) {
             return "\u1828";
         }
         return "\u1820";

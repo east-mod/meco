@@ -15,6 +15,7 @@ public class ToMenkShapeCodeMapper {
         mapper = new CodeMapper(2048);
         buildMapper1();
         buildMapper2();
+        buildMapper3();
     }
 
     private static void buildMapper1() {
@@ -234,5 +235,13 @@ public class ToMenkShapeCodeMapper {
         mapper.put("\ue0ba", "\ue334\ue28a");
         mapper.put("\ue0bb", "\ue334\ue287");
         mapper.put("\ue0bc", "\ue334\ue298");
+    }
+
+    private static void buildMapper3() {
+        mapper.put("\ue140", "\u180B");
+        mapper.put("\ue141", "\u180c");
+        mapper.put("\ue142", "\u180d");
+        mapper.put("\ue143", "\u180e");
+        mapper.put("\ue144", "\ue144");
     }
 }

@@ -3,6 +3,8 @@ package com.zvvnmod.meco.translate.shape;
 import com.zvvnmod.meco.translate.letter.from.CharType;
 import com.zvvnmod.meco.translate.word.ShapeWordFragment;
 
+import java.util.List;
+
 /**
  * AUTHOR: zorigt
  * DATE  : 2020/8/27
@@ -14,7 +16,7 @@ public interface ShapeTranslateRule {
 
     boolean contains(ShapeWordFragment wordFragment);
 
-    String getMapperCode(ShapeWordFragment wordFragment);
+    String getMapperCode(List<Character> preFragmentContent, ShapeWordFragment wordFragment);
 
     CharType getCharType(char ch);
 }

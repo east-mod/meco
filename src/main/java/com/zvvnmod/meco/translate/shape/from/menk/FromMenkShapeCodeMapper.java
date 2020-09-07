@@ -80,7 +80,7 @@ public class FromMenkShapeCodeMapper {
         List<String> likeEHead = Lists.newArrayList("\ue267", "\ue271", "\ue2b2", "\ue2b4");
         likeEHead.forEach(item -> buildLocateChar(base, item, "\ue000"));
 
-        List<String> likeTailN = Lists.newArrayList("\ue268", "\ue2b5");
+        List<String> likeTailN = Lists.newArrayList("\ue268", "\ue2b5", "\ue273");
         likeTailN.forEach(item -> buildLocateChar(base, item, "\ue00c"));
 
         base.put("\ue269\u0020", "\ue00d");
@@ -89,7 +89,6 @@ public class FromMenkShapeCodeMapper {
 
         base.put("\u0020\ue270\u0020", "\ue000\ue00d");
         base.put("\u0020\ue272", "\ue000\ue005");
-        buildLocateChar(base, "\ue273", "\ue00c");
 
         base.put("\ue274\u0020", "\ue00d");
         base.put("\ue275\u0020", "\ue005\ue00d");
@@ -107,20 +106,21 @@ public class FromMenkShapeCodeMapper {
         //head1 o
         base.put("\u0020\ue284", "\ue000\ue008");
         base.put("\u0020\ue28c", "\ue000\ue008");
-        //head2 o
-        base.put("\u0020\uE291", "\ue001");
-        base.put("\u0020\uE2AB", "\ue001");
+
+        List<String> niruTaiGedes = Lists.newArrayList("\ue289", "\ue291", "\ue29e", "\ue2ab");
+        niruTaiGedes.forEach(item -> {
+            base.put("\u0020" + item, "\ue001");
+            base.put(item, "\ue008");
+            base.put(item + "\u0020", "\ue008");
+            base.put("\u0020" + item + "\u0020", "\ue001");
+        });
+
         //u
         base.put("\u0020\ue293\u0020", "\ue000\ue010");
         base.put("\u0020\ue2a0\u0020", "\ue000\ue010");
         //head1 u
         base.put("\u0020\ue295", "\ue000\ue008\ue006");
         base.put("\u0020\ue2a2", "\ue000\ue008\ue006");
-        //middle o,u
-        base.put("\ue289", "\ue008");
-        base.put("\ue29e", "\ue008");
-        base.put("\ue291", "\ue008");
-        base.put("\ue2ab", "\ue008");
         //middle o
         base.put("\ue288", "\ue005\ue008");
         base.put("\ue290", "\ue005\ue008");

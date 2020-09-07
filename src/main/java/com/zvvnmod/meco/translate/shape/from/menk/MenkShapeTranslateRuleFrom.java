@@ -8,6 +8,8 @@ import com.zvvnmod.meco.translate.shape.ShapeTranslateRule;
 import com.zvvnmod.meco.translate.word.ShapeWordFragment;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  * AUTHOR: zorigt
  * DATE  : 2020/8/30
@@ -29,7 +31,7 @@ public class MenkShapeTranslateRuleFrom implements ShapeTranslateRule {
     }
 
     @Override
-    public String getMapperCode(ShapeWordFragment wordFragment) {
+    public String getMapperCode(List<Character> preFragmentContent, ShapeWordFragment wordFragment) {
         return FromMenkShapeCodeMapper.codeMapper.get(wordFragment.getLocateKey());
     }
 

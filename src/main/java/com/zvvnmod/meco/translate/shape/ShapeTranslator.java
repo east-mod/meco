@@ -9,6 +9,9 @@ import com.zvvnmod.meco.translate.word.ShapeWordFragment;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * AUTHOR: zorigt
  * DATE  : 2020/8/27
@@ -31,13 +34,15 @@ public class ShapeTranslator {
     }
 
     private void translateWord(StringBuilder builder, ShapeWord word) {
+        List<Character> preFragmentContent = new LinkedList<>();
         for (ShapeWordFragment wordFragment : word.getWordFragments()) {
-            String s = translateRule.getMapperCode(wordFragment);
+            String s = translateRule.getMapperCode(preFragmentContent, wordFragment);
             if (s == null) {
                 throw new MecoException(TranslateState.NOT_FOUNT_IN_MAPPER_RULE.getCode(),
                         "Not fount the string " + wordFragment.getContent() + " in mapper rule");
             }
             builder.append(s);
+            preFragmentContent.addAll(wordFragment.getContent());
         }
         wordCounter++;
     }

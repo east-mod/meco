@@ -8,6 +8,9 @@ import com.zvvnmod.meco.translate.shape.ShapeTranslateRule;
 import com.zvvnmod.meco.translate.word.ShapeWordFragment;
 import com.zvvnmod.meco.translate.word.ZvvnModUnicodeBlock;
 import org.springframework.stereotype.Component;
+import org.springframework.util.CollectionUtils;
+
+import java.util.List;
 
 /**
  * AUTHOR: zorigt
@@ -26,16 +29,31 @@ public class MenkShapeTranslateRuleTo implements ShapeTranslateRule {
 
     @Override
     public boolean contains(ShapeWordFragment wordFragment) {
-        return ToMenkShapeCodeMapper.codeMapper.containsKey(wordFragment.getKey());
+        return ToMenkShapeCodeMapper.mapper.containsKey(wordFragment.getKey());
     }
 
     @Override
-    public String getMapperCode(ShapeWordFragment wordFragment) {
-        return ToMenkShapeCodeMapper.codeMapper.get(wordFragment.getKey());
+    public String getMapperCode(List<Character> preFragmentContent, ShapeWordFragment wordFragment) {
+        String result = resloveTsatslaga(preFragmentContent, wordFragment.getKey());
+        if (result != null) {
+            return result;
+        }
+        return ToMenkShapeCodeMapper.mapper.get(wordFragment.getKey());
     }
 
     @Override
     public CharType getCharType(char ch) {
+        return null;
+    }
+
+    private String resloveTsatslaga(List<Character> preFragmentContent, String s) {
+        if (!s.equals("\ue00d") || CollectionUtils.isEmpty(preFragmentContent)) {
+            return null;
+        }
+        Character pre = preFragmentContent.get(preFragmentContent.size() - 1);
+        if (ZvvnModUnicodeBlock.zvvnModTailCodes.contains(pre)) {
+            return "\ue26a";
+        }
         return null;
     }
 }

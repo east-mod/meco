@@ -11,9 +11,11 @@ import java.util.Set;
  */
 public class ZvvnModUnicodeBlock {
     public static final Set<Character> zvvnModCodes = new HashSet<>(256);
+    public static final Set<Character> zvvnModTailCodes = new HashSet<>(128);
 
     static {
         buildZvvnModCodes();
+        buildZvvnModTailCodes();
     }
 
     private static void buildZvvnModCodes() {
@@ -191,5 +193,77 @@ public class ZvvnModUnicodeBlock {
         zvvnModCodes.add('\ue142');
         zvvnModCodes.add('\ue143');
         zvvnModCodes.add('\ue144');
+    }
+
+    private static void buildZvvnModTailCodes() {
+        zvvnModTailCodes.add('\ue00c');
+        zvvnModTailCodes.add('\ue00d');
+        zvvnModTailCodes.add('\ue00e');
+        zvvnModTailCodes.add('\ue00f');
+        zvvnModTailCodes.add('\ue010');
+        zvvnModTailCodes.add('\ue011');
+        zvvnModTailCodes.add('\ue016');
+        zvvnModTailCodes.add('\ue01a');
+        zvvnModTailCodes.add('\ue01b');
+        zvvnModTailCodes.add('\ue02b');
+        zvvnModTailCodes.add('\ue02e');
+        zvvnModTailCodes.add('\ue032');
+        zvvnModTailCodes.add('\ue033');
+        zvvnModTailCodes.add('\ue038');
+        zvvnModTailCodes.add('\ue03b');
+        zvvnModTailCodes.add('\ue03e');
+        zvvnModTailCodes.add('\ue041');
+        zvvnModTailCodes.add('\ue044');
+        zvvnModTailCodes.add('\ue049');
+        zvvnModTailCodes.add('\ue04c');
+        zvvnModTailCodes.add('\ue04f');
+        zvvnModTailCodes.add('\ue055');
+        zvvnModTailCodes.add('\ue058');
+        zvvnModTailCodes.add('\ue05b');
+        zvvnModTailCodes.add('\ue05e');
+        zvvnModTailCodes.add('\ue061');
+        zvvnModTailCodes.add('\ue064');
+        zvvnModTailCodes.add('\ue067');
+        zvvnModTailCodes.add('\ue077');
+        zvvnModTailCodes.add('\ue079');
+        zvvnModTailCodes.add('\ue07a');
+        zvvnModTailCodes.add('\ue07b');
+        zvvnModTailCodes.add('\ue081');
+        zvvnModTailCodes.add('\ue086');
+        zvvnModTailCodes.add('\ue087');
+        zvvnModTailCodes.add('\ue088');
+        zvvnModTailCodes.add('\ue08e');
+        zvvnModTailCodes.add('\ue091');
+        zvvnModTailCodes.add('\ue092');
+        zvvnModTailCodes.add('\ue093');
+        zvvnModTailCodes.add('\ue099');
+        zvvnModTailCodes.add('\ue09c');
+        zvvnModTailCodes.add('\ue09d');
+        zvvnModTailCodes.add('\ue09f');
+        zvvnModTailCodes.add('\ue0a0');
+        zvvnModTailCodes.add('\ue0a1');
+        zvvnModTailCodes.add('\ue0a7');
+        zvvnModTailCodes.add('\ue0aa');
+        zvvnModTailCodes.add('\ue0ac');
+        zvvnModTailCodes.add('\ue0ad');
+        zvvnModTailCodes.add('\ue0ae');
+        zvvnModTailCodes.add('\ue0af');
+        zvvnModTailCodes.add('\ue0b5');
+        zvvnModTailCodes.add('\ue0b8');
+        zvvnModTailCodes.add('\ue0bb');
+        zvvnModTailCodes.add('\ue0bc');
+        zvvnModTailCodes.add('\ue0bd');
+        zvvnModTailCodes.add('\ue0c0');
+        zvvnModTailCodes.add('\ue0c1');
+        zvvnModTailCodes.add('\ue0c4');
+        zvvnModTailCodes.add('\ue0c5');
+        zvvnModTailCodes.add('\ue0c8');
+        zvvnModTailCodes.add('\ue0c9');
+        zvvnModTailCodes.add('\ue0cc');
+        zvvnModTailCodes.add('\ue0cd');
+        zvvnModTailCodes.add('\ue0ce');
+        zvvnModTailCodes.add('\ue0cf');
+        zvvnModTailCodes.add('\ue0d0');
+
     }
 }

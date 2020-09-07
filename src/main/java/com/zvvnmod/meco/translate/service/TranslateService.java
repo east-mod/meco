@@ -56,7 +56,7 @@ public class TranslateService {
         if (codeType.getCodeSeries() == CodeSeries.Letter) {
             return new LetterFromTranslator(letterFromRuleHolder.getRule(codeType)).translate(s);
         } else if (codeType.getCodeSeries() == CodeSeries.Shape) {
-            return new ShapeTranslator(shapeRuleHolder.getRule(codeType)).translate(s);
+            return new ShapeTranslator(shapeRuleHolder.getFromRule(codeType)).translate(s);
         }
         logger.error("Not supported code series : {}", codeType.getCodeSeries());
         throw new MecoException(TranslateState.NOT_SUPPORTED_CODE_SERIES);
@@ -71,7 +71,7 @@ public class TranslateService {
         if (codeType.getCodeSeries() == CodeSeries.Letter) {
             return new LetterToTranslator(letterToRuleHolder.getRule(codeType)).translate(s);
         } else if (codeType.getCodeSeries() == CodeSeries.Shape) {
-            return new ShapeTranslator(shapeRuleHolder.getRule(codeType)).translate(s);
+            return new ShapeTranslator(shapeRuleHolder.getToRule(codeType)).translate(s);
         }
         logger.error("Not supported code series : {}", codeType.getCodeSeries());
         throw new MecoException(TranslateState.NOT_SUPPORTED_CODE_SERIES);

@@ -1,5 +1,6 @@
 package com.zvvnmod.meco.translate.shape;
 
+import com.zvvnmod.meco.translate.letter.from.CharType;
 import com.zvvnmod.meco.translate.word.ShapeWordFragment;
 
 /**
@@ -15,5 +16,5 @@ public interface ShapeTranslateRule {
 
     String getMapperCode(ShapeWordFragment wordFragment);
 
-    boolean isWordCodePoint(char c);
+    CharType getCharType(char ch);
 }

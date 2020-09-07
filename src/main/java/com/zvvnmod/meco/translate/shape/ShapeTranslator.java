@@ -57,19 +57,19 @@ public class ShapeTranslator {
             char aChar = chars[i];
             if (translateRule.isTranslateCodePoint(aChar)) {
                 wordFragment.push(aChar);
-                wordFragment.setTail(getCharType(chars[i + 1]));
+                wordFragment.setTail(translateRule.getCharType(chars[i + 1]));
                 if (translateRule.contains(wordFragment)) {
                     continue;
                 }
                 wordFragment.pop();
-                wordFragment.setTail(getCharType(aChar));
+                wordFragment.setTail(translateRule.getCharType(aChar));
                 if (wordFragment.isBlank()) {
                     throw new MecoException(TranslateState.NOT_FOUNT_IN_MAPPER_RULE.getCode(),
                             "Not fount the string [" + aChar + "] in mapper rule");
                 }
                 word.add(wordFragment);
                 wordFragment = new ShapeWordFragment();
-                wordFragment.setHead(getCharType(chars[i - 1]));
+                wordFragment.setHead(translateRule.getCharType(chars[i - 1]));
                 i--;
             } else {
                 if (wordFragment.isNotBlank()) {
@@ -88,9 +88,5 @@ public class ShapeTranslator {
         builder.deleteCharAt(builder.length() - 1);
         logger.info("{} words translated.", wordCounter);
         return builder.toString();
-    }
-
-    private CharType getCharType(char ch) {
-        return translateRule.isWordCodePoint(ch) ? CharType.MONGOLIAN : CharType.OTHER;
     }
 }

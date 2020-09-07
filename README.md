@@ -1,6 +1,6 @@
 # meco
 
-####CURL例子
+#### CURL例子
 curl --location --request GET '39.104.94.197:2207/meco/translate' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -9,7 +9,7 @@ curl --location --request GET '39.104.94.197:2207/meco/translate' \
     "content":"           "
 }'
 
-####from，to可选类型:
+#### from，to可选类型
 menk_shape，
 menk_letter,
 delehi

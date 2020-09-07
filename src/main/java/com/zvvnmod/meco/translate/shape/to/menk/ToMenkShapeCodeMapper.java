@@ -14,6 +14,7 @@ public class ToMenkShapeCodeMapper {
     static {
         mapper = new CodeMapper(2048);
         buildMapper1();
+        buildMapper2();
     }
 
     private static void buildMapper1() {

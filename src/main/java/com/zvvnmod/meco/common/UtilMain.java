@@ -7,7 +7,7 @@ package com.zvvnmod.meco.common;
  * TIME  : 16:25
  */
 public class UtilMain {
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         String s = "ᠥᠪᠡᠷ ᠢ ᠪᠡᠨ ᠰᠠᠶᠢᠨ ᠪᠡᠯᠡᠳᠬᠡ ᠂ gravimon ᠳᠡᠯᠡᠬᠡᠶ ᠶᠢᠨ ᠪᠥᠮᠪᠥᠷᠴᠡᠭ ᠦᠨ ᠵᠣᠷᠢᠭ ᠰᠠᠨᠠᠭ\u180Eᠠ ! \n" +
                 "ᠤᠴᠢᠷ ᠨᠢ ᠪᠢ ᠵᠥᠪᠬᠡᠨ ᠴᠢᠮ\u180Eᠠ ᠳᠤ ᠬᠠᠢᠷᠠᠲᠠᠢ \n" +
                 "ᠦᠨᠡᠨ ᠢ ᠬᠡᠯᠡᠪᠡᠯ ᠪᠢ ᠴᠢᠮ\u180Eᠠ ᠶᠢ ᠬᠠᠪᠰᠤᠷᠤᠶ\u180Eᠠ \n" +

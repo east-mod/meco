@@ -47,18 +47,18 @@ public class ToMenkShapeCodeMapper {
 
         mapper.put("\ue01a", "\ue282");
         mapper.put("\ue01b", "\ue285");
-
+        //n
         mapper.put("\ue027", "\ue2b1");
         mapper.put("\ue028", "\ue2b7");
-
+        //b
         mapper.put("\ue029", "\ue2c7");
         mapper.put("\ue02a", "\ue2c7");
         mapper.put("\ue02b", "\ue2c3");
-
+        //p
         mapper.put("\ue02c", "\ue2cd");
         mapper.put("\ue02d", "\ue2cd");
         mapper.put("\ue02e", "\ue2ca");
-
+        //h,g
         mapper.put("\ue02f", "\ue2ce");
         mapper.put("\ue030", "\ue2da");
         mapper.put("\ue031", "\ue2df");
@@ -66,42 +66,42 @@ public class ToMenkShapeCodeMapper {
         mapper.put("\ue033", "\ue2e8");
         mapper.put("\ue034", "\ue2cf");
         mapper.put("\ue035", "\ue2d9");
-
+        //m
         mapper.put("\ue036", "\ue2f1");
         mapper.put("\ue037", "\ue2f4");
         mapper.put("\ue038", "\ue2f3");
-
+        //l
         mapper.put("\ue039", "\ue2f7");
         mapper.put("\ue03a", "\ue2fa");
         mapper.put("\ue03b", "\ue2f9");
-
+        //s
         mapper.put("\ue03c", "\ue2fd");
         mapper.put("\ue03d", "\ue301");
         mapper.put("\ue03e", "\ue2ff");
-
+        //sh
         mapper.put("\ue03f", "\ue303");
         mapper.put("\ue040", "\ue306");
         mapper.put("\ue041", "\ue305");
-
+        //t
         mapper.put("\ue042", "\ue308");
         mapper.put("\ue043", "\ue30c");
         mapper.put("\ue044", "\ue30a");
-
+        //d
         mapper.put("\ue045", "\ue30b");
         mapper.put("\ue046", "\ue30b");
         mapper.put("\ue049", "\ue312");
-
+        //tr
         mapper.put("\ue04a", "\ue315");
         mapper.put("\ue04b", "\ue317");
         mapper.put("\ue04c", "\ue316");
-
+        //j
         mapper.put("\ue04d", "\ue318");
         mapper.put("\ue04e", "\ue31d");
         mapper.put("\ue04f", "\ue31b");
-
+        //y
         mapper.put("\ue050", "\ue31e");
         mapper.put("\ue051", "\ue320");
-
+        //r
         mapper.put("\ue053", "\ue322");
         mapper.put("\ue054", "\ue326");
         mapper.put("\ue055", "\ue325");
@@ -134,6 +134,104 @@ public class ToMenkShapeCodeMapper {
     }
 
     private static void buildMapper2() {
-        mapper.put("", "");
+        mapper.put("\ue077", "");
+        //b+ ...
+        mapper.put("\ue079", "\ue2c1\ue27c");
+        mapper.put("\ue07a", "\ue2c2\ue287");
+        mapper.put("\ue07b", "\ue2c2\ue298");
+        mapper.put("\ue07c", "\ue2c1\ue26d");
+        mapper.put("\ue07d", "\ue2c1\ue26d");
+        mapper.put("\ue07f", "\ue2c1\ue27f");
+        mapper.put("\ue080", "\ue2c1\ue27f");
+        mapper.put("\ue081", "\ue2c1\ue27c");
+        mapper.put("\ue082", "\ue2c2\ue28a");
+        mapper.put("\ue083", "\ue2c2\ue28a");
+        mapper.put("\ue084", "\ue2c2\ue287");
+        mapper.put("\ue0c1", "\ue2c7\ue32a");
+        mapper.put("\ue0c2", "\ue2c7\ue32c");
+        mapper.put("\ue0c3", "\ue2c7\ue32c");
+        mapper.put("\ue0c4", "\ue2c7\ue32a");
+        mapper.put("\ue0cd", "\ue2c2\ue298");
+
+        //p+ ...
+        mapper.put("\ue086", "\ue2c8\ue27c");
+        mapper.put("\ue087", "\ue2c9\ue287");
+        mapper.put("\ue088", "\ue2c9\ue298");
+        mapper.put("\ue089", "\ue2c8\ue26d");
+        mapper.put("\ue08a", "\ue2c8\ue26d");
+        mapper.put("\ue08c", "\ue2c8\ue27f");
+        mapper.put("\ue08d", "\ue2c8\ue27f");
+        mapper.put("\ue08e", "\ue2c8\ue27c");
+        mapper.put("\ue08f", "\ue2c9\ue28a");
+        mapper.put("\ue090", "\ue2c9\ue28a");
+        mapper.put("\ue091", "\ue2c9\ue287");
+
+        mapper.put("\ue0c5", "\ue2cd\ue32a");
+        mapper.put("\ue0c6", "\ue2cd\ue32c");
+        mapper.put("\ue0c7", "\ue2cd\ue32c");
+        mapper.put("\ue0c8", "\ue2cd\ue32a");
+
+        mapper.put("\ue0ce", "\ue2c9\ue298");
+
+        //h,g+ ...
+        mapper.put("\ue092", "\ue2da\ue27c");
+        mapper.put("\ue093", "\ue2dd\ue298");
+        mapper.put("\ue094", "\ue2da\ue277");
+        mapper.put("\ue095", "\ue2da\ue277");
+        mapper.put("\ue097", "\ue2da\ue27f");
+        mapper.put("\ue098", "\ue2da\ue27f");
+        mapper.put("\ue099", "\ue2da\ue27c");
+        mapper.put("\ue09a", "\ue2dd\ue29d");
+        mapper.put("\ue09b", "\ue2dd\ue28a");
+        mapper.put("\ue09c", "\ue2dd\ue287");
+
+        mapper.put("\ue09d", "\ue2e9\ue26a");
+
+        mapper.put("\ue0bd", "\ue2df\ue32a");
+        mapper.put("\ue0be", "\ue2df\ue32c");
+        mapper.put("\ue0bf", "\ue2df\ue32c");
+        mapper.put("\ue0c0", "\ue2df\ue32a");
+
+        mapper.put("\ue0cf", "\ue2dd\ue298");
+
+        //f+ ...
+        mapper.put("\ue09f", "\ue32d\ue27c");
+        mapper.put("\ue0a0", "\ue32e\ue287");
+        mapper.put("\ue0a1", "\ue32e\ue298");
+        mapper.put("\ue0a2", "\ue32d\ue26d");
+        mapper.put("\ue0a3", "\ue32d\ue26d");
+        mapper.put("\ue0a5", "\ue32d\ue27f");
+        mapper.put("\ue0a6", "\ue32d\ue27f");
+        mapper.put("\ue0a7", "\ue32d\ue27c");
+        mapper.put("\ue0a8", "\ue32e\ue28a");
+        mapper.put("\ue0a9", "\ue32e\ue28a");
+        mapper.put("\ue0aa", "\ue32e\ue287");
+
+        mapper.put("\ue0c9", "\ue332\ue32a");
+        mapper.put("\ue0ca", "\ue332\ue32c");
+        mapper.put("\ue0cb", "\ue332\ue32c");
+        mapper.put("\ue0cc", "\ue332\ue32a");
+
+        mapper.put("\ue0d0", "\ue32e\ue298");
+
+        //k+ ...
+        mapper.put("\ue0ac", "\ue338\ue32a");
+        mapper.put("\ue0b3", "\ue338\ue32c");
+        mapper.put("\ue0b4", "\ue338\ue32c");
+        mapper.put("\ue0b5", "\ue338\ue32a");
+
+        mapper.put("\ue0ad", "\ue333\ue27c");
+        mapper.put("\ue0ae", "\ue334\ue287");
+        mapper.put("\ue0af", "\ue334\ue298");
+        mapper.put("\ue0b0", "\ue333\ue277");
+        mapper.put("\ue0b1", "\ue333\ue277");
+
+        mapper.put("\ue0b6", "\ue333\ue27f");
+        mapper.put("\ue0b7", "\ue333\ue27f");
+        mapper.put("\ue0b8", "\ue333\ue27c");
+        mapper.put("\ue0b9", "\ue334\ue28a");
+        mapper.put("\ue0ba", "\ue334\ue28a");
+        mapper.put("\ue0bb", "\ue334\ue287");
+        mapper.put("\ue0bc", "\ue334\ue298");
     }
 }

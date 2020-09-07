@@ -78,13 +78,13 @@ public class ToDelehiCodeMapper {
         mapper.put("\ue02a", "\u182a");
         mapper.put("\ue02b", "\u182a");
 
-        mapper.put("\ue078", "\u182a\u1820");
+        mapper.put("\ue07c\ue00d", "\u182a\u1820");
         mapper.put("\ue079", "\u182a\u1822");
         mapper.put("\ue07a", "\u182a\u1823");
         mapper.put("\ue07b", "\u182a\u1825");
         mapper.put("\ue07c", "\u182a\u1820");
         mapper.put("\ue07d", "\u182a\u1820");
-        mapper.put("\ue07e", "\u182a\u1820");
+        mapper.put("\ue07d\ue00d", "\u182a\u1820");
         mapper.put("\ue07f", "\u182a\u1822");
         mapper.put("\ue080", "\u182a\u1822");
         mapper.put("\ue081", "\u182a\u1822");
@@ -103,13 +103,13 @@ public class ToDelehiCodeMapper {
         mapper.put("\ue02d", "\u182b");
         mapper.put("\ue02e", "\u182b");
 
-        mapper.put("\ue085", "\u182b\u1820");
+        mapper.put("\ue089\ue00d", "\u182b\u1820");
         mapper.put("\ue086", "\u182b\u1822");
         mapper.put("\ue087", "\u182b\u1823");
         mapper.put("\ue088", "\u182b\u1825");
         mapper.put("\ue089", "\u182b\u1820");
         mapper.put("\ue08a", "\u182b\u1820");
-        mapper.put("\ue08b", "\u182b\u1820");
+        mapper.put("\ue08a\ue00d", "\u182b\u1820");
         mapper.put("\ue08c", "\u182b\u1822");
         mapper.put("\ue08d", "\u182b\u1822");
         mapper.put("\ue08e", "\u182b\u1822");
@@ -144,7 +144,7 @@ public class ToDelehiCodeMapper {
         mapper.put("\ue093", "\u182c\u1825");
         mapper.put("\ue094", "\u182c\u1821");
         mapper.put("\ue095", "\u182c\u1821");
-        mapper.put("\ue096", "\u182c\u1821");
+        mapper.put("\ue095\ue00d", "\u182c\u1821");
         mapper.put("\ue097", "\u182c\u1822");
         mapper.put("\ue098", "\u182c\u1822");
         mapper.put("\ue099", "\u182c\u1822");
@@ -202,13 +202,13 @@ public class ToDelehiCodeMapper {
         mapper.put("\ue05a", "\u1839");
         mapper.put("\ue05b", "\u1839");
 
-        mapper.put("\ue09e", "\u1839\u1820");
+        mapper.put("\ue0a2\ue00d", "\u1839\u1820");
         mapper.put("\ue09f", "\u1839\u1822");
         mapper.put("\ue0a0", "\u1839\u1823");
         mapper.put("\ue0a1", "\u1839\u1825");
         mapper.put("\ue0a2", "\u1839\u1820");
         mapper.put("\ue0a3", "\u1839\u1820");
-        mapper.put("\ue0a4", "\u1839\u1820");
+        mapper.put("\ue0a3\ue00d", "\u1839\u1820");
         mapper.put("\ue0a5", "\u1839\u1822");
         mapper.put("\ue0a6", "\u1839\u1822");
         mapper.put("\ue0a7", "\u1839\u1822");
@@ -226,14 +226,14 @@ public class ToDelehiCodeMapper {
         mapper.put("\ue05d", "\u183a");
         mapper.put("\ue05e", "\u183a");
 
-        mapper.put("\ue0ab", "\u183a\u1820");
+        mapper.put("\ue0b0\ue00d", "\u183a\u1820");
         mapper.put("\ue0ac", "\u183a\u1827");
         mapper.put("\ue0ad", "\u183a\u1822");
         mapper.put("\ue0ae", "\u183a\u1823");
         mapper.put("\ue0af", "\u183a\u1825");
         mapper.put("\ue0b0", "\u183a\u1820");
         mapper.put("\ue0b1", "\u183a\u1820");
-        mapper.put("\ue0b2", "\u183a\u1820");
+        mapper.put("\ue0b1\ue00d", "\u183a\u1820");
         mapper.put("\ue0b3", "\u183a\u1827");
         mapper.put("\ue0b4", "\u183a\u1827");
         mapper.put("\ue0b5", "\u183a\u1827");

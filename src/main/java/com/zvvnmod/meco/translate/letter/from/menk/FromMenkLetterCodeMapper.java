@@ -310,9 +310,9 @@ public class FromMenkLetterCodeMapper {
         b.put("\u182a\u0020", "\ue02b");
 
         //ba
-        b.put("\u0020\u182a\u1820\u0020", "\ue078");
+        b.put("\u0020\u182a\u1820\u0020", "\ue07c\ue00d");
         //be
-        b.put("\u0020\u182a\u1821\u0020", "\ue078");
+        b.put("\u0020\u182a\u1821\u0020", "\ue07c\ue00d");
         //bee
         b.put("\u0020\u182a\u1827\u0020", "\ue0c1");
         //bi
@@ -337,8 +337,8 @@ public class FromMenkLetterCodeMapper {
         b.put("\u182a\u1820", "\ue07d");
         b.put("\u182a\u1821", "\ue07d");
         //tail ba,be
-        b.put("\u182a\u1820\u0020", "\ue07e");
-        b.put("\u182a\u1821\u0020", "\ue07e");
+        b.put("\u182a\u1820\u0020", "\ue07d\ue00d");
+        b.put("\u182a\u1821\u0020", "\ue07d\ue00d");
         //head baa
         b.put("\u0020\u182a\u1827", "\ue0c2");
         //middle baa
@@ -389,8 +389,8 @@ public class FromMenkLetterCodeMapper {
         //tail
         p.put("\u182b\u0020", "\ue02e");
         //pa,pe
-        p.put("\u0020\u182b\u1820\u0020", "\ue085");
-        p.put("\u0020\u182b\u1821\u0020", "\ue085");
+        p.put("\u0020\u182b\u1820\u0020", "\ue089\ue00d");
+        p.put("\u0020\u182b\u1821\u0020", "\ue089\ue00d");
         //paa
         p.put("\u0020\u182b\u1827\u0020", "\ue0c5");
         //pi
@@ -412,8 +412,8 @@ public class FromMenkLetterCodeMapper {
         p.put("\u182b\u1820", "\ue08a");
         p.put("\u182b\u1821", "\ue08a");
         //tail pa,pe
-        p.put("\u182b\u1820\u0020", "\ue08b");
-        p.put("\u182b\u1821\u0020", "\ue08b");
+        p.put("\u182b\u1820\u0020", "\ue08a\ue00d");
+        p.put("\u182b\u1821\u0020", "\ue08a\ue00d");
         //head pee
         p.put("\u0020\u182b\u1827", "\ue0c6");
         //middle pee
@@ -492,7 +492,7 @@ public class FromMenkLetterCodeMapper {
         //middle he
         h.put("\u182c\u1821", "\ue095");
         //tail he
-        h.put("\u182c\u1821\u0020", "\ue096");
+        h.put("\u182c\u1821\u0020", "\ue095\ue00d");
         //head hee
         h.put("\u0020\u182c\u1827", "\ue0be");
         //middle hee
@@ -586,9 +586,9 @@ public class FromMenkLetterCodeMapper {
         g.put("\u1830\u182d\u1821", "\ue03d\ue095");
         g.put("\u1833\u182d\u1821", "\ue008\ue005\ue095");
         //tail ge
-        g.put("\u182d\u1821\u0020", "\ue096");
-        g.put("\u1830\u182d\u1821\u0020", "\ue03d\ue096");
-        g.put("\u1833\u182d\u1821\u0020", "\ue008\ue005\ue096");
+        g.put("\u182d\u1821\u0020", "\ue095\ue00d");
+        g.put("\u1830\u182d\u1821\u0020", "\ue03d\ue095\ue00d");
+        g.put("\u1833\u182d\u1821\u0020", "\ue008\ue005\ue095\ue00d");
         //head gi
         g.put("\u0020\u182d\u1822", "\ue097");
         //middle gi
@@ -1114,9 +1114,9 @@ public class FromMenkLetterCodeMapper {
         f.put("\u1839\u0020", "\ue05b");
 
         //fa
-        f.put("\u0020\u1839\u1820\u0020", "\ue09e");
+        f.put("\u0020\u1839\u1820\u0020", "\ue0a2\ue00d");
         //fe
-        f.put("\u0020\u1839\u1821\u0020", "\ue09e");
+        f.put("\u0020\u1839\u1821\u0020", "\ue0a2\ue00d");
         //fee
         f.put("\u0020\u1839\u1827\u0020", "\ue0c9");
         //fi
@@ -1136,8 +1136,8 @@ public class FromMenkLetterCodeMapper {
         f.put("\u1839\u1820", "\ue0a3");
         f.put("\u1839\u1821", "\ue0a3");
         //tail fa,fe
-        f.put("\u1839\u1820\u0020", "\ue0a4");
-        f.put("\u1839\u1821\u0020", "\ue0a4");
+        f.put("\u1839\u1820\u0020", "\ue0a3\ue00d");
+        f.put("\u1839\u1821\u0020", "\ue0a3\ue00d");
         //head fee
         f.put("\u0020\u1839\u1827", "\ue0ca");
         //middle fee
@@ -1195,8 +1195,8 @@ public class FromMenkLetterCodeMapper {
         k.put("\u183a\u0020", "\ue05e");
 
         //ka,ke
-        k.put("\u0020\u183a\u1820\u0020", "\ue0ab");
-        k.put("\u0020\u183a\u1821\u0020", "\ue0ab");
+        k.put("\u0020\u183a\u1820\u0020", "\ue0b0\ue00d");
+        k.put("\u0020\u183a\u1821\u0020", "\ue0b0\ue00d");
         //kee
         k.put("\u0020\u183a\u1827\u0020", "\ue0ac");
         //ki
@@ -1214,8 +1214,8 @@ public class FromMenkLetterCodeMapper {
         k.put("\u183a\u1820", "\ue0b1");
         k.put("\u183a\u1821", "\ue0b1");
         //tail ka,ke
-        k.put("\u183a\u1820\u0020", "\ue0b2");
-        k.put("\u183a\u1821\u0020", "\ue0b2");
+        k.put("\u183a\u1820\u0020", "\ue0b1\ue00d");
+        k.put("\u183a\u1821\u0020", "\ue0b1\ue00d");
         //head kee
         k.put("\u0020\u183a\u1827", "\ue0b3");
         //middle kee

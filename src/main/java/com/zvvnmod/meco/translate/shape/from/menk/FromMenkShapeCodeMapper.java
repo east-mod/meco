@@ -241,10 +241,10 @@ public class FromMenkShapeCodeMapper {
         //ba,be tail ba,be
         b1.forEach(item -> {
             for (String s : cycleTsatslagaList) {
-                b.put("\u0020" + item + s, "\ue078");
-                b.put(item + s, "\ue07e");
-                b.put("\u0020" + item + s + "\u0020", "\ue078");
-                b.put(item + s + "\u0020", "\ue07e");
+                b.put("\u0020" + item + s, "\ue07c\ue00d");
+                b.put(item + s, "\ue07d\ue00d");
+                b.put("\u0020" + item + s + "\u0020", "\ue07c\ue00d");
+                b.put(item + s + "\u0020", "\ue07d\ue00d");
             }
         });
         //bu
@@ -344,10 +344,10 @@ public class FromMenkShapeCodeMapper {
         //pa,pe tail pa,pe
         p1.forEach(item -> {
             for (String s : cycleTsatslagaList) {
-                p.put("\u0020" + item + s, "\ue085");
-                p.put(item + s, "\ue08b");
-                p.put("\u0020" + item + s + "\u0020", "\ue085");
-                p.put(item + s + "\u0020", "\ue08b");
+                p.put("\u0020" + item + s, "\ue089\ue00d");
+                p.put(item + s, "\ue08a\ue00d");
+                p.put("\u0020" + item + s + "\u0020", "\ue089\ue00d");
+                p.put(item + s + "\u0020", "\ue08a\ue00d");
             }
         });
         //pu
@@ -684,10 +684,10 @@ public class FromMenkShapeCodeMapper {
         //fa,fe tail fa,fe
         f1.forEach(item -> {
             for (String s : cycleTsatslagaList) {
-                f.put("\u0020" + item + s, "\ue09e");
-                f.put(item + s, "\ue0a4");
-                f.put("\u0020" + item + s + "\u0020", "\ue09e");
-                f.put(item + s + "\u0020", "\ue0a4");
+                f.put("\u0020" + item + s, "\ue0a2\ue00d");
+                f.put(item + s, "\ue0a3\ue00d");
+                f.put("\u0020" + item + s + "\u0020", "\ue0a2\ue00d");
+                f.put(item + s + "\u0020", "\ue0a3\ue00d");
             }
         });
         //fu
@@ -787,10 +787,10 @@ public class FromMenkShapeCodeMapper {
         //ka,ke tail ka,ke
         k1.forEach(item -> {
             for (String s : cycleTsatslagaList) {
-                k.put("\u0020" + item + s, "\ue0ab");
-                k.put(item + s, "\ue0b2");
-                k.put("\u0020" + item + s + "\u0020", "\ue0ab");
-                k.put(item + s + "\u0020", "\ue0b2");
+                k.put("\u0020" + item + s, "\ue0b0\ue00d");
+                k.put(item + s, "\ue0b1\ue00d");
+                k.put("\u0020" + item + s + "\u0020", "\ue0b0\ue00d");
+                k.put(item + s + "\u0020", "\ue0b1\ue00d");
             }
         });
         //ku

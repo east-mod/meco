@@ -1,8 +1,11 @@
 package com.zvvnmod.meco.translate.letter.to.menk;
 
+import com.zvvnmod.meco.common.Strings;
 import com.zvvnmod.meco.translate.annotation.Rule;
 import com.zvvnmod.meco.translate.enumeration.CodeType;
 import com.zvvnmod.meco.translate.letter.to.LetterTranslateRuleTo;
+import com.zvvnmod.meco.translate.word.MglUnicodeBlock;
+import com.zvvnmod.meco.translate.word.ZvvnModUnicodeBlock;
 import org.springframework.stereotype.Component;
 
 /**
@@ -14,18 +17,40 @@ import org.springframework.stereotype.Component;
 @Component
 @Rule(CodeType.Menk_Letter)
 public class MenkTranslateRuleTo implements LetterTranslateRuleTo {
+
     @Override
     public String getMapperCode(String preLetterCodes, String s) {
-        return null;
+        String result = resolveUe00c(preLetterCodes, s);
+        if (result != null) {
+            return result;
+        }
+        return ToMenkLetterCodeMapper.mapper.get(s);
     }
 
-    @Override
     public boolean contains(String s) {
-        return false;
+        return ToMenkLetterCodeMapper.mapper.containsKey(s);
     }
 
-    @Override
     public boolean isTranslateCodePoint(char c) {
-        return false;
+        return ZvvnModUnicodeBlock.zvvnModCodes.contains(c);
+    }
+
+    /**
+     * tail n and a
+     *
+     * @return n and a
+     */
+    private String resolveUe00c(String preLetterCodes, String s) {
+        if (!s.equals("\ue00c")) {
+            return null;
+        }
+        if (Strings.isBlank(preLetterCodes)) {
+            return "\u1820";
+        }
+        Character c = preLetterCodes.charAt(preLetterCodes.length() - 1);
+        if (MglUnicodeBlock.isTraditionalEhshig(c)) {
+            return "\u1828";
+        }
+        return "\u1820";
     }
 }

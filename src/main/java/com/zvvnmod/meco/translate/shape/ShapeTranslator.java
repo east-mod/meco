@@ -32,7 +32,7 @@ public class ShapeTranslator {
 
     private void translateWord(StringBuilder builder, ShapeWord word) {
         for (ShapeWordFragment wordFragment : word.getWordFragments()) {
-            String s = translateRule.getMapperCode(wordFragment.getLocateKey());
+            String s = translateRule.getMapperCode(wordFragment);
             if (s == null) {
                 throw new MecoException(TranslateState.NOT_FOUNT_IN_MAPPER_RULE.getCode(),
                         "Not fount the string " + wordFragment.getContent() + " in mapper rule");
@@ -58,7 +58,7 @@ public class ShapeTranslator {
             if (translateRule.isTranslateCodePoint(aChar)) {
                 wordFragment.push(aChar);
                 wordFragment.setTail(getCharType(chars[i + 1]));
-                if (translateRule.contains(wordFragment.getLocateKey())) {
+                if (translateRule.contains(wordFragment)) {
                     continue;
                 }
                 wordFragment.pop();

@@ -3,6 +3,7 @@ package com.zvvnmod.meco.translate.shape.from.menk;
 import com.zvvnmod.meco.translate.annotation.Rule;
 import com.zvvnmod.meco.translate.enumeration.CodeType;
 import com.zvvnmod.meco.translate.shape.ShapeTranslateRule;
+import com.zvvnmod.meco.translate.word.ShapeWordFragment;
 import org.springframework.stereotype.Component;
 
 /**
@@ -20,13 +21,13 @@ public class MenkShapeTranslateRuleFrom implements ShapeTranslateRule {
     }
 
     @Override
-    public boolean contains(String s) {
-        return FromMenkShapeCodeMapper.codeMapper.containsKey(s);
+    public boolean contains(ShapeWordFragment wordFragment) {
+        return FromMenkShapeCodeMapper.codeMapper.containsKey(wordFragment.getLocateKey());
     }
 
     @Override
-    public String getMapperCode(String s) {
-        return FromMenkShapeCodeMapper.codeMapper.get(s);
+    public String getMapperCode(ShapeWordFragment wordFragment) {
+        return FromMenkShapeCodeMapper.codeMapper.get(wordFragment.getLocateKey());
     }
 
     @Override

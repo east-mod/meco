@@ -136,7 +136,7 @@ public class ToMenkShapeCodeMapper {
     }
 
     private static void buildMapper2() {
-        mapper.put("\ue077", "");
+        mapper.put("\ue077", "\ue2b6\ue26a");
         //b+ ...
         mapper.put("\ue079", "\ue2c1\ue27c");
         mapper.put("\ue07a", "\ue2c2\ue287");

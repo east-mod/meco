@@ -52,10 +52,10 @@ public class ToMenkLetterCodeMapper {
         mapper.put("\ue00e", "\u1822");
         mapper.put("\ue00e\ue00d", "\u1836\u180e\u1820");
 
-        mapper.put("\ue00f", "\u1823\u180b");
+        mapper.put("\ue00f", "\u1823");
 
         mapper.put("\ue010", "\u1826\u180b");
-        mapper.put("\ue011", "\u1823");
+        mapper.put("\ue011", "\u1824");
 
         mapper.put("\ue015", "\u1829");
 

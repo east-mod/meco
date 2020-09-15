@@ -1,5 +1,7 @@
 package com.zvvnmod.meco.translate.letter.to;
 
+import com.zvvnmod.meco.translate.word.ShapeWord;
+
 /**
  * AUTHOR: zorigt
  * DATE  : 2020/8/22
@@ -8,7 +10,7 @@ package com.zvvnmod.meco.translate.letter.to;
  */
 public interface LetterTranslateRuleTo {
 
-    String getMapperCode(String preLetterCodes, String s);
+    void getMapperCode(StringBuilder builder, ShapeWord zvvnModWord);
 
     boolean contains(String s);
 

@@ -70,7 +70,7 @@ public class ToDelehiCodeMapper {
     private static void buildMapper2() {
         //n
         mapper.put("\ue027", "\u1828");
-        mapper.put("\ue028", "\u1828");
+        mapper.put("\ue028", "\u1828\u180b");
         mapper.put("\ue028\ue006", "\u1828\u1822");
         mapper.put("\ue077", "\u1828\u180e\u1820");
         //b

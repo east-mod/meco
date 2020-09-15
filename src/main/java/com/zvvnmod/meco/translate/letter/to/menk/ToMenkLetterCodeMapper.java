@@ -77,6 +77,8 @@ public class ToMenkLetterCodeMapper {
         mapper.put("\ue028\ue00c", "\u1828\u1820");
         mapper.put("\ue028\ue00e", "\u1828\u1822");
         mapper.put("\ue028\ue011", "\u1828\u1823");
+        mapper.put("\ue028\ue057", "\u1828\u1827");
+        mapper.put("\ue028\ue058", "\u1828\u1827");
 
         mapper.put("\ue077", "\u1828\u180e\u1820");
         //b
@@ -201,7 +203,7 @@ public class ToMenkLetterCodeMapper {
         mapper.put("\ue055", "\u1837");
         //w
         mapper.put("\ue056", "\u1838");
-        mapper.put("\ue057", "\u1838\u180b");
+        mapper.put("\ue057", "\u1827");
         mapper.put("\ue058", "\u1827");
         //f
         mapper.put("\ue059", "\u1839");

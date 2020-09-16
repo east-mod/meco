@@ -252,9 +252,9 @@ public class FromMenkShapeCodeMapper {
         b2.forEach(item -> {
             for (String cycleTailU : cycleTailUList) {
                 b.put("\u0020" + item + cycleTailU, "\ue07b");
-                b.put(item + cycleTailU, "\ue07b");
+                b.put(item + cycleTailU, "\ue0cd");
+                b.put(item + cycleTailU + "\u0020", "\ue0cd");
                 b.put("\u0020" + item + cycleTailU + "\u0020", "\ue07b");
-                b.put(item + cycleTailU + "\u0020", "\ue07b");
             }
         });
         //bo,tail bo,bu
@@ -355,9 +355,9 @@ public class FromMenkShapeCodeMapper {
         p2.forEach(item -> {
             for (String cycleTailU : cycleTailUList) {
                 p.put("\u0020" + item + cycleTailU, "\ue088");
-                p.put(item + cycleTailU, "\ue088");
+                p.put(item + cycleTailU, "\ue0ce");
                 p.put("\u0020" + item + cycleTailU + "\u0020", "\ue088");
-                p.put(item + cycleTailU + "\u0020", "\ue088");
+                p.put(item + cycleTailU + "\u0020", "\ue0ce");
             }
         });
         //po,tail po,pu
@@ -449,7 +449,7 @@ public class FromMenkShapeCodeMapper {
 
         List<String> h1 = Lists.newArrayList("\ue2d0", "\ue2e3", "\ue2da", "\ue2eb");
         List<String> h2 = Lists.newArrayList("\ue2d4", "\ue2e6", "\ue2ed", "\ue2dd");
-        //p1,p2
+        //h1,h2
         h1.forEach(item -> {
             hg.put(item, "\ue031");
             hg.put("\u0020" + item, "\ue030");
@@ -483,10 +483,13 @@ public class FromMenkShapeCodeMapper {
         //hu
         h2.forEach(item -> {
             for (String cycleTailU : cycleTailUList) {
-                buildLocateChar(hg, item + cycleTailU, "\ue093");
+                hg.put("\u0020" + item + cycleTailU, "\ue093");
+                hg.put(item + cycleTailU, "\ue0cf");
+                hg.put(item + cycleTailU + "\u0020", "\ue0cf");
+                hg.put("\u0020" + item + cycleTailU + "\u0020", "\ue093");
             }
         });
-        //tail bu
+        //tail hu
         h2.forEach(item -> {
             for (String s : cycleTailGedesList) {
                 hg.put("\u0020" + item + s, "\ue09c");
@@ -695,9 +698,9 @@ public class FromMenkShapeCodeMapper {
         f2.forEach(item -> {
             for (String cycleTailU : cycleTailUList) {
                 f.put("\u0020" + item + cycleTailU, "\ue0a1");
-                f.put(item + cycleTailU, "\ue0a1");
+                f.put(item + cycleTailU, "\ue0d0");
+                f.put(item + cycleTailU + "\u0020", "\ue0d0");
                 f.put("\u0020" + item + cycleTailU + "\u0020", "\ue0a1");
-                f.put(item + cycleTailU + "\u0020", "\ue0a1");
             }
         });
         //fo,tail fo,fu

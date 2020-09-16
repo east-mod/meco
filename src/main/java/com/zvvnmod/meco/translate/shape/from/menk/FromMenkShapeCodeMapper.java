@@ -170,10 +170,10 @@ public class FromMenkShapeCodeMapper {
 
     private static Map<String, String> buildEng() {
         Map<String, String> eng = new HashMap<>(64);
-        buildLocateChar(eng, "\ue2bb\u0020", "\ue005\ue006");
-        buildLocateChar(eng, "\ue2bc", "\ue015");
-        buildLocateChar(eng, "\ue2bd", "\ue015");
-        buildLocateChar(eng, "\ue2be", "\ue015");
+        buildLocateChar(eng, "\ue2bb\u0020", "\ue005\ue006\ue00d");
+        buildLocateChar(eng, "\ue2bc", "\ue005\ue031");
+        buildLocateChar(eng, "\ue2bd", "\ue005\ue031");
+        buildLocateChar(eng, "\ue2be", "\ue005\ue031");
         return eng;
     }
 
@@ -441,10 +441,10 @@ public class FromMenkShapeCodeMapper {
             }
         });
         //tail2 h
-        buildLocateChar(hg, "\ue2e8", "\ue033");
+        buildLocateChar(hg, "\ue2e8", "\ue006\ue00d");
         //middle ga
         List<String> middleGa = Lists.newArrayList("\ue2d9", "\ue2ea", "\ue2ec");
-        middleGa.forEach(item -> buildLocateChar(hg, item, "\ue035"));
+        middleGa.forEach(item -> buildLocateChar(hg, item, "\ue028\ue028"));
 
         List<String> h1 = Lists.newArrayList("\ue2d0", "\ue2e3", "\ue2da", "\ue2eb");
         List<String> h2 = Lists.newArrayList("\ue2d4", "\ue2e6", "\ue2ed", "\ue2dd");

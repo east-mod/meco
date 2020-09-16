@@ -35,11 +35,11 @@ public class ToMenkLetterCodeMapper {
         mapper.put("\ue001\ue00c", "\u202f\u1826\u1828");
         mapper.put("\ue001\ue011", "\u202f\u1824\u1824");
 
-        mapper.put("\ue002", "\u1836\u180b");
-        mapper.put("\ue002\ue006", "\u202f\u1836\u180b\u1822");
+        mapper.put("\ue04d\ue006", "\u202f\u1836\u180b\u1822");
 
         mapper.put("\ue005", "\u1820");
         mapper.put("\ue006", "\u180d\u1822");
+        mapper.put("\ue005\ue006", "\u1820\u180d\u1822");
         mapper.put("\ue008", "\u1823");
 
         mapper.put("\ue008\ue006", "\u1825\u180b");
@@ -57,9 +57,9 @@ public class ToMenkLetterCodeMapper {
         mapper.put("\ue010", "\u1826\u180b");
         mapper.put("\ue011", "\u1824");
 
-        mapper.put("\ue015", "\u1829");
+        mapper.put("\ue005\ue031", "\u1829");
 
-        mapper.put("\ue016", "\u1829");
+        mapper.put("\ue005\ue006\ue00d", "\u1829");
 
         mapper.put("\ue01a", "\u1822\u180b");
         mapper.put("\ue01a\ue00d", "\u1835\u180e\u1820");
@@ -137,7 +137,7 @@ public class ToMenkLetterCodeMapper {
         mapper.put("\ue031", "\u182d");
         mapper.put("\ue032", "\u182c\u180d");
         mapper.put("\ue032\ue00d", "\u182c\u180e\u1820");
-        mapper.put("\ue033", "\u182c\u180c");
+        mapper.put("\ue006\ue00d", "\u182c\u180c");
 
         mapper.put("\ue0bd", "\u182c\u1827");
         mapper.put("\ue0be", "\u182c\u1827");
@@ -145,8 +145,8 @@ public class ToMenkLetterCodeMapper {
         mapper.put("\ue0c0", "\u182c\u1827");
         //g
         mapper.put("\ue034", "\u182d");
-        mapper.put("\ue035", "\u182d");
-        mapper.put("\ue035\ue008", "\u182d\u1823");
+        mapper.put("\ue028\ue028", "\u182d");
+        mapper.put("\ue028\ue028\ue008", "\u182d\u1823");
         //h,g
         mapper.put("\ue092", "\u182c\u1822");
         mapper.put("\ue093", "\u182c\u1825");

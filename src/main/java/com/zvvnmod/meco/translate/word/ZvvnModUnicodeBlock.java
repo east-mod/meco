@@ -21,7 +21,6 @@ public class ZvvnModUnicodeBlock {
     private static void buildZvvnModCodes() {
         zvvnModCodes.add('\ue000');
         zvvnModCodes.add('\ue001');
-        zvvnModCodes.add('\ue002');
 
         zvvnModCodes.add('\ue005');
         zvvnModCodes.add('\ue006');
@@ -34,9 +33,6 @@ public class ZvvnModUnicodeBlock {
         zvvnModCodes.add('\ue00f');
         zvvnModCodes.add('\ue010');
         zvvnModCodes.add('\ue011');
-
-        zvvnModCodes.add('\ue015');
-        zvvnModCodes.add('\ue016');
 
         zvvnModCodes.add('\ue01a');
         zvvnModCodes.add('\ue01b');
@@ -53,9 +49,7 @@ public class ZvvnModUnicodeBlock {
         zvvnModCodes.add('\ue030');
         zvvnModCodes.add('\ue031');
         zvvnModCodes.add('\ue032');
-        zvvnModCodes.add('\ue033');
         zvvnModCodes.add('\ue034');
-        zvvnModCodes.add('\ue035');
         zvvnModCodes.add('\ue036');
         zvvnModCodes.add('\ue037');
         zvvnModCodes.add('\ue038');
@@ -202,13 +196,11 @@ public class ZvvnModUnicodeBlock {
         zvvnModTailCodes.add('\ue00f');
         zvvnModTailCodes.add('\ue010');
         zvvnModTailCodes.add('\ue011');
-        zvvnModTailCodes.add('\ue016');
         zvvnModTailCodes.add('\ue01a');
         zvvnModTailCodes.add('\ue01b');
         zvvnModTailCodes.add('\ue02b');
         zvvnModTailCodes.add('\ue02e');
         zvvnModTailCodes.add('\ue032');
-        zvvnModTailCodes.add('\ue033');
         zvvnModTailCodes.add('\ue038');
         zvvnModTailCodes.add('\ue03b');
         zvvnModTailCodes.add('\ue03e');

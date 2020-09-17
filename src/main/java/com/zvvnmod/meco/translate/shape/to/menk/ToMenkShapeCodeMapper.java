@@ -12,7 +12,7 @@ public class ToMenkShapeCodeMapper {
     public static CodeMapper mapper;
 
     static {
-        mapper = new CodeMapper(2048);
+        mapper = new CodeMapper(1024);
         buildMapper1();
         buildMapper2();
         buildMapper3();

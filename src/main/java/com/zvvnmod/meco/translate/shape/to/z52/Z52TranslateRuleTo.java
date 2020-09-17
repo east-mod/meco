@@ -6,6 +6,7 @@ import com.zvvnmod.meco.translate.enumeration.CodeType;
 import com.zvvnmod.meco.translate.letter.from.CharType;
 import com.zvvnmod.meco.translate.shape.ShapeTranslateRule;
 import com.zvvnmod.meco.translate.word.ShapeWordFragment;
+import com.zvvnmod.meco.translate.word.ZvvnModUnicodeBlock;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -22,17 +23,17 @@ import java.util.List;
 public class Z52TranslateRuleTo implements ShapeTranslateRule {
     @Override
     public boolean isTranslateCodePoint(char c) {
-        return false;
+        return ZvvnModUnicodeBlock.zvvnModCodes.contains(c);
     }
 
     @Override
     public boolean contains(ShapeWordFragment wordFragment) {
-        return false;
+        return ToZ52CodeMapper.codeMapper.containsKey(wordFragment.getKey());
     }
 
     @Override
     public String getMapperCode(List<Character> preFragmentContent, ShapeWordFragment wordFragment) {
-        return null;
+        return ToZ52CodeMapper.codeMapper.get(wordFragment.getKey());
     }
 
     @Override

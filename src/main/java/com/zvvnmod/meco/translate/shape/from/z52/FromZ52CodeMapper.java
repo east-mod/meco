@@ -87,9 +87,9 @@ public class FromZ52CodeMapper {
         //b1
         String b1 = "\u1873";
         b.put(b1, "\ue02a");
-        b.put(b1 + "\u0020", "\ue029");
+        b.put(b1 + "\u0020", "\ue011");
         b.put("\u0020" + b1, "\ue029");
-        b.put("\u0020" + b1 + "\u0020", "\ue029");
+        b.put("\u0020" + b1 + "\u0020", "\ue01b");
         //b2
         String b2 = "\u1874";
         b.put(b2, "\ue02a");

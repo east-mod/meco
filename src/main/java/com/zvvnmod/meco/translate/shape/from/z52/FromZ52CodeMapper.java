@@ -12,7 +12,7 @@ import java.util.Map;
  * TIME  : 21:24
  */
 public class FromZ52CodeMapper {
-    private static final CodeMapper codeMapper = new CodeMapper(1024);
+    public static final CodeMapper codeMapper = new CodeMapper(1024);
     private static final String shud = "\u186a";
     private static final String shelb = "\u186c";
     private static final String gedes = "\u186d";

@@ -311,7 +311,7 @@ public class FromDelehiCodeMapper {
         //be
         b.put("\u0020\u182a\u1821\u0020", "\ue07c\ue00d");
         //bee
-        b.put("\u0020\u182a\u1827\u0020", "\ue0c1");
+        b.put("\u0020\u182a\u1827\u0020", "\ue029\ue058");
         //bi
         b.put("\u0020\u182a\u1822\u0020", "\ue079");
         //b4o
@@ -335,11 +335,11 @@ public class FromDelehiCodeMapper {
         b.put("\u182a\u1820\u0020", "\ue07d\ue00d");
         b.put("\u182a\u1821\u0020", "\ue07d\ue00d");
         //head baa
-        b.put("\u0020\u182a\u1827", "\ue0c2");
+        b.put("\u0020\u182a\u1827", "\ue029\ue057");
         //middle baa
-        b.put("\u182a\u1827", "\ue0c3");
+        b.put("\u182a\u1827", "\ue02a\ue057");
         //tail baa
-        b.put("\u182a\u1827\u0020", "\ue0c4");
+        b.put("\u182a\u1827\u0020", "\ue02a\ue058");
         //head bi
         b.put("\u0020\u182a\u1822", "\ue07f");
         //middle bi
@@ -387,7 +387,7 @@ public class FromDelehiCodeMapper {
         p.put("\u0020\u182b\u1820\u0020", "\ue089\ue00d");
         p.put("\u0020\u182b\u1821\u0020", "\ue089\ue00d");
         //paa
-        p.put("\u0020\u182b\u1827\u0020", "\ue0c5");
+        p.put("\u0020\u182b\u1827\u0020", "\ue02c\ue058");
         //pi
         p.put("\u0020\u182b\u1822\u0020", "\ue086");
         //p4o,p5o
@@ -409,11 +409,11 @@ public class FromDelehiCodeMapper {
         p.put("\u182b\u1820\u0020", "\ue08a\ue00d");
         p.put("\u182b\u1821\u0020", "\ue08a\ue00d");
         //head pee
-        p.put("\u0020\u182b\u1827", "\ue0c6");
+        p.put("\u0020\u182b\u1827", "\ue02c\ue057");
         //middle pee
-        p.put("\u182b\u1827", "\ue0c7");
+        p.put("\u182b\u1827", "\ue02d\ue057");
         //middle pee
-        p.put("\u182b\u1827\u0020", "\ue0c8");
+        p.put("\u182b\u1827\u0020", "\ue02d\ue058");
         //head pi
         p.put("\u0020\u182b\u1822", "\ue08c");
         //middle pi
@@ -463,7 +463,7 @@ public class FromDelehiCodeMapper {
         //he
         h.put("\u0020\u182c\u1821\u0020", "\ue094\ue00d");
         //hee
-        h.put("\u0020\u182c\u1827\u0020", "\ue0bd");
+        h.put("\u0020\u182c\u1827\u0020", "\ue030\ue058");
         //hi
         h.put("\u0020\u182c\u1822\u0020", "\ue092");
         //h4o,h5o
@@ -483,11 +483,11 @@ public class FromDelehiCodeMapper {
         //tail he
         h.put("\u182c\u1821\u0020", "\ue095\ue00d");
         //head hee
-        h.put("\u0020\u182c\u1827", "\ue0be");
+        h.put("\u0020\u182c\u1827", "\ue030\ue057");
         //middle hee
-        h.put("\u182c\u1827", "\ue0bf");
+        h.put("\u182c\u1827", "\ue031\ue057");
         //tail hee
-        h.put("\u182c\u1827\u0020", "\ue0c0");
+        h.put("\u182c\u1827\u0020", "\ue031\ue058");
         //head hi
         h.put("\u0020\u182c\u1822", "\ue097");
         //middle hi
@@ -547,7 +547,7 @@ public class FromDelehiCodeMapper {
         //ge
         g.put("\u0020\u182d\u1821\u0020", "\ue094\ue00d");
         //gee
-        g.put("\u0020\u182d\u1827\u0020", "\ue0bd");
+        g.put("\u0020\u182d\u1827\u0020", "\ue030\ue058");
         //gi
         g.put("\u0020\u182d\u1822\u0020", "\ue092");
         //g4o,g5o
@@ -586,11 +586,11 @@ public class FromDelehiCodeMapper {
         g.put("\u1830\u182d\u1821\u0020", "\ue03d\ue095\ue00d");
         g.put("\u1833\u182d\u1821\u0020", "\ue008\ue005\ue095\ue00d");
         //head gee
-        g.put("\u0020\u182d\u1827", "\ue0be");
+        g.put("\u0020\u182d\u1827", "\ue030\ue057");
         //middle gee
-        g.put("\u182d\u1827", "\ue0bf");
+        g.put("\u182d\u1827", "\ue031\ue057");
         //tail gee
-        g.put("\u182d\u1827\u0020", "\ue0c0");
+        g.put("\u182d\u1827\u0020", "\ue031\ue058");
         //head gi
         g.put("\u0020\u182d\u1822", "\ue097");
         //middle gi
@@ -1087,7 +1087,7 @@ public class FromDelehiCodeMapper {
         //fe
         f.put("\u0020\u1839\u1821\u0020", "\ue0a2\ue00d");
         //fee
-        f.put("\u0020\u1839\u1827\u0020", "\ue0c9");
+        f.put("\u0020\u1839\u1827\u0020", "\ue059\ue058");
         //fi
         f.put("\u0020\u1839\u1822\u0020", "\ue09f");
         //f4o
@@ -1108,11 +1108,11 @@ public class FromDelehiCodeMapper {
         f.put("\u1839\u1820\u0020", "\ue0a3\ue00d");
         f.put("\u1839\u1821\u0020", "\ue0a3\ue00d");
         //head fee
-        f.put("\u0020\u1839\u1827", "\ue0ca");
+        f.put("\u0020\u1839\u1827", "\ue059\ue057");
         //middle fee
-        f.put("\u1839\u1827", "\ue0cb");
+        f.put("\u1839\u1827", "\ue05a\ue057");
         //tail fee
-        f.put("\u1839\u1827\u0020", "\ue0cc");
+        f.put("\u1839\u1827\u0020", "\ue05a\ue058");
         //head fi
         f.put("\u0020\u1839\u1822", "\ue0a5");
         //middle fi
@@ -1165,7 +1165,7 @@ public class FromDelehiCodeMapper {
         k.put("\u0020\u183a\u1820\u0020", "\ue0b0\ue00d");
         k.put("\u0020\u183a\u1821\u0020", "\ue0b0\ue00d");
         //kee
-        k.put("\u0020\u183a\u1827\u0020", "\ue0ac");
+        k.put("\u0020\u183a\u1827\u0020", "\ue05c\ue058");
         //ki
         k.put("\u0020\u183a\u1822\u0020", "\ue0ad");
         //k4o,k5o
@@ -1184,11 +1184,11 @@ public class FromDelehiCodeMapper {
         k.put("\u183a\u1820\u0020", "\ue0b1\ue00d");
         k.put("\u183a\u1821\u0020", "\ue0b1\ue00d");
         //head kee
-        k.put("\u0020\u183a\u1827", "\ue0b3");
+        k.put("\u0020\u183a\u1827", "\ue05c\ue057");
         //middle kee
-        k.put("\u183a\u1827", "\ue0b4");
+        k.put("\u183a\u1827", "\ue05d\ue057");
         //tail kee
-        k.put("\u183a\u1827\u0020", "\ue0b5");
+        k.put("\u183a\u1827\u0020", "\ue05d\ue058");
         //head ki
         k.put("\u0020\u183a\u1822", "\ue0b6");
         //middle ki
@@ -1277,17 +1277,17 @@ public class FromDelehiCodeMapper {
     public static Map<String, String> getGiiHH() {
         Map<String, String> hh = new HashMap<>(8);
         //hh
-        hh.put("\u0020\u183e\u0020", "\ue065");
+        hh.put("\u0020\u183e\u0020", "\ue000\ue066");
         //head
-        hh.put("\u0020\u183e", "\ue065");
+        hh.put("\u0020\u183e", "\ue000\ue066");
         //middle
         hh.put("\u183e", "\ue066");
         //tail
         hh.put("\u183e\u0020", "\ue067");
 
         //ts6u,ts7u
-        hh.put("\u0020\u183e\u1825", "\ue065\ue008\ue006");
-        hh.put("\u0020\u183e\u1826", "\ue065\ue008\ue006");
+        hh.put("\u0020\u183e\u1825", "\ue000\ue066\ue008\ue006");
+        hh.put("\u0020\u183e\u1826", "\ue000\ue066\ue008\ue006");
         return hh;
     }
 

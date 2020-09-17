@@ -128,7 +128,7 @@ public class ToMenkShapeCodeMapper {
         mapper.put("\ue063", "\ue344");
         mapper.put("\ue064", "\ue343");
 
-        mapper.put("\ue065", "\ue345");
+        mapper.put("\ue000\ue066", "\ue345");
         mapper.put("\ue066", "\ue347");
         mapper.put("\ue067", "\ue346");
 
@@ -149,10 +149,10 @@ public class ToMenkShapeCodeMapper {
         mapper.put("\ue082", "\ue2c2\ue28a");
         mapper.put("\ue083", "\ue2c2\ue28a");
         mapper.put("\ue084", "\ue2c2\ue287");
-        mapper.put("\ue0c1", "\ue2c7\ue32a");
-        mapper.put("\ue0c2", "\ue2c7\ue32c");
-        mapper.put("\ue0c3", "\ue2c7\ue32c");
-        mapper.put("\ue0c4", "\ue2c7\ue32a");
+        mapper.put("\ue029\ue058", "\ue2c7\ue32a");
+        mapper.put("\ue029\ue057", "\ue2c7\ue32c");
+        mapper.put("\ue02a\ue057", "\ue2c7\ue32c");
+        mapper.put("\ue02a\ue058", "\ue2c7\ue32a");
         mapper.put("\ue0cd", "\ue2c2\ue298");
 
         //p+ ...
@@ -168,10 +168,10 @@ public class ToMenkShapeCodeMapper {
         mapper.put("\ue090", "\ue2c9\ue28a");
         mapper.put("\ue091", "\ue2c9\ue287");
 
-        mapper.put("\ue0c5", "\ue2cd\ue32a");
-        mapper.put("\ue0c6", "\ue2cd\ue32c");
-        mapper.put("\ue0c7", "\ue2cd\ue32c");
-        mapper.put("\ue0c8", "\ue2cd\ue32a");
+        mapper.put("\ue02c\ue058", "\ue2cd\ue32a");
+        mapper.put("\ue02c\ue057", "\ue2cd\ue32c");
+        mapper.put("\ue02d\ue057", "\ue2cd\ue32c");
+        mapper.put("\ue02d\ue058", "\ue2cd\ue32a");
 
         mapper.put("\ue0ce", "\ue2c9\ue298");
 
@@ -189,10 +189,10 @@ public class ToMenkShapeCodeMapper {
 
         mapper.put("\ue09d", "\ue2e9\ue26a");
 
-        mapper.put("\ue0bd", "\ue2df\ue32a");
-        mapper.put("\ue0be", "\ue2df\ue32c");
-        mapper.put("\ue0bf", "\ue2df\ue32c");
-        mapper.put("\ue0c0", "\ue2df\ue32a");
+        mapper.put("\ue030\ue058", "\ue2df\ue32a");
+        mapper.put("\ue030\ue057", "\ue2df\ue32c");
+        mapper.put("\ue031\ue057", "\ue2df\ue32c");
+        mapper.put("\ue031\ue058", "\ue2df\ue32a");
 
         mapper.put("\ue0cf", "\ue2dd\ue298");
 
@@ -209,18 +209,18 @@ public class ToMenkShapeCodeMapper {
         mapper.put("\ue0a9", "\ue32e\ue28a");
         mapper.put("\ue0aa", "\ue32e\ue287");
 
-        mapper.put("\ue0c9", "\ue332\ue32a");
-        mapper.put("\ue0ca", "\ue332\ue32c");
-        mapper.put("\ue0cb", "\ue332\ue32c");
-        mapper.put("\ue0cc", "\ue332\ue32a");
+        mapper.put("\ue059\ue058", "\ue332\ue32a");
+        mapper.put("\ue059\ue057", "\ue332\ue32c");
+        mapper.put("\ue05a\ue057", "\ue332\ue32c");
+        mapper.put("\ue05a\ue058", "\ue332\ue32a");
 
         mapper.put("\ue0d0", "\ue32e\ue298");
 
         //k+ ...
-        mapper.put("\ue0ac", "\ue338\ue32a");
-        mapper.put("\ue0b3", "\ue338\ue32c");
-        mapper.put("\ue0b4", "\ue338\ue32c");
-        mapper.put("\ue0b5", "\ue338\ue32a");
+        mapper.put("\ue05c\ue058", "\ue338\ue32a");
+        mapper.put("\ue05c\ue057", "\ue338\ue32c");
+        mapper.put("\ue05d\ue057", "\ue338\ue32c");
+        mapper.put("\ue05d\ue058", "\ue338\ue32a");
 
         mapper.put("\ue0ad", "\ue333\ue27c");
         mapper.put("\ue0ae", "\ue334\ue287");

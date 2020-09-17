@@ -881,7 +881,7 @@ public class FromMenkShapeCodeMapper {
 
     private static Map<String, String> buildHH() {
         Map<String, String> hh = new HashMap<>(64);
-        buildLocateChar(hh, "\ue345", "\ue065");
+        buildLocateChar(hh, "\ue345", "\ue000\ue066");
         buildLocateChar(hh, "\ue347", "\ue066");
         buildLocateChar(hh, "\ue346", "\ue067");
         return hh;

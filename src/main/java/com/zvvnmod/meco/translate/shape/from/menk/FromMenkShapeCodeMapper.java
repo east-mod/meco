@@ -219,15 +219,15 @@ public class FromMenkShapeCodeMapper {
         List<String> b2 = Lists.newArrayList("\ue2c2", "\ue2c6");
         //b1,b2
         b1.forEach(item -> {
-            b.put(item, "\ue02a");
             b.put("\u0020" + item, "\ue029");
-            b.put(item + "\u0020", "\ue029");
+            b.put(item, "\ue02a");
+            b.put(item + "\u0020", "\ue02a");
             b.put("\u0020" + item + "\u0020", "\ue029");
         });
         b2.forEach(item -> {
-            b.put(item, "\ue02a");
             b.put("\u0020" + item, "\ue029");
-            b.put(item + "\u0020", "\ue029");
+            b.put(item, "\ue02a");
+            b.put(item + "\u0020", "\ue02a");
             b.put("\u0020" + item + "\u0020", "\ue029");
         });
         //head,middle ba,be
@@ -322,15 +322,15 @@ public class FromMenkShapeCodeMapper {
         List<String> p2 = Lists.newArrayList("\ue2cc", "\ue2c9");
         //p1,p2
         p1.forEach(item -> {
-            p.put(item, "\ue02d");
             p.put("\u0020" + item, "\ue02c");
-            p.put(item + "\u0020", "\ue02c");
+            p.put(item, "\ue02d");
+            p.put(item + "\u0020", "\ue02d");
             p.put("\u0020" + item + "\u0020", "\ue02c");
         });
         p2.forEach(item -> {
-            p.put(item, "\ue02d");
             p.put("\u0020" + item, "\ue02c");
-            p.put(item + "\u0020", "\ue02c");
+            p.put(item, "\ue02d");
+            p.put(item + "\u0020", "\ue02d");
             p.put("\u0020" + item + "\u0020", "\ue02c");
         });
         //head,middle pa,pe
@@ -451,14 +451,14 @@ public class FromMenkShapeCodeMapper {
         List<String> h2 = Lists.newArrayList("\ue2d4", "\ue2e6", "\ue2ed", "\ue2dd");
         //h1,h2
         h1.forEach(item -> {
-            hg.put(item, "\ue031");
             hg.put("\u0020" + item, "\ue030");
+            hg.put(item, "\ue031");
             hg.put(item + "\u0020", "\ue031");
             hg.put("\u0020" + item + "\u0020", "\ue030");
         });
         h2.forEach(item -> {
-            hg.put(item, "\ue031");
             hg.put("\u0020" + item, "\ue030");
+            hg.put(item, "\ue031");
             hg.put(item + "\u0020", "\ue031");
             hg.put("\u0020" + item + "\u0020", "\ue030");
         });
@@ -665,15 +665,15 @@ public class FromMenkShapeCodeMapper {
         List<String> f2 = Lists.newArrayList("\ue32e", "\ue331");
         //f1,f2
         f1.forEach(item -> {
-            f.put(item, "\ue05a");
             f.put("\u0020" + item, "\ue059");
-            f.put(item + "\u0020", "\ue059");
+            f.put(item, "\ue05a");
+            f.put(item + "\u0020", "\ue05a");
             f.put("\u0020" + item + "\u0020", "\ue059");
         });
         f2.forEach(item -> {
-            f.put(item, "\ue05a");
             f.put("\u0020" + item, "\ue059");
-            f.put(item + "\u0020", "\ue059");
+            f.put(item, "\ue05a");
+            f.put(item + "\u0020", "\ue05a");
             f.put("\u0020" + item + "\u0020", "\ue059");
         });
         //head,middle fa,fe
@@ -768,15 +768,15 @@ public class FromMenkShapeCodeMapper {
         List<String> k2 = Lists.newArrayList("\ue334", "\ue337");
         //k1,k2
         k1.forEach(item -> {
-            k.put(item, "\ue05d");
             k.put("\u0020" + item, "\ue05c");
-            k.put(item + "\u0020", "\ue05c");
+            k.put(item, "\ue05d");
+            k.put(item + "\u0020", "\ue05d");
             k.put("\u0020" + item + "\u0020", "\ue05c");
         });
         k2.forEach(item -> {
-            k.put(item, "\ue05d");
             k.put("\u0020" + item, "\ue05c");
-            k.put(item + "\u0020", "\ue05c");
+            k.put(item, "\ue05d");
+            k.put(item + "\u0020", "\ue05d");
             k.put("\u0020" + item + "\u0020", "\ue05c");
         });
         //head,middle ka,ke

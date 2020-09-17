@@ -30,6 +30,17 @@ public class FromZ52CodeMapper {
         codeMapper.combine(buildS());
         codeMapper.combine(buildSH());
         codeMapper.combine(buildTD());
+        codeMapper.combine(buildTR());
+        codeMapper.combine(buildJ());
+        codeMapper.combine(buildY());
+        codeMapper.combine(buildR());
+        codeMapper.combine(buildW());
+        codeMapper.combine(buildF());
+        codeMapper.combine(buildK());
+        codeMapper.combine(buildTS());
+        codeMapper.combine(buildZ());
+        codeMapper.combine(buildHH());
+        codeMapper.combine(buildRH());
     }
 
     public static Map<String, String> buildBase() {
@@ -230,7 +241,7 @@ public class FromZ52CodeMapper {
     }
 
     public static Map<String, String> buildM() {
-        Map<String, String> m = new HashMap<>(8);
+        Map<String, String> m = new HashMap<>(16);
         putAll(m, "\u188c", "\ue036");
         putAll(m, "\u188d", "\ue038");
         putAll(m, "\u188e", "\ue037");
@@ -238,7 +249,7 @@ public class FromZ52CodeMapper {
     }
 
     public static Map<String, String> buildL() {
-        Map<String, String> l = new HashMap<>(8);
+        Map<String, String> l = new HashMap<>(16);
         putAll(l, "\u188f", "\ue039");
         putAll(l, "\u1890", "\ue03b");
         putAll(l, "\u1891", "\ue03a");
@@ -246,7 +257,7 @@ public class FromZ52CodeMapper {
     }
 
     public static Map<String, String> buildS() {
-        Map<String, String> s = new HashMap<>(8);
+        Map<String, String> s = new HashMap<>(16);
         putAll(s, "\u1893", "\ue03e");
         s.put("\u0020" + "\u1894", "\ue03c");
         s.put("\u1894", "\ue03d");
@@ -256,7 +267,7 @@ public class FromZ52CodeMapper {
     }
 
     public static Map<String, String> buildSH() {
-        Map<String, String> sh = new HashMap<>(8);
+        Map<String, String> sh = new HashMap<>(16);
         putAll(sh, "\u1896", "\ue041");
         sh.put("\u0020" + "\u1897", "\ue03f");
         sh.put("\u1897", "\ue040");
@@ -288,9 +299,216 @@ public class FromZ52CodeMapper {
     }
 
     public static Map<String, String> buildTR() {
-        Map<String, String> tr = new HashMap<>(8);
+        Map<String, String> tr = new HashMap<>(16);
+        String tr1 = "\u189a";
+        tr.put("\u0020" + tr1, "\ue04a");
+        tr.put(tr1, "\ue04b");
+        tr.put(tr1 + "\u0020", "\ue04b");
+        tr.put("\u0020" + tr1 + "\u0020", "\ue04a");
+
+        String trGiiOhorCuul = tr1 + ohorCuul;
+        putAll(tr, trGiiOhorCuul, "\ue04c");
 
         return tr;
+    }
+
+    public static Map<String, String> buildJ() {
+        Map<String, String> j = new HashMap<>(16);
+        String j1 = "\u189b";
+        putAll(j, j1, "\ue04e");
+        String j1OhorCuul = j1 + ohorCuul;
+        putAll(j, j1OhorCuul, "\ue04f");
+        return j;
+    }
+
+    public static Map<String, String> buildY() {
+        Map<String, String> y = new HashMap<>(8);
+        String y1 = "\u189c";
+        y.put("\u0020" + y1, "\ue050");
+        y.put(y1, "\ue051");
+        y.put(y1 + "\u0020", "\ue051");
+        y.put("\u0020" + y1 + "\u0020", "\ue050");
+        return y;
+    }
+
+    public static Map<String, String> buildR() {
+        Map<String, String> r = new HashMap<>(16);
+        String r1 = "\u189e";
+        r.put("\u0020" + r1, "\ue053");
+        r.put(r1, "\ue054");
+        r.put(r1 + "\u0020", "\ue054");
+        r.put("\u0020" + r1 + "\u0020", "\ue053");
+
+        String r2 = "\u189d";
+        putAll(r, r2, "\ue055");
+        return r;
+    }
+
+    public static Map<String, String> buildW() {
+        Map<String, String> w = new HashMap<>(16);
+        String w1 = "\u189f";
+        w.put("\u0020" + w1, "\ue056");
+        w.put(w1, "\ue057");
+        w.put(w1 + "\u0020", "\ue057");
+        w.put("\u0020" + w1 + "\u0020", "\ue056");
+
+        String w1OhorCuul = w1 + ohorCuul;
+        putAll(w, w1OhorCuul, "\ue058");
+        return w;
+    }
+
+    public static Map<String, String> buildF() {
+        Map<String, String> f = new HashMap<>(64);
+        //f1
+        String f1 = "\u18a1";
+        f.put("\u0020" + f1, "\ue059");
+        f.put(f1, "\ue05a");
+        f.put(f1 + "\u0020", "\ue05a");
+        f.put("\u0020" + f1 + "\u0020", "\ue059");
+        //f2
+        String f2 = "\u18a2";
+        f.put("\u0020" + f2, "\ue059");
+        f.put(f2, "\ue05a");
+        f.put(f2 + "\u0020", "\ue05a");
+        f.put("\u0020" + f2 + "\u0020", "\ue059");
+        //f tail
+        putAll(f, "\u18a0", "\ue05b");
+
+        //head,middle fa,fe
+        String f1Shud = f1 + shud;
+        f.put("\u0020" + f1Shud, "\ue0a2");
+        f.put(f1Shud, "\ue0a3");
+        f.put("\u0020" + f1Shud + "\u0020", "\ue0a2");
+        f.put(f1Shud + "\u0020", "\ue0a3");
+        //fo
+        String f2Gedes = f2 + gedes;
+        f.put("\u0020" + f2Gedes, "\ue0a8");
+        f.put(f2Gedes, "\ue0a9");
+        f.put(f2Gedes + "\u0020", "\ue0aa");
+        f.put("\u0020" + f2Gedes + "\u0020", "\ue0a0");
+        //fu
+        String f2GedesOhorCuul = f2Gedes + ohorCuul;
+        f.put("\u0020" + f2GedesOhorCuul, "\ue0a1");
+        f.put(f2GedesOhorCuul, "\ue0d0");
+        f.put(f2GedesOhorCuul + "\u0020", "\ue0d0");
+        f.put("\u0020" + f2GedesOhorCuul + "\u0020", "\ue0a1");
+        //middle,top fi
+        String f1Shelb = f1 + shelb;
+        f.put("\u0020" + f1Shelb, "\ue0a5");
+        f.put(f1Shelb, "\ue0a6");
+        f.put(f1Shelb + "\u0020", "\ue0a6");
+        f.put("\u0020" + f1Shelb + "\u0020", "\ue0a5");
+        //bi,tail fi
+        String f1ShelbOhorCuul = f1Shelb + ohorCuul;
+        f.put("\u0020" + f1ShelbOhorCuul, "\ue09f");
+        f.put(f1ShelbOhorCuul, "\ue0a7");
+        f.put(f1ShelbOhorCuul + "\u0020", "\ue0a7");
+        f.put("\u0020" + f1ShelbOhorCuul + "\u0020", "\ue09f");
+        return f;
+    }
+
+    public static Map<String, String> buildK() {
+        Map<String, String> k = new HashMap<>(64);
+        String k1 = "\u18a4";
+        k.put("\u0020" + k1, "\ue05c");
+        k.put(k1, "\ue05d");
+        k.put(k1 + "\u0020", "\ue05d");
+        k.put("\u0020" + k1 + "\u0020", "\ue05c");
+
+        String k2 = "\u18a5";
+        k.put("\u0020" + k2, "\ue05c");
+        k.put(k2, "\ue05d");
+        k.put(k2 + "\u0020", "\ue05d");
+        k.put("\u0020" + k2 + "\u0020", "\ue05c");
+
+        String k3 = "\u18a3";
+        putAll(k, k3, "\ue05e");
+
+        //top,middle ka,ke
+        String k1Shud = k1 + shud;
+        k.put("\u0020" + k1Shud, "\ue0b0");
+        k.put(k1Shud, "\ue0b1");
+        k.put(k1Shud + "\u0020", "\ue0b1");
+        k.put("\u0020" + k1Shud + "\u0020", "\ue0b0");
+
+        //top,middle ki
+        String k1Shelb = k1 + shelb;
+        k.put("\u0020" + k1Shelb, "\ue0b6");
+        k.put(k1Shelb, "\ue0b7");
+        k.put(k1Shelb + "\u0020", "\ue0b7");
+        k.put("\u0020" + k1Shelb + "\u0020", "\ue0b6");
+
+        //ki,tail ki
+        String k1ShelbOhorCuul = k1Shelb + ohorCuul;
+        k.put("\u0020" + k1ShelbOhorCuul, "\ue0ad");
+        k.put(k1ShelbOhorCuul, "\ue0b8");
+        k.put(k1ShelbOhorCuul + "\u0020", "\ue0b8");
+        k.put("\u0020" + k1ShelbOhorCuul + "\u0020", "\ue0ad");
+
+        //ko
+        String k2Gedes = k2 + gedes;
+        k.put("\u0020" + k2Gedes, "\ue0b9");
+        k.put(k2Gedes, "\ue0ba");
+        k.put(k2Gedes + "\u0020", "\ue0bb");
+        k.put("\u0020" + k2Gedes + "\u0020", "\ue0ae");
+
+        //ku,tail2 ku
+        String k2GedesOhorCuul = k2Gedes + ohorCuul;
+        k.put("\u0020" + k2GedesOhorCuul, "\ue0af");
+        k.put(k2GedesOhorCuul, "\ue0bc");
+        k.put(k2GedesOhorCuul + "\u0020", "\ue0bc");
+        k.put("\u0020" + k2GedesOhorCuul + "\u0020", "\ue0af");
+
+        return k;
+    }
+
+    public static Map<String, String> buildTS() {
+        Map<String, String> ts = new HashMap<>(16);
+
+        String ts1 = "\u18a6";
+        ts.put("\u0020" + ts1, "\ue05f");
+        ts.put(ts1, "\ue060");
+        ts.put(ts1 + "\u0020", "\ue060");
+        ts.put("\u0020" + ts1 + "\u0020", "\ue05f");
+
+        String ts1OhorCuul = ts1 + ohorCuul;
+        putAll(ts, ts1OhorCuul, "\ue061");
+        return ts;
+    }
+
+    public static Map<String, String> buildZ() {
+        Map<String, String> z = new HashMap<>(16);
+
+        String z1 = "\u18a7";
+        z.put("\u0020" + z1, "\ue062");
+        z.put(z1, "\ue063");
+        z.put(z1 + "\u0020", "\ue063");
+        z.put("\u0020" + z1 + "\u0020", "\ue062");
+
+        String z1OhorCuul = z1 + ohorCuul;
+        putAll(z, z1OhorCuul, "\ue064");
+
+        return z;
+    }
+
+    public static Map<String, String> buildHH() {
+        Map<String, String> hh = new HashMap<>(16);
+        String hh1 = "\u18a8";
+        putAll(hh, hh1, "\ue066");
+
+        String hh1OhorCuul = hh1 + ohorCuul;
+        putAll(hh, hh1OhorCuul, "\ue067");
+
+        return hh;
+    }
+
+    public static Map<String, String> buildRH() {
+        Map<String, String> rh = new HashMap<>(16);
+
+        String rh1 = "\u18aa";
+        putAll(rh, rh1, "\ue068");
+
+        return rh;
     }
 
     private static void putAll(Map<String, String> map, String s, String mapperString) {

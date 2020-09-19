@@ -37,6 +37,9 @@ public class FromMenkLetterCodeMapper {
         //middle g
         chaghMapper.put("\u182d", "\ue005\ue005");
 
+        chaghMapper.put("\u182d\u180b\u0020", "\ue09d");
+        chaghMapper.put("\u182d\u180b", "\ue028\ue028");
+
         chaghMapper.put("\u1830\u182d\u180e", "\ue03d\ue005\ue005\ue143");
         chaghMapper.put("\u1833\u182d\u180e", "\ue008\ue005\ue005\ue005\ue143");
         //tail g
@@ -52,6 +55,9 @@ public class FromMenkLetterCodeMapper {
         //middle g
         hundiiMapper.put("\u182d", "\ue031");
 
+        hundiiMapper.put("\u182d\u180b\u0020", "\ue032");
+        hundiiMapper.put("\u182d\u180b", "\ue031");
+
         hundiiMapper.put("\u1830\u182d\u180e", "\ue03d\ue031\ue143");
         hundiiMapper.put("\u1833\u182d\u180e", "\ue008\ue005\ue031\ue143");
         //tail g
@@ -66,6 +72,9 @@ public class FromMenkLetterCodeMapper {
         saarmag.put("\u182c\u180e", "\ue031\ue143");
         //middle g
         saarmag.put("\u182d", "\ue031");
+
+        saarmag.put("\u182d\u180b\u0020", "\ue032");
+        saarmag.put("\u182d\u180b", "\ue031");
 
         saarmag.put("\u1830\u182d\u180e", "\ue03d\ue031\ue143");
         saarmag.put("\u1833\u182d\u180e", "\ue008\ue005\ue031\ue143");
@@ -557,6 +566,12 @@ public class FromMenkLetterCodeMapper {
         h.put("\u182c\u1824\u180b\u0020", "\ue005\ue005\ue00f");
         h.put("\u182c\u1825\u180b\u0020", "\ue0cf");
         h.put("\u182c\u1826\u180b\u0020", "\ue0cf");
+
+        h.put("\u0020\u182c\u180b", "\ue034");
+        h.put("\u182c\u180b", "\ue028\ue028");
+        h.put("\u182c\u180b\u0020", "\ue09d");
+        h.put("\u0020\u182c\u180b\u0020", "\ue031");
+
         return h;
     }
 
@@ -699,6 +714,10 @@ public class FromMenkLetterCodeMapper {
         g.put("\u0020\u182d\u1824\u180b\u0020", "\ue034\ue011");
         g.put("\u0020\u182d\u1825\u180b\u0020", "\ue093");
         g.put("\u0020\u182d\u1826\u180b\u0020", "\ue093");
+
+        g.put("\u0020\u182d\u180b", "\ue031");
+        g.put("\u0020\u182d\u180b\u0020", "\ue031");
+
         return g;
     }
 

@@ -285,11 +285,17 @@ public class FromMenkLetterCodeMapper {
         n.put("\u1828\u1826\u180b\u0020", "\ue028\ue010");
 
         //n+180e
-        n.put("\u1828\u180e", "\ue028\ue143");
-        n.put("\u1828\u180e\u0020", "\ue00c\ue143");
+        n.put("\u0020\u1828\u180e", "\ue077");
+        n.put("\u1828\u180e", "\ue077");
+        n.put("\u1828\u180e\u0020", "\ue077");
+        n.put("\u0020\u1828\u180e\u0020", "\ue077");
+
         //tail2 na,ne
         n.put("\u1828\u180e\u1820\u0020", "\ue077");
         n.put("\u1828\u180e\u1821\u0020", "\ue077");
+
+        n.put("\u0020\u1828\u180e\u1820\u0020", "\ue077");
+        n.put("\u0020\u1828\u180e\u1821\u0020", "\ue077");
 
         n.put("\u0020\u1828\u1823\u0020", "\ue027\ue00f");
         n.put("\u0020\u1828\u1824\u0020", "\ue027\ue00f");

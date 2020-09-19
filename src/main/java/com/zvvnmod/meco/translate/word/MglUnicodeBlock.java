@@ -66,6 +66,14 @@ public class MglUnicodeBlock {
         return ehshig.contains(ch) || ch.equals('\u1827');
     }
 
+    public static boolean isGiiguulegch(Character ch) {
+        if (ch == null) {
+            return false;
+        }
+        return ch >= '\u1828' && ch <= '\u1842';
+    }
+
+
     public static boolean isTraditionalEhshig(Character ch) {
         if (ch == null) {
             return false;

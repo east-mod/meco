@@ -9,6 +9,7 @@ import com.zvvnmod.meco.translate.word.Nature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -54,9 +55,20 @@ public class LetterFromTranslator {
         Nature nature;
         String s;
         List<Character> preFragmentContent = new LinkedList<>();
-        for (LetterWordFragment wordFragment : letterWord.getLetterWordFragments()) {
-            nature = wordFragment.getNature().equals(Nature.SAARMAG) ? letterWord.getNature() : wordFragment.getNature();
-            s = letterTranslateRuleFrom.getMapperCode(preFragmentContent, wordFragment.getKey(), nature);
+        for (int i = 0; i < letterWord.getLetterWordFragments().size(); i++) {
+            LetterWordFragment wordFragment = letterWord.getLetterWordFragments().get(i);
+            nature = wordFragment.getNature().equals(Nature.SAARMAG) ?
+                    letterWord.getNature() : wordFragment.getNature();
+
+            List<Character> suf;
+            if (i + 1 < letterWord.getLetterWordFragments().size()) {
+                suf = letterWord.getLetterWordFragments().get(i + 1).getContent();
+            } else {
+                suf = Collections.emptyList();
+            }
+
+            s = letterTranslateRuleFrom.getMapperCode(preFragmentContent, suf, wordFragment.getKey(), nature);
+
             if (s == null) {
                 throw new MecoException(TranslateState.NOT_FOUNT_IN_MAPPER_RULE.getCode(),
                         "Not fount the string " + wordFragment.getContent() + " in mapper rule");

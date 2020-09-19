@@ -19,7 +19,7 @@ import java.util.List;
 public class OyunTranslateRuleFrom implements LetterTranslateRuleFrom {
 
     @Override
-    public String getMapperCode(List<Character> pre, String s, Nature nature) {
+    public String getMapperCode(List<Character> pre, List<Character> suf, String s, Nature nature) {
         return null;
     }
 

@@ -11,7 +11,7 @@ import java.util.List;
  * TIME  : 19:33
  */
 public interface LetterTranslateRuleFrom {
-    String getMapperCode(List<Character> pre, String s, Nature nature);
+    String getMapperCode(List<Character> pre, List<Character> suf, String s, Nature nature);
 
     boolean contains(String s);
 

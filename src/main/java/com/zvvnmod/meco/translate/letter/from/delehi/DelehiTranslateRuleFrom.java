@@ -21,7 +21,7 @@ import java.util.List;
 public class DelehiTranslateRuleFrom implements LetterTranslateRuleFrom {
 
     @Override
-    public String getMapperCode(List<Character> pre, String s, Nature nature) {
+    public String getMapperCode(List<Character> pre, List<Character> stuf, String s, Nature nature) {
         String result = resolveDevsgerI(pre, s);
         if (result != null) {
             return result;

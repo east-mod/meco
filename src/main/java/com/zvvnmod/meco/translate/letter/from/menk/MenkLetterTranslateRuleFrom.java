@@ -22,12 +22,16 @@ import java.util.List;
 public class MenkLetterTranslateRuleFrom implements LetterTranslateRuleFrom {
 
     @Override
-    public String getMapperCode(List<Character> pre, String s, Nature nature) {
+    public String getMapperCode(List<Character> pre, List<Character> suf, String s, Nature nature) {
         String result = resolveDevsgerI(pre, s);
         if (result != null) {
             return result;
         }
         result = resoloveW(pre, s);
+        if (result != null) {
+            return result;
+        }
+        result = resoloveT(suf, s);
         if (result != null) {
             return result;
         }
@@ -78,6 +82,16 @@ public class MenkLetterTranslateRuleFrom implements LetterTranslateRuleFrom {
         Character c = pre.get(pre.size() - 1);
         if (MglUnicodeBlock.isEhshig(c)) {
             return FromMenkLetterCodeMapper.wWithEhshig.get(s);
+        }
+        return null;
+    }
+
+    private String resoloveT(List<Character> suf, String s) {
+        if (s.equals("\u1832") && !CollectionUtils.isEmpty(suf)) {
+            Character sufFirst = suf.get(0);
+            if (MglUnicodeBlock.isGiiguulegch(sufFirst)) {
+                return "\ue043";
+            }
         }
         return null;
     }

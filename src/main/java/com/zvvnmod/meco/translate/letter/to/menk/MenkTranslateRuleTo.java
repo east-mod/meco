@@ -8,6 +8,7 @@ import com.zvvnmod.meco.translate.exception.TranslateState;
 import com.zvvnmod.meco.translate.letter.to.LetterTranslateRuleTo;
 import com.zvvnmod.meco.translate.letter.to.MapperResult;
 import com.zvvnmod.meco.translate.word.MglUnicodeBlock;
+import com.zvvnmod.meco.translate.word.Nature;
 import com.zvvnmod.meco.translate.word.ShapeWord;
 import com.zvvnmod.meco.translate.word.ShapeWordFragment;
 import com.zvvnmod.meco.translate.word.ZvvnModUnicodeBlock;
@@ -26,7 +27,13 @@ public class MenkTranslateRuleTo implements LetterTranslateRuleTo {
     @Override
     public void getMapperCode(StringBuilder builder, ShapeWord zvvnModWord) {
         String s = "";
+        Nature nature = Nature.CHAGH;
         for (ShapeWordFragment wordFragment : zvvnModWord.getWordFragments()) {
+            int index = wordFragment.getKey().indexOf('\ue031');
+            if (index == 0 || (index > 0 && wordFragment.getKey().charAt(index - 1) != '\ue005')) {
+                nature = Nature.HUNDII;
+            }
+
             s = get(s, wordFragment.getKey());
             if (s == null) {
                 throw new MecoException(TranslateState.NOT_FOUNT_IN_MAPPER_RULE.getCode(),
@@ -35,6 +42,9 @@ public class MenkTranslateRuleTo implements LetterTranslateRuleTo {
         }
         if (s.charAt(0) == '\u202f' && builder.charAt(builder.length() - 1) == '\u0020') {
             builder.deleteCharAt(builder.length() - 1);
+        }
+        if (nature == Nature.HUNDII) {
+            s = hundiiString(s);
         }
         builder.append(s);
     }
@@ -99,5 +109,18 @@ public class MenkTranslateRuleTo implements LetterTranslateRuleTo {
             }
         }
         return new MapperResult(true, concatAnd202f(String.valueOf(chars), ToMenkLetterCodeMapper.mapper.get(s)));
+    }
+
+    private String hundiiString(String s) {
+        char[] chars = s.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            char ch = chars[i];
+            if (ch == '\u1820') {
+                chars[i] = '\u1821';
+            } else if (ch == '\u1823' || ch == '\u1824') {
+                chars[i] = '\u1826';
+            }
+        }
+        return String.valueOf(chars);
     }
 }

@@ -192,8 +192,18 @@ public class FromMenkShapeCodeMapper {
 
     private static Map<String, String> buildShelb() {
         Map<String, String> shelb = new HashMap<>(64);
-        shelbList.forEach(item -> buildLocateChar(shelb, item, "\ue006"));
-        buildLocateChar(shelb, cycleShelb, "\ue006");
+        shelbList.forEach(item -> {
+            shelb.put("\u0020" + item, "\ue04d");
+            shelb.put(item, "\ue006");
+            shelb.put(item + "\u0020", "\ue006");
+            shelb.put("\u0020" + item + "\u0020", "\ue04d");
+        });
+
+        shelb.put("\u0020" + cycleShelb, "\ue04d");
+        shelb.put(cycleShelb, "\ue006");
+        shelb.put(cycleShelb + "\u0020", "\ue006");
+        shelb.put("\u0020" + cycleShelb + "\u0020", "\ue04d");
+
         return shelb;
     }
 
@@ -626,6 +636,7 @@ public class FromMenkShapeCodeMapper {
     private static Map<String, String> buildJ() {
         Map<String, String> j = new HashMap<>(64);
         List<String> j1 = Lists.newArrayList("\ue318", "\ue319", "\ue31a");
+
         j1.forEach(item -> buildLocateChar(j, item, "\ue04d"));
         buildLocateChar(j, "\ue31b", "\ue04f");
         buildLocateChar(j, "\ue31d", "\ue04e");

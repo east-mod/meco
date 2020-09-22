@@ -228,6 +228,12 @@ public class FromDelehiCodeMapper {
         //tail
         n.put("\u1828\u0020", "\ue00c");
 
+        //n+180b
+        n.put("\u0020\u1828\u180b", "\ue000");
+        n.put("\u1828\u180b", "\ue028");
+        n.put("\u1828\u180b\u0020", "\ue077");
+        n.put("\u0020\u1828\u180b\u0020", "\ue000");
+
         //n6u,n7u
         n.put("\u0020\u1828\u1825", "\ue027\ue008\ue006");
         n.put("\u0020\u1828\u1826", "\ue027\ue008\ue006");

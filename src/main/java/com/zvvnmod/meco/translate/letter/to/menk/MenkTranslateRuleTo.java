@@ -28,20 +28,32 @@ public class MenkTranslateRuleTo implements LetterTranslateRuleTo {
     public void getMapperCode(StringBuilder builder, ShapeWord zvvnModWord) {
         String s = "";
         for (ShapeWordFragment wordFragment : zvvnModWord.getWordFragments()) {
-            s = get(s, wordFragment.getKey(), zvvnModWord.getNature());
-            if (s == null) {
+            String s1 = get(s, wordFragment.getKey(), zvvnModWord.getNature());
+            if (s1 == null) {
                 throw new MecoException(TranslateState.NOT_FOUNT_IN_MAPPER_RULE.getCode(),
                         "Not fount the string " + wordFragment.getContent() + " in mapper rule");
             }
-            if (s.charAt(0) == '\u202f' && builder.charAt(builder.length() - 1) == '\u0020') {
-                builder.deleteCharAt(builder.length() - 1);
-            }
-            builder.append(s);
+            s = concatAnd202f(s, s1);
         }
+        if (s.charAt(0) == '\u202f' && builder.charAt(builder.length() - 1) == '\u0020') {
+            builder.deleteCharAt(builder.length() - 1);
+        }
+        builder.append(s);
+    }
+
+    private String concatAnd202f(String s0, String s1) {
+        if (s1.charAt(0) == '\u202f' && s0.length() > 0 && s0.charAt(s0.length() - 1) == '\u0020') {
+            return s0.substring(0, s0.length() - 1) + s1;
+        }
+        return s0 + s1;
     }
 
     private String get(String preLetterCodes, String s, Nature nature) {
         MapperResult mapperResult = resolveUe00c(preLetterCodes, s, nature);
+        if (mapperResult.isRet()) {
+            return mapperResult.getSb();
+        }
+        mapperResult = resolveSingleGiiAndUe011(preLetterCodes, s, nature);
         if (mapperResult.isRet()) {
             return mapperResult.getSb();
         }
@@ -92,5 +104,19 @@ public class MenkTranslateRuleTo implements LetterTranslateRuleTo {
             return new MapperResult(true, "\u1820");
         }
         return new MapperResult(true, "\u1821");
+    }
+
+    private MapperResult resolveSingleGiiAndUe011(String preLetterCodes, String s, Nature nature) {
+        if (!s.equals("\ue011") || Strings.isEmpty(preLetterCodes)) {
+            return new MapperResult(false);
+        }
+        if (preLetterCodes.length() == 1 && MglUnicodeBlock.isGiiguulegch(preLetterCodes.charAt(0))) {
+            if (nature == Nature.CHAGH) {
+                return new MapperResult(true, "\u1824\u180b");
+            } else {
+                return new MapperResult(true, "\u1826\u180b");
+            }
+        }
+        return new MapperResult(false);
     }
 }

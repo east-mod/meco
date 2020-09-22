@@ -110,11 +110,17 @@ public class MenkTranslateRuleTo implements LetterTranslateRuleTo {
         if (!s.equals("\ue011") || Strings.isEmpty(preLetterCodes)) {
             return new MapperResult(false);
         }
-        if (preLetterCodes.length() == 1 && MglUnicodeBlock.isGiiguulegch(preLetterCodes.charAt(0))) {
-            if (nature == Nature.CHAGH) {
-                return new MapperResult(true, "\u1824\u180b");
-            } else {
-                return new MapperResult(true, "\u1826\u180b");
+
+        if (preLetterCodes.length() == 1) {
+            char ch = preLetterCodes.charAt(0);
+            if (MglUnicodeBlock.isGiiguulegch(ch)) {
+                String result;
+                if (ch >= '\u1832' && ch <= '\u1834') {
+                    result = nature == Nature.CHAGH ? "\u1824" : "\u1826";
+                } else {
+                    result = nature == Nature.CHAGH ? "\u1824\u180b" : "\u1826\u180b";
+                }
+                return new MapperResult(true, result);
             }
         }
         return new MapperResult(false);

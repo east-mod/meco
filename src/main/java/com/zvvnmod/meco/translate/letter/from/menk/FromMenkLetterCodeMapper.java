@@ -240,6 +240,9 @@ public class FromMenkLetterCodeMapper {
         //n6u,n7u
         n.put("\u0020\u1828\u1825", "\ue027\ue008\ue006");
         n.put("\u0020\u1828\u1826", "\ue027\ue008\ue006");
+        //n4o,n5o
+        n.put("\u0020\u1828\u1823", "\ue027\ue008");
+        n.put("\u0020\u1828\u1824", "\ue027\ue008");
 
         //middle na
         n.put("\u1828\u1820", "\ue028\ue005");
@@ -751,6 +754,8 @@ public class FromMenkLetterCodeMapper {
         m.put("\u0020\u182e\u1824\u0020", "\ue036\ue00f");
         m.put("\u0020\u182e\u1825\u0020", "\ue036\ue011");
         m.put("\u0020\u182e\u1826\u0020", "\ue036\ue011");
+        m.put("\u0020\u182e\u1823", "\ue036\ue008");
+        m.put("\u0020\u182e\u1824", "\ue036\ue008");
         m.put("\u0020\u182e\u1823\u180b\u0020", "\ue036\ue011");
         m.put("\u0020\u182e\u1824\u180b\u0020", "\ue036\ue011");
         m.put("\u0020\u182e\u1825\u180b\u0020", "\ue036\ue010");
@@ -782,6 +787,8 @@ public class FromMenkLetterCodeMapper {
         l.put("\u0020\u182f\u1824\u0020", "\ue039\ue00f");
         l.put("\u0020\u182f\u1825\u0020", "\ue039\ue011");
         l.put("\u0020\u182f\u1826\u0020", "\ue039\ue011");
+        l.put("\u0020\u182f\u1823", "\ue039\ue008");
+        l.put("\u0020\u182f\u1824", "\ue039\ue008");
         l.put("\u0020\u182f\u1823\u180b\u0020", "\ue039\ue011");
         l.put("\u0020\u182f\u1824\u180b\u0020", "\ue039\ue011");
         l.put("\u0020\u182f\u1825\u180b\u0020", "\ue039\ue010");
@@ -808,6 +815,8 @@ public class FromMenkLetterCodeMapper {
         s.put("\u0020\u1830\u1824\u0020", "\ue03c\ue00f");
         s.put("\u0020\u1830\u1825\u0020", "\ue03c\ue011");
         s.put("\u0020\u1830\u1826\u0020", "\ue03c\ue010");
+        s.put("\u0020\u1830\u1823", "\ue03c\ue008");
+        s.put("\u0020\u1830\u1824", "\ue03c\ue008");
         s.put("\u0020\u1830\u1823\u180b\u0020", "\ue03c\ue011");
         s.put("\u0020\u1830\u1824\u180b\u0020", "\ue03c\ue011");
         s.put("\u0020\u1830\u1825\u180b\u0020", "\ue03c\ue010");
@@ -834,6 +843,8 @@ public class FromMenkLetterCodeMapper {
         sh.put("\u0020\u1831\u1824\u0020", "\ue03f\ue00f");
         sh.put("\u0020\u1831\u1825\u0020", "\ue03f\ue011");
         sh.put("\u0020\u1831\u1826\u0020", "\ue03f\ue011");
+        sh.put("\u0020\u1831\u1823", "\ue03f\ue008");
+        sh.put("\u0020\u1831\u1824", "\ue03f\ue008");
         sh.put("\u0020\u1831\u1823\u180b\u0020", "\ue03f\ue011");
         sh.put("\u0020\u1831\u1824\u180b\u0020", "\ue03f\ue011");
         sh.put("\u0020\u1831\u1825\u180b\u0020", "\ue03f\ue010");
@@ -863,6 +874,8 @@ public class FromMenkLetterCodeMapper {
         t.put("\u0020\u1832\u1824\u0020", "\ue042\ue011");
         t.put("\u0020\u1832\u1825\u0020", "\ue042\ue011");
         t.put("\u0020\u1832\u1826\u0020", "\ue042\ue011");
+        t.put("\u0020\u1832\u1823", "\ue042\ue008");
+        t.put("\u0020\u1832\u1824", "\ue042\ue008");
         t.put("\u0020\u1832\u1823\u180b\u0020", "\ue042\ue011");
         t.put("\u0020\u1832\u1824\u180b\u0020", "\ue042\ue00f");
         t.put("\u0020\u1832\u1825\u180b\u0020", "\ue042\ue010");
@@ -1014,6 +1027,8 @@ public class FromMenkLetterCodeMapper {
         tr.put("\u0020\u1834\u1824\u0020", "\ue04a\ue011");
         tr.put("\u0020\u1834\u1825\u0020", "\ue04a\ue011");
         tr.put("\u0020\u1834\u1826\u0020", "\ue04a\ue011");
+        tr.put("\u0020\u1834\u1823", "\ue04a\ue008");
+        tr.put("\u0020\u1834\u1824", "\ue04a\ue008");
         tr.put("\u0020\u1834\u1823\u180b\u0020", "\ue04a\ue011");
         tr.put("\u0020\u1834\u1824\u180b\u0020", "\ue04a\ue00f");
         tr.put("\u0020\u1834\u1825\u180b\u0020", "\ue04a\ue010");
@@ -1044,6 +1059,8 @@ public class FromMenkLetterCodeMapper {
         j.put("\u0020\u1835\u1824\u0020", "\ue04d\ue00f");
         j.put("\u0020\u1835\u1825\u0020", "\ue04d\ue011");
         j.put("\u0020\u1835\u1826\u0020", "\ue04d\ue011");
+        j.put("\u0020\u1835\u1823", "\ue04d\ue008");
+        j.put("\u0020\u1835\u1824", "\ue04d\ue008");
         j.put("\u0020\u1835\u1823\u180b\u0020", "\ue04d\ue011");
         j.put("\u0020\u1835\u1824\u180b\u0020", "\ue04d\ue011");
         j.put("\u0020\u1835\u1825\u180b\u0020", "\ue04d\ue010");
@@ -1104,10 +1121,37 @@ public class FromMenkLetterCodeMapper {
         y.put("\u0020\u1836\u1824\u0020", "\ue050\ue00f");
         y.put("\u0020\u1836\u1825\u0020", "\ue050\ue011");
         y.put("\u0020\u1836\u1826\u0020", "\ue050\ue011");
+        y.put("\u0020\u1836\u1823", "\ue050\ue008");
+        y.put("\u0020\u1836\u1824", "\ue050\ue008");
         y.put("\u0020\u1836\u1823\u180b\u0020", "\ue050\ue011");
         y.put("\u0020\u1836\u1824\u180b\u0020", "\ue050\ue011");
         y.put("\u0020\u1836\u1825\u180b\u0020", "\ue050\ue010");
         y.put("\u0020\u1836\u1826\u180b\u0020", "\ue050\ue010");
+
+        //y+180b
+        y.put("\u0020\u1836\u180b\u0020", "\ue050");
+
+        //top y+180b+a,y+180b+e,y+180b+i,y+180b+o,y+180b+u
+        //look "\u0020\u1836\u180b"
+
+        //middle y+180b+a,y+180b+e,y+180b+o,y+180b+u
+        y.put("\u1836\u180b\u1820", "\ue006\ue005");
+        y.put("\u1836\u180b\u1821", "\ue006\ue005");
+        y.put("\u1836\u180b\u1823", "\ue006\ue008");
+        y.put("\u1836\u180b\u1824", "\ue006\ue008");
+        y.put("\u1836\u180b\u1825", "\ue006\ue008");
+        y.put("\u1836\u180b\u1826", "\ue006\ue008");
+        y.put("\u1836\u180b\u1827", "\ue006\ue057");
+
+        //tail y+180b+a,y+180b+e,y+180b+o,y+180b+u
+        y.put("\u1836\u180b\u1820\u0020", "\ue006\ue00c");
+        y.put("\u1836\u180b\u1821\u0020", "\ue006\ue00c");
+        y.put("\u1836\u180b\u1823\u0020", "\ue006\ue011");
+        y.put("\u1836\u180b\u1824\u0020", "\ue006\ue011");
+        y.put("\u1836\u180b\u1825\u0020", "\ue006\ue011");
+        y.put("\u1836\u180b\u1826\u0020", "\ue006\ue011");
+        y.put("\u1836\u180b\u1827\u0020", "\ue006\ue058");
+
         return y;
     }
 
@@ -1135,6 +1179,8 @@ public class FromMenkLetterCodeMapper {
         r.put("\u0020\u1837\u1824\u0020", "\ue053\ue00f");
         r.put("\u0020\u1837\u1825\u0020", "\ue053\ue011");
         r.put("\u0020\u1837\u1826\u0020", "\ue053\ue011");
+        r.put("\u0020\u1837\u1823", "\ue053\ue008");
+        r.put("\u0020\u1837\u1824", "\ue053\ue008");
         r.put("\u0020\u1837\u1823\u180b\u0020", "\ue053\ue011");
         r.put("\u0020\u1837\u1824\u180b\u0020", "\ue053\ue011");
         r.put("\u0020\u1837\u1825\u180b\u0020", "\ue053\ue010");
@@ -1188,6 +1234,8 @@ public class FromMenkLetterCodeMapper {
         w.put("\u0020\u1838\u1825\u0020", "\ue056\ue011");
         w.put("\u0020\u1838\u1826\u0020", "\ue056\ue011");
         w.put("\u0020\u1838\u1827\u0020", "\ue056\ue057");
+        w.put("\u0020\u1838\u1823", "\ue056\ue008");
+        w.put("\u0020\u1838\u1824", "\ue056\ue008");
         w.put("\u0020\u1838\u1823\u180b\u0020", "\ue056\ue011");
         w.put("\u0020\u1838\u1824\u180b\u0020", "\ue056\ue011");
         w.put("\u0020\u1838\u1825\u180b\u0020", "\ue056\ue010");
@@ -1380,6 +1428,8 @@ public class FromMenkLetterCodeMapper {
         ts.put("\u0020\u183c\u1824\u0020", "\ue05f\ue00f");
         ts.put("\u0020\u183c\u1825\u0020", "\ue05f\ue011");
         ts.put("\u0020\u183c\u1826\u0020", "\ue05f\ue011");
+        ts.put("\u0020\u183c\u1823", "\ue05f\ue008");
+        ts.put("\u0020\u183c\u1824", "\ue05f\ue008");
         ts.put("\u0020\u183c\u1823\u180b\u0020", "\ue05f\ue011");
         ts.put("\u0020\u183c\u1824\u180b\u0020", "\ue05f\ue011");
         ts.put("\u0020\u183c\u1825\u180b\u0020", "\ue05f\ue010");
@@ -1406,6 +1456,8 @@ public class FromMenkLetterCodeMapper {
         z.put("\u0020\u183d\u1824\u0020", "\ue062\ue00f");
         z.put("\u0020\u183d\u1825\u0020", "\ue062\ue011");
         z.put("\u0020\u183d\u1826\u0020", "\ue062\ue011");
+        z.put("\u0020\u183d\u1823", "\ue062\ue008");
+        z.put("\u0020\u183d\u1824", "\ue062\ue008");
         z.put("\u0020\u183d\u1823\u180b\u0020", "\ue062\ue011");
         z.put("\u0020\u183d\u1824\u180b\u0020", "\ue062\ue011");
         z.put("\u0020\u183d\u1825\u180b\u0020", "\ue062\ue010");
@@ -1427,6 +1479,9 @@ public class FromMenkLetterCodeMapper {
         //ts6u,ts7u
         hh.put("\u0020\u183e\u1825", "\ue000\ue066\ue008\ue006");
         hh.put("\u0020\u183e\u1826", "\ue000\ue066\ue008\ue006");
+        //ts4o,ts5o
+        hh.put("\u0020\u183e\u1823", "\ue000\ue066\ue008");
+        hh.put("\u0020\u183e\u1824", "\ue000\ue066\ue008");
         return hh;
     }
 
@@ -1444,6 +1499,10 @@ public class FromMenkLetterCodeMapper {
         //ts6u,ts7u
         rh.put("\u0020\u183f\u1825", "\ue068\ue008\ue006");
         rh.put("\u0020\u183f\u1826", "\ue068\ue008\ue006");
+
+        //ts4o,ts5o
+        rh.put("\u0020\u183f\u1823", "\ue068\ue008");
+        rh.put("\u0020\u183f\u1824", "\ue068\ue008");
         return rh;
     }
 

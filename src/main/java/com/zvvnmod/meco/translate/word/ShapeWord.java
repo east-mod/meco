@@ -14,13 +14,19 @@ import java.util.List;
  */
 public class ShapeWord {
     @Getter
+    private Nature nature;
+    @Getter
     private List<ShapeWordFragment> wordFragments;
 
     public ShapeWord() {
+        this.nature = Nature.CHAGH;
         this.wordFragments = new LinkedList<>();
     }
 
     public void add(final ShapeWordFragment shapeWordFragment) {
+        if (shapeWordFragment.getKey().equals("\ue006\ue00d") || shapeWordFragment.getKey().equals("\ue031")) {
+            nature = Nature.HUNDII;
+        }
         wordFragments.add(shapeWordFragment);
     }
 

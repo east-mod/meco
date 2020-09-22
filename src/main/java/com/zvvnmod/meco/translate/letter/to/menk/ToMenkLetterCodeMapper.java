@@ -10,15 +10,18 @@ import com.zvvnmod.meco.translate.word.CodeMapper;
  */
 public class ToMenkLetterCodeMapper {
     public static CodeMapper mapper = new CodeMapper(1024);
+    public static CodeMapper hundiiMapper = new CodeMapper(128);
+    public static CodeMapper chaghMapper = new CodeMapper(128);
 
     static {
         buildMapper1();
         buildMapper2();
+        buildChaghMapper();
+        buildHundiiMapper();
     }
 
     private static void buildMapper1() {
         mapper.put("\ue000", "\u1821");
-        mapper.put("\ue000\ue005", "\u1820");
         mapper.put("\ue000\ue006", "\u1822");
         mapper.put("\ue000\ue008", "\u1823");
         mapper.put("\ue000\ue00c", "\u1820");
@@ -37,32 +40,22 @@ public class ToMenkLetterCodeMapper {
 
         mapper.put("\ue04d\ue006", "\u202f\u1836\u180b\u1822");
 
-        mapper.put("\ue005", "\u1820");
         mapper.put("\ue006", "\u1822");
-        mapper.put("\ue005\ue006", "\u1820\u180d\u1822");
         mapper.put("\ue008", "\u1823");
 
         mapper.put("\ue008\ue006", "\u1826");
 
-        //default
-        mapper.put("\ue00c", "\u1820");
-
-        mapper.put("\ue00d", "\u180e\u1820");
-
         mapper.put("\ue00e", "\u1822");
-        mapper.put("\ue00e\ue00d", "\u1836\u180e\u1820");
 
         mapper.put("\ue00f", "\u1823");
 
         mapper.put("\ue010", "\u1826\u180b");
-        mapper.put("\ue011", "\u1824");
 
         mapper.put("\ue005\ue031", "\u1829");
 
         mapper.put("\ue005\ue006\ue00d", "\u1829");
 
         mapper.put("\ue01a", "\u1835\u180e");
-        mapper.put("\ue01a\ue00d", "\u1835\u180e\u1820");
 
         mapper.put("\ue01b", "\u202f\u1824");
     }
@@ -71,34 +64,24 @@ public class ToMenkLetterCodeMapper {
         //n
         mapper.put("\ue027", "\u1828");
         mapper.put("\ue028", "\u1828\u180b");
-        mapper.put("\ue028\ue005", "\u1828\u1820");
         mapper.put("\ue028\ue006", "\u1828\u1822");
-        mapper.put("\ue028\ue008", "\u1828\u1823");
-        mapper.put("\ue028\ue00c", "\u1828\u1820");
         mapper.put("\ue028\ue00e", "\u1828\u1822");
-        mapper.put("\ue028\ue011", "\u1828\u1823");
         mapper.put("\ue028\ue057", "\u1828\u1827");
         mapper.put("\ue028\ue058", "\u1828\u1827");
 
-        mapper.put("\ue077", "\u1828\u180e\u1820");
         //b
         mapper.put("\ue029", "\u182a");
         mapper.put("\ue02a", "\u182a");
         mapper.put("\ue02b", "\u182a");
 
-        mapper.put("\ue07c\ue00d", "\u182a\u1820");
         mapper.put("\ue079", "\u182a\u1822");
         mapper.put("\ue07a", "\u182a\u1823");
         mapper.put("\ue07b", "\u182a\u1825");
-        mapper.put("\ue07c", "\u182a\u1820");
-        mapper.put("\ue07d", "\u182a\u1820");
-        mapper.put("\ue07d\ue00d", "\u182a\u1820");
         mapper.put("\ue07f", "\u182a\u1822");
         mapper.put("\ue080", "\u182a\u1822");
         mapper.put("\ue081", "\u182a\u1822");
         mapper.put("\ue082", "\u182a\u1823");
-        mapper.put("\ue083", "\u182a\u1823");
-        mapper.put("\ue084", "\u182a\u1823");
+        mapper.put("\ue082\ue006", "\u182a\u1826");
 
         mapper.put("\ue029\ue058", "\u182a\u1827");
         mapper.put("\ue029\ue057", "\u182a\u1827");
@@ -111,19 +94,14 @@ public class ToMenkLetterCodeMapper {
         mapper.put("\ue02d", "\u182b");
         mapper.put("\ue02e", "\u182b");
 
-        mapper.put("\ue089\ue00d", "\u182b\u1820");
         mapper.put("\ue086", "\u182b\u1822");
         mapper.put("\ue087", "\u182b\u1823");
         mapper.put("\ue088", "\u182b\u1825");
-        mapper.put("\ue089", "\u182b\u1820");
-        mapper.put("\ue08a", "\u182b\u1820");
-        mapper.put("\ue08a\ue00d", "\u182b\u1820");
         mapper.put("\ue08c", "\u182b\u1822");
         mapper.put("\ue08d", "\u182b\u1822");
         mapper.put("\ue08e", "\u182b\u1822");
         mapper.put("\ue08f", "\u182b\u1823");
-        mapper.put("\ue090", "\u182b\u1823");
-        mapper.put("\ue091", "\u182b\u1823");
+        mapper.put("\ue08f\ue006", "\u182b\u1826");
 
         mapper.put("\ue02c\ue058", "\u182b\u1827");
         mapper.put("\ue02c\ue057", "\u182b\u1827");
@@ -165,12 +143,10 @@ public class ToMenkLetterCodeMapper {
         mapper.put("\ue036", "\u182E");
         mapper.put("\ue037", "\u182E");
         mapper.put("\ue038", "\u182E");
-        mapper.put("\ue038\ue00d", "\u182e\u180e\u1820");
         //l
         mapper.put("\ue039", "\u182f");
         mapper.put("\ue03a", "\u182f");
         mapper.put("\ue03b", "\u182f");
-        mapper.put("\ue03b\ue00d", "\u182f\u180e\u1820");
         //s
         mapper.put("\ue03c", "\u1830");
         mapper.put("\ue03d", "\u1830");
@@ -197,6 +173,7 @@ public class ToMenkLetterCodeMapper {
         //y
         mapper.put("\ue050", "\u1836");
         mapper.put("\ue051", "\u1836");
+        mapper.put("\ue050\ue006", "\u1836\u180b\u1822");
         //r
         mapper.put("\ue053", "\u1837");
         mapper.put("\ue054", "\u1837");
@@ -210,19 +187,14 @@ public class ToMenkLetterCodeMapper {
         mapper.put("\ue05a", "\u1839");
         mapper.put("\ue05b", "\u1839");
 
-        mapper.put("\ue0a2\ue00d", "\u1839\u1820");
         mapper.put("\ue09f", "\u1839\u1822");
         mapper.put("\ue0a0", "\u1839\u1823");
         mapper.put("\ue0a1", "\u1839\u1825");
-        mapper.put("\ue0a2", "\u1839\u1820");
-        mapper.put("\ue0a3", "\u1839\u1820");
-        mapper.put("\ue0a3\ue00d", "\u1839\u1820");
         mapper.put("\ue0a5", "\u1839\u1822");
         mapper.put("\ue0a6", "\u1839\u1822");
         mapper.put("\ue0a7", "\u1839\u1822");
         mapper.put("\ue0a8", "\u1839\u1823");
-        mapper.put("\ue0a9", "\u1839\u1823");
-        mapper.put("\ue0aa", "\u1839\u1823");
+        mapper.put("\ue0a8\ue006", "\u1839\u1826");
 
         mapper.put("\ue059\ue058", "\u1839\u1827");
         mapper.put("\ue059\ue057", "\u1839\u1827");
@@ -234,14 +206,11 @@ public class ToMenkLetterCodeMapper {
         mapper.put("\ue05d", "\u183a");
         mapper.put("\ue05e", "\u183a");
 
-        mapper.put("\ue0b0\ue00d", "\u183a\u1820");
+
         mapper.put("\ue05c\ue058", "\u183a\u1827");
         mapper.put("\ue0ad", "\u183a\u1822");
         mapper.put("\ue0ae", "\u183a\u1823");
         mapper.put("\ue0af", "\u183a\u1825");
-        mapper.put("\ue0b0", "\u183a\u1820");
-        mapper.put("\ue0b1", "\u183a\u1820");
-        mapper.put("\ue0b1\ue00d", "\u183a\u1820");
         mapper.put("\ue05c\ue057", "\u183a\u1827");
         mapper.put("\ue05d\ue057", "\u183a\u1827");
         mapper.put("\ue05d\ue058", "\u183a\u1827");
@@ -249,8 +218,7 @@ public class ToMenkLetterCodeMapper {
         mapper.put("\ue0b7", "\u183a\u1822");
         mapper.put("\ue0b8", "\u183a\u1822");
         mapper.put("\ue0b9", "\u183a\u1823");
-        mapper.put("\ue0ba", "\u183a\u1823");
-        mapper.put("\ue0bb", "\u183a\u1823");
+        mapper.put("\ue0b9\ue006", "\u183a\u1826");
         mapper.put("\ue0bc", "\u183a\u1825");
         //ts
         mapper.put("\ue05f", "\u183c");
@@ -272,4 +240,89 @@ public class ToMenkLetterCodeMapper {
         mapper.put("\ue142", "\u180D");
         mapper.put("\ue143", "\u180E");
     }
+
+    private static void buildChaghMapper() {
+        chaghMapper.put("\ue005", "\u1820");
+        chaghMapper.put("\ue000\ue005", "\u1820");
+        chaghMapper.put("\ue011", "\u1824");
+        chaghMapper.put("\ue005\ue006", "\u1820\u180d\u1822");
+        chaghMapper.put("\ue00c", "\u1820");
+        chaghMapper.put("\ue00d", "\u180e\u1820");
+        chaghMapper.put("\ue00e\ue00d", "\u1836\u180e\u1820");
+        chaghMapper.put("\ue01a\ue00d", "\u1835\u180e\u1820");
+        chaghMapper.put("\ue028\ue005", "\u1828\u1820");
+        chaghMapper.put("\ue028\ue00c", "\u1828\u1820");
+        chaghMapper.put("\ue077", "\u1828\u180e\u1820");
+        chaghMapper.put("\ue07c\ue00d", "\u182a\u1820");
+        chaghMapper.put("\ue07c", "\u182a\u1820");
+        chaghMapper.put("\ue07d", "\u182a\u1820");
+        chaghMapper.put("\ue07d\ue00d", "\u182a\u1820");
+        chaghMapper.put("\ue089\ue00d", "\u182b\u1820");
+        chaghMapper.put("\ue089", "\u182b\u1820");
+        chaghMapper.put("\ue08a", "\u182b\u1820");
+        chaghMapper.put("\ue08a\ue00d", "\u182b\u1820");
+        chaghMapper.put("\ue038\ue00d", "\u182e\u180e\u1820");
+        chaghMapper.put("\ue03b\ue00d", "\u182f\u180e\u1820");
+        chaghMapper.put("\ue0a2\ue00d", "\u1839\u1820");
+        chaghMapper.put("\ue0a2", "\u1839\u1820");
+        chaghMapper.put("\ue0a3", "\u1839\u1820");
+        chaghMapper.put("\ue0a3\ue00d", "\u1839\u1820");
+        chaghMapper.put("\ue0b0\ue00d", "\u183a\u1820");
+        chaghMapper.put("\ue0b0", "\u183a\u1820");
+        chaghMapper.put("\ue0b1", "\u183a\u1820");
+        chaghMapper.put("\ue0b1\ue00d", "\u183a\u1820");
+        chaghMapper.put("\ue028\ue008", "\u1828\u1823");
+        chaghMapper.put("\ue028\ue011", "\u1828\u1823");
+        chaghMapper.put("\ue083", "\u182a\u1823");
+        chaghMapper.put("\ue084", "\u182a\u1823");
+        chaghMapper.put("\ue090", "\u182b\u1823");
+        chaghMapper.put("\ue091", "\u182b\u1823");
+        chaghMapper.put("\ue0a9", "\u1839\u1823");
+        chaghMapper.put("\ue0aa", "\u1839\u1823");
+        chaghMapper.put("\ue0ba", "\u183a\u1823");
+        chaghMapper.put("\ue0bb", "\u183a\u1823");
+    }
+
+    private static void buildHundiiMapper() {
+        hundiiMapper.put("\ue005", "\u1821");
+        hundiiMapper.put("\ue000\ue005", "\u1821\u1821");
+        hundiiMapper.put("\ue011", "\u1826");
+        hundiiMapper.put("\ue005\ue006", "\u1821\u180d\u1822");
+        hundiiMapper.put("\ue00c", "\u1821");
+        hundiiMapper.put("\ue00d", "\u180e\u1821");
+        hundiiMapper.put("\ue00e\ue00d", "\u1836\u180e\u1821");
+        hundiiMapper.put("\ue01a\ue00d", "\u1835\u180e\u1821");
+        hundiiMapper.put("\ue028\ue005", "\u1828\u1821");
+        hundiiMapper.put("\ue028\ue00c", "\u1828\u1821");
+        hundiiMapper.put("\ue077", "\u1828\u180e\u1821");
+        hundiiMapper.put("\ue07c\ue00d", "\u182a\u1821");
+        hundiiMapper.put("\ue07c", "\u182a\u1821");
+        hundiiMapper.put("\ue07d", "\u182a\u1821");
+        hundiiMapper.put("\ue07d\ue00d", "\u182a\u1821");
+        hundiiMapper.put("\ue089\ue00d", "\u182b\u1821");
+        hundiiMapper.put("\ue089", "\u182b\u1821");
+        hundiiMapper.put("\ue08a", "\u182b\u1821");
+        hundiiMapper.put("\ue08a\ue00d", "\u182b\u1821");
+        hundiiMapper.put("\ue038\ue00d", "\u182e\u180e\u1821");
+        hundiiMapper.put("\ue03b\ue00d", "\u182f\u180e\u1821");
+        hundiiMapper.put("\ue0a2\ue00d", "\u1839\u1821");
+        hundiiMapper.put("\ue0a2", "\u1839\u1821");
+        hundiiMapper.put("\ue0a3", "\u1839\u1821");
+        hundiiMapper.put("\ue0a3\ue00d", "\u1839\u1821");
+        hundiiMapper.put("\ue0b0\ue00d", "\u183a\u1821");
+        hundiiMapper.put("\ue0b0", "\u183a\u1821");
+        hundiiMapper.put("\ue0b1", "\u183a\u1821");
+        hundiiMapper.put("\ue0b1\ue00d", "\u183a\u1821");
+        hundiiMapper.put("\ue028\ue008", "\u1828\u1826");
+        hundiiMapper.put("\ue028\ue011", "\u1828\u1826");
+        hundiiMapper.put("\ue083", "\u182a\u1826");
+        hundiiMapper.put("\ue084", "\u182a\u1826");
+        hundiiMapper.put("\ue090", "\u182b\u1826");
+        hundiiMapper.put("\ue091", "\u182b\u1826");
+        hundiiMapper.put("\ue0a9", "\u1839\u1826");
+        hundiiMapper.put("\ue0aa", "\u1839\u1826");
+        hundiiMapper.put("\ue0ba", "\u183a\u1826");
+        hundiiMapper.put("\ue0bb", "\u183a\u1826");
+    }
+
 }

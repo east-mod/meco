@@ -1482,6 +1482,8 @@ public class FromMenkLetterCodeMapper {
         //ts4o,ts5o
         hh.put("\u0020\u183e\u1823", "\ue000\ue066\ue008");
         hh.put("\u0020\u183e\u1824", "\ue000\ue066\ue008");
+        hh.put("\u0020\u183e\u1823\u0020", "\ue000\ue066\ue00f");
+        hh.put("\u0020\u183e\u1824\u0020", "\ue000\ue066\ue00f");
         return hh;
     }
 
@@ -1503,6 +1505,8 @@ public class FromMenkLetterCodeMapper {
         //ts4o,ts5o
         rh.put("\u0020\u183f\u1823", "\ue068\ue008");
         rh.put("\u0020\u183f\u1824", "\ue068\ue008");
+        rh.put("\u0020\u183f\u1823\u0020", "\ue068\ue00f");
+        rh.put("\u0020\u183f\u1824\u0020", "\ue068\ue00f");
         return rh;
     }
 

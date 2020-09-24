@@ -162,6 +162,7 @@ public class ToMenkLetterCodeMapper {
         mapper.put("\ue092", "\u182c\u1822");
         mapper.put("\ue093", "\u182c\u1825");
         mapper.put("\ue094", "\u182c\u1821");
+        mapper.put("\uE094\uE00d", "\u182c\u1821");
         mapper.put("\ue095", "\u182c\u1821");
         mapper.put("\ue095\ue00d", "\u182c\u1821");
         mapper.put("\ue097", "\u182c\u1822");

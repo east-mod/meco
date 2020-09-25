@@ -185,6 +185,8 @@ public class ToMenkLetterCodeMapper {
         mapper.put("\ue03c", "\u1830");
         mapper.put("\ue03d", "\u1830");
         mapper.put("\ue03e", "\u1830");
+        //就这个东西很奇葩
+        mapper.put("\ue03c\ue010", "\u1830\u1826");
         //sh
         mapper.put("\ue03f", "\u1831");
         mapper.put("\ue040", "\u1831");

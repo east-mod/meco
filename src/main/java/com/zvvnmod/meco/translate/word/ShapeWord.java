@@ -24,7 +24,9 @@ public class ShapeWord {
     }
 
     public void add(final ShapeWordFragment shapeWordFragment) {
-        if (shapeWordFragment.getKey().equals("\ue006\ue00d") || shapeWordFragment.getKey().equals("\ue031")) {
+        if (shapeWordFragment.getKey().equals("\ue006\ue00d") ||
+                shapeWordFragment.getKey().equals("\ue031") ||
+                shapeWordFragment.getKey().equals("\uE006\uE006\uE00D")) {
             nature = Nature.HUNDII;
         }
         wordFragments.add(shapeWordFragment);

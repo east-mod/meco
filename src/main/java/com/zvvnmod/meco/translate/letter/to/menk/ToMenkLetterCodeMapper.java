@@ -41,6 +41,8 @@ public class ToMenkLetterCodeMapper {
         mapper.put("\ue04d\ue006", "\u202f\u1836\u180b\u1822");
 
         mapper.put("\ue006", "\u180d\u1822");
+        mapper.put("\uE006\uE006", "\u180d\u1822\u180d\u1822");
+        mapper.put("\uE006\uE006\uE00D", "\u1822\u182d");
 
         mapper.put("\ue000\ue008", "\u1823");
         mapper.put("\ue027\ue008", "\u1828\u1823");
@@ -347,7 +349,7 @@ public class ToMenkLetterCodeMapper {
         chaghMapper.put("\ue051\ue005", "\u1836\u1820");
         chaghMapper.put("\ue051\ue008", "\u1836\u1823");
         chaghMapper.put("\ue051\ue00c", "\u1836\u1820");
-        chaghMapper.put("\ue051\ue011", "\u1836\u1824\u180b");
+        chaghMapper.put("\ue051\ue011", "\u1836\u1824");
     }
 
     private static void buildHundiiMapper() {
@@ -395,7 +397,7 @@ public class ToMenkLetterCodeMapper {
         hundiiMapper.put("\ue051\ue005", "\u1836\u1821");
         hundiiMapper.put("\ue051\ue008", "\u1836\u1826");
         hundiiMapper.put("\ue051\ue00c", "\u1836\u1821");
-        hundiiMapper.put("\ue051\ue011", "\u1836\u1826\u180b");
+        hundiiMapper.put("\ue051\ue011", "\u1836\u1826");
     }
 
 }

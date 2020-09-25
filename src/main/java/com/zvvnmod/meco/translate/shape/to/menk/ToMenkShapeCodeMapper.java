@@ -16,6 +16,7 @@ public class ToMenkShapeCodeMapper {
         buildMapper1();
         buildMapper2();
         buildMapper3();
+        buildPunctuations();
     }
 
     private static void buildMapper1() {
@@ -244,4 +245,61 @@ public class ToMenkShapeCodeMapper {
         mapper.put("\ue143", "\u180e");
         mapper.put("\ue144", "\ue144");
     }
+
+    private static void buildPunctuations() {
+        mapper.put("\u1800", "\ue234");
+        mapper.put("\u1801", "\ue235");
+        mapper.put("\u1802", "\ue236");
+        mapper.put("\u1803", "\ue237");
+        mapper.put("\u1804", "\ue238");
+        mapper.put("\u1805", "\ue239");
+        mapper.put("\u1806", "\ue23a");
+        mapper.put("\u1807", "\ue23b");
+        mapper.put("\u1808", "\ue23c");
+        mapper.put("\u1809", "\ue23d");
+        mapper.put("\u180A", "\ue23e");
+
+        //没有匹配
+        mapper.put("\ue23f", "\ue23f");
+        mapper.put("\ue240", "\ue240");
+        mapper.put("\ue241", "\ue241");
+        mapper.put("\ue242", "\ue242");
+
+
+        mapper.put("\u00b7", "\ue243");
+
+        mapper.put("\u1810", "\ue244");
+        mapper.put("\u1811", "\ue245");
+        mapper.put("\u1812", "\ue246");
+        mapper.put("\u1813", "\ue247");
+        mapper.put("\u1814", "\ue248");
+        mapper.put("\u1815", "\ue249");
+        mapper.put("\u1816", "\ue24a");
+        mapper.put("\u1817", "\ue24b");
+        mapper.put("\u1818", "\ue24c");
+        mapper.put("\u1819", "\ue24d");
+
+
+        mapper.put("\u2048", "\ue24e");
+        mapper.put("\u2049", "\ue24f");
+        mapper.put("\u0021", "\ue250");
+        mapper.put("\u003f", "\ue251");
+        mapper.put("\u003b", "\ue252");
+        mapper.put("\u0028", "\ue253");
+        mapper.put("\u0029", "\ue254");
+        mapper.put("\u3008", "\ue255");
+        mapper.put("\u3009", "\ue256");
+        mapper.put("\u3014", "\ue257");
+        mapper.put("\u3015", "\ue258");
+        mapper.put("\u300a", "\ue259");
+        mapper.put("\u300b", "\ue25a");
+        mapper.put("\u300e", "\ue25b");
+        mapper.put("\u300f", "\ue25c");
+        mapper.put("\u002c", "\ue25d");
+        mapper.put("\u00d7", "\ue25e");
+        mapper.put("\u203b", "\ue25f");
+        mapper.put("\u002d", "\ue260");
+        mapper.put("\u007c", "\ue261");
+    }
+
 }

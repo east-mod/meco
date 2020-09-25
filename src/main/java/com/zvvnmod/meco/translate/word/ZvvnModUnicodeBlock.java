@@ -12,10 +12,12 @@ import java.util.Set;
 public class ZvvnModUnicodeBlock {
     public static final Set<Character> zvvnModCodes = new HashSet<>(256);
     public static final Set<Character> zvvnModTailCodes = new HashSet<>(128);
+    public static final Set<Character> zvvnModPunctuations = new HashSet<>(128);
 
     static {
         buildZvvnModCodes();
         buildZvvnModTailCodes();
+        buildZvvnModPunctuations();
     }
 
     private static void buildZvvnModCodes() {
@@ -226,5 +228,61 @@ public class ZvvnModUnicodeBlock {
         zvvnModTailCodes.add('\ue0cf');
         zvvnModTailCodes.add('\ue0d0');
 
+    }
+
+    private static void buildZvvnModPunctuations() {
+        zvvnModPunctuations.add('\u1800');
+        zvvnModPunctuations.add('\u1801');
+        zvvnModPunctuations.add('\u1802');
+        zvvnModPunctuations.add('\u1803');
+        zvvnModPunctuations.add('\u1804');
+        zvvnModPunctuations.add('\u1805');
+        zvvnModPunctuations.add('\u1806');
+        zvvnModPunctuations.add('\u1807');
+        zvvnModPunctuations.add('\u1808');
+        zvvnModPunctuations.add('\u1809');
+        zvvnModPunctuations.add('\u180A');
+
+        //没有匹配
+        zvvnModPunctuations.add('\ue23f');
+        zvvnModPunctuations.add('\ue240');
+        zvvnModPunctuations.add('\ue241');
+        zvvnModPunctuations.add('\ue242');
+
+
+        zvvnModPunctuations.add('\u00b7');
+
+        zvvnModPunctuations.add('\u1810');
+        zvvnModPunctuations.add('\u1811');
+        zvvnModPunctuations.add('\u1812');
+        zvvnModPunctuations.add('\u1813');
+        zvvnModPunctuations.add('\u1814');
+        zvvnModPunctuations.add('\u1815');
+        zvvnModPunctuations.add('\u1816');
+        zvvnModPunctuations.add('\u1817');
+        zvvnModPunctuations.add('\u1818');
+        zvvnModPunctuations.add('\u1819');
+
+
+        zvvnModPunctuations.add('\u2048');
+        zvvnModPunctuations.add('\u2049');
+        zvvnModPunctuations.add('\u0021');
+        zvvnModPunctuations.add('\u003f');
+        zvvnModPunctuations.add('\u003b');
+        zvvnModPunctuations.add('\u0028');
+        zvvnModPunctuations.add('\u0029');
+        zvvnModPunctuations.add('\u3008');
+        zvvnModPunctuations.add('\u3009');
+        zvvnModPunctuations.add('\u3014');
+        zvvnModPunctuations.add('\u3015');
+        zvvnModPunctuations.add('\u300a');
+        zvvnModPunctuations.add('\u300b');
+        zvvnModPunctuations.add('\u300e');
+        zvvnModPunctuations.add('\u300f');
+        zvvnModPunctuations.add('\u002c');
+        zvvnModPunctuations.add('\u00d7');
+        zvvnModPunctuations.add('\u203b');
+        zvvnModPunctuations.add('\u002d');
+        zvvnModPunctuations.add('\u007c');
     }
 }

@@ -69,6 +69,7 @@ public class FromMenkShapeCodeMapper {
         codeMapper.combine(buildHH());
         codeMapper.combine(buildRH());
         codeMapper.combine(buildOthers());
+        codeMapper.combine(buildPunctuations());
     }
 
     public static Map<String, String> buildBase() {
@@ -908,6 +909,66 @@ public class FromMenkShapeCodeMapper {
         Map<String, String> others = new HashMap<>();
         buildLocateChar(others, "\ue263", "\u0020");
         return others;
+    }
+
+    private static Map<String, String> buildPunctuations() {
+        Map<String, String> punctuations = new HashMap<>();
+        
+        buildLocateChar(punctuations, "\ue234", "\u1800");
+        buildLocateChar(punctuations, "\ue235", "\u1801");
+        buildLocateChar(punctuations, "\ue236", "\u1802");
+        buildLocateChar(punctuations, "\ue237", "\u1803");
+        buildLocateChar(punctuations, "\ue238", "\u1804");
+        buildLocateChar(punctuations, "\ue239", "\u1805");
+        buildLocateChar(punctuations, "\ue23a", "\u1806");
+        buildLocateChar(punctuations, "\ue23b", "\u1807");
+        buildLocateChar(punctuations, "\ue23c", "\u1808");
+        buildLocateChar(punctuations, "\ue23d", "\u1809");
+        buildLocateChar(punctuations, "\ue23e", "\u180A");
+
+        //没有匹配
+        buildLocateChar(punctuations, "\ue23f", "\ue23f");
+        buildLocateChar(punctuations, "\ue240", "\ue240");
+        buildLocateChar(punctuations, "\ue241", "\ue241");
+        buildLocateChar(punctuations, "\ue242", "\ue242");
+
+
+        buildLocateChar(punctuations, "\ue243", "\u00b7");
+
+        buildLocateChar(punctuations, "\ue244", "\u1810");
+        buildLocateChar(punctuations, "\ue245", "\u1811");
+        buildLocateChar(punctuations, "\ue246", "\u1812");
+        buildLocateChar(punctuations, "\ue247", "\u1813");
+        buildLocateChar(punctuations, "\ue248", "\u1814");
+        buildLocateChar(punctuations, "\ue249", "\u1815");
+        buildLocateChar(punctuations, "\ue24a", "\u1816");
+        buildLocateChar(punctuations, "\ue24b", "\u1817");
+        buildLocateChar(punctuations, "\ue24c", "\u1818");
+        buildLocateChar(punctuations, "\ue24d", "\u1819");
+
+
+        buildLocateChar(punctuations, "\ue24e", "\u2048");
+        buildLocateChar(punctuations, "\ue24f", "\u2049");
+        buildLocateChar(punctuations, "\ue250", "\u0021");
+        buildLocateChar(punctuations, "\ue251", "\u003f");
+        buildLocateChar(punctuations, "\ue252", "\u003b");
+        buildLocateChar(punctuations, "\ue253", "\u0028");
+        buildLocateChar(punctuations, "\ue254", "\u0029");
+        buildLocateChar(punctuations, "\ue255", "\u3008");
+        buildLocateChar(punctuations, "\ue256", "\u3009");
+        buildLocateChar(punctuations, "\ue257", "\u3014");
+        buildLocateChar(punctuations, "\ue258", "\u3015");
+        buildLocateChar(punctuations, "\ue259", "\u300a");
+        buildLocateChar(punctuations, "\ue25a", "\u300b");
+        buildLocateChar(punctuations, "\ue25b", "\u300e");
+        buildLocateChar(punctuations, "\ue25c", "\u300f");
+        buildLocateChar(punctuations, "\ue25d", "\u002c");
+        buildLocateChar(punctuations, "\ue25e", "\u00d7");
+        buildLocateChar(punctuations, "\ue25f", "\u203b");
+        buildLocateChar(punctuations, "\ue260", "\u002d");
+        buildLocateChar(punctuations, "\ue261", "\u007c");
+
+        return punctuations;
     }
 
     private static void buildLocateChar(Map<String, String> map, String s, String mapperString) {

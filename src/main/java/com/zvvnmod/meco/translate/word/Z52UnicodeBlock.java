@@ -11,12 +11,14 @@ import java.util.Set;
  */
 public class Z52UnicodeBlock {
     public static final Set<Character> z52Codes = new HashSet<>(256);
+    public static final Set<Character> z52CodePunctuations = new HashSet<>(64);
 
     static {
         build();
+        buildZ52CodePunctuations();
     }
 
-    public static void build() {
+    private static void build() {
         z52Codes.add('\u1865');
         z52Codes.add('\u1866');
         z52Codes.add('\u1867');
@@ -75,5 +77,29 @@ public class Z52UnicodeBlock {
 
         z52Codes.add('\u18aa');
 
+    }
+
+    private static void buildZ52CodePunctuations() {
+        z52CodePunctuations.add('\u184f');
+        z52CodePunctuations.add('\u1850');
+        z52CodePunctuations.add('\u1851');
+        z52CodePunctuations.add('\u1852');
+        z52CodePunctuations.add('\u1853');
+        z52CodePunctuations.add('\u1854');
+        z52CodePunctuations.add('\u1855');
+        z52CodePunctuations.add('\u1856');
+        z52CodePunctuations.add('\u1857');
+        z52CodePunctuations.add('\u1858');
+        z52CodePunctuations.add('\u1859');
+        z52CodePunctuations.add('\u185a');
+        z52CodePunctuations.add('\u185b');
+        z52CodePunctuations.add('\u185c');
+        z52CodePunctuations.add('\u185d');
+        z52CodePunctuations.add('\u185e');
+        z52CodePunctuations.add('\u185f');
+        z52CodePunctuations.add('\u1860');
+        z52CodePunctuations.add('\u1861');
+        z52CodePunctuations.add('\u1862');
+        z52CodePunctuations.add('\u1863');
     }
 }

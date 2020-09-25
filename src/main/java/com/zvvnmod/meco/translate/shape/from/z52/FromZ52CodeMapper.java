@@ -41,9 +41,10 @@ public class FromZ52CodeMapper {
         codeMapper.combine(buildZ());
         codeMapper.combine(buildHH());
         codeMapper.combine(buildRH());
+        codeMapper.combine(buildPunctuations());
     }
 
-    public static Map<String, String> buildBase() {
+    private static Map<String, String> buildBase() {
         Map<String, String> map = new HashMap<>(64);
         putAll(map, "\u1865", "\ue000");
 
@@ -73,7 +74,7 @@ public class FromZ52CodeMapper {
         return map;
     }
 
-    public static Map<String, String> buildN() {
+    private static Map<String, String> buildN() {
         Map<String, String> n = new HashMap<>(32);
         putAll(n, "\u186f", "\ue027");
         putAll(n, "\u1870", "\ue077");
@@ -82,7 +83,7 @@ public class FromZ52CodeMapper {
         return n;
     }
 
-    public static Map<String, String> buildB() {
+    private static Map<String, String> buildB() {
         Map<String, String> b = new HashMap<>(64);
         //b1
         String b1 = "\u1873";
@@ -132,7 +133,7 @@ public class FromZ52CodeMapper {
         return b;
     }
 
-    public static Map<String, String> buildP() {
+    private static Map<String, String> buildP() {
         Map<String, String> p = new HashMap<>(64);
         //b1
         String p1 = "\u1876";
@@ -182,7 +183,7 @@ public class FromZ52CodeMapper {
         return p;
     }
 
-    public static Map<String, String> buildHG() {
+    private static Map<String, String> buildHG() {
         Map<String, String> hg = new HashMap<>(64);
         putAll(hg, "\u1878", "\ue02f");
         putAll(hg, "\u1887", "\ue032");
@@ -240,7 +241,7 @@ public class FromZ52CodeMapper {
         return hg;
     }
 
-    public static Map<String, String> buildM() {
+    private static Map<String, String> buildM() {
         Map<String, String> m = new HashMap<>(16);
         putAll(m, "\u188c", "\ue036");
         putAll(m, "\u188d", "\ue038");
@@ -248,7 +249,7 @@ public class FromZ52CodeMapper {
         return m;
     }
 
-    public static Map<String, String> buildL() {
+    private static Map<String, String> buildL() {
         Map<String, String> l = new HashMap<>(16);
         putAll(l, "\u188f", "\ue039");
         putAll(l, "\u1890", "\ue03b");
@@ -256,7 +257,7 @@ public class FromZ52CodeMapper {
         return l;
     }
 
-    public static Map<String, String> buildS() {
+    private static Map<String, String> buildS() {
         Map<String, String> s = new HashMap<>(16);
         putAll(s, "\u1893", "\ue03e");
         s.put("\u0020" + "\u1894", "\ue03c");
@@ -266,7 +267,7 @@ public class FromZ52CodeMapper {
         return s;
     }
 
-    public static Map<String, String> buildSH() {
+    private static Map<String, String> buildSH() {
         Map<String, String> sh = new HashMap<>(16);
         putAll(sh, "\u1896", "\ue041");
         sh.put("\u0020" + "\u1897", "\ue03f");
@@ -276,7 +277,7 @@ public class FromZ52CodeMapper {
         return sh;
     }
 
-    public static Map<String, String> buildTD() {
+    private static Map<String, String> buildTD() {
         Map<String, String> td = new HashMap<>(32);
         String t = "\u1898";
         td.put("\u0020" + t, "\ue042");
@@ -298,7 +299,7 @@ public class FromZ52CodeMapper {
         return td;
     }
 
-    public static Map<String, String> buildTR() {
+    private static Map<String, String> buildTR() {
         Map<String, String> tr = new HashMap<>(16);
         String tr1 = "\u189a";
         tr.put("\u0020" + tr1, "\ue04a");
@@ -312,7 +313,7 @@ public class FromZ52CodeMapper {
         return tr;
     }
 
-    public static Map<String, String> buildJ() {
+    private static Map<String, String> buildJ() {
         Map<String, String> j = new HashMap<>(16);
         String j1 = "\u189b";
         putAll(j, j1, "\ue04e");
@@ -321,7 +322,7 @@ public class FromZ52CodeMapper {
         return j;
     }
 
-    public static Map<String, String> buildY() {
+    private static Map<String, String> buildY() {
         Map<String, String> y = new HashMap<>(8);
         String y1 = "\u189c";
         y.put("\u0020" + y1, "\ue050");
@@ -331,7 +332,7 @@ public class FromZ52CodeMapper {
         return y;
     }
 
-    public static Map<String, String> buildR() {
+    private static Map<String, String> buildR() {
         Map<String, String> r = new HashMap<>(16);
         String r1 = "\u189e";
         r.put("\u0020" + r1, "\ue053");
@@ -344,7 +345,7 @@ public class FromZ52CodeMapper {
         return r;
     }
 
-    public static Map<String, String> buildW() {
+    private static Map<String, String> buildW() {
         Map<String, String> w = new HashMap<>(16);
         String w1 = "\u189f";
         w.put("\u0020" + w1, "\ue056");
@@ -357,7 +358,7 @@ public class FromZ52CodeMapper {
         return w;
     }
 
-    public static Map<String, String> buildF() {
+    private static Map<String, String> buildF() {
         Map<String, String> f = new HashMap<>(64);
         //f1
         String f1 = "\u18a1";
@@ -407,7 +408,7 @@ public class FromZ52CodeMapper {
         return f;
     }
 
-    public static Map<String, String> buildK() {
+    private static Map<String, String> buildK() {
         Map<String, String> k = new HashMap<>(64);
         String k1 = "\u18a4";
         k.put("\u0020" + k1, "\ue05c");
@@ -462,7 +463,7 @@ public class FromZ52CodeMapper {
         return k;
     }
 
-    public static Map<String, String> buildTS() {
+    private static Map<String, String> buildTS() {
         Map<String, String> ts = new HashMap<>(16);
 
         String ts1 = "\u18a6";
@@ -476,7 +477,7 @@ public class FromZ52CodeMapper {
         return ts;
     }
 
-    public static Map<String, String> buildZ() {
+    private static Map<String, String> buildZ() {
         Map<String, String> z = new HashMap<>(16);
 
         String z1 = "\u18a7";
@@ -491,7 +492,7 @@ public class FromZ52CodeMapper {
         return z;
     }
 
-    public static Map<String, String> buildHH() {
+    private static Map<String, String> buildHH() {
         Map<String, String> hh = new HashMap<>(16);
         String hh1 = "\u18a8";
         putAll(hh, hh1, "\ue066");
@@ -502,13 +503,41 @@ public class FromZ52CodeMapper {
         return hh;
     }
 
-    public static Map<String, String> buildRH() {
+    private static Map<String, String> buildRH() {
         Map<String, String> rh = new HashMap<>(16);
 
         String rh1 = "\u18aa";
         putAll(rh, rh1, "\ue068");
 
         return rh;
+    }
+
+    private static Map<String, String> buildPunctuations() {
+        Map<String, String> punctuations = new HashMap<>(512);
+
+        putAll(punctuations, "\u184f", "\u00b7");
+        putAll(punctuations, "\u1850", "\u2048");
+        putAll(punctuations, "\u1851", "\u2049");
+        putAll(punctuations, "\u1852", "\u0021");
+        putAll(punctuations, "\u1853", "\u003f");
+        putAll(punctuations, "\u1854", "\u003b");
+        putAll(punctuations, "\u1855", "\u0028");
+        putAll(punctuations, "\u1856", "\u0029");
+        putAll(punctuations, "\u1857", "\u3008");
+        putAll(punctuations, "\u1858", "\u3009");
+        putAll(punctuations, "\u1859", "\u3014");
+        putAll(punctuations, "\u185a", "\u3015");
+        putAll(punctuations, "\u185b", "\u300a");
+        putAll(punctuations, "\u185c", "\u300b");
+        putAll(punctuations, "\u185d", "\u300e");
+        putAll(punctuations, "\u185e", "\u300f");
+        putAll(punctuations, "\u185f", "\u002c");
+        putAll(punctuations, "\u1860", "\u00d7");
+        putAll(punctuations, "\u1861", "\u203b");
+        putAll(punctuations, "\u1862", "\u002d");
+        putAll(punctuations, "\u1863", "\u007c");
+
+        return punctuations;
     }
 
     private static void putAll(Map<String, String> map, String s, String mapperString) {

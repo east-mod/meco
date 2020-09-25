@@ -72,7 +72,7 @@ public class FromMenkShapeCodeMapper {
         codeMapper.combine(buildPunctuations());
     }
 
-    public static Map<String, String> buildBase() {
+    private static Map<String, String> buildBase() {
         Map<String, String> base = new HashMap<>(1024);
         buildLocateChar(base, "\ue264", "\ue000\ue00c");
         buildLocateChar(base, "\ue265", "\ue000\ue00d");
@@ -912,8 +912,8 @@ public class FromMenkShapeCodeMapper {
     }
 
     private static Map<String, String> buildPunctuations() {
-        Map<String, String> punctuations = new HashMap<>();
-        
+        Map<String, String> punctuations = new HashMap<>(512);
+
         buildLocateChar(punctuations, "\ue234", "\u1800");
         buildLocateChar(punctuations, "\ue235", "\u1801");
         buildLocateChar(punctuations, "\ue236", "\u1802");

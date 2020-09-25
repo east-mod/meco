@@ -23,7 +23,8 @@ import java.util.List;
 public class Z52TranslateRuleTo implements ShapeTranslateRule {
     @Override
     public boolean isTranslateCodePoint(char c) {
-        return ZvvnModUnicodeBlock.zvvnModCodes.contains(c);
+        return ZvvnModUnicodeBlock.zvvnModCodes.contains(c) ||
+                ZvvnModUnicodeBlock.zvvnModPunctuations.contains(c);
     }
 
     @Override

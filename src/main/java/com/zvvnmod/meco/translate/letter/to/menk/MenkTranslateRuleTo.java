@@ -116,9 +116,9 @@ public class MenkTranslateRuleTo implements LetterTranslateRuleTo {
             if (MglUnicodeBlock.isGiiguulegch(ch)) {
                 String result;
                 if (ch >= '\u1832' && ch <= '\u1834') {
-                    result = nature == Nature.CHAGH ? "\u1824" : "\u1826";
+                    result = "\u1824";
                 } else {
-                    result = nature == Nature.CHAGH ? "\u1824\u180b" : "\u1826\u180b";
+                    result = "\u1824\u180b";
                 }
                 return new MapperResult(true, result);
             }

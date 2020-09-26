@@ -158,7 +158,7 @@ public class ToDelehiCodeMapper {
         //h
         mapper.put("\ue02f", "\u182c");
         mapper.put("\ue02f\ue008", "\u182c\u1823");
-        mapper.put("\ue030", "\u182c");
+        mapper.put("\ue030", "\u182d\u180d");
         mapper.put("\ue031", "\u182c\u180d");
         mapper.put("\ue032", "\u182c\u180d");
         mapper.put("\ue032\ue00d", "\u182c\u180e\u1820");

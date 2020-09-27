@@ -134,6 +134,8 @@ public class ToMenkShapeCodeMapper {
         mapper.put("\ue067", "\ue346");
 
         mapper.put("\ue068", "\ue348");
+        mapper.put("\ue069", "\ue349");
+        mapper.put("\ue06a", "\ue34a");
     }
 
     private static void buildMapper2() {

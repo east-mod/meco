@@ -103,6 +103,8 @@ public class ToZ52CodeMapper {
         codeMapper.put("\ue066", "\u18a8");
         codeMapper.put("\ue067", "\u18a8\u1866");
         codeMapper.put("\ue068", "\u18aa");
+        codeMapper.put("\ue069", "\u18aa");
+        codeMapper.put("\ue06a", "\u18aa\u1866");
 
         codeMapper.put("\ue077", "\u1870" + orogshilga);
 

@@ -507,7 +507,14 @@ public class FromZ52CodeMapper {
         Map<String, String> rh = new HashMap<>(16);
 
         String rh1 = "\u18aa";
-        putAll(rh, rh1, "\ue068");
+
+        rh.put("\u0020" + rh1, "\ue068");
+        rh.put(rh1, "\ue069");
+        rh.put(rh1 + "\u0020", "\ue069");
+        rh.put("\u0020" + rh1 + "\u0020", "\ue068");
+
+        String rh1OhorCuul = rh1 + ohorCuul;
+        putAll(rh, rh1OhorCuul, "\ue06a");
 
         return rh;
     }

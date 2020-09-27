@@ -1077,10 +1077,10 @@ public class FromMenkLetterCodeMapper {
         y.put("\u0020\u202f\u1836\u180b", "\u0020\ue050");
         //middle
         y.put("\u1836", "\ue006");
-        y.put("\u1836\u180b", "\ue050");
+        y.put("\u1836\u180b", "\ue051");
         //y+ee
-        y.put("\u1836\u1827\u0020", "\ue050\ue058");
-        y.put("\u1836\u1827", "\ue050\ue057");
+        y.put("\u1836\u1827\u0020", "\ue051\ue058");
+        y.put("\u1836\u1827", "\ue051\ue057");
         //tail
         y.put("\u1836\u0020", "\ue00e");
 

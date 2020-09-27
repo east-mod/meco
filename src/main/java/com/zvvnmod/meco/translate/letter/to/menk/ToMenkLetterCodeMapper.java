@@ -211,7 +211,8 @@ public class ToMenkLetterCodeMapper {
         //y
         mapper.put("\ue050", "\u1836");
         mapper.put("\ue051", "\u1836\u180b");
-        mapper.put("\ue050\ue006", "\u1836\u180b\u1822");
+        //[]
+        mapper.put("\ue050\ue006", "\u1836\u1822");
         mapper.put("\ue051\ue00e", "\u1836\u180b\u1822");
         mapper.put("\ue051\ue00f", "\u1836\u1824");
         mapper.put("\ue051\ue010", "\u1836\u1826\u180b");

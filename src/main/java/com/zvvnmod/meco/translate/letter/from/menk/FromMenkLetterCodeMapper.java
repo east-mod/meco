@@ -105,12 +105,14 @@ public class FromMenkLetterCodeMapper {
         mapper.combine(getGiiW());
         mapper.combine(getGiiF());
         mapper.combine(getGiiK());
-//        mapper.combine(getGiiKH());
+        mapper.combine(getGiiKH());
         mapper.combine(getGiiTS());
         mapper.combine(getGiiZ());
         mapper.combine(getGiiHH());
         mapper.combine(getGiiRH());
-//        rule.combine(getGiiLH());
+        mapper.combine(getGiiLH());
+        mapper.combine(getGiiZHI());
+        mapper.combine(getGiiCHI());
         mapper.combine(getDagbor());
         mapper.combine(getDevsger());
         mapper.combine(getOthers());
@@ -797,7 +799,7 @@ public class FromMenkLetterCodeMapper {
     }
 
     private static Map<String, String> getGiiS() {
-        Map<String, String> s = new HashMap<>(8);
+        Map<String, String> s = new HashMap<>(16);
         //s
         s.put("\u0020\u1830\u0020", "\ue03c");
         //head
@@ -825,7 +827,7 @@ public class FromMenkLetterCodeMapper {
     }
 
     private static Map<String, String> getGiiSH() {
-        Map<String, String> sh = new HashMap<>(8);
+        Map<String, String> sh = new HashMap<>(16);
         //sh
         sh.put("\u0020\u1831\u0020", "\ue03f");
         //head
@@ -1009,7 +1011,7 @@ public class FromMenkLetterCodeMapper {
     }
 
     private static Map<String, String> getGiiTR() {
-        Map<String, String> tr = new HashMap<>(8);
+        Map<String, String> tr = new HashMap<>(16);
         //tr
         tr.put("\u0020\u1834\u0020", "\ue04a");
         //head
@@ -1037,7 +1039,7 @@ public class FromMenkLetterCodeMapper {
     }
 
     private static Map<String, String> getGiiJ() {
-        Map<String, String> j = new HashMap<>(8);
+        Map<String, String> j = new HashMap<>(16);
         //j
         j.put("\u0020\u1835\u0020", "\ue04d");
         //head
@@ -1069,7 +1071,7 @@ public class FromMenkLetterCodeMapper {
     }
 
     private static Map<String, String> getGiiY() {
-        Map<String, String> y = new HashMap<>(8);
+        Map<String, String> y = new HashMap<>(16);
         //y
         y.put("\u0020\u1836\u0020", "\ue050");
         //head
@@ -1189,7 +1191,7 @@ public class FromMenkLetterCodeMapper {
     }
 
     private static Map<String, String> getGiiW() {
-        Map<String, String> w = new HashMap<>(8);
+        Map<String, String> w = new HashMap<>(16);
         //w
         w.put("\u0020\u1838\u0020", "\ue056");
         //head
@@ -1409,8 +1411,87 @@ public class FromMenkLetterCodeMapper {
         return k;
     }
 
+    private static Map<String, String> getGiiKH() {
+        Map<String, String> kh = new HashMap<>(64);
+        //k
+        kh.put("\u0020\u183b\u0020", "\ue05c");
+        //head
+        kh.put("\u0020\u183b", "\ue05c");
+        //middle
+        kh.put("\u183b", "\ue05d");
+        //tail
+        kh.put("\u183b\u0020", "\ue05e");
+
+        //ka,ke
+        kh.put("\u0020\u183b\u1820\u0020", "\ue0b0\ue00d");
+        kh.put("\u0020\u183b\u1821\u0020", "\ue0b0\ue00d");
+        //kee
+        kh.put("\u0020\u183b\u1827\u0020", "\ue05c\ue058");
+        //ki
+        kh.put("\u0020\u183b\u1822\u0020", "\ue0ad");
+        //k4o,k5o
+        kh.put("\u0020\u183b\u1823\u0020", "\ue0ae");
+        kh.put("\u0020\u183b\u1824\u0020", "\ue0ae");
+        //k6u,k7u
+        kh.put("\u0020\u183b\u1825\u0020", "\ue0ae");
+        kh.put("\u0020\u183b\u1826\u0020", "\ue0ae");
+        //head ka,ke
+        kh.put("\u0020\u183b\u1820", "\ue0b0");
+        kh.put("\u0020\u183b\u1821", "\ue0b0");
+        //middle ka,ke
+        kh.put("\u183b\u1820", "\ue0b1");
+        kh.put("\u183b\u1821", "\ue0b1");
+        //tail ka,ke
+        kh.put("\u183b\u1820\u0020", "\ue0b1\ue00d");
+        kh.put("\u183b\u1821\u0020", "\ue0b1\ue00d");
+        //head kee
+        kh.put("\u0020\u183b\u1827", "\ue05c\ue057");
+        //middle kee
+        kh.put("\u183b\u1827", "\ue05d\ue057");
+        //tail kee
+        kh.put("\u183b\u1827\u0020", "\ue05d\ue058");
+        //head ki
+        kh.put("\u0020\u183b\u1822", "\ue0b6");
+        //middle ki
+        kh.put("\u183b\u1822", "\ue0b7");
+        //tail ki
+        kh.put("\u183b\u1822\u0020", "\ue0b8");
+        //head k4o,k5o
+        kh.put("\u0020\u183b\u1823", "\ue0b9");
+        kh.put("\u0020\u183b\u1824", "\ue0b9");
+        //middle k4o,k5o,k6u,k7u
+        kh.put("\u183b\u1823", "\ue0ba");
+        kh.put("\u183b\u1824", "\ue0ba");
+        kh.put("\u183b\u1825", "\ue0ba");
+        kh.put("\u183b\u1826", "\ue0ba");
+
+        kh.put("\u183b\u1825\u180b", "\ue0ba\ue006");
+        kh.put("\u183b\u1826\u180b", "\ue0ba\ue006");
+
+        //tail k4o,k5o
+        kh.put("\u183b\u1823\u0020", "\ue0bb");
+        kh.put("\u183b\u1824\u0020", "\ue0bb");
+        //tail k6u,k7u
+        kh.put("\u183b\u1825\u0020", "\ue0bc");
+        kh.put("\u183b\u1826\u0020", "\ue0bc");
+        //head k6u,k7u
+        kh.put("\u0020\u183b\u1825", "\ue0b9\ue006");
+        kh.put("\u0020\u183b\u1826", "\ue0b9\ue006");
+
+        kh.put("\u0020\u183b\u1823\u180b", "\ue05c\ue005\ue008");
+        kh.put("\u0020\u183b\u1824\u180b", "\ue05c\ue005\ue008");
+        kh.put("\u0020\u183b\u1825\u180b", "\ue0b9");
+        kh.put("\u0020\u183b\u1826\u180b", "\ue0b9");
+
+        kh.put("\u0020\u183b\u1823\u180b\u0020", "\ue0ae");
+        kh.put("\u0020\u183b\u1824\u180b\u0020", "\ue0ae");
+        kh.put("\u0020\u183b\u1825\u180b\u0020", "\ue0af");
+        kh.put("\u0020\u183b\u1826\u180b\u0020", "\ue0af");
+        return kh;
+    }
+
     private static Map<String, String> getGiiTS() {
-        Map<String, String> ts = new HashMap<>(8);
+        Map<String, String> ts = new HashMap<>(16);
         //ts
         ts.put("\u0020\u183c\u0020", "\ue05f");
         //head
@@ -1438,7 +1519,7 @@ public class FromMenkLetterCodeMapper {
     }
 
     private static Map<String, String> getGiiZ() {
-        Map<String, String> z = new HashMap<>(8);
+        Map<String, String> z = new HashMap<>(16);
         //z
         z.put("\u0020\u183d\u0020", "\ue062");
         //head
@@ -1466,7 +1547,7 @@ public class FromMenkLetterCodeMapper {
     }
 
     private static Map<String, String> getGiiHH() {
-        Map<String, String> hh = new HashMap<>(8);
+        Map<String, String> hh = new HashMap<>(16);
         //hh
         hh.put("\u0020\u183e\u0020", "\ue000\ue066");
         //head
@@ -1484,19 +1565,26 @@ public class FromMenkLetterCodeMapper {
         hh.put("\u0020\u183e\u1824", "\ue000\ue066\ue008");
         hh.put("\u0020\u183e\u1823\u0020", "\ue000\ue066\ue00f");
         hh.put("\u0020\u183e\u1824\u0020", "\ue000\ue066\ue00f");
+
+        hh.put("\u0020\u183e\u1825\u0020", "\ue000\ue066\ue011");
+        hh.put("\u0020\u183e\u1826\u0020", "\ue000\ue066\ue011");
+        hh.put("\u0020\u183e\u1823\u180b\u0020", "\ue000\ue066\ue011");
+        hh.put("\u0020\u183e\u1824\u180b\u0020", "\ue000\ue066\ue011");
+        hh.put("\u0020\u183e\u1825\u180b\u0020", "\ue000\ue066\ue010");
+        hh.put("\u0020\u183e\u1826\u180b\u0020", "\ue000\ue066\ue010");
         return hh;
     }
 
     private static Map<String, String> getGiiRH() {
-        Map<String, String> rh = new HashMap<>(8);
+        Map<String, String> rh = new HashMap<>(16);
         //rh
         rh.put("\u0020\u183f\u0020", "\ue068");
         //head
         rh.put("\u0020\u183f", "\ue068");
         //middle
-        rh.put("\u183f", "\ue068");
+        rh.put("\u183f", "\ue069");
         //tail
-        rh.put("\u183f\u0020", "\ue068");
+        rh.put("\u183f\u0020", "\ue06a");
 
         //ts6u,ts7u
         rh.put("\u0020\u183f\u1825", "\ue068\ue008\ue006");
@@ -1507,7 +1595,29 @@ public class FromMenkLetterCodeMapper {
         rh.put("\u0020\u183f\u1824", "\ue068\ue008");
         rh.put("\u0020\u183f\u1823\u0020", "\ue068\ue00f");
         rh.put("\u0020\u183f\u1824\u0020", "\ue068\ue00f");
+
+        rh.put("\u0020\u183f\u1825\u0020", "\ue068\ue011");
+        rh.put("\u0020\u183f\u1826\u0020", "\ue068\ue011");
+        rh.put("\u0020\u183f\u1823\u180b\u0020", "\ue068\ue011");
+        rh.put("\u0020\u183f\u1824\u180b\u0020", "\ue068\ue011");
+        rh.put("\u0020\u183f\u1825\u180b\u0020", "\ue068\ue010");
+        rh.put("\u0020\u183f\u1826\u180b\u0020", "\ue068\ue010");
         return rh;
+    }
+
+    private static Map<String, String> getGiiLH() {
+        Map<String, String> lha = new HashMap<>(16);
+        return lha;
+    }
+
+    private static Map<String, String> getGiiZHI() {
+        Map<String, String> zhi = new HashMap<>();
+        return zhi;
+    }
+
+    private static Map<String, String> getGiiCHI() {
+        Map<String, String> chi = new HashMap<>();
+        return chi;
     }
 
     private static Map<String, String> getDagbor() {

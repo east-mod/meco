@@ -20,7 +20,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1600756102
-ModificationTime: 1601204618
+ModificationTime: 1601206818
 OS2TypoAscent: 0
 OS2TypoAOffset: 1
 OS2TypoDescent: 0
@@ -6227,8 +6227,8 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: uniE065
-Encoding: 57445 57445 138
+StartChar: uniE0E7
+Encoding: 57575 57575 138
 Width: 814
 Flags: HW
 LayerCount: 2

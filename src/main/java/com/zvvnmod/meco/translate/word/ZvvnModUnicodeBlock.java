@@ -101,6 +101,8 @@ public class ZvvnModUnicodeBlock {
         zvvnModCodes.add('\ue066');
         zvvnModCodes.add('\ue067');
         zvvnModCodes.add('\ue068');
+        zvvnModCodes.add('\ue069');
+        zvvnModCodes.add('\ue06a');
         zvvnModCodes.add('\ue077');
         zvvnModCodes.add('\ue079');
         zvvnModCodes.add('\ue07a');
@@ -197,6 +199,7 @@ public class ZvvnModUnicodeBlock {
         zvvnModTailCodes.add('\ue061');
         zvvnModTailCodes.add('\ue064');
         zvvnModTailCodes.add('\ue067');
+        zvvnModTailCodes.add('\ue06a');
         zvvnModTailCodes.add('\ue077');
         zvvnModTailCodes.add('\ue079');
         zvvnModTailCodes.add('\ue07a');

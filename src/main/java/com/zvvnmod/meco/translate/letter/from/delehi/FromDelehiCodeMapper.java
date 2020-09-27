@@ -102,19 +102,21 @@ public class FromDelehiCodeMapper {
         mapper.combine(getGiiW());
         mapper.combine(getGiiF());
         mapper.combine(getGiiK());
-//        mapper.combine(getGiiKH());
+        mapper.combine(getGiiKH());
         mapper.combine(getGiiTS());
         mapper.combine(getGiiZ());
         mapper.combine(getGiiHH());
         mapper.combine(getGiiRH());
-//        rule.combine(getGiiLH());
+        mapper.combine(getGiiLH());
+        mapper.combine(getGiiZHI());
+        mapper.combine(getGiiCHI());
         mapper.combine(getDagbor());
         mapper.combine(getDevsger());
         mapper.combine(getOthers());
         mapper.combine(whatTheFuck());
     }
 
-    public static Map<String, String> getSeparator() {
+    private static Map<String, String> getSeparator() {
         Map<String, String> separator = new HashMap<>(16);
         separator.put("\u0020\u180B\u0020", "\ue140");
         separator.put("\u0020\u180C\u0020", "\ue141");
@@ -142,7 +144,7 @@ public class FromDelehiCodeMapper {
         return separator;
     }
 
-    public static Map<String, String> getEhshig() {
+    private static Map<String, String> getEhshig() {
         Map<String, String> ehshig = new HashMap<>(32);
         //a
         ehshig.put("\u0020\u1820\u0020", "\ue000\ue00c");
@@ -217,7 +219,7 @@ public class FromDelehiCodeMapper {
         return ehshig;
     }
 
-    public static Map<String, String> getGiiN() {
+    private static Map<String, String> getGiiN() {
         Map<String, String> n = new HashMap<>(64);
         //n
         n.put("\u0020\u1828\u0020", "\ue027");
@@ -301,7 +303,7 @@ public class FromDelehiCodeMapper {
         return n;
     }
 
-    public static Map<String, String> getGiiB() {
+    private static Map<String, String> getGiiB() {
         Map<String, String> b = new HashMap<>(64);
         //b
         b.put("\u0020\u182a\u0020", "\ue029");
@@ -379,7 +381,7 @@ public class FromDelehiCodeMapper {
         return b;
     }
 
-    public static Map<String, String> getGiiP() {
+    private static Map<String, String> getGiiP() {
         Map<String, String> p = new HashMap<>(64);
         //p
         p.put("\u0020\u182b\u0020", "\ue02c");
@@ -451,7 +453,7 @@ public class FromDelehiCodeMapper {
         return p;
     }
 
-    public static Map<String, String> getGiiH() {
+    private static Map<String, String> getGiiH() {
         Map<String, String> h = new HashMap<>(64);
         //h
         h.put("\u0020\u182c\u0020", "\ue02f");
@@ -536,7 +538,7 @@ public class FromDelehiCodeMapper {
         return h;
     }
 
-    public static Map<String, String> getGiiG() {
+    private static Map<String, String> getGiiG() {
         Map<String, String> g = new HashMap<>(64);
         //g
         g.put("\u0020\u182d\u0020", "\ue034");
@@ -673,7 +675,7 @@ public class FromDelehiCodeMapper {
         return g;
     }
 
-    public static Map<String, String> getGiiM() {
+    private static Map<String, String> getGiiM() {
         Map<String, String> m = new HashMap<>(16);
         //m
         m.put("\u0020\u182E\u0020", "\ue036");
@@ -704,7 +706,7 @@ public class FromDelehiCodeMapper {
         return m;
     }
 
-    public static Map<String, String> getGiiL() {
+    private static Map<String, String> getGiiL() {
         Map<String, String> l = new HashMap<>(16);
         //l
         l.put("\u0020\u182f\u0020", "\ue039");
@@ -735,8 +737,8 @@ public class FromDelehiCodeMapper {
         return l;
     }
 
-    public static Map<String, String> getGiiS() {
-        Map<String, String> s = new HashMap<>(8);
+    private static Map<String, String> getGiiS() {
+        Map<String, String> s = new HashMap<>(16);
         //s
         s.put("\u0020\u1830\u0020", "\ue03c");
         //head
@@ -762,8 +764,8 @@ public class FromDelehiCodeMapper {
         return s;
     }
 
-    public static Map<String, String> getGiiSH() {
-        Map<String, String> sh = new HashMap<>(8);
+    private static Map<String, String> getGiiSH() {
+        Map<String, String> sh = new HashMap<>(16);
         //sh
         sh.put("\u0020\u1831\u0020", "\ue03f");
         //head
@@ -788,7 +790,7 @@ public class FromDelehiCodeMapper {
         return sh;
     }
 
-    public static Map<String, String> getGiiT() {
+    private static Map<String, String> getGiiT() {
         Map<String, String> t = new HashMap<>(16);
         //head
         t.put("\u0020\u1832\u0020", "\ue042");
@@ -818,7 +820,7 @@ public class FromDelehiCodeMapper {
         return t;
     }
 
-    public static Map<String, String> getGiiD() {
+    private static Map<String, String> getGiiD() {
         Map<String, String> d = new HashMap<>(64);
         //d
         d.put("\u0020\u1833\u0020", "\ue045");
@@ -929,8 +931,8 @@ public class FromDelehiCodeMapper {
         return d;
     }
 
-    public static Map<String, String> getGiiTR() {
-        Map<String, String> tr = new HashMap<>(8);
+    private static Map<String, String> getGiiTR() {
+        Map<String, String> tr = new HashMap<>(16);
         //tr
         tr.put("\u0020\u1834\u0020", "\ue04a");
         //head
@@ -955,8 +957,8 @@ public class FromDelehiCodeMapper {
         return tr;
     }
 
-    public static Map<String, String> getGiiJ() {
-        Map<String, String> j = new HashMap<>(8);
+    private static Map<String, String> getGiiJ() {
+        Map<String, String> j = new HashMap<>(16);
         //j
         j.put("\u0020\u1835\u0020", "\ue04d");
         //head
@@ -985,8 +987,8 @@ public class FromDelehiCodeMapper {
         return j;
     }
 
-    public static Map<String, String> getGiiY() {
-        Map<String, String> y = new HashMap<>(8);
+    private static Map<String, String> getGiiY() {
+        Map<String, String> y = new HashMap<>(16);
         //y
         y.put("\u0020\u1836\u0020", "\ue050");
         //head
@@ -1017,7 +1019,7 @@ public class FromDelehiCodeMapper {
         return y;
     }
 
-    public static Map<String, String> getGiiR() {
+    private static Map<String, String> getGiiR() {
         Map<String, String> r = new HashMap<>(16);
         //r
         r.put("\u0020\u1837\u0020", "\ue053");
@@ -1048,8 +1050,8 @@ public class FromDelehiCodeMapper {
         return r;
     }
 
-    public static Map<String, String> getGiiW() {
-        Map<String, String> w = new HashMap<>(8);
+    private static Map<String, String> getGiiW() {
+        Map<String, String> w = new HashMap<>(16);
         //w
         w.put("\u0020\u1838\u0020", "\ue056");
         //head
@@ -1077,7 +1079,7 @@ public class FromDelehiCodeMapper {
         return w;
     }
 
-    public static Map<String, String> getGiiF() {
+    private static Map<String, String> getGiiF() {
         Map<String, String> f = new HashMap<>(64);
         //f
         f.put("\u0020\u1839\u0020", "\ue059");
@@ -1156,7 +1158,7 @@ public class FromDelehiCodeMapper {
         return f;
     }
 
-    public static Map<String, String> getGiiK() {
+    private static Map<String, String> getGiiK() {
         Map<String, String> k = new HashMap<>(64);
         //k
         k.put("\u0020\u183a\u0020", "\ue05c");
@@ -1228,8 +1230,80 @@ public class FromDelehiCodeMapper {
         return k;
     }
 
-    public static Map<String, String> getGiiTS() {
-        Map<String, String> ts = new HashMap<>(8);
+    private static Map<String, String> getGiiKH() {
+        Map<String, String> k = new HashMap<>(64);
+        //k
+        k.put("\u0020\u183b\u0020", "\ue05c");
+        //head
+        k.put("\u0020\u183b", "\ue05c");
+        //middle
+        k.put("\u183b", "\ue05d");
+        //tail
+        k.put("\u183b\u0020", "\ue05e");
+
+        //ka,ke
+        k.put("\u0020\u183b\u1820\u0020", "\ue0b0\ue00d");
+        k.put("\u0020\u183b\u1821\u0020", "\ue0b0\ue00d");
+        //kee
+        k.put("\u0020\u183b\u1827\u0020", "\ue05c\ue058");
+        //ki
+        k.put("\u0020\u183b\u1822\u0020", "\ue0ad");
+        //k4o,k5o
+        k.put("\u0020\u183b\u1823\u0020", "\ue0ae");
+        k.put("\u0020\u183b\u1824\u0020", "\ue0ae");
+        //k6u,k7u
+        k.put("\u0020\u183b\u1825\u0020", "\ue0ae");
+        k.put("\u0020\u183b\u1826\u0020", "\ue0ae");
+        //head ka,ke
+        k.put("\u0020\u183b\u1820", "\ue0b0");
+        k.put("\u0020\u183b\u1821", "\ue0b0");
+        //middle ka,ke
+        k.put("\u183b\u1820", "\ue0b1");
+        k.put("\u183b\u1821", "\ue0b1");
+        //tail ka,ke
+        k.put("\u183b\u1820\u0020", "\ue0b1\ue00d");
+        k.put("\u183b\u1821\u0020", "\ue0b1\ue00d");
+        //head kee
+        k.put("\u0020\u183b\u1827", "\ue05c\ue057");
+        //middle kee
+        k.put("\u183b\u1827", "\ue05d\ue057");
+        //tail kee
+        k.put("\u183b\u1827\u0020", "\ue05d\ue058");
+        //head ki
+        k.put("\u0020\u183b\u1822", "\ue0b6");
+        //middle ki
+        k.put("\u183b\u1822", "\ue0b7");
+        //tail ki
+        k.put("\u183b\u1822\u0020", "\ue0b8");
+        //head k4o,k5o
+        k.put("\u0020\u183b\u1823", "\ue0b9");
+        k.put("\u0020\u183b\u1824", "\ue0b9");
+        //middle k4o,k5o,k6u,k7u
+        k.put("\u183b\u1823", "\ue0ba");
+        k.put("\u183b\u1824", "\ue0ba");
+        k.put("\u183b\u1825", "\ue0ba");
+        k.put("\u183b\u1826", "\ue0ba");
+
+        k.put("\u183b\u1825\u180b", "\ue0ba\ue006");
+        k.put("\u183b\u1826\u180b", "\ue0ba\ue006");
+
+        //tail k4o,k5o
+        k.put("\u183b\u1823\u0020", "\ue0bb");
+        k.put("\u183b\u1824\u0020", "\ue0bb");
+        //tail k6u,k7u
+        k.put("\u183b\u1825\u0020", "\ue0bc");
+        k.put("\u183b\u1826\u0020", "\ue0bc");
+        //head k6u,k7u
+        k.put("\u0020\u183b\u1825", "\ue0b9\ue006");
+        k.put("\u0020\u183b\u1826", "\ue0b9\ue006");
+
+        k.put("\u0020\u183b\u1825\u180b\u0020", "\ue0af");
+        k.put("\u0020\u183b\u1826\u180b\u0020", "\ue0af");
+        return k;
+    }
+
+    private static Map<String, String> getGiiTS() {
+        Map<String, String> ts = new HashMap<>(16);
         //ts
         ts.put("\u0020\u183c\u0020", "\ue05f");
         //head
@@ -1254,8 +1328,8 @@ public class FromDelehiCodeMapper {
         return ts;
     }
 
-    public static Map<String, String> getGiiZ() {
-        Map<String, String> z = new HashMap<>(8);
+    private static Map<String, String> getGiiZ() {
+        Map<String, String> z = new HashMap<>(16);
         //z
         z.put("\u0020\u183d\u0020", "\ue062");
         //head
@@ -1280,8 +1354,8 @@ public class FromDelehiCodeMapper {
         return z;
     }
 
-    public static Map<String, String> getGiiHH() {
-        Map<String, String> hh = new HashMap<>(8);
+    private static Map<String, String> getGiiHH() {
+        Map<String, String> hh = new HashMap<>(16);
         //hh
         hh.put("\u0020\u183e\u0020", "\ue000\ue066");
         //head
@@ -1294,27 +1368,60 @@ public class FromDelehiCodeMapper {
         //ts6u,ts7u
         hh.put("\u0020\u183e\u1825", "\ue000\ue066\ue008\ue006");
         hh.put("\u0020\u183e\u1826", "\ue000\ue066\ue008\ue006");
+
+        hh.put("\u0020\u183e\u1823\u0020", "\ue000\ue066\ue011");
+        hh.put("\u0020\u183e\u1824\u0020", "\ue000\ue066\ue011");
+        hh.put("\u0020\u183e\u1825\u0020", "\ue000\ue066\ue011");
+        hh.put("\u0020\u183e\u1826\u0020", "\ue000\ue066\ue011");
+        hh.put("\u0020\u183e\u1823\u180b\u0020", "\ue000\ue066\ue00f");
+        hh.put("\u0020\u183e\u1824\u180b\u0020", "\ue000\ue066\ue00f");
+        hh.put("\u0020\u183e\u1825\u180b\u0020", "\ue000\ue066\ue010");
+        hh.put("\u0020\u183e\u1826\u180b\u0020", "\ue000\ue066\ue010");
         return hh;
     }
 
-    public static Map<String, String> getGiiRH() {
-        Map<String, String> rh = new HashMap<>(8);
+    private static Map<String, String> getGiiRH() {
+        Map<String, String> rh = new HashMap<>(16);
         //rh
         rh.put("\u0020\u183f\u0020", "\ue068");
         //head
         rh.put("\u0020\u183f", "\ue068");
         //middle
-        rh.put("\u183f", "\ue068");
+        rh.put("\u183f", "\ue069");
         //tail
-        rh.put("\u183f\u0020", "\ue068");
+        rh.put("\u183f\u0020", "\ue06a");
 
         //ts6u,ts7u
         rh.put("\u0020\u183f\u1825", "\ue068\ue008\ue006");
         rh.put("\u0020\u183f\u1826", "\ue068\ue008\ue006");
+
+        rh.put("\u0020\u183f\u1823\u0020", "\ue068\ue011");
+        rh.put("\u0020\u183f\u1824\u0020", "\ue068\ue011");
+        rh.put("\u0020\u183f\u1825\u0020", "\ue068\ue011");
+        rh.put("\u0020\u183f\u1826\u0020", "\ue068\ue011");
+        rh.put("\u0020\u183f\u1823\u180b\u0020", "\ue068\ue00f");
+        rh.put("\u0020\u183f\u1824\u180b\u0020", "\ue068\ue00f");
+        rh.put("\u0020\u183f\u1825\u180b\u0020", "\ue068\ue010");
+        rh.put("\u0020\u183f\u1826\u180b\u0020", "\ue068\ue010");
         return rh;
     }
 
-    public static Map<String, String> getDagbor() {
+    private static Map<String, String> getGiiLH() {
+        Map<String, String> lha = new HashMap<>(16);
+        return lha;
+    }
+
+    private static Map<String, String> getGiiZHI() {
+        Map<String, String> zhi = new HashMap<>();
+        return zhi;
+    }
+
+    private static Map<String, String> getGiiCHI() {
+        Map<String, String> chi = new HashMap<>();
+        return chi;
+    }
+
+    private static Map<String, String> getDagbor() {
         Map<String, String> dagbor = new HashMap<>(32);
         //i
         dagbor.put("\u0020\u1822\u180b\u0020", "\ue01a");
@@ -1379,7 +1486,7 @@ public class FromDelehiCodeMapper {
         return dagbor;
     }
 
-    public static Map<String, String> getDevsger() {
+    private static Map<String, String> getDevsger() {
         Map<String, String> devsger = new HashMap<>(64);
         //eng
         devsger.put("\u0020\u1829\u0020", "\ue005\ue031");
@@ -1395,7 +1502,7 @@ public class FromDelehiCodeMapper {
         return devsger;
     }
 
-    public static Map<String, String> getOthers() {
+    private static Map<String, String> getOthers() {
         Map<String, String> others = new HashMap<>(128);
         // (4o,5o,6u,7u)*180b
         //head o
@@ -1424,7 +1531,7 @@ public class FromDelehiCodeMapper {
         return others;
     }
 
-    public static Map<String, String> whatTheFuck() {
+    private static Map<String, String> whatTheFuck() {
         Map<String, String> fuck = new HashMap<>(128);
         //ee
         fuck.put("\u0020\u1827\u0020", "\ue000\ue058");

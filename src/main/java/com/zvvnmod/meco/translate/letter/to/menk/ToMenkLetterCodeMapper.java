@@ -278,6 +278,8 @@ public class ToMenkLetterCodeMapper {
         mapper.put("\ue067", "\u183e");
         //rh
         mapper.put("\ue068", "\u183f");
+        mapper.put("\ue069", "\u183f");
+        mapper.put("\ue06a", "\u183f");
         //others
         mapper.put("\ue140", "\u180B");
         mapper.put("\ue141", "\u180C");

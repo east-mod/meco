@@ -875,6 +875,109 @@ public class FromMenkShapeCodeMapper {
         return k;
     }
 
+    private static Map<String, String> buildKH() {
+        Map<String, String> kh = new HashMap<>(64);
+        //top,middle k with a,e,i
+        List<String> kh1 = Lists.newArrayList("\ue339", "\ue33c");
+        //top,middle k with o,u
+        List<String> kh2 = Lists.newArrayList("\ue33a", "\ue33d");
+        //k1,k2
+        kh1.forEach(item -> {
+            kh.put("\u0020" + item, "\ue05c");
+            kh.put(item, "\ue05d");
+            kh.put(item + "\u0020", "\ue05d");
+            kh.put("\u0020" + item + "\u0020", "\ue05c");
+        });
+        kh2.forEach(item -> {
+            kh.put("\u0020" + item, "\ue05c");
+            kh.put(item, "\ue05d");
+            kh.put(item + "\u0020", "\ue05d");
+            kh.put("\u0020" + item + "\u0020", "\ue05c");
+        });
+        //head,middle ka,ke
+        kh1.forEach(item -> {
+            for (String shud : shudList) {
+                kh.put("\u0020" + item + shud, "\ue0b0");
+                kh.put(item + shud, "\ue0b1");
+                kh.put("\u0020" + item + shud + "\u0020", "\ue0b0");
+                kh.put(item + shud + "\u0020", "\ue0b1");
+            }
+        });
+        //ka,ke tail ka,ke
+        kh1.forEach(item -> {
+            for (String s : cycleTsatslagaList) {
+                kh.put("\u0020" + item + s, "\ue0b0\ue00d");
+                kh.put(item + s, "\ue0b1\ue00d");
+                kh.put("\u0020" + item + s + "\u0020", "\ue0b0\ue00d");
+                kh.put(item + s + "\u0020", "\ue0b1\ue00d");
+            }
+        });
+        //ku
+        kh2.forEach(item -> {
+            for (String cycleTailU : cycleTailUList) {
+                kh.put("\u0020" + item + cycleTailU, "\ue0af");
+                kh.put(item + cycleTailU, "\ue0bc");
+                kh.put("\u0020" + item + cycleTailU + "\u0020", "\ue0af");
+                kh.put(item + cycleTailU + "\u0020", "\ue0bc");
+            }
+        });
+        //ko,tail ko,ku
+        kh2.forEach(item -> {
+            for (String s : cycleTailGedesList) {
+                kh.put("\u0020" + item + s, "\ue0ae");
+                kh.put(item + s, "\ue0bb");
+                kh.put(item + s + "\u0020", "\ue0bb");
+                kh.put("\u0020" + item + s + "\u0020", "\ue0ae");
+            }
+        });
+        //head ko,middle ko,ku
+        kh2.forEach(item -> {
+            for (String s : cycleNoTailGedesList) {
+                kh.put("\u0020" + item + s, "\ue0b9");
+                kh.put(item + s, "\ue0ba");
+                kh.put(item + s + "\u0020", "\ue0ba");
+                kh.put("\u0020" + item + s + "\u0020", "\ue0b9");
+            }
+        });
+        //head ku
+        kh2.forEach(item -> {
+            for (String s : cycleGedesForU) {
+                kh.put("\u0020" + item + s, "\ue0b9\ue006");
+                kh.put(item + s, "\ue0b9\ue006");
+                kh.put(item + s + "\u0020", "\ue0b9\ue006");
+                kh.put("\u0020" + item + s + "\u0020", "\ue0b9\ue006");
+            }
+        });
+        //ki,tail ki
+        kh1.forEach(item -> {
+            kh.put("\u0020" + item + "\ue27c", "\ue0ad");
+            kh.put(item + "\ue27c", "\ue0b8");
+            kh.put(item + "\ue27c\u0020", "\ue0b8");
+            kh.put("\u0020" + item + "\ue27c" + "\u0020", "\ue0ad");
+        });
+        //top,middle ki
+        kh1.forEach(item -> {
+            for (String s : shelbList) {
+                kh.put("\u0020" + item + s, "\ue0b6");
+                kh.put(item + s, "\ue0b7");
+                kh.put(item + s + "\u0020", "\ue0b7");
+                kh.put("\u0020" + item + s + "\u0020", "\ue0b6");
+            }
+            kh.put("\u0020" + item + cycleShelb, "\ue0b6");
+            kh.put(item + cycleShelb, "\ue0b7");
+            kh.put(item + cycleShelb + "\u0020", "\ue0b7");
+            kh.put("\u0020" + item + cycleShelb + "\u0020", "\ue0b6");
+        });
+        //k
+        kh.put("\u0020\ue33e", "\ue05c");
+        kh.put("\ue33e", "\ue05d");
+        kh.put("\ue33e\u0020", "\ue05d");
+        kh.put("\u0020\ue33e\u0020", "\ue05c");
+        //k
+        buildLocateChar(kh, "\ue33b", "\ue05e");
+        return kh;
+    }
+
     private static Map<String, String> buildTS() {
         Map<String, String> ts = new HashMap<>(64);
         buildLocateChar(ts, "\ue33f", "\ue05f");
@@ -902,6 +1005,8 @@ public class FromMenkShapeCodeMapper {
     private static Map<String, String> buildRH() {
         Map<String, String> rh = new HashMap<>(64);
         buildLocateChar(rh, "\ue348", "\ue068");
+        buildLocateChar(rh, "\ue349", "\ue069");
+        buildLocateChar(rh, "\ue34a", "\ue06a");
         return rh;
     }
 

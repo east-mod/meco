@@ -22,7 +22,7 @@ import java.util.List;
 public class MenkShapeTranslateRuleFrom implements ShapeTranslateRule {
     @Override
     public boolean isTranslateCodePoint(char c) {
-        return (c >= '\ue263' && c <= '\ue34f') || (c >= '\ue234' && c <= '\ue261');
+        return (c >= '\ue263' && c <= '\ue34a') || (c >= '\ue234' && c <= '\ue261');
     }
 
     @Override

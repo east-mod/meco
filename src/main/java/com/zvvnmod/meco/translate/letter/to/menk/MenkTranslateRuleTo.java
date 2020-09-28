@@ -35,7 +35,7 @@ public class MenkTranslateRuleTo implements LetterTranslateRuleTo {
             }
             s = concatAnd202f(s, s1);
         }
-        if (s.charAt(0) == '\u202f' && builder.charAt(builder.length() - 1) == '\u0020') {
+        if (s.charAt(0) == '\u202f' && !Strings.isEmpty(builder) && builder.charAt(builder.length() - 1) == '\u0020') {
             builder.deleteCharAt(builder.length() - 1);
         }
         builder.append(s);

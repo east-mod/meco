@@ -13,11 +13,13 @@ public class ZvvnModUnicodeBlock {
     public static final Set<Character> zvvnModCodes = new HashSet<>(256);
     public static final Set<Character> zvvnModTailCodes = new HashSet<>(128);
     public static final Set<Character> zvvnModPunctuations = new HashSet<>(128);
+    public static final Set<Character> toZ52Punctuations = new HashSet<>(128);
 
     static {
         buildZvvnModCodes();
         buildZvvnModTailCodes();
         buildZvvnModPunctuations();
+        buildToZ52Punctuations();
     }
 
     private static void buildZvvnModCodes() {
@@ -287,5 +289,29 @@ public class ZvvnModUnicodeBlock {
         zvvnModPunctuations.add('\u203b');
         zvvnModPunctuations.add('\u002d');
         zvvnModPunctuations.add('\u007c');
+    }
+
+    private static void buildToZ52Punctuations() {
+        toZ52Punctuations.add('\u00b7');
+        toZ52Punctuations.add('\u2048');
+        toZ52Punctuations.add('\u2049');
+        toZ52Punctuations.add('\u0021');
+        toZ52Punctuations.add('\u003f');
+        toZ52Punctuations.add('\u003b');
+        toZ52Punctuations.add('\u0028');
+        toZ52Punctuations.add('\u0029');
+        toZ52Punctuations.add('\u3008');
+        toZ52Punctuations.add('\u3009');
+        toZ52Punctuations.add('\u3014');
+        toZ52Punctuations.add('\u3015');
+        toZ52Punctuations.add('\u300a');
+        toZ52Punctuations.add('\u300b');
+        toZ52Punctuations.add('\u300e');
+        toZ52Punctuations.add('\u300f');
+        toZ52Punctuations.add('\u002c');
+        toZ52Punctuations.add('\u00d7');
+        toZ52Punctuations.add('\u203b');
+        toZ52Punctuations.add('\u002d');
+        toZ52Punctuations.add('\u007c');
     }
 }

@@ -33,7 +33,7 @@ public class DelehiTranslateRuleTo implements LetterTranslateRuleTo {
                         "Not fount the string " + wordFragment.getContent() + " in mapper rule");
             }
         }
-        if (s.charAt(0) == '\u202f' && builder.charAt(builder.length() - 1) == '\u0020') {
+        if (s.charAt(0) == '\u202f' && !Strings.isEmpty(builder) && builder.charAt(builder.length() - 1) == '\u0020') {
             builder.deleteCharAt(builder.length() - 1);
         }
         builder.append(s);

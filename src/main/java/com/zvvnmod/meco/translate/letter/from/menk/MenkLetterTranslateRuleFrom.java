@@ -35,6 +35,10 @@ public class MenkLetterTranslateRuleFrom implements LetterTranslateRuleFrom {
         if (result != null) {
             return result;
         }
+        result = resoloveG(suf, s);
+        if (result != null) {
+            return result;
+        }
         result = FromMenkLetterCodeMapper.mapper.get(s);
         if (result != null) {
             return result;
@@ -91,6 +95,16 @@ public class MenkLetterTranslateRuleFrom implements LetterTranslateRuleFrom {
             Character sufFirst = suf.get(0);
             if (MglUnicodeBlock.isGiiguulegch(sufFirst)) {
                 return "\ue043";
+            }
+        }
+        return null;
+    }
+
+    private String resoloveG(List<Character> suf, String s) {
+        if (s.equals("\u182d") && !CollectionUtils.isEmpty(suf)) {
+            Character sufFirst = suf.get(0);
+            if (MglUnicodeBlock.isGiiguulegch(sufFirst)) {
+                return "\ue031";
             }
         }
         return null;

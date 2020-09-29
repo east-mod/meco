@@ -103,7 +103,7 @@ public class ToMenkLetterCodeMapper {
         mapper.put("\ue028\ue00e", "\u1828\u1822");
         mapper.put("\ue028\ue057", "\u1828\u1827");
         mapper.put("\ue028\ue058", "\u1828\u1827");
-
+        mapper.put("\ue028\ue00f", "\u1828\u1823\u180b");
         //b
         mapper.put("\ue029", "\u182a");
         mapper.put("\ue02a", "\u182a");

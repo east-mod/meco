@@ -718,6 +718,8 @@ public class FromDelehiCodeMapper {
         l.put("\u182f\u0020", "\ue03b");
         //tail la
         l.put("\u182f\u180e", "\ue03a");
+        l.put("\u182f\u180e\u0020", "\ue03b");
+        l.put("\u0020\u182f\u180e\u0020", "\ue039");
         l.put("\u182f\u180e\u1820\u0020", "\ue03b\ue00d");
         //tail le
         l.put("\u182f\u180e\u1821\u0020", "\ue03b\ue00d");

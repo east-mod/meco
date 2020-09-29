@@ -19,6 +19,7 @@ public class ToZ52CodeMapper {
     static {
         build1();
         buildPunctuations();
+        buildOthers();
     }
 
     private static void build1() {
@@ -213,5 +214,12 @@ public class ToZ52CodeMapper {
         codeMapper.put("\u203b", "\u1861");
         codeMapper.put("\u002d", "\u1862");
         codeMapper.put("\u007c", "\u1863");
+    }
+
+    private static void buildOthers() {
+        codeMapper.put("\ue140", "\u180B");
+        codeMapper.put("\ue141", "\u180C");
+        codeMapper.put("\ue142", "\u180D");
+        codeMapper.put("\ue143", "\u180E");
     }
 }

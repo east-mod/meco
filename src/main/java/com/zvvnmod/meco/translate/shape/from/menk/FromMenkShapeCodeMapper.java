@@ -64,6 +64,7 @@ public class FromMenkShapeCodeMapper {
         codeMapper.combine(buildW());
         codeMapper.combine(buildF());
         codeMapper.combine(buildK());
+        codeMapper.combine(buildKH());
         codeMapper.combine(buildTS());
         codeMapper.combine(buildZ());
         codeMapper.combine(buildHH());

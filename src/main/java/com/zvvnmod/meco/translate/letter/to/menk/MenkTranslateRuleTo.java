@@ -27,8 +27,21 @@ public class MenkTranslateRuleTo implements LetterTranslateRuleTo {
     @Override
     public void getMapperCode(StringBuilder builder, ShapeWord zvvnModWord) {
         String s = "";
+        boolean ue031 = false;
         for (ShapeWordFragment wordFragment : zvvnModWord.getWordFragments()) {
             String s1 = get(s, wordFragment.getKey(), zvvnModWord.getNature());
+
+            if (wordFragment.getKey().equals("\ue031")) {
+                ue031 = true;
+                if (!Strings.isEmpty(s) && s.endsWith("\u180d\u1822")) {
+                    s = s.substring(0, s.length() - 2) + "\u1822";
+                }
+            }
+            if (ue031 && s1.contains("\u180d\u1822")) {
+                ue031 = false;
+                s1 = s1.replace("\u180d\u1822", "\u1822");
+            }
+
             if (s1 == null) {
                 throw new MecoException(TranslateState.NOT_FOUNT_IN_MAPPER_RULE.getCode(),
                         "Not fount the string " + wordFragment.getContent() + " in mapper rule");

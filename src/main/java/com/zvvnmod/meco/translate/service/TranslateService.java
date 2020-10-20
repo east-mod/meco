@@ -34,6 +34,7 @@ public class TranslateService {
     private ShapeRuleHolder shapeRuleHolder;
 
     public String translate(CodeType from, CodeType to, String s) {
+        logger.info("from:{},to:{}", from.toString(), to.toString());
         if (from == to || Strings.isBlank(s)) {
             return s;
         }

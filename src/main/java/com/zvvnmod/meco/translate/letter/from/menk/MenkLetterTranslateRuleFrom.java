@@ -6,6 +6,8 @@ import com.zvvnmod.meco.translate.letter.from.LetterTranslateRuleFrom;
 import com.zvvnmod.meco.translate.letter.from.delehi.DelehiCodeBlock;
 import com.zvvnmod.meco.translate.word.MglUnicodeBlock;
 import com.zvvnmod.meco.translate.word.Nature;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
@@ -20,9 +22,11 @@ import java.util.List;
 @Component
 @Rule(CodeType.Menk_Letter)
 public class MenkLetterTranslateRuleFrom implements LetterTranslateRuleFrom {
+    private static final Logger logger = LoggerFactory.getLogger(MenkLetterTranslateRuleFrom.class);
 
     @Override
     public String getMapperCode(List<Character> pre, List<Character> suf, String s, Nature nature) {
+        logger.info(nature.toString());
         String result = resolveDevsgerI(pre, s);
         if (result != null) {
             return result;
@@ -35,7 +39,7 @@ public class MenkLetterTranslateRuleFrom implements LetterTranslateRuleFrom {
         if (result != null) {
             return result;
         }
-        result = resoloveG(suf, s);
+        result = resoloveG(suf, s, nature);
         if (result != null) {
             return result;
         }
@@ -100,11 +104,11 @@ public class MenkLetterTranslateRuleFrom implements LetterTranslateRuleFrom {
         return null;
     }
 
-    private String resoloveG(List<Character> suf, String s) {
+    private String resoloveG(final List<Character> suf, final String s, final Nature nature) {
         if (s.equals("\u182d") && !CollectionUtils.isEmpty(suf)) {
             Character sufFirst = suf.get(0);
             if (MglUnicodeBlock.isGiiguulegch(sufFirst)) {
-                return "\ue031";
+                return nature == Nature.CHAGH ? "\ue005\ue005" : "\ue031";
             }
         }
         return null;

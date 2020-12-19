@@ -75,4 +75,15 @@ public class LetterWordFragment {
     public boolean isNotBlank() {
         return !isBlank();
     }
+
+    public int size() {
+        return this.content.size();
+    }
+
+    public Character getLastCharacter() {
+        if (CollectionUtils.isEmpty(this.content)) {
+            return null;
+        }
+        return this.content.get(this.content.size() - 1);
+    }
 }

@@ -180,6 +180,7 @@ public class FromDelehiCodeMapper {
         ehshig.put("\u1821", "\ue005");
         //middle i
         ehshig.put("\u1822", "\ue006");
+        ehshig.put("\u1822\u180e", "\ue006");
         //middle 4o,5o
         ehshig.put("\u1823", "\ue008");
         ehshig.put("\u1824", "\ue008");
@@ -200,6 +201,7 @@ public class FromDelehiCodeMapper {
         ehshig.put("\u180e\u1821\u0020", "\ue00d");
         //tail i
         ehshig.put("\u1822\u0020", "\ue00e");
+        ehshig.put("\u1822\u180e\u0020", "\ue00e");
         //tail1 4o,5o
         ehshig.put("\u1823\u0020", "\ue011");
         ehshig.put("\u1824\u0020", "\ue011");

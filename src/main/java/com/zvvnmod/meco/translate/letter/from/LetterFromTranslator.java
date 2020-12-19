@@ -52,6 +52,7 @@ public class LetterFromTranslator {
     }
 
     private void translateWord(StringBuilder builder, LetterWord letterWord) {
+        letterWord.removeInvalidCodePointFromEnd();
         Nature nature;
         String s;
         List<Character> preFragmentContent = new LinkedList<>();

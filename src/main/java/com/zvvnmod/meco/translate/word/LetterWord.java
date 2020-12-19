@@ -1,9 +1,10 @@
 package com.zvvnmod.meco.translate.word;
 
+import com.zvvnmod.meco.translate.letter.from.CharType;
 import lombok.Getter;
 import org.springframework.util.CollectionUtils;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,7 +22,7 @@ public class LetterWord {
 
     public LetterWord() {
         this.nature = Nature.SAARMAG;
-        this.letterWordFragments = new LinkedList<>();
+        this.letterWordFragments = new ArrayList<>(16);
     }
 
     public void add(final LetterWordFragment letterWordFragment) {
@@ -37,5 +38,33 @@ public class LetterWord {
 
     public boolean isNotBlank() {
         return !isBlank();
+    }
+
+    public void removeInvalidCodePointFromEnd() {
+        if (CollectionUtils.isEmpty(letterWordFragments)) {
+            return;
+        }
+        LetterWordFragment wordFragment;
+        LetterWordFragment preWordFragment;
+        for (int i = letterWordFragments.size() - 1; i > -1; i--) {
+            if (i == 0) {
+                return;
+            }
+            wordFragment = letterWordFragments.get(i);
+            if (wordFragment.size() != 1) {
+                return;
+            }
+            Character character = wordFragment.getContent().get(0);
+            if (!MglUnicodeBlock.isVowelSeparator(character) && !MglUnicodeBlock.isFreeVariationSelector(character)) {
+                return;
+            }
+
+            preWordFragment = letterWordFragments.get(i - 1);
+            Character preLastCharacter = preWordFragment.getLastCharacter();
+            if (preLastCharacter.equals(character)) {
+                letterWordFragments.remove(i);
+                letterWordFragments.get(i - 1).setTail(CharType.OTHER);
+            }
+        }
     }
 }

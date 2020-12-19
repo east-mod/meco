@@ -903,10 +903,10 @@ public class FromMenkLetterCodeMapper {
         d.put("\u0020\u202f\u1833\u1825\u0020", "\u0020\ue045\ue011");
         d.put("\u0020\u202f\u1833\u1826\u0020", "\u0020\ue045\ue011");
         d.put("\u0020\u1833\u180b", "\ue045");
-        d.put("\u0020\u202f\u1833\u180b", "\ue045");
+        d.put("\u0020\u202f\u1833\u180b", "\u0020\ue045");
 
         d.put("\u0020\u1833\u180b\u0020", "\ue045");
-        d.put("\u0020\u202f\u1833\u180b\u0020", "\ue045");
+        d.put("\u0020\u202f\u1833\u180b\u0020", "\u0020\ue045");
 
         //middle
         d.put("\u1833", "\ue008\ue005");
@@ -1631,7 +1631,7 @@ public class FromMenkLetterCodeMapper {
         dagbor.put("\u0020\u202f\u1822\u0020", "\u0020\ue01a");
         dagbor.put("\u0020\u1835\u180e", "\ue01a");
         dagbor.put("\u0020\u1835\u180e\u0020", "\ue01a");
-        dagbor.put("\u0020\u202f\u1822\u180b\u0020", "\ue01a");
+        dagbor.put("\u0020\u202f\u1822\u180b\u0020", "\u0020\ue01a");
 
         //etre
         dagbor.put("\u0020\u202f\u1820", "\u0020\ue000");

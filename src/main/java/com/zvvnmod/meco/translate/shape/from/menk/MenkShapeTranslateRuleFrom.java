@@ -10,6 +10,8 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+import static com.zvvnmod.meco.translate.shape.from.menk.FromMenkShapeCodeMapper.notSupportSet;
+
 /**
  * AUTHOR: zorigt
  * DATE  : 2020/8/30
@@ -22,6 +24,9 @@ import java.util.List;
 public class MenkShapeTranslateRuleFrom implements ShapeTranslateRule {
     @Override
     public boolean isTranslateCodePoint(char c) {
+        if (notSupportSet.contains(c)) {
+            return false;
+        }
         return (c >= '\ue263' && c <= '\ue34a') || (c >= '\ue234' && c <= '\ue261');
     }
 

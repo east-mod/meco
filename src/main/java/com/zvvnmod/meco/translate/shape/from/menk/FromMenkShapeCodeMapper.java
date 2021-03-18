@@ -4,8 +4,10 @@ import com.google.common.collect.Lists;
 import com.zvvnmod.meco.translate.word.CodeMapper;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * AUTHOR: zorigt
@@ -40,6 +42,9 @@ public class FromMenkShapeCodeMapper {
 
     private static final List<String> cycleTsatslagaList = Lists.newArrayList("\ue26b", "\ue275");
 
+
+    public static final Set<Character> notSupportSet = new HashSet<>(8);
+
     static {
         codeMapper = new CodeMapper(4096);
         codeMapper.combine(buildBase());
@@ -71,6 +76,12 @@ public class FromMenkShapeCodeMapper {
         codeMapper.combine(buildRH());
         codeMapper.combine(buildOthers());
         codeMapper.combine(buildPunctuations());
+
+        notSupportSet.add('\ue2d1');
+        notSupportSet.add('\ue2d5');
+        notSupportSet.add('\ue2db');
+        notSupportSet.add('\ue2de');
+        notSupportSet.add('\ue2e0');
     }
 
     private static Map<String, String> buildBase() {
@@ -131,14 +142,14 @@ public class FromMenkShapeCodeMapper {
             base.put("\u0020" + item + "\u0020", "\ue001\ue006");
         });
 
-        cycleTailGedesList.forEach(item->{
+        cycleTailGedesList.forEach(item -> {
             base.put("\u0020" + item, "\ue001");
             base.put(item, "\ue008");
 //            base.put(item + "\u0020", "\ue00f");
             base.put("\u0020" + item + "\u0020", "\ue008");
         });
 
-        cycleTailUList.forEach(item->{
+        cycleTailUList.forEach(item -> {
             base.put("\u0020" + item, "\ue010");
             base.put(item, "\ue010");
 //            base.put(item + "\u0020", "\ue010");

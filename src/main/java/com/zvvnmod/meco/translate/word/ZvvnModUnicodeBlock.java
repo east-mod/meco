@@ -292,26 +292,26 @@ public class ZvvnModUnicodeBlock {
     }
 
     private static void buildToZ52Punctuations() {
-        toZ52Punctuations.add('\u00b7');
+//        toZ52Punctuations.add('\u00b7');
         toZ52Punctuations.add('\u2048');
         toZ52Punctuations.add('\u2049');
         toZ52Punctuations.add('\u0021');
         toZ52Punctuations.add('\u003f');
-        toZ52Punctuations.add('\u003b');
-        toZ52Punctuations.add('\u0028');
-        toZ52Punctuations.add('\u0029');
-        toZ52Punctuations.add('\u3008');
-        toZ52Punctuations.add('\u3009');
-        toZ52Punctuations.add('\u3014');
-        toZ52Punctuations.add('\u3015');
-        toZ52Punctuations.add('\u300a');
-        toZ52Punctuations.add('\u300b');
-        toZ52Punctuations.add('\u300e');
-        toZ52Punctuations.add('\u300f');
-        toZ52Punctuations.add('\u002c');
-        toZ52Punctuations.add('\u00d7');
-        toZ52Punctuations.add('\u203b');
-        toZ52Punctuations.add('\u002d');
-        toZ52Punctuations.add('\u007c');
+//        toZ52Punctuations.add('\u003b');
+//        toZ52Punctuations.add('\u0028');
+//        toZ52Punctuations.add('\u0029');
+//        toZ52Punctuations.add('\u3008');
+//        toZ52Punctuations.add('\u3009');
+//        toZ52Punctuations.add('\u3014');
+//        toZ52Punctuations.add('\u3015');
+//        toZ52Punctuations.add('\u300a');
+//        toZ52Punctuations.add('\u300b');
+//        toZ52Punctuations.add('\u300e');
+//        toZ52Punctuations.add('\u300f');
+//        toZ52Punctuations.add('\u002c');
+//        toZ52Punctuations.add('\u00d7');
+//        toZ52Punctuations.add('\u203b');
+//        toZ52Punctuations.add('\u002d');
+//        toZ52Punctuations.add('\u007c');
     }
 }

@@ -82,7 +82,7 @@ public class FromMenkShapeCodeMapper {
         List<String> likeEHead = Lists.newArrayList("\ue267", "\ue271", "\ue2b2", "\ue2b4");
         likeEHead.forEach(item -> buildLocateChar(base, item, "\ue000"));
 
-        List<String> likeTailN = Lists.newArrayList("\ue268", "\ue2b5", "\ue273");
+        List<String> likeTailN = Lists.newArrayList("\ue268", "\ue2b5", "\ue273", "\ue300");
         likeTailN.forEach(item -> buildLocateChar(base, item, "\ue00c"));
 
         buildLocateChar(base, "\ue269", "\ue00d");
@@ -116,6 +116,22 @@ public class FromMenkShapeCodeMapper {
             base.put(item + "\u0020", "\ue008");
             base.put("\u0020" + item + "\u0020", "\ue001");
         });
+
+        cycleNoTailGedesList.forEach(item -> {
+            base.put("\u0020" + item, "\ue001");
+            base.put(item, "\ue008");
+            base.put(item + "\u0020", "\ue008");
+            base.put("\u0020" + item + "\u0020", "\ue001");
+        });
+
+        cycleGedesForU.forEach(item -> {
+            base.put("\u0020" + item, "\ue001\ue006");
+            base.put(item, "\ue008\ue006");
+            base.put(item + "\u0020", "\ue008\ue006");
+            base.put("\u0020" + item + "\u0020", "\ue001\ue006");
+        });
+
+        buildLocateChar(base, "\ue27c", "");
 
         //u
         buildLocateChar(base, "\ue293", "\ue000\ue010");
@@ -173,7 +189,7 @@ public class FromMenkShapeCodeMapper {
 
     private static Map<String, String> buildEng() {
         Map<String, String> eng = new HashMap<>(64);
-        buildLocateChar(eng, "\ue2bb\u0020", "\ue005\ue006\ue00d");
+        buildLocateChar(eng, "\ue2bb", "\ue005\ue006\ue00d");
         buildLocateChar(eng, "\ue2bc", "\ue005\ue031");
         buildLocateChar(eng, "\ue2bd", "\ue005\ue031");
         buildLocateChar(eng, "\ue2be", "\ue005\ue031");

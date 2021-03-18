@@ -193,27 +193,27 @@ public class ToZ52CodeMapper {
     }
 
     private static void buildPunctuations() {
-        codeMapper.put("\u00b7", "\u184f");
+//        codeMapper.put("\u00b7", "\u184f");
         codeMapper.put("\u2048", "\u1850");
         codeMapper.put("\u2049", "\u1851");
         codeMapper.put("\u0021", "\u1852");
         codeMapper.put("\u003f", "\u1853");
-        codeMapper.put("\u003b", "\u1854");
-        codeMapper.put("\u0028", "\u1855");
-        codeMapper.put("\u0029", "\u1856");
-        codeMapper.put("\u3008", "\u1857");
-        codeMapper.put("\u3009", "\u1858");
-        codeMapper.put("\u3014", "\u1859");
-        codeMapper.put("\u3015", "\u185a");
-        codeMapper.put("\u300a", "\u185b");
-        codeMapper.put("\u300b", "\u185c");
-        codeMapper.put("\u300e", "\u185d");
-        codeMapper.put("\u300f", "\u185e");
-        codeMapper.put("\u002c", "\u185f");
-        codeMapper.put("\u00d7", "\u1860");
-        codeMapper.put("\u203b", "\u1861");
-        codeMapper.put("\u002d", "\u1862");
-        codeMapper.put("\u007c", "\u1863");
+//        codeMapper.put("\u003b", "\u1854");
+//        codeMapper.put("\u0028", "\u1855");
+//        codeMapper.put("\u0029", "\u1856");
+//        codeMapper.put("\u3008", "\u1857");
+//        codeMapper.put("\u3009", "\u1858");
+//        codeMapper.put("\u3014", "\u1859");
+//        codeMapper.put("\u3015", "\u185a");
+//        codeMapper.put("\u300a", "\u185b");
+//        codeMapper.put("\u300b", "\u185c");
+//        codeMapper.put("\u300e", "\u185d");
+//        codeMapper.put("\u300f", "\u185e");
+//        codeMapper.put("\u002c", "\u185f");
+//        codeMapper.put("\u00d7", "\u1860");
+//        codeMapper.put("\u203b", "\u1861");
+//        codeMapper.put("\u002d", "\u1862");
+//        codeMapper.put("\u007c", "\u1863");
     }
 
     private static void buildOthers() {

@@ -131,6 +131,20 @@ public class FromMenkShapeCodeMapper {
             base.put("\u0020" + item + "\u0020", "\ue001\ue006");
         });
 
+        cycleTailGedesList.forEach(item->{
+            base.put("\u0020" + item, "\ue001");
+            base.put(item, "\ue008");
+//            base.put(item + "\u0020", "\ue00f");
+            base.put("\u0020" + item + "\u0020", "\ue008");
+        });
+
+        cycleTailUList.forEach(item->{
+            base.put("\u0020" + item, "\ue010");
+            base.put(item, "\ue010");
+//            base.put(item + "\u0020", "\ue010");
+            base.put("\u0020" + item + "\u0020", "\ue010");
+        });
+
         buildLocateChar(base, "\ue27c", "");
 
         //u

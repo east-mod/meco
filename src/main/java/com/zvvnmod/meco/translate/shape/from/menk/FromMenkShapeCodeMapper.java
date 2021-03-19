@@ -202,6 +202,9 @@ public class FromMenkShapeCodeMapper {
         buildLocateChar(base, "\ue2ae", "\ue000\ue057");
         buildLocateChar(base, "\ue2af", "\ue058");
         buildLocateChar(base, "\ue2b0", "\ue057");
+
+        //\ue2c4
+        buildLocateChar(base, "\ue2c4", "\ue001\ue00d");
         return base;
     }
 

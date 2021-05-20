@@ -1,8 +1,9 @@
 # meco
 
 #### 介绍
-实现**Menk国际编码、Menk形码、Delehi国际编码、Oyun国际编码、Z编码**之间相互转换.
-Oyun国际编码和Z编码暂不支持
+实现**Menk国际编码(标准编码输入法)、Menk形码(蒙科立输入法 2008)、Delehi国际编码(德力海蒙古文输入法2016)、Oyun国际编码、Z编码**之间相互转换.
+
+暂不支持**基于“蒙古语言文字数字资源建设与共享工程”项目标准的输入法**
 
 #### CURL例子
 curl --location --request GET '39.104.94.197:2207/meco/translate' \
@@ -16,6 +17,10 @@ curl --location --request GET '39.104.94.197:2207/meco/translate' \
 #### from，to可选类型
 menk_shape,
 menk_letter,
-delehi
+delehi,
+zcode
 
 #### 参与贡献
+zvvnmod,zcode
+
+相关问题提问或讨论:http://zvvnmod.com

@@ -20,6 +20,18 @@ menk_letter,
 delehi,
 zcode
 
+#### 构建
+安装jdk11 http://jdk.java.net/java-se-ri/11
+安装maven https://maven.apache.org/
+
+1.打包
+mvn clean package
+target目录下生成meco-x.x.x-SNAPSHOT.jar
+
+2.执行
+java -jar meco-x.x.x-SNAPSHOT.jar
+默认端口：20207
+
 #### 参与贡献
 zvvnmod team,zcode team
 

@@ -5,6 +5,8 @@
 
 暂不支持**基于“蒙古语言文字数字资源建设与共享工程”项目标准的输入法**
 
+线上部署网址:http://mcc.zvvnmod.com
+
 #### CURL例子
 curl --location --request GET '39.104.94.197:2207/meco/translate' \
 --header 'Content-Type: application/json' \

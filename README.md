@@ -8,13 +8,13 @@
 线上部署网址:http://mcc.zvvnmod.com
 
 #### CURL例子
-curl --location --request GET '39.104.94.197:2207/meco/translate' \
+`curl --location --request GET '39.104.94.197:2207/meco/translate' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "from":"menk_shape",
     "to":"delehi",
     "content":"           "
-}'
+}'`
 
 #### from，to可选类型
 menk_shape,
@@ -27,11 +27,11 @@ zcode
 安装maven https://maven.apache.org/
 
 1.打包
-mvn clean package
+`mvn clean package`
 target目录下生成meco-x.x.x-SNAPSHOT.jar
 
 2.执行
-java -jar meco-x.x.x-SNAPSHOT.jar
+`java -jar meco-x.x.x-SNAPSHOT.jar`
 默认端口：20207
 
 #### 参与贡献

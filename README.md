@@ -21,6 +21,6 @@ delehi,
 zcode
 
 #### 参与贡献
-zvvnmod,zcode
+zvvnmod team,zcode team
 
 相关问题提问或讨论:http://zvvnmod.com

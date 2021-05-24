@@ -1546,6 +1546,7 @@ public class FromDelehiCodeMapper {
         //tail ee
         fuck.put("\u1827\u0020", "\ue058");
 
+        fuck.put("\u0020\u180A\u0020", "");
         fuck.put("\u0020\u180A", "");
         fuck.put("\u180A", "");
         fuck.put("\u180A\u0020", "");

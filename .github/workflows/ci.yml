@@ -42,7 +42,7 @@ jobs:
       - name: Maven Package
         run: |
           mvn clean package -Dmaven.test.skip=true
-          mv target/meco.jar docker/
+          mv target/meco-0.0.1-SNAPSHOT.jar docker/
       - name: Set Image Tag
         id: set_tag
         run: echo "::set-output name=tag::$(date +%Y%m%d%H%M%S)"

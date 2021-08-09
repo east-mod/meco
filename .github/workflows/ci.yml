@@ -1,0 +1,64 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+env:
+  NAMESPACE: zorigt
+  IMAGE: meco
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt' # See 'Supported distributions' for available options
+          java-version: '11'
+      - name: Setup Maven
+        # You may pin to the exact commit or the version.
+        # uses: stCarolas/setup-maven@3c9ddfb1c6df927e174580018dd71e774bc7dd48
+        uses: stCarolas/setup-maven@v4.1
+        with:
+          # Version Spec of the version to use.  Examples: 10.x, 10.15.1, >=10.15.0
+          maven-version: 3.5.4
+      - name: Maven Package
+        run: |
+          mvn clean package -Dmaven.test.skip=true
+          mv target/meco.jar docker/
+      - name: Set Image Tag
+        id: set_tag
+        run: echo "::set-output name=tag::$(date +%Y%m%d%H%M%S)"
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Docker Login
+        uses: docker/login-action@v1
+        with:
+          registry: ${{ secrets.REGISTRY }}
+          username: ${{ secrets.REGISTRY_USER_NAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: docker/
+          push: true
+          tags: "${{ secrets.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.IMAGE }}:${{ steps.set_tag.outputs.tag }}"

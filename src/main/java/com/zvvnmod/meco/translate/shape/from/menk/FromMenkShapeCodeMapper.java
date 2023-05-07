@@ -772,19 +772,19 @@ public class FromMenkShapeCodeMapper {
         //head fo,middle fo,fu
         f2.forEach(item -> {
             for (String s : cycleNoTailGedesList) {
-                f.put("\u0020" + item + s, "\ue08f");
-                f.put(item + s, "\ue090");
-                f.put(item + s + "\u0020", "\ue090");
-                f.put("\u0020" + item + s + "\u0020", "\ue08f");
+                f.put("\u0020" + item + s, "\ue0a8");
+                f.put(item + s, "\ue0a9");
+                f.put(item + s + "\u0020", "\ue0a9");
+                f.put("\u0020" + item + s + "\u0020", "\ue0a8");
             }
         });
         //head fu
         f2.forEach(item -> {
             for (String s : cycleGedesForU) {
-                f.put("\u0020" + item + s, "\ue08f\ue006");
-                f.put(item + s, "\ue08f\ue006");
-                f.put(item + s + "\u0020", "\ue08f\ue006");
-                f.put("\u0020" + item + s + "\u0020", "\ue08f\ue006");
+                f.put("\u0020" + item + s, "\ue0a8\ue006");
+                f.put(item + s, "\ue0a8\ue006");
+                f.put(item + s + "\u0020", "\ue0a8\ue006");
+                f.put("\u0020" + item + s + "\u0020", "\ue0a8\ue006");
             }
         });
         //fi,tail fi

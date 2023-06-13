@@ -26,3 +26,6 @@ target
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+src/main/java/com/zvvnmod/meco/temp/
+mongo_words_1.txt
+mongol_words.txt
